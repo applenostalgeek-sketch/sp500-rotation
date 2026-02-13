@@ -46,7 +46,7 @@ function renderSignalHistory(data) {
     let html = "";
 
     if (active.length > 0) {
-        html += '<div class="sh-section-title">Signaux en acceleration</div>';
+        html += '<div class="sh-section-title">Accelerations en cours</div>';
         for (const s of active) {
             const ret = (s.return_abs * 100).toFixed(1);
             const retClass = s.return_abs >= 0 ? "positive" : "negative";

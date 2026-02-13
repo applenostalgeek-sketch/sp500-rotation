@@ -707,8 +707,9 @@ def backfill_signal_history(data_all):
 
     all_tickers = list(ticker_sector.keys())
 
-    # Compute full phase series for each stock
+    # Compute full phase series + RS-Momentum for each stock
     phase_series = {}
+    rm_series = {}
     for ticker in all_tickers:
         c = close[ticker].dropna()
         if len(c) < 40:
@@ -733,6 +734,7 @@ def backfill_signal_history(data_all):
         phases.loc[valid[(mask_rr >= 100) & (mask_rm < 100)]] = "weakening"
         phases.loc[valid[(mask_rr < 100) & (mask_rm >= 100)]] = "improving"
         phase_series[ticker] = phases.dropna()
+        rm_series[ticker] = rm
 
     # Get trading days — use all available after RS warmup (~40 days)
     trading_days = spy.dropna().index
@@ -760,8 +762,12 @@ def backfill_signal_history(data_all):
                 continue
             phase_yesterday = ps.iloc[day_pos - 1]
 
-            # Check for new signal: entering improving
+            # Check for new signal: entering improving with strong momentum
             if phase_today == "improving" and phase_yesterday != "improving":
+                # Filter: RS-Momentum must be >= 101 (not just barely crossing 100)
+                rm_val = rm_series[ticker].loc[day] if day in rm_series[ticker].index else 100
+                if rm_val < 101:
+                    continue
                 if ticker not in active_signals and ticker in close.columns:
                     stock_price = float(close[ticker].loc[day])
                     if not np.isnan(stock_price):
@@ -891,10 +897,12 @@ def update_signal_history(result, data_all, history_path):
             sig["close_date"] = today
             sig["close_reason"] = "expired"
 
-    # Find new signals: stocks entering improving (days_in_phase <= 2) not already tracked
+    # Find new signals: stocks entering improving with strong momentum (RS-Mom >= 101)
     existing_active = {s["ticker"] for s in history if s["status"] == "active"}
     for sig in result.get("signals", []):
         if sig["phase"] != "improving" or sig["days_in_phase"] > 2:
+            continue
+        if sig.get("rs_momentum", 100) < 101:
             continue
         ticker = sig["ticker"]
         if ticker in existing_active:
@@ -1015,6 +1023,7 @@ def main():
                             "days_in_phase": dip,
                             "return_5d": s["return_5d"],
                             "phase_value": s["phase_value"],
+                            "rs_momentum": s.get("rs_momentum", 100),
                         })
             else:
                 print(f"  {etf}: no data")
