@@ -13,8 +13,8 @@ function loadData() {
 
 /* ---------- Phase display ---------- */
 const PHASE_INFO = {
-    leading:    { label: "Confirmé",        color: "#22c55e" },
-    improving:  { label: "Acceleration",    color: "#eab308" },
+    leading:    { label: "Surperformance",   color: "#22c55e" },
+    improving:  { label: "Accélération",    color: "#eab308" },
     weakening:  { label: "Essoufflement",   color: "#f97316" },
     lagging:    { label: "Sous pression",   color: "#ef4444" },
 };
@@ -41,12 +41,11 @@ function renderSignalHistory(data) {
     if (history.length === 0) { container.innerHTML = ""; return; }
 
     const active = history.filter(s => s.status === "active");
-    const closed = history.filter(s => s.status === "closed").slice(0, 15);
 
     let html = "";
 
     if (active.length > 0) {
-        html += '<div class="sh-section-title">Accelerations en cours</div>';
+        html += '<div class="sh-section-title">Actions à suivre</div>';
         for (const s of active) {
             const ret = (s.return_abs * 100).toFixed(1);
             const retClass = s.return_abs >= 0 ? "positive" : "negative";
@@ -64,28 +63,6 @@ function renderSignalHistory(data) {
                     ${rsiHtml}
                     <span class="sh-meta">J${s.days_active} · ${s.sector_name}</span>
                     ${retHtml}
-                </div>`;
-        }
-    }
-
-    if (closed.length > 0) {
-        const wins = closed.filter(s => s.return_abs > 0).length;
-        html += `<div class="sh-section-title">Clos recemment <span class="sh-winrate">${wins}/${closed.length}</span></div>`;
-        for (const s of closed) {
-            const ret = (s.return_abs * 100).toFixed(1);
-            const retSign = s.return_abs >= 0 ? "+" : "";
-            const isWin = s.return_abs > 0;
-            const icon = isWin ? "\u2713" : "\u2717";
-            const iconClass = isWin ? "positive" : "negative";
-            const reason = s.close_reason === "confirmed" ? "Confirme"
-                : s.close_reason === "reversed" ? "Retourne"
-                : "Expire";
-            html += `
-                <div class="sh-row sh-closed">
-                    <span class="sh-icon ${iconClass}">${icon}</span>
-                    <span class="sh-ticker">${s.ticker}</span>
-                    <span class="sh-meta">${s.days_active}j · ${reason}</span>
-                    <span class="sh-ret ${iconClass}">${retSign}${ret}%</span>
                 </div>`;
         }
     }
