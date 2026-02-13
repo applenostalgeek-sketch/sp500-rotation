@@ -1,0 +1,390 @@
+{
+  "etf": "XLY",
+  "sector_name": "Conso. Discretionnaire",
+  "sector_color": "#f97316",
+  "date": "2026-02-12",
+  "stocks": [
+    {
+      "id": "LOW",
+      "name": "LOW",
+      "return_5d": 0.04835,
+      "return_20d": 0.05827,
+      "volume_ratio": 0.19,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 30.5,
+      "rs_ratio": 105.0,
+      "rs_momentum": 108.4,
+      "sector_relative": "leader",
+      "weight": 3.2
+    },
+    {
+      "id": "MAR",
+      "name": "MAR",
+      "return_5d": 0.09849,
+      "return_20d": 0.12361,
+      "volume_ratio": 0.21,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 4.8,
+      "rs_ratio": 109.3,
+      "rs_momentum": 109.6,
+      "sector_relative": "leader",
+      "weight": 2.4
+    },
+    {
+      "id": "DHI",
+      "name": "DHI",
+      "return_5d": 0.06668,
+      "return_20d": 0.03829,
+      "volume_ratio": 0.33,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 106.3,
+      "rs_momentum": 109.0,
+      "sector_relative": "leader",
+      "weight": 2.2
+    },
+    {
+      "id": "LEN",
+      "name": "LEN",
+      "return_5d": 0.08402,
+      "return_20d": 0.01556,
+      "volume_ratio": 0.19,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 107.4,
+      "rs_momentum": 111.0,
+      "sector_relative": "leader",
+      "weight": 1.3
+    },
+    {
+      "id": "APTV",
+      "name": "APTV",
+      "return_5d": 0.04097,
+      "return_20d": 0.03807,
+      "volume_ratio": 0.14,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 105.6,
+      "rs_momentum": 105.6,
+      "sector_relative": "leader",
+      "weight": 0.8
+    },
+    {
+      "id": "HD",
+      "name": "HD",
+      "return_5d": 0.026,
+      "return_20d": 0.04221,
+      "volume_ratio": 0.22,
+      "momentum_phase": "positif",
+      "phase_value": 92.5,
+      "phase_delta": 23.9,
+      "rs_ratio": 102.9,
+      "rs_momentum": 105.6,
+      "sector_relative": "leader",
+      "weight": 6.2
+    },
+    {
+      "id": "TSLA",
+      "name": "TSLA",
+      "return_5d": 0.03413,
+      "return_20d": -0.03062,
+      "volume_ratio": 0.32,
+      "momentum_phase": "positif",
+      "phase_value": 91.1,
+      "phase_delta": 91.1,
+      "rs_ratio": 101.7,
+      "rs_momentum": 106.5,
+      "sector_relative": "leader",
+      "weight": 100.0
+    },
+    {
+      "id": "ROST",
+      "name": "ROST",
+      "return_5d": 0.03169,
+      "return_20d": 0.01545,
+      "volume_ratio": 0.15,
+      "momentum_phase": "positif",
+      "phase_value": 88.1,
+      "phase_delta": 2.7,
+      "rs_ratio": 102.8,
+      "rs_momentum": 104.8,
+      "sector_relative": "leader",
+      "weight": 1.9
+    },
+    {
+      "id": "YUM",
+      "name": "YUM",
+      "return_5d": 0.00221,
+      "return_20d": 0.01391,
+      "volume_ratio": 0.1,
+      "momentum_phase": "positif",
+      "phase_value": 76.9,
+      "phase_delta": -23.1,
+      "rs_ratio": 102.5,
+      "rs_momentum": 102.9,
+      "sector_relative": "leader",
+      "weight": 1.4
+    },
+    {
+      "id": "F",
+      "name": "F",
+      "return_5d": 0.0221,
+      "return_20d": 0.02136,
+      "volume_ratio": 0.76,
+      "momentum_phase": "positif",
+      "phase_value": 65.4,
+      "phase_delta": -5.2,
+      "rs_ratio": 102.4,
+      "rs_momentum": 100.7,
+      "sector_relative": "leader",
+      "weight": 3.7
+    },
+    {
+      "id": "MCD",
+      "name": "MCD",
+      "return_5d": 0.00698,
+      "return_20d": 0.06748,
+      "volume_ratio": 0.62,
+      "momentum_phase": "positif",
+      "phase_value": 63.4,
+      "phase_delta": -29.6,
+      "rs_ratio": 102.0,
+      "rs_momentum": 100.6,
+      "sector_relative": "leader",
+      "weight": 4.1
+    },
+    {
+      "id": "ORLY",
+      "name": "ORLY",
+      "return_5d": 0.01359,
+      "return_20d": 0.01986,
+      "volume_ratio": 0.18,
+      "momentum_phase": "positif",
+      "phase_value": 52.1,
+      "phase_delta": 52.1,
+      "rs_ratio": 100.3,
+      "rs_momentum": 100.1,
+      "sector_relative": "leader",
+      "weight": 2.4
+    },
+    {
+      "id": "SBUX",
+      "name": "SBUX",
+      "return_5d": 0.03175,
+      "return_20d": 0.08744,
+      "volume_ratio": 1.0,
+      "momentum_phase": "positif",
+      "phase_value": 50.0,
+      "phase_delta": -11.8,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
+      "sector_relative": "leader",
+      "weight": 0.0
+    },
+    {
+      "id": "TJX",
+      "name": "TJX",
+      "return_5d": -0.00507,
+      "return_20d": -0.00698,
+      "volume_ratio": 0.23,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -60.0,
+      "rs_ratio": 101.3,
+      "rs_momentum": 105.3,
+      "sector_relative": "laggard",
+      "weight": 3.5
+    },
+    {
+      "id": "NKE",
+      "name": "NKE",
+      "return_5d": -0.02683,
+      "return_20d": -0.03693,
+      "volume_ratio": 0.2,
+      "momentum_phase": "negatif",
+      "phase_value": 40.0,
+      "phase_delta": -22.2,
+      "rs_ratio": 99.5,
+      "rs_momentum": 102.5,
+      "sector_relative": "laggard",
+      "weight": 3.3
+    },
+    {
+      "id": "CMG",
+      "name": "CMG",
+      "return_5d": -0.06639,
+      "return_20d": -0.08883,
+      "volume_ratio": 0.25,
+      "momentum_phase": "negatif",
+      "phase_value": 15.2,
+      "phase_delta": -24.0,
+      "rs_ratio": 95.3,
+      "rs_momentum": 97.8,
+      "sector_relative": "laggard",
+      "weight": 2.7
+    },
+    {
+      "id": "GM",
+      "name": "GM",
+      "return_5d": -0.03549,
+      "return_20d": 0.0042,
+      "volume_ratio": 0.19,
+      "momentum_phase": "negatif",
+      "phase_value": 7.2,
+      "phase_delta": -56.2,
+      "rs_ratio": 98.0,
+      "rs_momentum": 93.4,
+      "sector_relative": "laggard",
+      "weight": 2.9
+    },
+    {
+      "id": "AMZN",
+      "name": "AMZN",
+      "return_5d": -0.05526,
+      "return_20d": -0.16577,
+      "volume_ratio": 0.48,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": -12.0,
+      "rs_ratio": 90.2,
+      "rs_momentum": 89.3,
+      "sector_relative": "laggard",
+      "weight": 44.2
+    },
+    {
+      "id": "BKNG",
+      "name": "BKNG",
+      "return_5d": -0.05943,
+      "return_20d": -0.19271,
+      "volume_ratio": 0.4,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 92.6,
+      "rs_momentum": 93.3,
+      "sector_relative": "laggard",
+      "weight": 5.8
+    },
+    {
+      "id": "EBAY",
+      "name": "EBAY",
+      "return_5d": -0.05708,
+      "return_20d": -0.15052,
+      "volume_ratio": 0.22,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": -1.3,
+      "rs_ratio": 93.3,
+      "rs_momentum": 93.3,
+      "sector_relative": "laggard",
+      "weight": 1.5
+    }
+  ],
+  "correlations": [
+    {
+      "source": "DHI",
+      "target": "LEN",
+      "correlation": 0.937
+    },
+    {
+      "source": "LOW",
+      "target": "HD",
+      "correlation": 0.881
+    },
+    {
+      "source": "F",
+      "target": "GM",
+      "correlation": 0.818
+    },
+    {
+      "source": "MAR",
+      "target": "DHI",
+      "correlation": 0.698
+    },
+    {
+      "source": "MAR",
+      "target": "LEN",
+      "correlation": 0.654
+    },
+    {
+      "source": "YUM",
+      "target": "MCD",
+      "correlation": 0.646
+    },
+    {
+      "source": "LOW",
+      "target": "MAR",
+      "correlation": 0.633
+    },
+    {
+      "source": "APTV",
+      "target": "MCD",
+      "correlation": 0.63
+    },
+    {
+      "source": "HD",
+      "target": "NKE",
+      "correlation": 0.629
+    },
+    {
+      "source": "SBUX",
+      "target": "CMG",
+      "correlation": 0.625
+    },
+    {
+      "source": "LEN",
+      "target": "APTV",
+      "correlation": 0.617
+    },
+    {
+      "source": "LOW",
+      "target": "LEN",
+      "correlation": 0.611
+    },
+    {
+      "source": "ROST",
+      "target": "TJX",
+      "correlation": 0.597
+    },
+    {
+      "source": "LOW",
+      "target": "DHI",
+      "correlation": 0.593
+    },
+    {
+      "source": "MAR",
+      "target": "HD",
+      "correlation": 0.583
+    },
+    {
+      "source": "DHI",
+      "target": "APTV",
+      "correlation": 0.577
+    },
+    {
+      "source": "DHI",
+      "target": "HD",
+      "correlation": 0.572
+    },
+    {
+      "source": "LOW",
+      "target": "YUM",
+      "correlation": 0.566
+    },
+    {
+      "source": "SBUX",
+      "target": "NKE",
+      "correlation": 0.534
+    },
+    {
+      "source": "YUM",
+      "target": "F",
+      "correlation": 0.533
+    }
+  ]
+}

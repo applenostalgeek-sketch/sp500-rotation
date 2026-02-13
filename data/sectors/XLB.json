@@ -1,0 +1,376 @@
+{
+  "etf": "XLB",
+  "sector_name": "Materiaux",
+  "sector_color": "#a855f7",
+  "date": "2026-02-12",
+  "stocks": [
+    {
+      "id": "APD",
+      "name": "APD",
+      "return_5d": 0.04323,
+      "return_20d": 0.11046,
+      "volume_ratio": 0.07,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 104.1,
+      "rs_momentum": 106.8,
+      "sector_relative": "leader",
+      "weight": 27.2
+    },
+    {
+      "id": "NEM",
+      "name": "NEM",
+      "return_5d": 0.08732,
+      "return_20d": 0.09789,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 100.0,
+      "rs_ratio": 106.8,
+      "rs_momentum": 103.5,
+      "sector_relative": "leader",
+      "weight": 88.5
+    },
+    {
+      "id": "DOW",
+      "name": "DOW",
+      "return_5d": 0.06293,
+      "return_20d": 0.20902,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 107.3,
+      "rs_momentum": 110.4,
+      "sector_relative": "leader",
+      "weight": 31.1
+    },
+    {
+      "id": "DD",
+      "name": "DD",
+      "return_5d": 0.10015,
+      "return_20d": 0.18484,
+      "volume_ratio": 0.31,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 20.3,
+      "rs_ratio": 108.7,
+      "rs_momentum": 107.3,
+      "sector_relative": "leader",
+      "weight": 17.1
+    },
+    {
+      "id": "IFF",
+      "name": "IFF",
+      "return_5d": 0.10198,
+      "return_20d": 0.16405,
+      "volume_ratio": 0.49,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 24.2,
+      "rs_ratio": 110.9,
+      "rs_momentum": 115.2,
+      "sector_relative": "leader",
+      "weight": 9.2
+    },
+    {
+      "id": "CE",
+      "name": "CE",
+      "return_5d": 0.10787,
+      "return_20d": 0.28978,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 114.2,
+      "rs_momentum": 118.2,
+      "sector_relative": "leader",
+      "weight": 8.7
+    },
+    {
+      "id": "BALL",
+      "name": "BALL",
+      "return_5d": 0.0173,
+      "return_20d": 0.20988,
+      "volume_ratio": 0.11,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 105.4,
+      "rs_momentum": 105.6,
+      "sector_relative": "laggard",
+      "weight": 10.7
+    },
+    {
+      "id": "EMN",
+      "name": "EMN",
+      "return_5d": 0.05437,
+      "return_20d": 0.16247,
+      "volume_ratio": 0.13,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 106.0,
+      "rs_momentum": 106.1,
+      "sector_relative": "leader",
+      "weight": 10.4
+    },
+    {
+      "id": "ECL",
+      "name": "ECL",
+      "return_5d": 0.05237,
+      "return_20d": 0.10012,
+      "volume_ratio": 0.25,
+      "momentum_phase": "positif",
+      "phase_value": 98.8,
+      "phase_delta": 29.1,
+      "rs_ratio": 105.1,
+      "rs_momentum": 104.7,
+      "sector_relative": "leader",
+      "weight": 25.7
+    },
+    {
+      "id": "PPG",
+      "name": "PPG",
+      "return_5d": 0.04869,
+      "return_20d": 0.20532,
+      "volume_ratio": 0.11,
+      "momentum_phase": "positif",
+      "phase_value": 96.0,
+      "phase_delta": -4.0,
+      "rs_ratio": 106.3,
+      "rs_momentum": 102.9,
+      "sector_relative": "leader",
+      "weight": 21.6
+    },
+    {
+      "id": "AVY",
+      "name": "AVY",
+      "return_5d": 0.02914,
+      "return_20d": 0.04236,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 90.3,
+      "phase_delta": -8.7,
+      "rs_ratio": 103.4,
+      "rs_momentum": 104.6,
+      "sector_relative": "laggard",
+      "weight": 8.6
+    },
+    {
+      "id": "SHW",
+      "name": "SHW",
+      "return_5d": 0.03387,
+      "return_20d": 0.05085,
+      "volume_ratio": 0.21,
+      "momentum_phase": "positif",
+      "phase_value": 80.4,
+      "phase_delta": -9.7,
+      "rs_ratio": 103.2,
+      "rs_momentum": 102.9,
+      "sector_relative": "laggard",
+      "weight": 46.7
+    },
+    {
+      "id": "LIN",
+      "name": "LIN",
+      "return_5d": 0.05901,
+      "return_20d": 0.07874,
+      "volume_ratio": 0.26,
+      "momentum_phase": "positif",
+      "phase_value": 71.0,
+      "phase_delta": 4.2,
+      "rs_ratio": 102.8,
+      "rs_momentum": 101.4,
+      "sector_relative": "leader",
+      "weight": 80.0
+    },
+    {
+      "id": "CF",
+      "name": "CF",
+      "return_5d": 0.03751,
+      "return_20d": 0.10987,
+      "volume_ratio": 0.11,
+      "momentum_phase": "essoufflement",
+      "phase_value": 58.9,
+      "phase_delta": 23.4,
+      "rs_ratio": 102.5,
+      "rs_momentum": 99.3,
+      "sector_relative": "laggard",
+      "weight": 13.1
+    },
+    {
+      "id": "FCX",
+      "name": "FCX",
+      "return_5d": 0.05629,
+      "return_20d": 0.0688,
+      "volume_ratio": 0.25,
+      "momentum_phase": "essoufflement",
+      "phase_value": 49.4,
+      "phase_delta": 27.7,
+      "rs_ratio": 102.8,
+      "rs_momentum": 97.0,
+      "sector_relative": "leader",
+      "weight": 100.0
+    },
+    {
+      "id": "NUE",
+      "name": "NUE",
+      "return_5d": -0.00425,
+      "return_20d": 0.09858,
+      "volume_ratio": 0.13,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -37.9,
+      "rs_ratio": 101.9,
+      "rs_momentum": 100.8,
+      "sector_relative": "laggard",
+      "weight": 24.3
+    },
+    {
+      "id": "VMC",
+      "name": "VMC",
+      "return_5d": -0.00726,
+      "return_20d": 0.06516,
+      "volume_ratio": 0.15,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -52.4,
+      "rs_ratio": 101.7,
+      "rs_momentum": 102.6,
+      "sector_relative": "laggard",
+      "weight": 19.9
+    },
+    {
+      "id": "ALB",
+      "name": "ALB",
+      "return_5d": 0.00233,
+      "return_20d": -0.05772,
+      "volume_ratio": 0.45,
+      "momentum_phase": "negatif",
+      "phase_value": 37.7,
+      "phase_delta": 37.7,
+      "rs_ratio": 98.3,
+      "rs_momentum": 99.3,
+      "sector_relative": "laggard",
+      "weight": 37.2
+    },
+    {
+      "id": "MLM",
+      "name": "MLM",
+      "return_5d": -0.05067,
+      "return_20d": 0.022,
+      "volume_ratio": 0.26,
+      "momentum_phase": "negatif",
+      "phase_value": 23.3,
+      "phase_delta": -65.0,
+      "rs_ratio": 97.5,
+      "rs_momentum": 97.1,
+      "sector_relative": "laggard",
+      "weight": 18.7
+    }
+  ],
+  "correlations": [
+    {
+      "source": "DOW",
+      "target": "EMN",
+      "correlation": 0.887
+    },
+    {
+      "source": "DOW",
+      "target": "CE",
+      "correlation": 0.875
+    },
+    {
+      "source": "VMC",
+      "target": "MLM",
+      "correlation": 0.862
+    },
+    {
+      "source": "DD",
+      "target": "CE",
+      "correlation": 0.796
+    },
+    {
+      "source": "CE",
+      "target": "EMN",
+      "correlation": 0.776
+    },
+    {
+      "source": "DOW",
+      "target": "DD",
+      "correlation": 0.771
+    },
+    {
+      "source": "CE",
+      "target": "ECL",
+      "correlation": 0.766
+    },
+    {
+      "source": "PPG",
+      "target": "SHW",
+      "correlation": 0.752
+    },
+    {
+      "source": "AVY",
+      "target": "SHW",
+      "correlation": 0.747
+    },
+    {
+      "source": "DD",
+      "target": "ECL",
+      "correlation": 0.732
+    },
+    {
+      "source": "NEM",
+      "target": "FCX",
+      "correlation": 0.723
+    },
+    {
+      "source": "DD",
+      "target": "EMN",
+      "correlation": 0.72
+    },
+    {
+      "source": "CE",
+      "target": "SHW",
+      "correlation": 0.709
+    },
+    {
+      "source": "CE",
+      "target": "PPG",
+      "correlation": 0.701
+    },
+    {
+      "source": "CE",
+      "target": "AVY",
+      "correlation": 0.686
+    },
+    {
+      "source": "DOW",
+      "target": "SHW",
+      "correlation": 0.664
+    },
+    {
+      "source": "ECL",
+      "target": "AVY",
+      "correlation": 0.662
+    },
+    {
+      "source": "EMN",
+      "target": "SHW",
+      "correlation": 0.637
+    },
+    {
+      "source": "EMN",
+      "target": "PPG",
+      "correlation": 0.627
+    },
+    {
+      "source": "DOW",
+      "target": "PPG",
+      "correlation": 0.624
+    }
+  ]
+}

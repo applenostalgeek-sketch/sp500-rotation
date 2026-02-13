@@ -1,0 +1,376 @@
+{
+  "etf": "XLU",
+  "sector_name": "Services Publics",
+  "sector_color": "#eab308",
+  "date": "2026-02-12",
+  "stocks": [
+    {
+      "id": "D",
+      "name": "D",
+      "return_5d": 0.0584,
+      "return_20d": 0.0933,
+      "volume_ratio": 0.16,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 6.4,
+      "rs_ratio": 105.5,
+      "rs_momentum": 105.7,
+      "sector_relative": "leader",
+      "weight": 37.6
+    },
+    {
+      "id": "AEP",
+      "name": "AEP",
+      "return_5d": 0.06677,
+      "return_20d": 0.07928,
+      "volume_ratio": 0.5,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 16.0,
+      "rs_ratio": 106.1,
+      "rs_momentum": 106.2,
+      "sector_relative": "leader",
+      "weight": 48.1
+    },
+    {
+      "id": "SRE",
+      "name": "SRE",
+      "return_5d": 0.0633,
+      "return_20d": 0.01442,
+      "volume_ratio": 0.16,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 11.6,
+      "rs_ratio": 105.4,
+      "rs_momentum": 106.8,
+      "sector_relative": "leader",
+      "weight": 50.7
+    },
+    {
+      "id": "EXC",
+      "name": "EXC",
+      "return_5d": 0.07534,
+      "return_20d": 0.07973,
+      "volume_ratio": 1.05,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 43.1,
+      "rs_ratio": 107.2,
+      "rs_momentum": 108.2,
+      "sector_relative": "leader",
+      "weight": 47.4
+    },
+    {
+      "id": "ES",
+      "name": "ES",
+      "return_5d": 0.05894,
+      "return_20d": 0.02353,
+      "volume_ratio": 0.14,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 58.0,
+      "rs_ratio": 103.9,
+      "rs_momentum": 106.3,
+      "sector_relative": "leader",
+      "weight": 20.3
+    },
+    {
+      "id": "ETR",
+      "name": "ETR",
+      "return_5d": 0.05559,
+      "return_20d": 0.08086,
+      "volume_ratio": 0.39,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 16.9,
+      "rs_ratio": 105.2,
+      "rs_momentum": 105.0,
+      "sector_relative": "leader",
+      "weight": 30.4
+    },
+    {
+      "id": "DTE",
+      "name": "DTE",
+      "return_5d": 0.0534,
+      "return_20d": 0.05505,
+      "volume_ratio": 0.1,
+      "momentum_phase": "positif",
+      "phase_value": 99.1,
+      "phase_delta": 30.4,
+      "rs_ratio": 104.2,
+      "rs_momentum": 105.6,
+      "sector_relative": "leader",
+      "weight": 27.7
+    },
+    {
+      "id": "ATO",
+      "name": "ATO",
+      "return_5d": 0.04079,
+      "return_20d": 0.04751,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 98.5,
+      "phase_delta": 0.0,
+      "rs_ratio": 104.0,
+      "rs_momentum": 105.7,
+      "sector_relative": "laggard",
+      "weight": 35.2
+    },
+    {
+      "id": "AEE",
+      "name": "AEE",
+      "return_5d": 0.04301,
+      "return_20d": 0.0617,
+      "volume_ratio": 0.44,
+      "momentum_phase": "positif",
+      "phase_value": 96.2,
+      "phase_delta": 19.5,
+      "rs_ratio": 104.5,
+      "rs_momentum": 104.8,
+      "sector_relative": "laggard",
+      "weight": 20.7
+    },
+    {
+      "id": "CMS",
+      "name": "CMS",
+      "return_5d": 0.03295,
+      "return_20d": 0.05556,
+      "volume_ratio": 0.31,
+      "momentum_phase": "positif",
+      "phase_value": 91.6,
+      "phase_delta": 5.1,
+      "rs_ratio": 103.5,
+      "rs_momentum": 104.8,
+      "sector_relative": "laggard",
+      "weight": 27.0
+    },
+    {
+      "id": "FE",
+      "name": "FE",
+      "return_5d": 0.04739,
+      "return_20d": 0.05877,
+      "volume_ratio": 0.3,
+      "momentum_phase": "positif",
+      "phase_value": 90.0,
+      "phase_delta": 32.0,
+      "rs_ratio": 103.9,
+      "rs_momentum": 104.1,
+      "sector_relative": "laggard",
+      "weight": 27.9
+    },
+    {
+      "id": "XEL",
+      "name": "XEL",
+      "return_5d": 0.04559,
+      "return_20d": 0.05308,
+      "volume_ratio": 0.08,
+      "momentum_phase": "positif",
+      "phase_value": 89.1,
+      "phase_delta": 20.2,
+      "rs_ratio": 103.7,
+      "rs_momentum": 104.1,
+      "sector_relative": "laggard",
+      "weight": 48.3
+    },
+    {
+      "id": "DUK",
+      "name": "DUK",
+      "return_5d": 0.04669,
+      "return_20d": 0.07275,
+      "volume_ratio": 0.31,
+      "momentum_phase": "positif",
+      "phase_value": 85.2,
+      "phase_delta": -9.4,
+      "rs_ratio": 103.9,
+      "rs_momentum": 103.1,
+      "sector_relative": "laggard",
+      "weight": 64.9
+    },
+    {
+      "id": "PPL",
+      "name": "PPL",
+      "return_5d": 0.02589,
+      "return_20d": 0.03192,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 84.2,
+      "phase_delta": 38.6,
+      "rs_ratio": 102.8,
+      "rs_momentum": 104.1,
+      "sector_relative": "laggard",
+      "weight": 37.0
+    },
+    {
+      "id": "AWK",
+      "name": "AWK",
+      "return_5d": 0.03342,
+      "return_20d": -0.03648,
+      "volume_ratio": 0.5,
+      "momentum_phase": "positif",
+      "phase_value": 82.3,
+      "phase_delta": 32.3,
+      "rs_ratio": 102.2,
+      "rs_momentum": 104.2,
+      "sector_relative": "laggard",
+      "weight": 22.1
+    },
+    {
+      "id": "ED",
+      "name": "ED",
+      "return_5d": 0.04211,
+      "return_20d": 0.09047,
+      "volume_ratio": 0.1,
+      "momentum_phase": "positif",
+      "phase_value": 80.6,
+      "phase_delta": -7.2,
+      "rs_ratio": 103.6,
+      "rs_momentum": 102.5,
+      "sector_relative": "laggard",
+      "weight": 24.4
+    },
+    {
+      "id": "WEC",
+      "name": "WEC",
+      "return_5d": 0.03375,
+      "return_20d": 0.0649,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 75.6,
+      "phase_delta": 6.0,
+      "rs_ratio": 102.7,
+      "rs_momentum": 102.4,
+      "sector_relative": "laggard",
+      "weight": 33.1
+    },
+    {
+      "id": "SO",
+      "name": "SO",
+      "return_5d": 0.02748,
+      "return_20d": 0.04252,
+      "volume_ratio": 0.59,
+      "momentum_phase": "positif",
+      "phase_value": 75.5,
+      "phase_delta": -18.8,
+      "rs_ratio": 102.6,
+      "rs_momentum": 102.5,
+      "sector_relative": "laggard",
+      "weight": 61.0
+    },
+    {
+      "id": "NEE",
+      "name": "NEE",
+      "return_5d": 0.04193,
+      "return_20d": 0.13422,
+      "volume_ratio": 0.18,
+      "momentum_phase": "positif",
+      "phase_value": 75.4,
+      "phase_delta": 4.6,
+      "rs_ratio": 104.1,
+      "rs_momentum": 101.0,
+      "sector_relative": "laggard",
+      "weight": 100.0
+    }
+  ],
+  "correlations": [
+    {
+      "source": "DUK",
+      "target": "SO",
+      "correlation": 0.915
+    },
+    {
+      "source": "AEP",
+      "target": "AEE",
+      "correlation": 0.885
+    },
+    {
+      "source": "ES",
+      "target": "DTE",
+      "correlation": 0.875
+    },
+    {
+      "source": "AEP",
+      "target": "EXC",
+      "correlation": 0.862
+    },
+    {
+      "source": "FE",
+      "target": "PPL",
+      "correlation": 0.848
+    },
+    {
+      "source": "ES",
+      "target": "XEL",
+      "correlation": 0.843
+    },
+    {
+      "source": "DTE",
+      "target": "CMS",
+      "correlation": 0.843
+    },
+    {
+      "source": "DUK",
+      "target": "ED",
+      "correlation": 0.84
+    },
+    {
+      "source": "D",
+      "target": "AEE",
+      "correlation": 0.815
+    },
+    {
+      "source": "XEL",
+      "target": "DUK",
+      "correlation": 0.81
+    },
+    {
+      "source": "AEE",
+      "target": "SO",
+      "correlation": 0.806
+    },
+    {
+      "source": "D",
+      "target": "DUK",
+      "correlation": 0.804
+    },
+    {
+      "source": "DTE",
+      "target": "DUK",
+      "correlation": 0.804
+    },
+    {
+      "source": "EXC",
+      "target": "AEE",
+      "correlation": 0.803
+    },
+    {
+      "source": "AEP",
+      "target": "ETR",
+      "correlation": 0.801
+    },
+    {
+      "source": "D",
+      "target": "DTE",
+      "correlation": 0.777
+    },
+    {
+      "source": "ED",
+      "target": "SO",
+      "correlation": 0.776
+    },
+    {
+      "source": "AEE",
+      "target": "WEC",
+      "correlation": 0.775
+    },
+    {
+      "source": "WEC",
+      "target": "NEE",
+      "correlation": 0.773
+    },
+    {
+      "source": "D",
+      "target": "SO",
+      "correlation": 0.769
+    }
+  ]
+}

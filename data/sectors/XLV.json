@@ -1,0 +1,390 @@
+{
+  "etf": "XLV",
+  "sector_name": "Sante",
+  "sector_color": "#22c55e",
+  "date": "2026-02-12",
+  "stocks": [
+    {
+      "id": "UNH",
+      "name": "UNH",
+      "return_5d": 0.02115,
+      "return_20d": -0.16657,
+      "volume_ratio": 0.23,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 100.0,
+      "rs_ratio": 101.4,
+      "rs_momentum": 114.7,
+      "sector_relative": "leader",
+      "weight": 98.3
+    },
+    {
+      "id": "ABT",
+      "name": "ABT",
+      "return_5d": 0.01525,
+      "return_20d": -0.08913,
+      "volume_ratio": 0.18,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 101.9,
+      "rs_momentum": 109.4,
+      "sector_relative": "leader",
+      "weight": 43.3
+    },
+    {
+      "id": "CI",
+      "name": "CI",
+      "return_5d": 0.01116,
+      "return_20d": 0.0625,
+      "volume_ratio": 0.1,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 4.9,
+      "rs_ratio": 104.0,
+      "rs_momentum": 106.0,
+      "sector_relative": "leader",
+      "weight": 15.0
+    },
+    {
+      "id": "ELV",
+      "name": "ELV",
+      "return_5d": 0.01513,
+      "return_20d": -0.09902,
+      "volume_ratio": 0.16,
+      "momentum_phase": "positif",
+      "phase_value": 99.4,
+      "phase_delta": 69.5,
+      "rs_ratio": 102.3,
+      "rs_momentum": 107.5,
+      "sector_relative": "leader",
+      "weight": 18.3
+    },
+    {
+      "id": "ZTS",
+      "name": "ZTS",
+      "return_5d": 0.01734,
+      "return_20d": 0.03914,
+      "volume_ratio": 0.94,
+      "momentum_phase": "positif",
+      "phase_value": 85.9,
+      "phase_delta": -5.3,
+      "rs_ratio": 102.4,
+      "rs_momentum": 104.8,
+      "sector_relative": "leader",
+      "weight": 16.6
+    },
+    {
+      "id": "SYK",
+      "name": "SYK",
+      "return_5d": 0.03521,
+      "return_20d": 0.02321,
+      "volume_ratio": 0.24,
+      "momentum_phase": "positif",
+      "phase_value": 81.3,
+      "phase_delta": 1.3,
+      "rs_ratio": 102.2,
+      "rs_momentum": 104.0,
+      "sector_relative": "leader",
+      "weight": 21.3
+    },
+    {
+      "id": "PFE",
+      "name": "PFE",
+      "return_5d": 0.02278,
+      "return_20d": 0.09333,
+      "volume_ratio": 0.19,
+      "momentum_phase": "positif",
+      "phase_value": 78.3,
+      "phase_delta": 9.0,
+      "rs_ratio": 103.4,
+      "rs_momentum": 102.3,
+      "sector_relative": "leader",
+      "weight": 40.5
+    },
+    {
+      "id": "JNJ",
+      "name": "JNJ",
+      "return_5d": 0.01769,
+      "return_20d": 0.11233,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 72.7,
+      "phase_delta": -27.3,
+      "rs_ratio": 103.3,
+      "rs_momentum": 101.2,
+      "sector_relative": "leader",
+      "weight": 60.4
+    },
+    {
+      "id": "ABBV",
+      "name": "ABBV",
+      "return_5d": 0.00854,
+      "return_20d": 0.0035,
+      "volume_ratio": 1.0,
+      "momentum_phase": "positif",
+      "phase_value": 50.0,
+      "phase_delta": -6.8,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
+      "sector_relative": "leader",
+      "weight": 0.0
+    },
+    {
+      "id": "GILD",
+      "name": "GILD",
+      "return_5d": 0.00518,
+      "return_20d": 0.26414,
+      "volume_ratio": 0.32,
+      "momentum_phase": "essoufflement",
+      "phase_value": 60.0,
+      "phase_delta": -34.4,
+      "rs_ratio": 103.4,
+      "rs_momentum": 98.6,
+      "sector_relative": "leader",
+      "weight": 35.8
+    },
+    {
+      "id": "MRK",
+      "name": "MRK",
+      "return_5d": -0.00451,
+      "return_20d": 0.09381,
+      "volume_ratio": 0.2,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -60.0,
+      "rs_ratio": 103.4,
+      "rs_momentum": 104.4,
+      "sector_relative": "laggard",
+      "weight": 45.8
+    },
+    {
+      "id": "AMGN",
+      "name": "AMGN",
+      "return_5d": -0.04036,
+      "return_20d": 0.1175,
+      "volume_ratio": 0.11,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -59.7,
+      "rs_ratio": 102.0,
+      "rs_momentum": 102.0,
+      "sector_relative": "laggard",
+      "weight": 31.4
+    },
+    {
+      "id": "BMY",
+      "name": "BMY",
+      "return_5d": -0.01823,
+      "return_20d": 0.07489,
+      "volume_ratio": 0.19,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -60.0,
+      "rs_ratio": 103.5,
+      "rs_momentum": 105.3,
+      "sector_relative": "laggard",
+      "weight": 21.8
+    },
+    {
+      "id": "LLY",
+      "name": "LLY",
+      "return_5d": -0.02724,
+      "return_20d": -0.0035,
+      "volume_ratio": 0.2,
+      "momentum_phase": "negatif",
+      "phase_value": 40.0,
+      "phase_delta": 2.6,
+      "rs_ratio": 99.2,
+      "rs_momentum": 102.2,
+      "sector_relative": "laggard",
+      "weight": 100.0
+    },
+    {
+      "id": "DHR",
+      "name": "DHR",
+      "return_5d": -0.00956,
+      "return_20d": -0.10567,
+      "volume_ratio": 0.23,
+      "momentum_phase": "negatif",
+      "phase_value": 40.0,
+      "phase_delta": 15.9,
+      "rs_ratio": 98.4,
+      "rs_momentum": 105.6,
+      "sector_relative": "laggard",
+      "weight": 25.4
+    },
+    {
+      "id": "MDT",
+      "name": "MDT",
+      "return_5d": -0.00948,
+      "return_20d": 0.02955,
+      "volume_ratio": 0.19,
+      "momentum_phase": "negatif",
+      "phase_value": 40.0,
+      "phase_delta": -25.8,
+      "rs_ratio": 99.8,
+      "rs_momentum": 99.3,
+      "sector_relative": "laggard",
+      "weight": 24.1
+    },
+    {
+      "id": "ISRG",
+      "name": "ISRG",
+      "return_5d": -0.00649,
+      "return_20d": -0.10411,
+      "volume_ratio": 0.18,
+      "momentum_phase": "negatif",
+      "phase_value": 40.0,
+      "phase_delta": 4.9,
+      "rs_ratio": 99.2,
+      "rs_momentum": 103.4,
+      "sector_relative": "laggard",
+      "weight": 30.2
+    },
+    {
+      "id": "VRTX",
+      "name": "VRTX",
+      "return_5d": -0.02274,
+      "return_20d": 0.06409,
+      "volume_ratio": 0.16,
+      "momentum_phase": "negatif",
+      "phase_value": 38.1,
+      "phase_delta": 8.8,
+      "rs_ratio": 99.9,
+      "rs_momentum": 97.7,
+      "sector_relative": "laggard",
+      "weight": 19.0
+    },
+    {
+      "id": "TMO",
+      "name": "TMO",
+      "return_5d": -0.0701,
+      "return_20d": -0.1919,
+      "volume_ratio": 0.54,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 91.9,
+      "rs_momentum": 97.0,
+      "sector_relative": "laggard",
+      "weight": 36.1
+    },
+    {
+      "id": "BSX",
+      "name": "BSX",
+      "return_5d": -0.02173,
+      "return_20d": -0.17124,
+      "volume_ratio": 0.21,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 93.0,
+      "rs_momentum": 93.0,
+      "sector_relative": "laggard",
+      "weight": 43.3
+    }
+  ],
+  "correlations": [
+    {
+      "source": "UNH",
+      "target": "ELV",
+      "correlation": 0.882
+    },
+    {
+      "source": "ZTS",
+      "target": "PFE",
+      "correlation": 0.806
+    },
+    {
+      "source": "AMGN",
+      "target": "LLY",
+      "correlation": 0.762
+    },
+    {
+      "source": "DHR",
+      "target": "TMO",
+      "correlation": 0.71
+    },
+    {
+      "source": "PFE",
+      "target": "DHR",
+      "correlation": 0.693
+    },
+    {
+      "source": "PFE",
+      "target": "AMGN",
+      "correlation": 0.662
+    },
+    {
+      "source": "LLY",
+      "target": "VRTX",
+      "correlation": 0.654
+    },
+    {
+      "source": "ZTS",
+      "target": "AMGN",
+      "correlation": 0.653
+    },
+    {
+      "source": "LLY",
+      "target": "BSX",
+      "correlation": -0.653
+    },
+    {
+      "source": "ABBV",
+      "target": "BSX",
+      "correlation": 0.646
+    },
+    {
+      "source": "ZTS",
+      "target": "LLY",
+      "correlation": 0.634
+    },
+    {
+      "source": "AMGN",
+      "target": "BSX",
+      "correlation": -0.633
+    },
+    {
+      "source": "PFE",
+      "target": "LLY",
+      "correlation": 0.615
+    },
+    {
+      "source": "ZTS",
+      "target": "DHR",
+      "correlation": 0.612
+    },
+    {
+      "source": "AMGN",
+      "target": "VRTX",
+      "correlation": 0.589
+    },
+    {
+      "source": "AMGN",
+      "target": "BMY",
+      "correlation": 0.577
+    },
+    {
+      "source": "MRK",
+      "target": "BMY",
+      "correlation": 0.573
+    },
+    {
+      "source": "UNH",
+      "target": "CI",
+      "correlation": 0.549
+    },
+    {
+      "source": "MDT",
+      "target": "BSX",
+      "correlation": 0.537
+    },
+    {
+      "source": "ZTS",
+      "target": "BMY",
+      "correlation": 0.525
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P 500 — Rotation Sectorielle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div id="narrative" class="narrative"></div>
+    </header>
+
+    <main>
+        <canvas id="graph-canvas"></canvas>
+        <div id="tooltip" class="tooltip"></div>
+        <!-- back-btn removed: click outside bubble to exit -->
+    </main>
+
+    <aside id="sidebar">
+        <div class="sheet-handle" id="sheet-handle">
+            <div class="sheet-handle-bar"></div>
+            <span class="sheet-handle-label">Voir les secteurs</span>
+        </div>
+        <div class="sidebar-title">Secteurs S&P 500</div>
+        <div id="sector-list"></div>
+        <div class="phase-legend">
+            <div class="phase-legend-title">Phases de momentum</div>
+            <div class="phase-legend-item"><span class="phase-dot" style="background:#22c55e"></span><b>Positif</b> — Le secteur surperforme, momentum confirme</div>
+            <div class="phase-legend-item"><span class="phase-dot" style="background:#f59e0b"></span><b>Essoufflement</b> — Le momentum faiblit</div>
+            <div class="phase-legend-item"><span class="phase-dot" style="background:#ef4444"></span><b>Negatif</b> — Le secteur sous-performe</div>
+        </div>
+        <div class="sidebar-footer">Mis a jour chaque soir apres la cloture US</div>
+    </aside>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="data/data.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg: #0a0e17;
+    --bg-card: #111827;
+    --border: #1e293b;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --green: #22c55e;
+    --red: #ef4444;
+    --orange: #f59e0b;
+    --sidebar-width: 300px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    display: grid;
+    grid-template-columns: 1fr var(--sidebar-width);
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ---------- Header ---------- */
+header {
+    grid-column: 1 / -1;
+    padding: 14px 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+.narrative {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.narrative-text {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.narrative-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+/* ---------- Main (graph) ---------- */
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+#graph-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ---------- Back button ---------- */
+.back-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 50;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.back-btn:hover {
+    border-color: rgba(255,255,255,0.2);
+    background: var(--border);
+}
+
+/* ---------- Sector navigation pills ---------- */
+.sector-pills {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    gap: 6px;
+    padding: 6px 10px;
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-width: calc(100% - 24px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.sector-pills::-webkit-scrollbar { display: none; }
+
+.sector-pill {
+    flex-shrink: 0;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.sector-pill:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.05);
+}
+
+.sector-pill.active {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.sector-pill-back {
+    color: var(--text);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.sector-pill-back:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* ---------- Clickable sector cards ---------- */
+.sector-card-clickable {
+    cursor: pointer;
+}
+
+.sector-card-clickable:hover {
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* ---------- Tooltip ---------- */
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 100;
+    max-width: 280px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.tooltip.visible { opacity: 1; }
+.tooltip .ticker { font-weight: 700; font-size: 0.9rem; }
+.tooltip .sector { color: var(--text-muted); font-size: 0.7rem; }
+.tooltip .positive { color: var(--green); }
+.tooltip .negative { color: var(--red); }
+
+/* ---------- Sidebar ---------- */
+aside {
+    background: var(--bg-card);
+    border-left: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+/* Phase legend */
+.phase-legend {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.phase-legend-title {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.phase-legend-item {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 0;
+}
+
+.phase-legend-item b {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.phase-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sidebar-footer {
+    padding-top: 12px;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Sector cards */
+.sector-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    transition: border-color 0.2s;
+}
+
+.sector-card:hover { border-color: rgba(255,255,255,0.1); }
+
+.sector-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.sector-id {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sector-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sector-name {
+    font-weight: 600;
+    font-size: 0.82rem;
+}
+
+.sector-rel {
+    font-size: 0.6rem;
+    margin-left: -4px;
+}
+
+.sector-status {
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.phase-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.phase-bar-track {
+    height: 3px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 2px;
+    margin: 6px 0;
+    overflow: hidden;
+}
+
+.phase-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.8s ease;
+}
+
+.sector-card-returns {
+    display: flex;
+    gap: 16px;
+    padding-left: 18px;
+}
+
+.ret-col {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.ret-col .positive { color: var(--green); font-weight: 600; }
+.ret-col .negative { color: var(--red); font-weight: 600; }
+
+/* ---------- Bottom sheet handle ---------- */
+.sheet-handle {
+    display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        overflow: hidden;
+    }
+
+    header { padding: 10px 16px; }
+    .narrative-text { font-size: 0.8rem; }
+
+    main {
+        min-height: 0;
+        grid-row: 2;
+    }
+
+    aside {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        max-height: none;
+        border-left: none;
+        border-top: none;
+        border-radius: 16px 16px 0 0;
+        padding: 0 16px 16px;
+        z-index: 200;
+        box-shadow: 0 -4px 30px rgba(0,0,0,0.6);
+        overflow: hidden;
+        will-change: transform;
+    }
+
+    .sheet-handle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 12px 0 8px;
+        cursor: pointer;
+        position: sticky;
+        top: 0;
+        background: var(--bg-card);
+        z-index: 1;
+    }
+
+    .sheet-handle-bar {
+        width: 36px;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(255,255,255,0.25);
+    }
+
+    .sheet-handle-label {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .sidebar-title { display: none; }
+
+    .sector-card { padding: 8px 10px; margin-bottom: 4px; }
+    .sector-name { font-size: 0.78rem; }
+    .phase-badge { font-size: 0.64rem; }
+    .ret-col { font-size: 0.66rem; }
+    .phase-legend { padding-top: 12px; }
+    .phase-legend-item { font-size: 0.62rem; }
+
+    .tooltip { font-size: 0.72rem; max-width: 220px; }
+
+    .sector-pills {
+        top: 8px;
+        padding: 4px 8px;
+        gap: 4px;
+    }
+
+    .sector-pill {
+        padding: 4px 8px;
+        font-size: 0.6rem;
+    }
+}

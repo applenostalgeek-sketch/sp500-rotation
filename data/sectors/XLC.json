@@ -1,0 +1,300 @@
+{
+  "etf": "XLC",
+  "sector_name": "Communication",
+  "sector_color": "#ec4899",
+  "date": "2026-02-12",
+  "stocks": [
+    {
+      "id": "VZ",
+      "name": "VZ",
+      "return_5d": 0.07625,
+      "return_20d": 0.26629,
+      "volume_ratio": 0.4,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 106.4,
+      "rs_momentum": 105.8,
+      "sector_relative": "leader",
+      "weight": 16.0
+    },
+    {
+      "id": "TMUS",
+      "name": "TMUS",
+      "return_5d": 0.10472,
+      "return_20d": 0.14371,
+      "volume_ratio": 0.58,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 108.3,
+      "rs_momentum": 107.2,
+      "sector_relative": "leader",
+      "weight": 12.8
+    },
+    {
+      "id": "CHTR",
+      "name": "CHTR",
+      "return_5d": 0.03052,
+      "return_20d": 0.22396,
+      "volume_ratio": 0.13,
+      "momentum_phase": "positif",
+      "phase_value": 93.4,
+      "phase_delta": -6.6,
+      "rs_ratio": 104.7,
+      "rs_momentum": 104.0,
+      "sector_relative": "leader",
+      "weight": 5.1
+    },
+    {
+      "id": "T",
+      "name": "T",
+      "return_5d": 0.07501,
+      "return_20d": 0.22904,
+      "volume_ratio": 0.33,
+      "momentum_phase": "positif",
+      "phase_value": 90.9,
+      "phase_delta": -9.1,
+      "rs_ratio": 106.9,
+      "rs_momentum": 101.3,
+      "sector_relative": "leader",
+      "weight": 12.2
+    },
+    {
+      "id": "LYV",
+      "name": "LYV",
+      "return_5d": 0.07789,
+      "return_20d": 0.04172,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 87.6,
+      "phase_delta": 43.0,
+      "rs_ratio": 104.6,
+      "rs_momentum": 102.9,
+      "sector_relative": "leader",
+      "weight": 3.2
+    },
+    {
+      "id": "CMCSA",
+      "name": "CMCSA",
+      "return_5d": 0.03076,
+      "return_20d": 0.14056,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 86.2,
+      "phase_delta": -11.3,
+      "rs_ratio": 104.2,
+      "rs_momentum": 103.0,
+      "sector_relative": "leader",
+      "weight": 10.0
+    },
+    {
+      "id": "WBD",
+      "name": "WBD",
+      "return_5d": 0.01882,
+      "return_20d": -0.02159,
+      "volume_ratio": 0.14,
+      "momentum_phase": "positif",
+      "phase_value": 82.4,
+      "phase_delta": 43.5,
+      "rs_ratio": 101.7,
+      "rs_momentum": 104.8,
+      "sector_relative": "leader",
+      "weight": 5.3
+    },
+    {
+      "id": "EA",
+      "name": "EA",
+      "return_5d": 0.00855,
+      "return_20d": -0.01195,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 57.2,
+      "phase_delta": 11.5,
+      "rs_ratio": 100.4,
+      "rs_momentum": 101.0,
+      "sector_relative": "leader",
+      "weight": 5.2
+    },
+    {
+      "id": "NFLX",
+      "name": "NFLX",
+      "return_5d": -0.01546,
+      "return_20d": -0.10085,
+      "volume_ratio": 1.0,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -26.4,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
+      "sector_relative": "laggard",
+      "weight": 0.0
+    },
+    {
+      "id": "OMC",
+      "name": "OMC",
+      "return_5d": -0.02705,
+      "return_20d": -0.15908,
+      "volume_ratio": 0.18,
+      "momentum_phase": "negatif",
+      "phase_value": 28.6,
+      "phase_delta": 28.6,
+      "rs_ratio": 95.7,
+      "rs_momentum": 100.0,
+      "sector_relative": "laggard",
+      "weight": 2.4
+    },
+    {
+      "id": "DIS",
+      "name": "DIS",
+      "return_5d": -0.06035,
+      "return_20d": -0.09937,
+      "volume_ratio": 0.53,
+      "momentum_phase": "negatif",
+      "phase_value": 8.3,
+      "phase_delta": -24.4,
+      "rs_ratio": 95.6,
+      "rs_momentum": 96.1,
+      "sector_relative": "laggard",
+      "weight": 11.1
+    },
+    {
+      "id": "TTWO",
+      "name": "TTWO",
+      "return_5d": -0.00708,
+      "return_20d": -0.20519,
+      "volume_ratio": 0.26,
+      "momentum_phase": "negatif",
+      "phase_value": 3.6,
+      "phase_delta": 3.6,
+      "rs_ratio": 94.5,
+      "rs_momentum": 96.2,
+      "sector_relative": "laggard",
+      "weight": 4.8
+    },
+    {
+      "id": "META",
+      "name": "META",
+      "return_5d": -0.01069,
+      "return_20d": 0.05411,
+      "volume_ratio": 0.21,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": -30.5,
+      "rs_ratio": 96.5,
+      "rs_momentum": 85.6,
+      "sector_relative": "laggard",
+      "weight": 100.0
+    },
+    {
+      "id": "GOOGL",
+      "name": "GOOGL",
+      "return_5d": -0.03853,
+      "return_20d": -0.06719,
+      "volume_ratio": 0.31,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": -55.0,
+      "rs_ratio": 94.9,
+      "rs_momentum": 93.5,
+      "sector_relative": "laggard",
+      "weight": 98.2
+    },
+    {
+      "id": "FOX",
+      "name": "FOX",
+      "return_5d": -0.10643,
+      "return_20d": -0.20543,
+      "volume_ratio": 0.32,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": -0.7,
+      "rs_ratio": 87.8,
+      "rs_momentum": 88.9,
+      "sector_relative": "laggard",
+      "weight": 0.7
+    }
+  ],
+  "correlations": [
+    {
+      "source": "TMUS",
+      "target": "T",
+      "correlation": 0.769
+    },
+    {
+      "source": "VZ",
+      "target": "TMUS",
+      "correlation": 0.699
+    },
+    {
+      "source": "CHTR",
+      "target": "CMCSA",
+      "correlation": 0.696
+    },
+    {
+      "source": "VZ",
+      "target": "TTWO",
+      "correlation": -0.624
+    },
+    {
+      "source": "CMCSA",
+      "target": "DIS",
+      "correlation": 0.619
+    },
+    {
+      "source": "NFLX",
+      "target": "OMC",
+      "correlation": 0.6
+    },
+    {
+      "source": "VZ",
+      "target": "T",
+      "correlation": 0.597
+    },
+    {
+      "source": "TMUS",
+      "target": "TTWO",
+      "correlation": -0.577
+    },
+    {
+      "source": "T",
+      "target": "TTWO",
+      "correlation": -0.528
+    },
+    {
+      "source": "EA",
+      "target": "TTWO",
+      "correlation": 0.525
+    },
+    {
+      "source": "LYV",
+      "target": "TTWO",
+      "correlation": 0.498
+    },
+    {
+      "source": "CHTR",
+      "target": "OMC",
+      "correlation": 0.476
+    },
+    {
+      "source": "VZ",
+      "target": "CHTR",
+      "correlation": 0.459
+    },
+    {
+      "source": "META",
+      "target": "GOOGL",
+      "correlation": 0.444
+    },
+    {
+      "source": "WBD",
+      "target": "EA",
+      "correlation": 0.427
+    },
+    {
+      "source": "OMC",
+      "target": "FOX",
+      "correlation": 0.412
+    }
+  ]
+}

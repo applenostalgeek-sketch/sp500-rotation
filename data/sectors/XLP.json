@@ -1,0 +1,376 @@
+{
+  "etf": "XLP",
+  "sector_name": "Conso. Essentiels",
+  "sector_color": "#06b6d4",
+  "date": "2026-02-12",
+  "stocks": [
+    {
+      "id": "WMT",
+      "name": "WMT",
+      "return_5d": 0.01868,
+      "return_20d": 0.12106,
+      "volume_ratio": 0.14,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 104.9,
+      "rs_momentum": 106.1,
+      "sector_relative": "laggard",
+      "weight": 100.0
+    },
+    {
+      "id": "MO",
+      "name": "MO",
+      "return_5d": 0.02691,
+      "return_20d": 0.09061,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 2.0,
+      "rs_ratio": 104.0,
+      "rs_momentum": 108.1,
+      "sector_relative": "leader",
+      "weight": 12.1
+    },
+    {
+      "id": "KMB",
+      "name": "KMB",
+      "return_5d": 0.0578,
+      "return_20d": 0.09909,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 11.6,
+      "rs_ratio": 106.1,
+      "rs_momentum": 108.8,
+      "sector_relative": "leader",
+      "weight": 12.2
+    },
+    {
+      "id": "HSY",
+      "name": "HSY",
+      "return_5d": -0.00229,
+      "return_20d": 0.14885,
+      "volume_ratio": 0.18,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 106.2,
+      "rs_momentum": 108.7,
+      "sector_relative": "laggard",
+      "weight": 9.0
+    },
+    {
+      "id": "KR",
+      "name": "KR",
+      "return_5d": 0.02415,
+      "return_20d": 0.10626,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": -0.0,
+      "rs_ratio": 103.7,
+      "rs_momentum": 106.3,
+      "sector_relative": "leader",
+      "weight": 7.9
+    },
+    {
+      "id": "CLX",
+      "name": "CLX",
+      "return_5d": 0.05437,
+      "return_20d": 0.14397,
+      "volume_ratio": 0.25,
+      "momentum_phase": "positif",
+      "phase_value": 100.0,
+      "phase_delta": 5.0,
+      "rs_ratio": 106.0,
+      "rs_momentum": 107.0,
+      "sector_relative": "leader",
+      "weight": 4.9
+    },
+    {
+      "id": "MDLZ",
+      "name": "MDLZ",
+      "return_5d": 0.04065,
+      "return_20d": 0.09005,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 96.7,
+      "phase_delta": 10.9,
+      "rs_ratio": 103.9,
+      "rs_momentum": 105.4,
+      "sector_relative": "leader",
+      "weight": 12.1
+    },
+    {
+      "id": "CL",
+      "name": "CL",
+      "return_5d": 0.03532,
+      "return_20d": 0.16604,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 92.6,
+      "phase_delta": -7.4,
+      "rs_ratio": 104.1,
+      "rs_momentum": 104.5,
+      "sector_relative": "leader",
+      "weight": 11.9
+    },
+    {
+      "id": "PEP",
+      "name": "PEP",
+      "return_5d": 0.0037,
+      "return_20d": 0.1675,
+      "volume_ratio": 0.14,
+      "momentum_phase": "positif",
+      "phase_value": 84.4,
+      "phase_delta": -15.6,
+      "rs_ratio": 103.8,
+      "rs_momentum": 103.1,
+      "sector_relative": "laggard",
+      "weight": 26.7
+    },
+    {
+      "id": "ADM",
+      "name": "ADM",
+      "return_5d": 0.0493,
+      "return_20d": 0.04552,
+      "volume_ratio": 0.17,
+      "momentum_phase": "positif",
+      "phase_value": 82.8,
+      "phase_delta": 61.0,
+      "rs_ratio": 102.9,
+      "rs_momentum": 103.6,
+      "sector_relative": "leader",
+      "weight": 4.7
+    },
+    {
+      "id": "SYY",
+      "name": "SYY",
+      "return_5d": 0.05411,
+      "return_20d": 0.15196,
+      "volume_ratio": 0.28,
+      "momentum_phase": "positif",
+      "phase_value": 82.4,
+      "phase_delta": -10.9,
+      "rs_ratio": 106.1,
+      "rs_momentum": 100.4,
+      "sector_relative": "leader",
+      "weight": 6.8
+    },
+    {
+      "id": "GIS",
+      "name": "GIS",
+      "return_5d": 0.02549,
+      "return_20d": 0.07654,
+      "volume_ratio": 0.14,
+      "momentum_phase": "positif",
+      "phase_value": 82.3,
+      "phase_delta": -17.7,
+      "rs_ratio": 102.8,
+      "rs_momentum": 103.7,
+      "sector_relative": "leader",
+      "weight": 6.0
+    },
+    {
+      "id": "STZ",
+      "name": "STZ",
+      "return_5d": 0.00531,
+      "return_20d": 0.04742,
+      "volume_ratio": 0.2,
+      "momentum_phase": "positif",
+      "phase_value": 82.2,
+      "phase_delta": -9.4,
+      "rs_ratio": 101.6,
+      "rs_momentum": 104.8,
+      "sector_relative": "laggard",
+      "weight": 6.3
+    },
+    {
+      "id": "PM",
+      "name": "PM",
+      "return_5d": 0.03733,
+      "return_20d": 0.09895,
+      "volume_ratio": 0.15,
+      "momentum_phase": "positif",
+      "phase_value": 82.0,
+      "phase_delta": -0.3,
+      "rs_ratio": 104.2,
+      "rs_momentum": 102.2,
+      "sector_relative": "leader",
+      "weight": 18.4
+    },
+    {
+      "id": "KO",
+      "name": "KO",
+      "return_5d": 0.01442,
+      "return_20d": 0.13749,
+      "volume_ratio": 0.26,
+      "momentum_phase": "positif",
+      "phase_value": 78.8,
+      "phase_delta": -21.2,
+      "rs_ratio": 103.5,
+      "rs_momentum": 102.3,
+      "sector_relative": "laggard",
+      "weight": 26.5
+    },
+    {
+      "id": "PG",
+      "name": "PG",
+      "return_5d": 0.02136,
+      "return_20d": 0.13202,
+      "volume_ratio": 0.25,
+      "momentum_phase": "positif",
+      "phase_value": 77.3,
+      "phase_delta": -17.3,
+      "rs_ratio": 103.4,
+      "rs_momentum": 102.1,
+      "sector_relative": "laggard",
+      "weight": 30.9
+    },
+    {
+      "id": "KHC",
+      "name": "KHC",
+      "return_5d": -0.00142,
+      "return_20d": 0.01506,
+      "volume_ratio": 0.38,
+      "momentum_phase": "positif",
+      "phase_value": 67.6,
+      "phase_delta": -32.4,
+      "rs_ratio": 101.0,
+      "rs_momentum": 102.5,
+      "sector_relative": "laggard",
+      "weight": 7.4
+    },
+    {
+      "id": "COST",
+      "name": "COST",
+      "return_5d": -0.00598,
+      "return_20d": 0.04158,
+      "volume_ratio": 0.18,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -36.9,
+      "rs_ratio": 101.7,
+      "rs_momentum": 103.9,
+      "sector_relative": "laggard",
+      "weight": 39.4
+    },
+    {
+      "id": "TSN",
+      "name": "TSN",
+      "return_5d": -0.01509,
+      "return_20d": 0.06363,
+      "volume_ratio": 0.1,
+      "momentum_phase": "negatif",
+      "phase_value": 20.0,
+      "phase_delta": -45.4,
+      "rs_ratio": 98.9,
+      "rs_momentum": 95.1,
+      "sector_relative": "laggard",
+      "weight": 3.3
+    }
+  ],
+  "correlations": [
+    {
+      "source": "GIS",
+      "target": "KHC",
+      "correlation": 0.687
+    },
+    {
+      "source": "WMT",
+      "target": "COST",
+      "correlation": 0.659
+    },
+    {
+      "source": "CLX",
+      "target": "GIS",
+      "correlation": 0.638
+    },
+    {
+      "source": "PEP",
+      "target": "KO",
+      "correlation": 0.628
+    },
+    {
+      "source": "MDLZ",
+      "target": "CL",
+      "correlation": 0.618
+    },
+    {
+      "source": "CL",
+      "target": "KO",
+      "correlation": 0.616
+    },
+    {
+      "source": "MO",
+      "target": "PEP",
+      "correlation": 0.609
+    },
+    {
+      "source": "KMB",
+      "target": "GIS",
+      "correlation": 0.6
+    },
+    {
+      "source": "MDLZ",
+      "target": "KO",
+      "correlation": 0.585
+    },
+    {
+      "source": "KMB",
+      "target": "MDLZ",
+      "correlation": 0.571
+    },
+    {
+      "source": "CL",
+      "target": "GIS",
+      "correlation": 0.565
+    },
+    {
+      "source": "KMB",
+      "target": "PG",
+      "correlation": 0.563
+    },
+    {
+      "source": "WMT",
+      "target": "PEP",
+      "correlation": 0.545
+    },
+    {
+      "source": "WMT",
+      "target": "KO",
+      "correlation": 0.535
+    },
+    {
+      "source": "CLX",
+      "target": "CL",
+      "correlation": 0.522
+    },
+    {
+      "source": "MO",
+      "target": "MDLZ",
+      "correlation": 0.518
+    },
+    {
+      "source": "KMB",
+      "target": "STZ",
+      "correlation": 0.515
+    },
+    {
+      "source": "KMB",
+      "target": "KHC",
+      "correlation": 0.515
+    },
+    {
+      "source": "PEP",
+      "target": "STZ",
+      "correlation": 0.515
+    },
+    {
+      "source": "CL",
+      "target": "PG",
+      "correlation": 0.513
+    }
+  ]
+}
