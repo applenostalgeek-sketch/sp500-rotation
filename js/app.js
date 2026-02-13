@@ -51,9 +51,9 @@ function renderSignalHistory(data) {
             const ret = (s.return_abs * 100).toFixed(1);
             const retClass = s.return_abs >= 0 ? "positive" : "negative";
             const retSign = s.return_abs >= 0 ? "+" : "";
-            const retHtml = s.days_active > 0
-                ? `<span class="sh-ret ${retClass}">${retSign}${ret}%</span>`
-                : `<span class="sh-ret" style="color:var(--text-muted)">nouveau</span>`;
+            const retHtml = ret === "0.0"
+                ? `<span class="sh-ret" style="color:var(--text-muted)">nouveau</span>`
+                : `<span class="sh-ret ${retClass}">${retSign}${ret}%</span>`;
             html += `
                 <div class="sh-row sh-active" data-sector="${s.sector}">
                     <span class="sh-ticker">${s.ticker}</span>
