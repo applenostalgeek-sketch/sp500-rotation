@@ -766,7 +766,7 @@ def backfill_signal_history(data_all):
             if phase_today == "improving" and phase_yesterday != "improving":
                 # Filter: RS-Momentum must be >= 101 (not just barely crossing 100)
                 rm_val = rm_series[ticker].loc[day] if day in rm_series[ticker].index else 100
-                if rm_val < 101:
+                if rm_val < 103:
                     continue
                 if ticker not in active_signals and ticker in close.columns:
                     stock_price = float(close[ticker].loc[day])
@@ -902,7 +902,7 @@ def update_signal_history(result, data_all, history_path):
     for sig in result.get("signals", []):
         if sig["phase"] != "improving" or sig["days_in_phase"] > 2:
             continue
-        if sig.get("rs_momentum", 100) < 101:
+        if sig.get("rs_momentum", 100) < 103:
             continue
         ticker = sig["ticker"]
         if ticker in existing_active:
