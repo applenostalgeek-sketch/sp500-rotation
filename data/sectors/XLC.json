@@ -7,32 +7,32 @@
     {
       "id": "CMCSA",
       "name": "CMCSA",
-      "return_5d": -0.00712,
-      "return_20d": 0.12815,
-      "volume_ratio": 0.2,
+      "return_5d": 0.00047,
+      "return_20d": 0.13677,
+      "volume_ratio": 0.53,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 105.8,
-      "rs_momentum": 104.4,
-      "rsi": 65.0,
+      "rs_ratio": 107.3,
+      "rs_momentum": 104.3,
+      "rsi": 67.5,
       "sector_relative": "leader",
-      "days_in_phase": 11,
+      "days_in_phase": 9,
       "previous_phase": "weakening",
-      "weight": 9.8
+      "weight": 9.9
     },
     {
       "id": "T",
       "name": "T",
-      "return_5d": 0.05644,
-      "return_20d": 0.21925,
-      "volume_ratio": 0.19,
+      "return_5d": 0.05791,
+      "return_20d": 0.22095,
+      "volume_ratio": 0.55,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 112.6,
-      "rs_momentum": 114.9,
-      "rsi": 88.1,
+      "rs_ratio": 113.6,
+      "rs_momentum": 114.1,
+      "rsi": 88.6,
       "sector_relative": "leader",
       "days_in_phase": 13,
       "previous_phase": "lagging",
@@ -41,49 +41,49 @@
     {
       "id": "VZ",
       "name": "VZ",
-      "return_5d": 0.0419,
-      "return_20d": 0.25906,
-      "volume_ratio": 0.18,
+      "return_5d": 0.04402,
+      "return_20d": 0.26163,
+      "volume_ratio": 0.53,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 113.7,
-      "rs_momentum": 115.4,
-      "rsi": 87.5,
+      "rs_ratio": 114.7,
+      "rs_momentum": 114.6,
+      "rsi": 88.2,
       "sector_relative": "leader",
-      "days_in_phase": 12,
+      "days_in_phase": 11,
       "previous_phase": "lagging",
       "weight": 16.3
     },
     {
       "id": "TMUS",
       "name": "TMUS",
-      "return_5d": 0.09805,
-      "return_20d": 0.16488,
-      "volume_ratio": 0.22,
+      "return_5d": 0.10548,
+      "return_20d": 0.17277,
+      "volume_ratio": 0.76,
       "momentum_phase": "leading",
       "phase_value": 100.0,
-      "phase_delta": 14.8,
-      "rs_ratio": 112.5,
-      "rs_momentum": 117.9,
-      "rsi": 79.4,
+      "phase_delta": 5.5,
+      "rs_ratio": 114.1,
+      "rs_momentum": 117.7,
+      "rsi": 80.0,
       "sector_relative": "leader",
-      "days_in_phase": 11,
-      "previous_phase": "lagging",
-      "weight": 13.5
+      "days_in_phase": 9,
+      "previous_phase": "improving",
+      "weight": 13.7
     },
     {
       "id": "CHTR",
       "name": "CHTR",
-      "return_5d": -0.00185,
-      "return_20d": 0.25321,
-      "volume_ratio": 0.11,
+      "return_5d": 0.00604,
+      "return_20d": 0.26312,
+      "volume_ratio": 0.45,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 114.3,
-      "rs_momentum": 122.3,
-      "rsi": 74.5,
+      "rs_ratio": 116.0,
+      "rs_momentum": 122.1,
+      "rsi": 75.2,
       "sector_relative": "leader",
       "days_in_phase": 11,
       "previous_phase": "lagging",
@@ -92,100 +92,100 @@
     {
       "id": "LYV",
       "name": "LYV",
-      "return_5d": 0.06152,
-      "return_20d": 0.0871,
-      "volume_ratio": 0.14,
+      "return_5d": 0.06561,
+      "return_20d": 0.09129,
+      "volume_ratio": 0.56,
       "momentum_phase": "leading",
       "phase_value": 100.0,
-      "phase_delta": 85.4,
-      "rs_ratio": 109.1,
-      "rs_momentum": 108.8,
-      "rsi": 64.2,
+      "phase_delta": 76.9,
+      "rs_ratio": 110.3,
+      "rs_momentum": 108.3,
+      "rsi": 64.8,
       "sector_relative": "leader",
-      "days_in_phase": 5,
-      "previous_phase": "lagging",
-      "weight": 3.5
+      "days_in_phase": 3,
+      "previous_phase": "weakening",
+      "weight": 3.6
     },
     {
       "id": "WBD",
       "name": "WBD",
-      "return_5d": 0.03032,
-      "return_20d": -0.01907,
-      "volume_ratio": 0.08,
+      "return_5d": 0.02903,
+      "return_20d": -0.02029,
+      "volume_ratio": 0.37,
       "momentum_phase": "leading",
-      "phase_value": 74.7,
-      "phase_delta": 37.2,
-      "rs_ratio": 101.9,
-      "rs_momentum": 103.0,
-      "rsi": 46.8,
+      "phase_value": 72.8,
+      "phase_delta": 26.8,
+      "rs_ratio": 102.5,
+      "rs_momentum": 102.0,
+      "rsi": 46.3,
       "sector_relative": "leader",
-      "days_in_phase": 3,
-      "previous_phase": "improving",
+      "days_in_phase": 2,
+      "previous_phase": "weakening",
       "weight": 5.3
     },
     {
       "id": "EA",
       "name": "EA",
-      "return_5d": -0.0008,
-      "return_20d": -0.01733,
-      "volume_ratio": 0.11,
+      "return_5d": -0.00274,
+      "return_20d": -0.01924,
+      "volume_ratio": 0.38,
       "momentum_phase": "leading",
-      "phase_value": 57.5,
-      "phase_delta": 19.5,
-      "rs_ratio": 100.4,
-      "rs_momentum": 101.2,
-      "rsi": 38.2,
+      "phase_value": 55.0,
+      "phase_delta": 8.4,
+      "rs_ratio": 100.9,
+      "rs_momentum": 100.1,
+      "rsi": 36.9,
       "sector_relative": "leader",
       "days_in_phase": 2,
-      "previous_phase": "improving",
+      "previous_phase": "lagging",
       "weight": 5.4
     },
     {
       "id": "META",
       "name": "META",
-      "return_5d": -0.0488,
-      "return_20d": 0.03857,
-      "volume_ratio": 0.18,
+      "return_5d": -0.05241,
+      "return_20d": 0.03462,
+      "volume_ratio": 0.44,
       "momentum_phase": "improving",
-      "phase_value": 57.4,
-      "phase_delta": -8.6,
-      "rs_ratio": 97.9,
-      "rs_momentum": 103.6,
-      "rsi": 43.0,
+      "phase_value": 53.3,
+      "phase_delta": -22.0,
+      "rs_ratio": 98.3,
+      "rs_momentum": 102.4,
+      "rsi": 42.5,
       "sector_relative": "laggard",
       "days_in_phase": 2,
       "previous_phase": "leading",
-      "weight": 99.6
+      "weight": 98.7
     },
     {
       "id": "DIS",
       "name": "DIS",
-      "return_5d": -0.0294,
-      "return_20d": -0.06493,
-      "volume_ratio": 0.23,
+      "return_5d": -0.01988,
+      "return_20d": -0.05576,
+      "volume_ratio": 0.65,
       "momentum_phase": "lagging",
-      "phase_value": 20.5,
+      "phase_value": 28.9,
       "phase_delta": -8.1,
-      "rs_ratio": 96.7,
+      "rs_ratio": 98.3,
       "rs_momentum": 97.4,
-      "rsi": 39.8,
-      "sector_relative": "laggard",
-      "days_in_phase": 3,
-      "previous_phase": "improving",
-      "weight": 12.0
+      "rsi": 41.4,
+      "sector_relative": "leader",
+      "days_in_phase": 16,
+      "previous_phase": "weakening",
+      "weight": 12.2
     },
     {
       "id": "NFLX",
       "name": "NFLX",
-      "return_5d": -0.06266,
-      "return_20d": -0.13222,
-      "volume_ratio": 0.19,
+      "return_5d": -0.06106,
+      "return_20d": -0.13073,
+      "volume_ratio": 0.51,
       "momentum_phase": "lagging",
-      "phase_value": 9.0,
-      "phase_delta": -23.4,
-      "rs_ratio": 93.4,
-      "rs_momentum": 98.4,
-      "rsi": 22.6,
+      "phase_value": 9.7,
+      "phase_delta": -31.0,
+      "rs_ratio": 94.3,
+      "rs_momentum": 97.7,
+      "rsi": 23.1,
       "sector_relative": "laggard",
       "days_in_phase": 3,
       "previous_phase": "improving",
@@ -194,15 +194,15 @@
     {
       "id": "GOOGL",
       "name": "GOOGL",
-      "return_5d": -0.05604,
-      "return_20d": -0.07229,
-      "volume_ratio": 0.29,
+      "return_5d": -0.05818,
+      "return_20d": -0.07439,
+      "volume_ratio": 0.7,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
-      "phase_delta": -4.2,
-      "rs_ratio": 94.5,
-      "rs_momentum": 90.9,
-      "rsi": 23.6,
+      "phase_delta": -12.7,
+      "rs_ratio": 95.0,
+      "rs_momentum": 90.0,
+      "rsi": 23.3,
       "sector_relative": "laggard",
       "days_in_phase": 6,
       "previous_phase": "weakening",
@@ -211,51 +211,51 @@
     {
       "id": "OMC",
       "name": "OMC",
-      "return_5d": -0.04155,
-      "return_20d": -0.15014,
-      "volume_ratio": 0.08,
+      "return_5d": -0.0306,
+      "return_20d": -0.14043,
+      "volume_ratio": 0.5,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
-      "rs_ratio": 92.5,
-      "rs_momentum": 91.9,
-      "rsi": 26.2,
+      "rs_ratio": 94.2,
+      "rs_momentum": 92.1,
+      "rsi": 28.3,
       "sector_relative": "laggard",
       "days_in_phase": 14,
       "previous_phase": "weakening",
-      "weight": 2.4
+      "weight": 2.5
     },
     {
       "id": "TTWO",
       "name": "TTWO",
-      "return_5d": -0.06069,
-      "return_20d": -0.19802,
-      "volume_ratio": 0.15,
+      "return_5d": -0.06365,
+      "return_20d": -0.20055,
+      "volume_ratio": 0.55,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
-      "rs_ratio": 88.1,
-      "rs_momentum": 91.2,
-      "rsi": 22.2,
+      "rs_ratio": 88.5,
+      "rs_momentum": 90.1,
+      "rsi": 21.7,
       "sector_relative": "laggard",
-      "days_in_phase": 25,
-      "previous_phase": "weakening",
-      "weight": 5.1
+      "days_in_phase": 22,
+      "previous_phase": "improving",
+      "weight": 5.0
     },
     {
       "id": "FOX",
       "name": "FOX",
-      "return_5d": -0.09498,
-      "return_20d": -0.21492,
-      "volume_ratio": 0.17,
+      "return_5d": -0.09004,
+      "return_20d": -0.21064,
+      "volume_ratio": 0.79,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
-      "rs_ratio": 84.5,
-      "rs_momentum": 85.1,
-      "rsi": 11.2,
+      "rs_ratio": 85.6,
+      "rs_momentum": 84.9,
+      "rsi": 12.4,
       "sector_relative": "laggard",
-      "days_in_phase": 18,
+      "days_in_phase": 17,
       "previous_phase": "weakening",
       "weight": 0.7
     }
@@ -264,12 +264,7 @@
     {
       "source": "T",
       "target": "TMUS",
-      "correlation": 0.736
-    },
-    {
-      "source": "VZ",
-      "target": "TMUS",
-      "correlation": 0.688
+      "correlation": 0.72
     },
     {
       "source": "CMCSA",
@@ -277,79 +272,84 @@
       "correlation": 0.679
     },
     {
-      "source": "T",
-      "target": "VZ",
-      "correlation": 0.61
+      "source": "VZ",
+      "target": "TMUS",
+      "correlation": 0.673
     },
     {
       "source": "NFLX",
       "target": "OMC",
-      "correlation": 0.609
+      "correlation": 0.617
     },
     {
       "source": "CMCSA",
       "target": "DIS",
-      "correlation": 0.603
+      "correlation": 0.611
+    },
+    {
+      "source": "T",
+      "target": "VZ",
+      "correlation": 0.608
     },
     {
       "source": "VZ",
       "target": "TTWO",
-      "correlation": -0.592
-    },
-    {
-      "source": "EA",
-      "target": "TTWO",
-      "correlation": 0.574
+      "correlation": -0.59
     },
     {
       "source": "NFLX",
       "target": "FOX",
-      "correlation": 0.565
+      "correlation": 0.572
     },
     {
-      "source": "TMUS",
+      "source": "EA",
       "target": "TTWO",
-      "correlation": -0.545
+      "correlation": 0.566
     },
     {
       "source": "CHTR",
       "target": "OMC",
-      "correlation": 0.538
+      "correlation": 0.537
     },
     {
-      "source": "EA",
-      "target": "FOX",
-      "correlation": 0.495
+      "source": "TMUS",
+      "target": "TTWO",
+      "correlation": -0.533
     },
     {
       "source": "T",
       "target": "TTWO",
-      "correlation": -0.488
+      "correlation": -0.485
+    },
+    {
+      "source": "EA",
+      "target": "FOX",
+      "correlation": 0.485
     },
     {
       "source": "META",
       "target": "GOOGL",
-      "correlation": 0.463
-    },
-    {
-      "source": "VZ",
-      "target": "CHTR",
-      "correlation": 0.444
+      "correlation": 0.467
     },
     {
       "source": "OMC",
       "target": "FOX",
-      "correlation": 0.441
+      "correlation": 0.453
+    },
+    {
+      "source": "VZ",
+      "target": "CHTR",
+      "correlation": 0.436
     },
     {
       "source": "TTWO",
       "target": "FOX",
-      "correlation": 0.423
+      "correlation": 0.427
     },
     {
       "source": "LYV",
       "target": "TTWO",
-      "correlation": 0.4
+      "correlation": 0.403
     }
   ]
 }

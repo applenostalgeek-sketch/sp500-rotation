@@ -542,14 +542,14 @@ def generate_sample_data():
 # Sector detail — individual stock phases
 # ---------------------------------------------------------------------------
 def compute_sector_detail(etf, data_all):
-    """Compute phases for individual stocks vs SPY (market), with sector-relative indicator."""
+    """Compute phases for individual stocks vs their sector ETF."""
     holdings = SECTOR_HOLDINGS.get(etf, [])
     if not holdings:
         return None
 
     meta = SECTOR_ETFS[etf]
-    spy = data_all["Close"][BENCHMARK]          # phases vs SPY
-    sector_close = data_all["Close"][etf]       # for leader/laggard
+    sector_close = data_all["Close"][etf]       # benchmark = sector ETF
+    spy = data_all["Close"][BENCHMARK]           # for leader/laggard vs market
 
     close = data_all["Close"]
     volume = data_all["Volume"]
@@ -580,8 +580,8 @@ def compute_sector_detail(etf, data_all):
         if np.isnan(r5): r5 = 0.0
         if np.isnan(r20): r20 = 0.0
 
-        # RS-Ratio/Momentum vs SPY (market)
-        rs_ratio, rs_mom, rs_ratio_prev, rs_mom_prev = compute_rs(c, spy)
+        # RS-Ratio/Momentum vs sector ETF
+        rs_ratio, rs_mom, rs_ratio_prev, rs_mom_prev = compute_rs(c, sector_close)
 
         # Phase — 4 RRG quadrants
         if rs_ratio >= 100 and rs_mom >= 100:
@@ -601,7 +601,7 @@ def compute_sector_detail(etf, data_all):
         # Days in current phase: compute phase series for last 30 days
         days_in_phase = 0
         if len(c) >= 60:
-            _rs = c / spy.reindex(c.index)
+            _rs = c / sector_close.reindex(c.index)
             _rs_sma = _rs.rolling(20).mean()
             _rr = (_rs / _rs_sma) * 100
             _rm = (_rr / _rr.shift(20)) * 100
@@ -725,7 +725,7 @@ def backfill_signal_history(data_all):
 
     all_tickers = list(ticker_sector.keys())
 
-    # Compute full phase series + RS-Momentum + RSI for each stock
+    # Compute full phase series + RS-Momentum + RSI for each stock vs sector ETF
     phase_series = {}
     rm_series = {}
     rsi_series = {}
@@ -733,9 +733,11 @@ def backfill_signal_history(data_all):
         c = close[ticker].dropna()
         if len(c) < 40:
             continue
-        common = c.index.intersection(spy.index)
+        etf = ticker_sector[ticker]
+        sector_close = close[etf].dropna()
+        common = c.index.intersection(sector_close.index)
         c = c.loc[common]
-        s = spy.loc[common]
+        s = sector_close.loc[common]
         if len(c) < 40:
             continue
 
