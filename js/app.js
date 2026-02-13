@@ -258,7 +258,7 @@ async function init() {
     const updateEl = document.getElementById("last-update");
     if (updateEl && appData.metadata?.date) {
         const d = new Date(appData.metadata.date + "T22:00:00Z");
-        updateEl.textContent = `Dernière mise à jour : ${d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}`;
+        updateEl.textContent = `Dernière mise à jour : ${d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })} à 22h UTC`;
     }
 
     renderSignalHistory(appData);
