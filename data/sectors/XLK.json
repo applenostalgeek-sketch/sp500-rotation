@@ -2,299 +2,299 @@
   "etf": "XLK",
   "sector_name": "Technologie",
   "sector_color": "#3b82f6",
-  "date": "2026-02-12",
+  "date": "2026-02-13",
   "stocks": [
     {
       "id": "ORCL",
       "name": "ORCL",
-      "return_5d": 0.08959,
-      "return_20d": -0.18033,
-      "volume_ratio": 0.21,
+      "return_5d": 0.09564,
+      "return_20d": -0.17577,
+      "volume_ratio": 0.73,
       "momentum_phase": "positif",
-      "phase_value": 98.0,
-      "phase_delta": 98.0,
-      "rs_ratio": 101.5,
-      "rs_momentum": 108.1,
+      "phase_value": 100.0,
+      "phase_delta": 100.0,
+      "rs_ratio": 103.1,
+      "rs_momentum": 109.8,
       "sector_relative": "leader",
-      "weight": 27.5
-    },
-    {
-      "id": "ADI",
-      "name": "ADI",
-      "return_5d": 0.06363,
-      "return_20d": 0.12824,
-      "volume_ratio": 0.19,
-      "momentum_phase": "positif",
-      "phase_value": 88.7,
-      "phase_delta": 5.3,
-      "rs_ratio": 105.7,
-      "rs_momentum": 102.1,
-      "sector_relative": "leader",
-      "weight": 7.6
-    },
-    {
-      "id": "AVGO",
-      "name": "AVGO",
-      "return_5d": 0.01111,
-      "return_20d": -0.01866,
-      "volume_ratio": 0.21,
-      "momentum_phase": "positif",
-      "phase_value": 77.0,
-      "phase_delta": 28.9,
-      "rs_ratio": 102.2,
-      "rs_momentum": 103.2,
-      "sector_relative": "leader",
-      "weight": 51.7
-    },
-    {
-      "id": "MSFT",
-      "name": "MSFT",
-      "return_5d": -0.00133,
-      "return_20d": -0.12275,
-      "volume_ratio": 0.22,
-      "momentum_phase": "positif",
-      "phase_value": 59.1,
-      "phase_delta": 59.1,
-      "rs_ratio": 97.7,
-      "rs_momentum": 104.2,
-      "sector_relative": "laggard",
-      "weight": 100.0
-    },
-    {
-      "id": "NVDA",
-      "name": "NVDA",
-      "return_5d": 0.10571,
-      "return_20d": 0.03773,
-      "volume_ratio": 1.0,
-      "momentum_phase": "positif",
-      "phase_value": 50.0,
-      "phase_delta": 50.0,
-      "rs_ratio": 100.0,
-      "rs_momentum": 100.0,
-      "sector_relative": "leader",
-      "weight": 0.0
-    },
-    {
-      "id": "AMD",
-      "name": "AMD",
-      "return_5d": 0.10951,
-      "return_20d": -0.04481,
-      "volume_ratio": 1.0,
-      "momentum_phase": "positif",
-      "phase_value": 50.0,
-      "phase_delta": 50.0,
-      "rs_ratio": 100.0,
-      "rs_momentum": 100.0,
-      "sector_relative": "leader",
-      "weight": 0.0
-    },
-    {
-      "id": "CSCO",
-      "name": "CSCO",
-      "return_5d": 0.03861,
-      "return_20d": 0.14958,
-      "volume_ratio": 1.0,
-      "momentum_phase": "positif",
-      "phase_value": 50.0,
-      "phase_delta": -50.0,
-      "rs_ratio": 100.0,
-      "rs_momentum": 100.0,
-      "sector_relative": "leader",
-      "weight": 0.0
-    },
-    {
-      "id": "LRCX",
-      "name": "LRCX",
-      "return_5d": 0.10225,
-      "return_20d": 0.12611,
-      "volume_ratio": 1.0,
-      "momentum_phase": "positif",
-      "phase_value": 50.0,
-      "phase_delta": 50.0,
-      "rs_ratio": 100.0,
-      "rs_momentum": 100.0,
-      "sector_relative": "leader",
-      "weight": 0.0
+      "weight": 15.1
     },
     {
       "id": "NOW",
       "name": "NOW",
-      "return_5d": 0.00084,
-      "return_20d": -0.23134,
-      "volume_ratio": 0.25,
+      "return_5d": 0.02531,
+      "return_20d": -0.21255,
+      "volume_ratio": 1.1,
       "momentum_phase": "positif",
-      "phase_value": 42.8,
-      "phase_delta": 42.8,
-      "rs_ratio": 94.2,
-      "rs_momentum": 104.3,
+      "phase_value": 75.5,
+      "phase_delta": 75.5,
+      "rs_ratio": 97.3,
+      "rs_momentum": 107.8,
       "sector_relative": "leader",
-      "weight": 13.5
+      "weight": 7.7
     },
     {
-      "id": "AMAT",
-      "name": "AMAT",
-      "return_5d": 0.0337,
-      "return_20d": 0.04482,
-      "volume_ratio": 0.25,
-      "momentum_phase": "essoufflement",
-      "phase_value": 64.0,
-      "phase_delta": 64.0,
-      "rs_ratio": 103.4,
-      "rs_momentum": 99.4,
+      "id": "ADI",
+      "name": "ADI",
+      "return_5d": 0.03405,
+      "return_20d": 0.09686,
+      "volume_ratio": 1.09,
+      "momentum_phase": "positif",
+      "phase_value": 73.4,
+      "phase_delta": -10.0,
+      "rs_ratio": 104.1,
+      "rs_momentum": 100.6,
       "sector_relative": "leader",
-      "weight": 15.5
+      "weight": 4.1
     },
     {
-      "id": "MU",
-      "name": "MU",
-      "return_5d": 0.07369,
-      "return_20d": 0.25887,
-      "volume_ratio": 0.5,
-      "momentum_phase": "essoufflement",
-      "phase_value": 54.9,
-      "phase_delta": 54.9,
-      "rs_ratio": 105.5,
-      "rs_momentum": 95.4,
+      "id": "MSFT",
+      "name": "MSFT",
+      "return_5d": 0.00174,
+      "return_20d": -0.12005,
+      "volume_ratio": 0.89,
+      "momentum_phase": "positif",
+      "phase_value": 72.6,
+      "phase_delta": 72.6,
+      "rs_ratio": 99.0,
+      "rs_momentum": 105.5,
       "sector_relative": "leader",
-      "weight": 97.0
-    },
-    {
-      "id": "TXN",
-      "name": "TXN",
-      "return_5d": 0.02303,
-      "return_20d": 0.20568,
-      "volume_ratio": 0.18,
-      "momentum_phase": "essoufflement",
-      "phase_value": 22.2,
-      "phase_delta": -77.8,
-      "rs_ratio": 101.8,
-      "rs_momentum": 92.6,
-      "sector_relative": "leader",
-      "weight": 12.5
+      "weight": 55.1
     },
     {
       "id": "QCOM",
       "name": "QCOM",
-      "return_5d": 0.01209,
-      "return_20d": -0.13873,
-      "volume_ratio": 0.25,
-      "momentum_phase": "negatif",
-      "phase_value": 34.9,
-      "phase_delta": 34.9,
-      "rs_ratio": 97.1,
+      "return_5d": 0.00823,
+      "return_20d": -0.14202,
+      "volume_ratio": 1.09,
+      "momentum_phase": "positif",
+      "phase_value": 41.9,
+      "phase_delta": 41.9,
+      "rs_ratio": 97.8,
+      "rs_momentum": 100.6,
+      "sector_relative": "leader",
+      "weight": 4.8
+    },
+    {
+      "id": "NVDA",
+      "name": "NVDA",
+      "return_5d": 0.00825,
+      "return_20d": -0.00059,
+      "volume_ratio": 1.07,
+      "momentum_phase": "essoufflement",
+      "phase_value": 62.4,
+      "phase_delta": 62.4,
+      "rs_ratio": 102.5,
       "rs_momentum": 99.9,
       "sector_relative": "leader",
-      "weight": 8.6
+      "weight": 100.0
     },
     {
-      "id": "AAPL",
-      "name": "AAPL",
-      "return_5d": -0.03334,
-      "return_20d": 0.04119,
-      "volume_ratio": 0.25,
-      "momentum_phase": "negatif",
-      "phase_value": 31.2,
-      "phase_delta": -68.8,
-      "rs_ratio": 98.8,
-      "rs_momentum": 97.4,
-      "sector_relative": "laggard",
-      "weight": 84.8
+      "id": "AMAT",
+      "name": "AMAT",
+      "return_5d": 0.01823,
+      "return_20d": 0.02918,
+      "volume_ratio": 1.12,
+      "momentum_phase": "essoufflement",
+      "phase_value": 60.8,
+      "phase_delta": 60.8,
+      "rs_ratio": 103.1,
+      "rs_momentum": 99.0,
+      "sector_relative": "leader",
+      "weight": 8.5
     },
     {
-      "id": "INTC",
-      "name": "INTC",
-      "return_5d": -0.05742,
-      "return_20d": -0.01314,
-      "volume_ratio": 0.21,
-      "momentum_phase": "negatif",
-      "phase_value": 30.9,
-      "phase_delta": -2.4,
-      "rs_ratio": 98.3,
-      "rs_momentum": 97.8,
-      "sector_relative": "laggard",
-      "weight": 37.1
+      "id": "MU",
+      "name": "MU",
+      "return_5d": 0.04885,
+      "return_20d": 0.22975,
+      "volume_ratio": 1.09,
+      "momentum_phase": "essoufflement",
+      "phase_value": 44.3,
+      "phase_delta": 44.3,
+      "rs_ratio": 104.4,
+      "rs_momentum": 94.4,
+      "sector_relative": "leader",
+      "weight": 51.9
+    },
+    {
+      "id": "AVGO",
+      "name": "AVGO",
+      "return_5d": -0.00526,
+      "return_20d": -0.03455,
+      "volume_ratio": 0.79,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -8.1,
+      "rs_ratio": 101.7,
+      "rs_momentum": 102.8,
+      "sector_relative": "leader",
+      "weight": 27.8
+    },
+    {
+      "id": "LRCX",
+      "name": "LRCX",
+      "return_5d": 0.00121,
+      "return_20d": 0.06355,
+      "volume_ratio": 0.82,
+      "momentum_phase": "essoufflement",
+      "phase_value": 37.9,
+      "phase_delta": 37.9,
+      "rs_ratio": 102.7,
+      "rs_momentum": 94.8,
+      "sector_relative": "leader",
+      "weight": 9.0
+    },
+    {
+      "id": "TXN",
+      "name": "TXN",
+      "return_5d": 0.00704,
+      "return_20d": 0.18684,
+      "volume_ratio": 0.84,
+      "momentum_phase": "essoufflement",
+      "phase_value": 18.6,
+      "phase_delta": -81.4,
+      "rs_ratio": 101.4,
+      "rs_momentum": 92.3,
+      "sector_relative": "leader",
+      "weight": 6.7
     },
     {
       "id": "CRM",
       "name": "CRM",
-      "return_5d": -0.04385,
-      "return_20d": -0.21655,
-      "volume_ratio": 0.36,
+      "return_5d": -0.03094,
+      "return_20d": -0.20597,
+      "volume_ratio": 1.24,
       "momentum_phase": "negatif",
-      "phase_value": 14.9,
-      "phase_delta": 14.9,
-      "rs_ratio": 93.6,
-      "rs_momentum": 99.3,
+      "phase_value": 37.0,
+      "phase_delta": 37.0,
+      "rs_ratio": 95.8,
+      "rs_momentum": 101.6,
       "sector_relative": "laggard",
-      "weight": 13.4
+      "weight": 7.6
     },
     {
       "id": "ADBE",
       "name": "ADBE",
-      "return_5d": -0.05753,
-      "return_20d": -0.16821,
-      "volume_ratio": 0.3,
+      "return_5d": -0.02191,
+      "return_20d": -0.13677,
+      "volume_ratio": 1.4,
       "momentum_phase": "negatif",
-      "phase_value": 0.0,
-      "phase_delta": -11.9,
-      "rs_ratio": 93.2,
-      "rs_momentum": 95.7,
+      "phase_value": 36.7,
+      "phase_delta": 24.8,
+      "rs_ratio": 97.4,
+      "rs_momentum": 100.0,
       "sector_relative": "laggard",
-      "weight": 8.4
+      "weight": 4.9
+    },
+    {
+      "id": "AAPL",
+      "name": "AAPL",
+      "return_5d": -0.05805,
+      "return_20d": 0.01458,
+      "volume_ratio": 1.37,
+      "momentum_phase": "negatif",
+      "phase_value": 18.7,
+      "phase_delta": -81.3,
+      "rs_ratio": 97.6,
+      "rs_momentum": 96.2,
+      "sector_relative": "laggard",
+      "weight": 46.5
+    },
+    {
+      "id": "INTC",
+      "name": "INTC",
+      "return_5d": -0.08124,
+      "return_20d": -0.03808,
+      "volume_ratio": 0.63,
+      "momentum_phase": "negatif",
+      "phase_value": 18.6,
+      "phase_delta": -14.7,
+      "rs_ratio": 97.1,
+      "rs_momentum": 96.6,
+      "sector_relative": "laggard",
+      "weight": 19.6
     },
     {
       "id": "ACN",
       "name": "ACN",
-      "return_5d": -0.0879,
-      "return_20d": -0.23734,
-      "volume_ratio": 0.54,
+      "return_5d": -0.07718,
+      "return_20d": -0.22838,
+      "volume_ratio": 1.78,
       "momentum_phase": "negatif",
-      "phase_value": 0.0,
-      "phase_delta": 0.0,
-      "rs_ratio": 91.0,
-      "rs_momentum": 97.4,
+      "phase_value": 12.0,
+      "phase_delta": 12.0,
+      "rs_ratio": 92.9,
+      "rs_momentum": 99.5,
       "sector_relative": "laggard",
-      "weight": 6.4
+      "weight": 3.7
     },
     {
       "id": "INTU",
       "name": "INTU",
-      "return_5d": -0.10999,
-      "return_20d": -0.28782,
-      "volume_ratio": 0.26,
+      "return_5d": -0.10323,
+      "return_20d": -0.28241,
+      "volume_ratio": 1.04,
+      "momentum_phase": "negatif",
+      "phase_value": 2.4,
+      "phase_delta": 2.4,
+      "rs_ratio": 91.5,
+      "rs_momentum": 99.0,
+      "sector_relative": "laggard",
+      "weight": 5.0
+    },
+    {
+      "id": "AMD",
+      "name": "AMD",
+      "return_5d": -0.01199,
+      "return_20d": -0.09644,
+      "volume_ratio": 0.72,
       "momentum_phase": "negatif",
       "phase_value": 0.0,
       "phase_delta": 0.0,
-      "rs_ratio": 89.9,
-      "rs_momentum": 97.3,
+      "rs_ratio": 95.8,
+      "rs_momentum": 94.1,
+      "sector_relative": "leader",
+      "weight": 27.6
+    },
+    {
+      "id": "CSCO",
+      "name": "CSCO",
+      "return_5d": -0.11577,
+      "return_20d": -0.00332,
+      "volume_ratio": 2.59,
+      "momentum_phase": "negatif",
+      "phase_value": 0.0,
+      "phase_delta": -100.0,
+      "rs_ratio": 92.1,
+      "rs_momentum": 89.6,
       "sector_relative": "laggard",
-      "weight": 9.0
+      "weight": 6.0
     },
     {
       "id": "IBM",
       "name": "IBM",
-      "return_5d": -0.12152,
-      "return_20d": -0.11863,
-      "volume_ratio": 0.71,
+      "return_5d": -0.12689,
+      "return_20d": -0.12402,
+      "volume_ratio": 2.06,
       "momentum_phase": "negatif",
       "phase_value": 0.0,
       "phase_delta": -52.9,
-      "rs_ratio": 90.0,
-      "rs_momentum": 87.0,
+      "rs_ratio": 90.5,
+      "rs_momentum": 87.4,
       "sector_relative": "laggard",
-      "weight": 8.4
+      "weight": 4.8
     }
   ],
   "correlations": [
     {
-      "source": "LRCX",
-      "target": "AMAT",
-      "correlation": 0.894
+      "source": "AMAT",
+      "target": "LRCX",
+      "correlation": 0.896
     },
     {
       "source": "NOW",
       "target": "CRM",
-      "correlation": 0.867
+      "correlation": 0.869
     },
     {
       "source": "CRM",
@@ -304,87 +304,87 @@
     {
       "source": "CRM",
       "target": "INTU",
-      "correlation": 0.841
+      "correlation": 0.842
     },
     {
       "source": "ADBE",
       "target": "INTU",
-      "correlation": 0.834
+      "correlation": 0.828
     },
     {
-      "source": "ADBE",
-      "target": "ACN",
-      "correlation": 0.785
-    },
-    {
-      "source": "MSFT",
-      "target": "NOW",
-      "correlation": 0.769
-    },
-    {
-      "source": "AVGO",
-      "target": "NVDA",
-      "correlation": 0.757
-    },
-    {
-      "source": "MSFT",
-      "target": "CRM",
-      "correlation": 0.742
-    },
-    {
-      "source": "CRM",
-      "target": "ACN",
-      "correlation": 0.742
+      "source": "NVDA",
+      "target": "AVGO",
+      "correlation": 0.767
     },
     {
       "source": "NOW",
       "target": "ADBE",
-      "correlation": 0.735
+      "correlation": 0.764
     },
     {
-      "source": "AMD",
-      "target": "AMAT",
-      "correlation": 0.724
+      "source": "NOW",
+      "target": "MSFT",
+      "correlation": 0.753
     },
     {
-      "source": "AVGO",
-      "target": "AMAT",
-      "correlation": 0.704
+      "source": "AMAT",
+      "target": "AMD",
+      "correlation": 0.74
+    },
+    {
+      "source": "MSFT",
+      "target": "CRM",
+      "correlation": 0.737
+    },
+    {
+      "source": "CRM",
+      "target": "ACN",
+      "correlation": 0.73
+    },
+    {
+      "source": "AMAT",
+      "target": "AVGO",
+      "correlation": 0.718
+    },
+    {
+      "source": "ADBE",
+      "target": "ACN",
+      "correlation": 0.701
     },
     {
       "source": "ACN",
       "target": "INTU",
-      "correlation": 0.695
-    },
-    {
-      "source": "NOW",
-      "target": "INTU",
-      "correlation": 0.692
-    },
-    {
-      "source": "AMD",
-      "target": "LRCX",
-      "correlation": 0.685
-    },
-    {
-      "source": "LRCX",
-      "target": "MU",
-      "correlation": 0.682
+      "correlation": 0.7
     },
     {
       "source": "NVDA",
       "target": "AMAT",
-      "correlation": 0.677
+      "correlation": 0.692
     },
     {
-      "source": "AMD",
-      "target": "MU",
-      "correlation": 0.66
+      "source": "LRCX",
+      "target": "AMD",
+      "correlation": 0.691
+    },
+    {
+      "source": "NOW",
+      "target": "INTU",
+      "correlation": 0.69
+    },
+    {
+      "source": "MU",
+      "target": "LRCX",
+      "correlation": 0.685
     },
     {
       "source": "AMAT",
       "target": "MU",
-      "correlation": 0.656
+      "correlation": 0.665
+    },
+    {
+      "source": "AAPL",
+      "target": "CSCO",
+      "correlation": 0.664
     }
   ]
 }

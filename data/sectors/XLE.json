@@ -2,347 +2,347 @@
   "etf": "XLE",
   "sector_name": "Energie",
   "sector_color": "#ef4444",
-  "date": "2026-02-12",
+  "date": "2026-02-13",
   "stocks": [
-    {
-      "id": "MPC",
-      "name": "MPC",
-      "return_5d": 0.01571,
-      "return_20d": 0.16105,
-      "volume_ratio": 0.13,
-      "momentum_phase": "positif",
-      "phase_value": 100.0,
-      "phase_delta": 0.0,
-      "rs_ratio": 105.4,
-      "rs_momentum": 105.4,
-      "sector_relative": "laggard",
-      "weight": 14.3
-    },
-    {
-      "id": "VLO",
-      "name": "VLO",
-      "return_5d": 0.0034,
-      "return_20d": 0.10854,
-      "volume_ratio": 0.19,
-      "momentum_phase": "positif",
-      "phase_value": 100.0,
-      "phase_delta": 0.0,
-      "rs_ratio": 104.3,
-      "rs_momentum": 106.2,
-      "sector_relative": "laggard",
-      "weight": 19.3
-    },
     {
       "id": "OKE",
       "name": "OKE",
-      "return_5d": 0.04875,
-      "return_20d": 0.18617,
-      "volume_ratio": 0.19,
+      "return_5d": 0.03372,
+      "return_20d": 0.16917,
+      "volume_ratio": 0.93,
       "momentum_phase": "positif",
-      "phase_value": 98.8,
-      "phase_delta": 23.7,
-      "rs_ratio": 105.8,
-      "rs_momentum": 103.9,
+      "phase_value": 96.1,
+      "phase_delta": 21.1,
+      "rs_ratio": 105.6,
+      "rs_momentum": 103.7,
       "sector_relative": "leader",
-      "weight": 13.0
+      "weight": 12.9
     },
     {
       "id": "BKR",
       "name": "BKR",
-      "return_5d": 0.05457,
-      "return_20d": 0.1949,
-      "volume_ratio": 0.17,
-      "momentum_phase": "positif",
-      "phase_value": 87.8,
-      "phase_delta": 40.0,
-      "rs_ratio": 105.8,
-      "rs_momentum": 101.8,
-      "sector_relative": "leader",
-      "weight": 21.1
-    },
-    {
-      "id": "SLB",
-      "name": "SLB",
-      "return_5d": 0.02387,
-      "return_20d": 0.11467,
-      "volume_ratio": 0.26,
-      "momentum_phase": "positif",
-      "phase_value": 87.5,
-      "phase_delta": 45.2,
-      "rs_ratio": 103.5,
-      "rs_momentum": 104.0,
-      "sector_relative": "laggard",
-      "weight": 35.0
-    },
-    {
-      "id": "PSX",
-      "name": "PSX",
-      "return_5d": 0.01888,
-      "return_20d": 0.14835,
-      "volume_ratio": 0.13,
+      "return_5d": 0.04192,
+      "return_20d": 0.18058,
+      "volume_ratio": 0.88,
       "momentum_phase": "positif",
       "phase_value": 87.3,
-      "phase_delta": -12.7,
-      "rs_ratio": 104.6,
-      "rs_momentum": 102.8,
-      "sector_relative": "laggard",
-      "weight": 11.4
-    },
-    {
-      "id": "TRGP",
-      "name": "TRGP",
-      "return_5d": 0.05079,
-      "return_20d": 0.22733,
-      "volume_ratio": 0.15,
-      "momentum_phase": "positif",
-      "phase_value": 83.7,
-      "phase_delta": 6.1,
+      "phase_delta": 39.5,
       "rs_ratio": 105.7,
-      "rs_momentum": 101.0,
+      "rs_momentum": 101.8,
       "sector_relative": "leader",
-      "weight": 8.8
-    },
-    {
-      "id": "WMB",
-      "name": "WMB",
-      "return_5d": 0.07608,
-      "return_20d": 0.19441,
-      "volume_ratio": 0.16,
-      "momentum_phase": "positif",
-      "phase_value": 82.3,
-      "phase_delta": 19.3,
-      "rs_ratio": 105.6,
-      "rs_momentum": 100.9,
-      "sector_relative": "leader",
-      "weight": 19.1
-    },
-    {
-      "id": "HAL",
-      "name": "HAL",
-      "return_5d": 0.00529,
-      "return_20d": 0.07276,
-      "volume_ratio": 0.17,
-      "momentum_phase": "positif",
-      "phase_value": 80.0,
-      "phase_delta": 24.3,
-      "rs_ratio": 102.8,
-      "rs_momentum": 103.2,
-      "sector_relative": "laggard",
-      "weight": 15.3
-    },
-    {
-      "id": "COP",
-      "name": "COP",
-      "return_5d": 0.03707,
-      "return_20d": 0.12817,
-      "volume_ratio": 0.22,
-      "momentum_phase": "positif",
-      "phase_value": 76.0,
-      "phase_delta": -21.3,
-      "rs_ratio": 104.4,
-      "rs_momentum": 100.8,
-      "sector_relative": "leader",
-      "weight": 29.0
-    },
-    {
-      "id": "XOM",
-      "name": "XOM",
-      "return_5d": 0.03385,
-      "return_20d": 0.19333,
-      "volume_ratio": 0.25,
-      "momentum_phase": "positif",
-      "phase_value": 72.1,
-      "phase_delta": -18.9,
-      "rs_ratio": 104.3,
-      "rs_momentum": 100.1,
-      "sector_relative": "leader",
-      "weight": 100.0
-    },
-    {
-      "id": "KMI",
-      "name": "KMI",
-      "return_5d": 0.04328,
-      "return_20d": 0.17215,
-      "volume_ratio": 0.15,
-      "momentum_phase": "positif",
-      "phase_value": 71.9,
-      "phase_delta": 18.0,
-      "rs_ratio": 104.0,
-      "rs_momentum": 100.4,
-      "sector_relative": "leader",
-      "weight": 15.5
+      "weight": 20.9
     },
     {
       "id": "EOG",
       "name": "EOG",
-      "return_5d": 0.03254,
-      "return_20d": 0.0972,
-      "volume_ratio": 0.19,
+      "return_5d": 0.0365,
+      "return_20d": 0.1014,
+      "volume_ratio": 1.56,
       "momentum_phase": "positif",
-      "phase_value": 70.2,
-      "phase_delta": -15.7,
-      "rs_ratio": 103.6,
-      "rs_momentum": 100.4,
+      "phase_value": 84.4,
+      "phase_delta": -1.5,
+      "rs_ratio": 105.1,
+      "rs_momentum": 101.8,
       "sector_relative": "leader",
-      "weight": 18.4
+      "weight": 19.2
+    },
+    {
+      "id": "WMB",
+      "name": "WMB",
+      "return_5d": 0.06291,
+      "return_20d": 0.1798,
+      "volume_ratio": 0.83,
+      "momentum_phase": "positif",
+      "phase_value": 81.6,
+      "phase_delta": 18.7,
+      "rs_ratio": 105.5,
+      "rs_momentum": 100.8,
+      "sector_relative": "leader",
+      "weight": 18.9
+    },
+    {
+      "id": "COP",
+      "name": "COP",
+      "return_5d": 0.02983,
+      "return_20d": 0.12029,
+      "volume_ratio": 1.43,
+      "momentum_phase": "positif",
+      "phase_value": 80.2,
+      "phase_delta": -17.1,
+      "rs_ratio": 104.8,
+      "rs_momentum": 101.2,
+      "sector_relative": "leader",
+      "weight": 29.6
+    },
+    {
+      "id": "SLB",
+      "name": "SLB",
+      "return_5d": 0.00471,
+      "return_20d": 0.09381,
+      "volume_ratio": 1.08,
+      "momentum_phase": "positif",
+      "phase_value": 80.1,
+      "phase_delta": 37.8,
+      "rs_ratio": 102.7,
+      "rs_momentum": 103.3,
+      "sector_relative": "laggard",
+      "weight": 34.5
+    },
+    {
+      "id": "KMI",
+      "name": "KMI",
+      "return_5d": 0.03902,
+      "return_20d": 0.16737,
+      "volume_ratio": 0.96,
+      "momentum_phase": "positif",
+      "phase_value": 78.8,
+      "phase_delta": 24.9,
+      "rs_ratio": 104.7,
+      "rs_momentum": 101.1,
+      "sector_relative": "leader",
+      "weight": 15.5
+    },
+    {
+      "id": "TRGP",
+      "name": "TRGP",
+      "return_5d": 0.03225,
+      "return_20d": 0.20568,
+      "volume_ratio": 1.2,
+      "momentum_phase": "positif",
+      "phase_value": 78.0,
+      "phase_delta": 0.4,
+      "rs_ratio": 105.1,
+      "rs_momentum": 100.5,
+      "sector_relative": "leader",
+      "weight": 8.9
     },
     {
       "id": "CVX",
       "name": "CVX",
-      "return_5d": 0.0219,
-      "return_20d": 0.1123,
-      "volume_ratio": 0.2,
+      "return_5d": 0.00851,
+      "return_20d": 0.09774,
+      "volume_ratio": 0.83,
       "momentum_phase": "positif",
-      "phase_value": 66.2,
-      "phase_delta": -30.2,
-      "rs_ratio": 102.4,
-      "rs_momentum": 100.8,
+      "phase_value": 64.8,
+      "phase_delta": -31.6,
+      "rs_ratio": 102.3,
+      "rs_momentum": 100.7,
       "sector_relative": "laggard",
-      "weight": 66.1
+      "weight": 65.1
     },
     {
       "id": "DVN",
       "name": "DVN",
-      "return_5d": 0.01677,
-      "return_20d": 0.22645,
-      "volume_ratio": 0.21,
+      "return_5d": 0.00342,
+      "return_20d": 0.21035,
+      "volume_ratio": 1.01,
       "momentum_phase": "essoufflement",
-      "phase_value": 69.6,
-      "phase_delta": -30.4,
-      "rs_ratio": 104.1,
-      "rs_momentum": 99.8,
+      "phase_value": 68.1,
+      "phase_delta": -31.9,
+      "rs_ratio": 103.9,
+      "rs_momentum": 99.7,
       "sector_relative": "laggard",
       "weight": 16.2
     },
     {
-      "id": "OXY",
-      "name": "OXY",
-      "return_5d": 0.00475,
-      "return_20d": 0.07783,
-      "volume_ratio": 0.25,
+      "id": "XOM",
+      "name": "XOM",
+      "return_5d": 0.01261,
+      "return_20d": 0.16882,
+      "volume_ratio": 1.4,
       "momentum_phase": "essoufflement",
-      "phase_value": 48.2,
-      "phase_delta": -24.3,
-      "rs_ratio": 101.4,
-      "rs_momentum": 98.2,
+      "phase_value": 63.7,
+      "phase_delta": -27.2,
+      "rs_ratio": 103.4,
+      "rs_momentum": 99.3,
       "sector_relative": "laggard",
-      "weight": 15.8
+      "weight": 100.0
     },
     {
       "id": "FANG",
       "name": "FANG",
-      "return_5d": 0.00785,
-      "return_20d": 0.1155,
-      "volume_ratio": 0.17,
+      "return_5d": 0.00294,
+      "return_20d": 0.11006,
+      "volume_ratio": 1.13,
       "momentum_phase": "essoufflement",
-      "phase_value": 43.9,
-      "phase_delta": -43.9,
-      "rs_ratio": 101.8,
-      "rs_momentum": 97.0,
+      "phase_value": 49.9,
+      "phase_delta": -37.9,
+      "rs_ratio": 102.4,
+      "rs_momentum": 97.6,
       "sector_relative": "laggard",
-      "weight": 10.4
+      "weight": 10.5
+    },
+    {
+      "id": "MPC",
+      "name": "MPC",
+      "return_5d": -0.02453,
+      "return_20d": 0.11504,
+      "volume_ratio": 0.84,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -60.0,
+      "rs_ratio": 102.7,
+      "rs_momentum": 102.7,
+      "sector_relative": "laggard",
+      "weight": 13.8
+    },
+    {
+      "id": "PSX",
+      "name": "PSX",
+      "return_5d": -0.00976,
+      "return_20d": 0.11606,
+      "volume_ratio": 0.97,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -60.0,
+      "rs_ratio": 103.1,
+      "rs_momentum": 101.3,
+      "sector_relative": "laggard",
+      "weight": 11.2
+    },
+    {
+      "id": "VLO",
+      "name": "VLO",
+      "return_5d": -0.02847,
+      "return_20d": 0.07332,
+      "volume_ratio": 1.02,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -60.0,
+      "rs_ratio": 102.4,
+      "rs_momentum": 104.2,
+      "sector_relative": "laggard",
+      "weight": 18.8
+    },
+    {
+      "id": "HAL",
+      "name": "HAL",
+      "return_5d": -0.01973,
+      "return_20d": 0.04606,
+      "volume_ratio": 1.04,
+      "momentum_phase": "essoufflement",
+      "phase_value": 40.0,
+      "phase_delta": -15.6,
+      "rs_ratio": 101.5,
+      "rs_momentum": 102.0,
+      "sector_relative": "laggard",
+      "weight": 15.1
+    },
+    {
+      "id": "OXY",
+      "name": "OXY",
+      "return_5d": -0.01771,
+      "return_20d": 0.05374,
+      "volume_ratio": 1.11,
+      "momentum_phase": "essoufflement",
+      "phase_value": 38.4,
+      "phase_delta": -34.1,
+      "rs_ratio": 100.4,
+      "rs_momentum": 97.3,
+      "sector_relative": "laggard",
+      "weight": 15.6
     }
   ],
   "correlations": [
     {
       "source": "XOM",
       "target": "OXY",
-      "correlation": 0.934
-    },
-    {
-      "source": "OXY",
-      "target": "FANG",
-      "correlation": 0.911
+      "correlation": 0.939
     },
     {
       "source": "MPC",
       "target": "PSX",
-      "correlation": 0.906
+      "correlation": 0.925
     },
     {
-      "source": "COP",
+      "source": "FANG",
       "target": "OXY",
-      "correlation": 0.901
-    },
-    {
-      "source": "COP",
-      "target": "FANG",
-      "correlation": 0.873
+      "correlation": 0.891
     },
     {
       "source": "MPC",
       "target": "VLO",
-      "correlation": 0.872
+      "correlation": 0.89
     },
     {
-      "source": "XOM",
+      "source": "COP",
+      "target": "OXY",
+      "correlation": 0.877
+    },
+    {
+      "source": "COP",
       "target": "FANG",
-      "correlation": 0.866
+      "correlation": 0.876
     },
     {
       "source": "SLB",
       "target": "HAL",
-      "correlation": 0.856
-    },
-    {
-      "source": "EOG",
-      "target": "OXY",
-      "correlation": 0.849
-    },
-    {
-      "source": "VLO",
-      "target": "PSX",
-      "correlation": 0.842
-    },
-    {
-      "source": "COP",
-      "target": "XOM",
-      "correlation": 0.829
-    },
-    {
-      "source": "XOM",
-      "target": "EOG",
-      "correlation": 0.813
+      "correlation": 0.871
     },
     {
       "source": "PSX",
-      "target": "XOM",
-      "correlation": 0.812
+      "target": "VLO",
+      "correlation": 0.867
     },
     {
-      "source": "COP",
-      "target": "CVX",
-      "correlation": 0.809
+      "source": "XOM",
+      "target": "PSX",
+      "correlation": 0.855
+    },
+    {
+      "source": "XOM",
+      "target": "MPC",
+      "correlation": 0.836
+    },
+    {
+      "source": "XOM",
+      "target": "FANG",
+      "correlation": 0.822
     },
     {
       "source": "EOG",
-      "target": "FANG",
-      "correlation": 0.808
+      "target": "COP",
+      "correlation": 0.811
     },
     {
-      "source": "COP",
-      "target": "EOG",
+      "source": "EOG",
+      "target": "OXY",
       "correlation": 0.807
     },
     {
-      "source": "DVN",
-      "target": "FANG",
-      "correlation": 0.792
-    },
-    {
       "source": "EOG",
-      "target": "DVN",
-      "correlation": 0.79
+      "target": "FANG",
+      "correlation": 0.806
     },
     {
-      "source": "MPC",
-      "target": "XOM",
-      "correlation": 0.783
+      "source": "PSX",
+      "target": "OXY",
+      "correlation": 0.806
     },
     {
       "source": "DVN",
       "target": "OXY",
-      "correlation": 0.781
+      "correlation": 0.8
+    },
+    {
+      "source": "CVX",
+      "target": "XOM",
+      "correlation": 0.799
+    },
+    {
+      "source": "DVN",
+      "target": "PSX",
+      "correlation": 0.792
+    },
+    {
+      "source": "DVN",
+      "target": "FANG",
+      "correlation": 0.791
+    },
+    {
+      "source": "XOM",
+      "target": "VLO",
+      "correlation": 0.789
     }
   ]
 }
