@@ -68,7 +68,7 @@ SECTOR_HOLDINGS = {
 # ---------------------------------------------------------------------------
 # Data fetching
 # ---------------------------------------------------------------------------
-def fetch_ohlcv(period: str = "90d"):
+def fetch_ohlcv(period: str = "1y"):
     """Download OHLCV data for all sector ETFs + SPY benchmark."""
     tickers = list(SECTOR_ETFS.keys()) + [BENCHMARK]
     print(f"Downloading {len(tickers)} ETFs ({period})...")
@@ -737,7 +737,7 @@ def backfill_signal_history(data_all):
     # Get trading days (last 60 usable days)
     trading_days = spy.dropna().index
     # Need at least 30 days warmup for RS
-    start_idx = max(0, len(trading_days) - 60)
+    start_idx = max(0, len(trading_days) - 120)
     replay_days = trading_days[start_idx:]
 
     history = []
@@ -963,7 +963,7 @@ def main():
             all_holdings.extend(h_list)
         all_holdings = list(set(all_holdings))
         print(f"Downloading {len(all_holdings)} individual stocks for sector detail...")
-        data_stocks = yf.download(all_holdings, period="90d", progress=False, auto_adjust=True)
+        data_stocks = yf.download(all_holdings, period="1y", progress=False, auto_adjust=True)
 
         # Merge sector ETF data + stock data
         data_all = {}
