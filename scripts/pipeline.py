@@ -814,8 +814,17 @@ def backfill_signal_history(data_all):
                     sig["close_reason"] = "expired"
                     del active_signals[ticker]
 
-    # Sort: active first, then closed by recency
-    history.sort(key=lambda s: (0 if s["status"] == "active" else 1, -(s.get("days_active") or 0)))
+    # Sort: active first (newest first), then closed by close_date descending (most recent first)
+    history.sort(key=lambda s: (
+        0 if s["status"] == "active" else 1,
+        s.get("close_date") or s.get("open_date") or "",
+    ), reverse=False)
+    # Reverse within each group: active newest first, closed newest first
+    active_sigs = [s for s in history if s["status"] == "active"]
+    closed_sigs = [s for s in history if s["status"] == "closed"]
+    active_sigs.sort(key=lambda s: s.get("open_date", ""), reverse=True)
+    closed_sigs.sort(key=lambda s: s.get("close_date", ""), reverse=True)
+    history = active_sigs + closed_sigs
 
     active = [s for s in history if s["status"] == "active"]
     closed = [s for s in history if s["status"] == "closed"]
@@ -913,8 +922,12 @@ def update_signal_history(result, data_all, history_path):
     cutoff = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=60)).strftime("%Y-%m-%d")
     history = [s for s in history if s["status"] == "active" or s["open_date"] >= cutoff]
 
-    # Sort: active first (newest first), then closed (newest first)
-    history.sort(key=lambda s: (0 if s["status"] == "active" else 1, -(s.get("days_active") or 0)))
+    # Sort: active first (newest first), then closed by close_date descending (most recent first)
+    active_sigs = [s for s in history if s["status"] == "active"]
+    closed_sigs = [s for s in history if s["status"] == "closed"]
+    active_sigs.sort(key=lambda s: s.get("open_date", ""), reverse=True)
+    closed_sigs.sort(key=lambda s: s.get("close_date", ""), reverse=True)
+    history = active_sigs + closed_sigs
 
     with open(history_path, "w") as f:
         json.dump(history, f, indent=2)
