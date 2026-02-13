@@ -68,7 +68,7 @@ SECTOR_HOLDINGS = {
 # ---------------------------------------------------------------------------
 # Data fetching
 # ---------------------------------------------------------------------------
-def fetch_ohlcv(period: str = "1y"):
+def fetch_ohlcv(period: str = "2y"):
     """Download OHLCV data for all sector ETFs + SPY benchmark."""
     tickers = list(SECTOR_ETFS.keys()) + [BENCHMARK]
     print(f"Downloading {len(tickers)} ETFs ({period})...")
@@ -734,10 +734,10 @@ def backfill_signal_history(data_all):
         phases.loc[valid[(mask_rr < 100) & (mask_rm >= 100)]] = "improving"
         phase_series[ticker] = phases.dropna()
 
-    # Get trading days (last 60 usable days)
+    # Get trading days — use all available after RS warmup (~40 days)
     trading_days = spy.dropna().index
-    # Need at least 30 days warmup for RS
-    start_idx = max(0, len(trading_days) - 120)
+    # RS needs 20d SMA + 20d shift = 40 days warmup, leave 50 for safety
+    start_idx = max(0, 50)
     replay_days = trading_days[start_idx:]
 
     history = []
@@ -976,7 +976,7 @@ def main():
             all_holdings.extend(h_list)
         all_holdings = list(set(all_holdings))
         print(f"Downloading {len(all_holdings)} individual stocks for sector detail...")
-        data_stocks = yf.download(all_holdings, period="1y", progress=False, auto_adjust=True)
+        data_stocks = yf.download(all_holdings, period="2y", progress=False, auto_adjust=True)
 
         # Merge sector ETF data + stock data
         data_all = {}
@@ -1040,7 +1040,7 @@ def main():
                 needs_backfill = True
 
         if needs_backfill:
-            print("  Backfilling signal history from 90 days of data...")
+            print("  Backfilling signal history from 2 years of data...")
             history = backfill_signal_history(data_all)
             with open(history_path, "w") as f:
                 json.dump(history, f, indent=2)
