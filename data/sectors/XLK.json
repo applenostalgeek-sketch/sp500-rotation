@@ -9,7 +9,7 @@
       "name": "TXN",
       "return_5d": 0.03378,
       "return_20d": 0.1882,
-      "volume_ratio": 0.47,
+      "volume_ratio": 0.5,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -26,7 +26,7 @@
       "name": "ADI",
       "return_5d": 0.04375,
       "return_20d": 0.12273,
-      "volume_ratio": 0.81,
+      "volume_ratio": 0.84,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 22.1,
@@ -43,7 +43,7 @@
       "name": "AAPL",
       "return_5d": -0.0686,
       "return_20d": 0.00191,
-      "volume_ratio": 0.83,
+      "volume_ratio": 0.94,
       "momentum_phase": "leading",
       "phase_value": 70.2,
       "phase_delta": -29.8,
@@ -53,14 +53,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 11,
       "previous_phase": "improving",
-      "weight": 47.5
+      "weight": 47.7
     },
     {
       "id": "AVGO",
       "name": "AVGO",
       "return_5d": -0.05457,
       "return_20d": -0.07546,
-      "volume_ratio": 0.63,
+      "volume_ratio": 0.66,
       "momentum_phase": "leading",
       "phase_value": 64.5,
       "phase_delta": -34.8,
@@ -77,7 +77,7 @@
       "name": "NVDA",
       "return_5d": -0.03804,
       "return_20d": -0.01836,
-      "volume_ratio": 0.88,
+      "volume_ratio": 0.92,
       "momentum_phase": "leading",
       "phase_value": 59.3,
       "phase_delta": -12.0,
@@ -145,7 +145,7 @@
       "name": "NOW",
       "return_5d": 0.0309,
       "return_20d": -0.1589,
-      "volume_ratio": 0.8,
+      "volume_ratio": 0.91,
       "momentum_phase": "improving",
       "phase_value": 57.6,
       "phase_delta": 57.6,
@@ -155,14 +155,14 @@
       "sector_relative": "leader",
       "days_in_phase": 2,
       "previous_phase": "lagging",
-      "weight": 8.3
+      "weight": 8.4
     },
     {
       "id": "CSCO",
       "name": "CSCO",
       "return_5d": -0.11443,
       "return_20d": 0.02208,
-      "volume_ratio": 1.53,
+      "volume_ratio": 1.56,
       "momentum_phase": "improving",
       "phase_value": 51.3,
       "phase_delta": -48.7,
@@ -206,14 +206,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 1,
       "previous_phase": "lagging",
-      "weight": 57.8
+      "weight": 57.6
     },
     {
       "id": "AMAT",
       "name": "AMAT",
       "return_5d": 0.07363,
       "return_20d": 0.08532,
-      "volume_ratio": 1.75,
+      "volume_ratio": 1.78,
       "momentum_phase": "weakening",
       "phase_value": 95.1,
       "phase_delta": 39.2,
@@ -240,14 +240,14 @@
       "sector_relative": "leader",
       "days_in_phase": 3,
       "previous_phase": "lagging",
-      "weight": 54.1
+      "weight": 53.9
     },
     {
       "id": "LRCX",
       "name": "LRCX",
       "return_5d": 0.02726,
       "return_20d": 0.05638,
-      "volume_ratio": 0.77,
+      "volume_ratio": 0.78,
       "momentum_phase": "weakening",
       "phase_value": 40.1,
       "phase_delta": 4.1,
@@ -264,7 +264,7 @@
       "name": "AMD",
       "return_5d": -0.04019,
       "return_20d": -0.10572,
-      "volume_ratio": 0.56,
+      "volume_ratio": 0.6,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -332,7 +332,7 @@
       "name": "IBM",
       "return_5d": -0.10955,
       "return_20d": -0.13673,
-      "volume_ratio": 0.78,
+      "volume_ratio": 1.11,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": -68.4,
@@ -342,7 +342,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 4,
       "previous_phase": "improving",
-      "weight": 5.0
+      "weight": 5.1
     }
   ],
   "correlations": [

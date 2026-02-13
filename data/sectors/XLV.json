@@ -9,7 +9,7 @@
       "name": "ABBV",
       "return_5d": 0.03691,
       "return_20d": 0.08001,
-      "volume_ratio": 0.79,
+      "volume_ratio": 1.07,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 25.6,
@@ -19,7 +19,7 @@
       "sector_relative": "leader",
       "days_in_phase": 7,
       "previous_phase": "improving",
-      "weight": 45.1
+      "weight": 45.8
     },
     {
       "id": "GILD",
@@ -43,7 +43,7 @@
       "name": "VRTX",
       "return_5d": 0.04375,
       "return_20d": 0.11354,
-      "volume_ratio": 1.72,
+      "volume_ratio": 1.76,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 31.9,
@@ -53,14 +53,14 @@
       "sector_relative": "leader",
       "days_in_phase": 2,
       "previous_phase": "improving",
-      "weight": 20.7
+      "weight": 20.8
     },
     {
       "id": "MRK",
       "name": "MRK",
       "return_5d": 0.03196,
       "return_20d": 0.11559,
-      "volume_ratio": 0.57,
+      "volume_ratio": 0.71,
       "momentum_phase": "leading",
       "phase_value": 90.6,
       "phase_delta": -9.4,
@@ -70,7 +70,7 @@
       "sector_relative": "leader",
       "days_in_phase": 10,
       "previous_phase": "weakening",
-      "weight": 44.1
+      "weight": 44.4
     },
     {
       "id": "BMY",
@@ -94,7 +94,7 @@
       "name": "AMGN",
       "return_5d": -0.01764,
       "return_20d": 0.11737,
-      "volume_ratio": 0.69,
+      "volume_ratio": 0.75,
       "momentum_phase": "leading",
       "phase_value": 85.2,
       "phase_delta": -14.8,
@@ -104,7 +104,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 20,
       "previous_phase": "improving",
-      "weight": 30.2
+      "weight": 30.3
     },
     {
       "id": "CI",
@@ -128,7 +128,7 @@
       "name": "PFE",
       "return_5d": 0.01959,
       "return_20d": 0.09326,
-      "volume_ratio": 0.53,
+      "volume_ratio": 0.67,
       "momentum_phase": "leading",
       "phase_value": 72.7,
       "phase_delta": -27.3,
@@ -138,14 +138,14 @@
       "sector_relative": "leader",
       "days_in_phase": 21,
       "previous_phase": "weakening",
-      "weight": 38.4
+      "weight": 38.7
     },
     {
       "id": "ABT",
       "name": "ABT",
       "return_5d": 0.0145,
       "return_20d": -0.07457,
-      "volume_ratio": 0.43,
+      "volume_ratio": 0.53,
       "momentum_phase": "leading",
       "phase_value": 60.2,
       "phase_delta": 41.9,
@@ -155,7 +155,7 @@
       "sector_relative": "leader",
       "days_in_phase": 1,
       "previous_phase": "improving",
-      "weight": 41.9
+      "weight": 42.1
     },
     {
       "id": "ZTS",
@@ -213,7 +213,7 @@
       "name": "JNJ",
       "return_5d": 0.02016,
       "return_20d": 0.11337,
-      "volume_ratio": 0.73,
+      "volume_ratio": 1.29,
       "momentum_phase": "weakening",
       "phase_value": 73.3,
       "phase_delta": -26.7,
@@ -223,7 +223,7 @@
       "sector_relative": "leader",
       "days_in_phase": 1,
       "previous_phase": "leading",
-      "weight": 58.7
+      "weight": 60.4
     },
     {
       "id": "SYK",
@@ -247,7 +247,7 @@
       "name": "MDT",
       "return_5d": -0.02125,
       "return_20d": 0.02821,
-      "volume_ratio": 0.95,
+      "volume_ratio": 1.12,
       "momentum_phase": "lagging",
       "phase_value": 20.3,
       "phase_delta": -53.1,
@@ -257,7 +257,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 2,
       "previous_phase": "leading",
-      "weight": 23.3
+      "weight": 23.5
     },
     {
       "id": "ELV",
@@ -298,7 +298,7 @@
       "name": "TMO",
       "return_5d": -0.07671,
       "return_20d": -0.18409,
-      "volume_ratio": 0.98,
+      "volume_ratio": 1.13,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -308,7 +308,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 12,
       "previous_phase": "weakening",
-      "weight": 36.2
+      "weight": 36.5
     },
     {
       "id": "DHR",

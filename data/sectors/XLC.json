@@ -9,7 +9,7 @@
       "name": "CMCSA",
       "return_5d": -0.00127,
       "return_20d": 0.1348,
-      "volume_ratio": 0.74,
+      "volume_ratio": 0.75,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -26,7 +26,7 @@
       "name": "T",
       "return_5d": 0.05828,
       "return_20d": 0.22137,
-      "volume_ratio": 0.64,
+      "volume_ratio": 0.78,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -36,14 +36,14 @@
       "sector_relative": "leader",
       "days_in_phase": 13,
       "previous_phase": "lagging",
-      "weight": 12.3
+      "weight": 12.4
     },
     {
       "id": "VZ",
       "name": "VZ",
       "return_5d": 0.04232,
       "return_20d": 0.25957,
-      "volume_ratio": 0.77,
+      "volume_ratio": 0.78,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -77,7 +77,7 @@
       "name": "CHTR",
       "return_5d": 0.00353,
       "return_20d": 0.25996,
-      "volume_ratio": 0.63,
+      "volume_ratio": 0.65,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -155,14 +155,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 2,
       "previous_phase": "leading",
-      "weight": 98.1
+      "weight": 98.0
     },
     {
       "id": "DIS",
       "name": "DIS",
       "return_5d": -0.01568,
       "return_20d": -0.05171,
-      "volume_ratio": 0.75,
+      "volume_ratio": 0.9,
       "momentum_phase": "lagging",
       "phase_value": 32.1,
       "phase_delta": -4.9,
@@ -172,7 +172,7 @@
       "sector_relative": "leader",
       "days_in_phase": 16,
       "previous_phase": "weakening",
-      "weight": 12.1
+      "weight": 12.2
     },
     {
       "id": "NFLX",
@@ -230,7 +230,7 @@
       "name": "TTWO",
       "return_5d": -0.05541,
       "return_20d": -0.19351,
-      "volume_ratio": 0.76,
+      "volume_ratio": 0.8,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -247,7 +247,7 @@
       "name": "FOX",
       "return_5d": -0.09145,
       "return_20d": -0.21186,
-      "volume_ratio": 1.09,
+      "volume_ratio": 1.11,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,

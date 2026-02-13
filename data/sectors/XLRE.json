@@ -60,7 +60,7 @@
       "name": "DLR",
       "return_5d": 0.05136,
       "return_20d": 0.10617,
-      "volume_ratio": 0.79,
+      "volume_ratio": 1.08,
       "momentum_phase": "leading",
       "phase_value": 88.2,
       "phase_delta": -3.8,
@@ -70,14 +70,14 @@
       "sector_relative": "leader",
       "days_in_phase": 3,
       "previous_phase": "weakening",
-      "weight": 53.2
+      "weight": 54.0
     },
     {
       "id": "KIM",
       "name": "KIM",
       "return_5d": 0.04366,
       "return_20d": 0.07835,
-      "volume_ratio": 0.6,
+      "volume_ratio": 0.92,
       "momentum_phase": "leading",
       "phase_value": 75.7,
       "phase_delta": 8.3,
@@ -87,7 +87,7 @@
       "sector_relative": "leader",
       "days_in_phase": 11,
       "previous_phase": "lagging",
-      "weight": 18.1
+      "weight": 18.4
     },
     {
       "id": "AMT",
@@ -111,7 +111,7 @@
       "name": "HST",
       "return_5d": 0.01791,
       "return_20d": 0.06993,
-      "volume_ratio": 0.74,
+      "volume_ratio": 0.75,
       "momentum_phase": "leading",
       "phase_value": 60.0,
       "phase_delta": -5.6,
@@ -121,7 +121,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 9,
       "previous_phase": "weakening",
-      "weight": 23.2
+      "weight": 23.3
     },
     {
       "id": "CCI",
@@ -162,7 +162,7 @@
       "name": "SPG",
       "return_5d": 0.00132,
       "return_20d": 0.06441,
-      "volume_ratio": 0.68,
+      "volume_ratio": 1.02,
       "momentum_phase": "improving",
       "phase_value": 64.5,
       "phase_delta": -31.6,
@@ -172,7 +172,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 3,
       "previous_phase": "leading",
-      "weight": 48.0
+      "weight": 48.9
     },
     {
       "id": "REG",
@@ -196,7 +196,7 @@
       "name": "EQR",
       "return_5d": -0.01253,
       "return_20d": 0.02934,
-      "volume_ratio": 0.88,
+      "volume_ratio": 1.07,
       "momentum_phase": "improving",
       "phase_value": 47.3,
       "phase_delta": -11.9,
@@ -206,7 +206,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 2,
       "previous_phase": "leading",
-      "weight": 26.0
+      "weight": 26.3
     },
     {
       "id": "O",
