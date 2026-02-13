@@ -347,7 +347,6 @@ def detect_rotations(data):
             })
 
     rotations.sort(key=lambda x: x["score"], reverse=True)
-    rotations = rotations[:8]  # Keep only the strongest confirmed signals
 
     # Market state
     if len(recent_resid.columns) > 1:
@@ -520,7 +519,6 @@ def generate_sample_data():
                 })
 
     rotations.sort(key=lambda x: x["score"], reverse=True)
-    rotations = rotations[:8]
 
     narrative = _generate_narrative(nodes, rotations, "normal", 0.35)
 
