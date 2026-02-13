@@ -445,12 +445,9 @@ aside.open {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-    header { padding: 10px 16px; }
-    .narrative-text { font-size: 0.8rem; }
-
     main {
-        min-height: 0;
-        grid-row: 2;
+        min-height: 100vh;
+        width: 100%;
     }
 
     aside {
