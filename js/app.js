@@ -54,9 +54,14 @@ function renderSignalHistory(data) {
             const retHtml = ret === "0.0"
                 ? `<span class="sh-ret" style="color:var(--text-muted)">nouveau</span>`
                 : `<span class="sh-ret ${retClass}">${retSign}${ret}%</span>`;
+            const rsi = s.rsi != null ? Math.round(s.rsi) : null;
+            const rsiHtml = rsi != null
+                ? `<span class="sh-rsi" style="color:${rsi < 50 ? 'var(--green)' : rsi < 70 ? 'var(--text-muted)' : 'var(--orange)'}">${rsi}</span>`
+                : "";
             html += `
                 <div class="sh-row sh-active" data-sector="${s.sector}">
                     <span class="sh-ticker">${s.ticker}</span>
+                    ${rsiHtml}
                     <span class="sh-meta">J${s.days_active} · ${s.sector_name}</span>
                     ${retHtml}
                 </div>`;

@@ -81,6 +81,15 @@ def fetch_ohlcv(period: str = "2y"):
 # ---------------------------------------------------------------------------
 # Indicator calculations
 # ---------------------------------------------------------------------------
+def compute_rsi_series(close, period=14):
+    """RSI series for a stock."""
+    delta = close.diff()
+    gain = delta.where(delta > 0, 0).rolling(period).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(period).mean()
+    rs = gain / loss.replace(0, np.nan)
+    return 100 - 100 / (1 + rs)
+
+
 def compute_mfi(high, low, close, volume, period=14):
     """Money Flow Index (latest value)."""
     tp = (high + low + close) / 3
@@ -707,9 +716,10 @@ def backfill_signal_history(data_all):
 
     all_tickers = list(ticker_sector.keys())
 
-    # Compute full phase series + RS-Momentum for each stock
+    # Compute full phase series + RS-Momentum + RSI for each stock
     phase_series = {}
     rm_series = {}
+    rsi_series = {}
     for ticker in all_tickers:
         c = close[ticker].dropna()
         if len(c) < 40:
@@ -735,6 +745,7 @@ def backfill_signal_history(data_all):
         phases.loc[valid[(mask_rr < 100) & (mask_rm >= 100)]] = "improving"
         phase_series[ticker] = phases.dropna()
         rm_series[ticker] = rm
+        rsi_series[ticker] = compute_rsi_series(close[ticker].dropna())
 
     # Get trading days — use all available after RS warmup (~40 days)
     trading_days = spy.dropna().index
@@ -772,6 +783,11 @@ def backfill_signal_history(data_all):
                     stock_price = float(close[ticker].loc[day])
                     if not np.isnan(stock_price):
                         etf = ticker_sector[ticker]
+                        rsi_val = 50.0
+                        if ticker in rsi_series and day in rsi_series[ticker].index:
+                            rv = rsi_series[ticker].loc[day]
+                            if not np.isnan(rv):
+                                rsi_val = round(float(rv), 0)
                         sig = {
                             "ticker": ticker,
                             "sector": etf,
@@ -783,6 +799,7 @@ def backfill_signal_history(data_all):
                             "days_active": 0,
                             "return_vs_spy": 0.0,
                             "return_abs": 0.0,
+                            "rsi": rsi_val,
                             "status": "active",
                             "close_date": None,
                             "close_reason": None,
@@ -910,6 +927,14 @@ def update_signal_history(result, data_all, history_path):
         if ticker not in close.columns or np.isnan(close[ticker].iloc[-1]):
             continue
 
+        rsi_val = 50.0
+        c = close[ticker].dropna()
+        if len(c) >= 14:
+            rsi_s = compute_rsi_series(c)
+            rv = rsi_s.iloc[-1]
+            if not np.isnan(rv):
+                rsi_val = round(float(rv), 0)
+
         history.append({
             "ticker": ticker,
             "sector": sig["sector"],
@@ -921,6 +946,7 @@ def update_signal_history(result, data_all, history_path):
             "days_active": 0,
             "return_vs_spy": 0.0,
             "return_abs": 0.0,
+            "rsi": rsi_val,
             "status": "active",
             "close_date": None,
             "close_reason": None,

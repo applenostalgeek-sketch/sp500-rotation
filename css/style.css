@@ -419,6 +419,12 @@ aside.open {
     min-width: 40px;
 }
 
+.sh-rsi {
+    font-size: 0.6rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
 .sh-meta {
     color: var(--text-muted);
     font-size: 0.65rem;
