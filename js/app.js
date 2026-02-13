@@ -254,6 +254,13 @@ async function init() {
     appData = await Promise.resolve(loadData());
     if (!appData) { return; }
 
+    // Display last update date
+    const updateEl = document.getElementById("last-update");
+    if (updateEl && appData.metadata?.date) {
+        const d = new Date(appData.metadata.date + "T22:00:00Z");
+        updateEl.textContent = `Dernière mise à jour : ${d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}`;
+    }
+
     renderSignalHistory(appData);
     renderSidebar(appData);
 
