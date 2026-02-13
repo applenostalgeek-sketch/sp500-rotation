@@ -257,8 +257,11 @@ async function init() {
     // Display last update date
     const updateEl = document.getElementById("last-update");
     if (updateEl && appData.metadata?.date) {
-        const d = new Date(appData.metadata.date + "T22:00:00Z");
-        updateEl.textContent = `Dernière mise à jour : ${d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })} à 22h UTC`;
+        const ts = appData.metadata.generated_at || appData.metadata.date;
+        const d = new Date(ts.includes("T") ? ts : ts + "T22:00:00Z");
+        const dateStr = d.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+        const timeStr = d.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" });
+        updateEl.textContent = `Dernière mise à jour : ${dateStr} à ${timeStr} UTC`;
     }
 
     renderSignalHistory(appData);

@@ -367,6 +367,7 @@ def detect_rotations(data):
     return {
         "metadata": {
             "date": datetime.now().strftime("%Y-%m-%d"),
+            "generated_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
             "market_state": market_state,
             "avg_correlation": round(avg_corr, 3),
             "total_sectors": len(valid),
