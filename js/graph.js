@@ -86,17 +86,19 @@ class RotationGraph {
     _isMobile() { return this.width < 600; }
 
     _phaseColor(phase) {
-        if (phase === "positif") return "#22c55e";
-        if (phase === "essoufflement") return "#f59e0b";
+        if (phase === "leading") return "#22c55e";
+        if (phase === "improving") return "#eab308";
+        if (phase === "weakening") return "#f97316";
         return "#ef4444";
     }
 
     _displayPV(node) {
         const pv = (node.phase_value || 0) / 100;
         const ph = node.momentum_phase;
-        if (ph === "positif") return 0.55 + pv * 0.35;
-        if (ph === "essoufflement") return 0.25 + pv * 0.25;
-        return 0.05 + pv * 0.17;
+        if (ph === "leading") return 0.65 + pv * 0.25;
+        if (ph === "improving") return 0.40 + pv * 0.20;
+        if (ph === "weakening") return 0.20 + pv * 0.18;
+        return 0.05 + pv * 0.13;
     }
 
     _pointToSegmentDist(px, py, x1, y1, x2, y2) {
@@ -517,12 +519,12 @@ class RotationGraph {
             const n = this.hoveredNode;
             const r5 = (n.return_5d * 100).toFixed(1);
             const r20 = (n.return_20d * 100).toFixed(1);
-            const phases = { positif: "Positif", essoufflement: "Essoufflement", negatif: "Negatif" };
+            const phases = { leading: "Confirmé", improving: "Acceleration", weakening: "Essoufflement", lagging: "Sous pression" };
             const pc = this._phaseColor(n.momentum_phase);
             tip.innerHTML = `
                 <div class="ticker">${n.name}</div>
                 <div class="sector">${n.id}</div>
-                <div style="color:${pc};font-weight:700">${phases[n.momentum_phase] || "?"} (${(n.phase_value || 0).toFixed(0)}%)${n.phase_delta ? ` <span style="color:${n.phase_delta > 0 ? 'var(--green)' : 'var(--red)'};font-size:0.7rem">${n.phase_delta > 0 ? '\u25B2' : '\u25BC'}${Math.abs(n.phase_delta).toFixed(0)}</span>` : ''}</div>
+                <div style="color:${pc};font-weight:700">${phases[n.momentum_phase] || "?"} (${(n.phase_value || 0).toFixed(0)}%)</div>
                 <div>1 sem: <span class="${r5 >= 0 ? 'positive' : 'negative'}">${r5}%</span> · 1 mois: <span class="${r20 >= 0 ? 'positive' : 'negative'}">${r20}%</span></div>
                 <div style="color:var(--text-muted);font-size:0.68rem;margin-top:4px">Vol: ${n.volume_ratio.toFixed(1)}x · MFI: ${n.mfi.toFixed(0)} · CMF: ${n.cmf.toFixed(2)}</div>
                 <div style="color:var(--text-muted);font-size:0.6rem;margin-top:2px">Cliquer pour explorer</div>`;
@@ -531,7 +533,7 @@ class RotationGraph {
             const n = this.hoveredNode;
             const r5 = (n.return_5d * 100).toFixed(1);
             const r20 = (n.return_20d * 100).toFixed(1);
-            const phases = { positif: "Positif", essoufflement: "Essoufflement", negatif: "Negatif" };
+            const phases = { leading: "Confirmé", improving: "Acceleration", weakening: "Essoufflement", lagging: "Sous pression" };
             const pc = this._phaseColor(n.momentum_phase);
             // Find top correlations for this stock
             let corrHtml = "";
@@ -552,7 +554,7 @@ class RotationGraph {
             }
             tip.innerHTML = `
                 <div class="ticker">${n.id}</div>
-                <div style="color:${pc};font-weight:700">${phases[n.momentum_phase] || "?"}${n.phase_delta ? ` <span style="color:${n.phase_delta > 0 ? 'var(--green)' : 'var(--red)'};font-size:0.7rem">${n.phase_delta > 0 ? '\u25B2' : '\u25BC'}${Math.abs(n.phase_delta).toFixed(0)}</span>` : ''}</div>
+                <div style="color:${pc};font-weight:700">${phases[n.momentum_phase] || "?"}</div>
                 <div>1 sem: <span class="${n.return_5d >= 0 ? 'positive' : 'negative'}">${n.return_5d >= 0 ? '+' : ''}${r5}%</span> · 1 mois: <span class="${n.return_20d >= 0 ? 'positive' : 'negative'}">${n.return_20d >= 0 ? '+' : ''}${r20}%</span></div>
                 <div style="color:var(--text-muted);font-size:0.68rem">Vol: ${n.volume_ratio.toFixed(1)}x</div>${corrHtml}`;
             tip.classList.add("visible");
@@ -795,10 +797,9 @@ class RotationGraph {
                 ctx.fill();
             }
 
-            // Momentum arc + trend arrow
+            // Momentum arc
             if (!dim) {
                 const pv = this._displayPV(node);
-                const delta = node.phase_delta || 0;
                 const pc = this._phaseColor(node.momentum_phase);
                 const arcR = r + 5, arcW = isHov ? 5 : 4;
 
@@ -812,30 +813,6 @@ class RotationGraph {
                     ctx.arc(node.x, node.y, arcR, -Math.PI / 2, -Math.PI / 2 + pv * Math.PI * 2);
                     ctx.strokeStyle = pc;
                     ctx.lineWidth = arcW; ctx.lineCap = "round"; ctx.stroke(); ctx.lineCap = "butt";
-                }
-
-                // Arrow at tip of arc — colored with dark outline
-                if (Math.abs(delta) > 2 && pv > 0.05) {
-                    const bounce = Math.sin(performance.now() * 0.004) * 0.04;
-                    const tipAngle = -Math.PI / 2 + pv * Math.PI * 2 + bounce * (delta > 0 ? 1 : -1);
-                    const tipX = node.x + Math.cos(tipAngle) * arcR;
-                    const tipY = node.y + Math.sin(tipAngle) * arcR;
-                    const dir = delta > 0 ? tipAngle + Math.PI / 2 : tipAngle - Math.PI / 2;
-                    const sz = Math.min(6, 3.5 + Math.abs(delta) / 20);
-                    const half = Math.PI * 0.38;
-
-                    ctx.save();
-                    ctx.beginPath();
-                    ctx.moveTo(tipX + Math.cos(dir) * sz, tipY + Math.sin(dir) * sz);
-                    ctx.lineTo(tipX + Math.cos(dir + Math.PI - half) * sz * 0.6, tipY + Math.sin(dir + Math.PI - half) * sz * 0.6);
-                    ctx.lineTo(tipX + Math.cos(dir + Math.PI + half) * sz * 0.6, tipY + Math.sin(dir + Math.PI + half) * sz * 0.6);
-                    ctx.closePath();
-                    ctx.strokeStyle = "#0a0e17";
-                    ctx.lineWidth = 2.5;
-                    ctx.stroke();
-                    ctx.fillStyle = delta > 0 ? "#4ade80" : "#f87171";
-                    ctx.fill();
-                    ctx.restore();
                 }
             }
 
@@ -903,9 +880,8 @@ class RotationGraph {
                 ctx.fillStyle = pc + "22"; ctx.fill();
             }
 
-            // Momentum arc + trend arrow
+            // Momentum arc
             const pv = this._displayPV(node);
-            const delta = node.phase_delta || 0;
             const arcR = r + 4, arcW = isHov ? 4 : 3;
 
             ctx.beginPath(); ctx.arc(node.x, node.y, arcR, 0, Math.PI * 2);
@@ -915,25 +891,14 @@ class RotationGraph {
                 ctx.arc(node.x, node.y, arcR, -Math.PI / 2, -Math.PI / 2 + pv * Math.PI * 2);
                 ctx.strokeStyle = pc; ctx.lineWidth = arcW; ctx.lineCap = "round"; ctx.stroke(); ctx.lineCap = "butt";
             }
-            if (Math.abs(delta) > 2 && pv > 0.05) {
-                const bounce = Math.sin(performance.now() * 0.004) * 0.04;
-                const tipAngle = -Math.PI / 2 + pv * Math.PI * 2 + bounce * (delta > 0 ? 1 : -1);
-                const tipX = node.x + Math.cos(tipAngle) * arcR;
-                const tipY = node.y + Math.sin(tipAngle) * arcR;
-                const dir = delta > 0 ? tipAngle + Math.PI / 2 : tipAngle - Math.PI / 2;
-                const sz = Math.min(5, 3 + Math.abs(delta) / 20);
-                const half = Math.PI * 0.38;
 
+            // Fresh signal pulse glow
+            const dip = node.days_in_phase;
+            if (dip != null && dip <= 3 && (node.momentum_phase === "improving" || node.momentum_phase === "leading")) {
+                const pulse = 0.3 + Math.sin(performance.now() * 0.003) * 0.15;
                 ctx.save();
-                ctx.beginPath();
-                ctx.moveTo(tipX + Math.cos(dir) * sz, tipY + Math.sin(dir) * sz);
-                ctx.lineTo(tipX + Math.cos(dir + Math.PI - half) * sz * 0.6, tipY + Math.sin(dir + Math.PI - half) * sz * 0.6);
-                ctx.lineTo(tipX + Math.cos(dir + Math.PI + half) * sz * 0.6, tipY + Math.sin(dir + Math.PI + half) * sz * 0.6);
-                ctx.closePath();
-                ctx.strokeStyle = "#0a0e17";
-                ctx.lineWidth = 2;
-                ctx.stroke();
-                ctx.fillStyle = delta > 0 ? "#4ade80" : "#f87171";
+                ctx.beginPath(); ctx.arc(node.x, node.y, r + 8, 0, Math.PI * 2);
+                ctx.fillStyle = pc + Math.round(pulse * 255).toString(16).padStart(2, "0");
                 ctx.fill();
                 ctx.restore();
             }

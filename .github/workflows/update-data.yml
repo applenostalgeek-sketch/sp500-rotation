@@ -37,6 +37,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/data.js data/sectors/
+          git add data/latest.json data/data.js data/sectors/ data/signals_history.json
           git commit -m "data: sector rotation $(date +'%Y-%m-%d')"
           git push

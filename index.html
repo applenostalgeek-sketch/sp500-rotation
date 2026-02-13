@@ -7,29 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div id="narrative" class="narrative"></div>
-    </header>
-
     <main>
         <canvas id="graph-canvas"></canvas>
         <div id="tooltip" class="tooltip"></div>
-        <!-- back-btn removed: click outside bubble to exit -->
+
+        <div class="graph-legend">
+            <div class="graph-legend-item"><span class="phase-dot" style="background:#22c55e"></span>Confirmé</div>
+            <div class="graph-legend-item"><span class="phase-dot" style="background:#eab308"></span>Acceleration</div>
+            <div class="graph-legend-item"><span class="phase-dot" style="background:#f97316"></span>Essoufflement</div>
+            <div class="graph-legend-item"><span class="phase-dot" style="background:#ef4444"></span>Sous pression</div>
+        </div>
     </main>
 
+    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Ouvrir le panneau">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
     <aside id="sidebar">
-        <div class="sheet-handle" id="sheet-handle">
-            <div class="sheet-handle-bar"></div>
-            <span class="sheet-handle-label">Voir les secteurs</span>
-        </div>
+        <button class="sidebar-close" id="sidebar-close" aria-label="Fermer">&times;</button>
         <div class="sidebar-title">Secteurs S&P 500</div>
+        <div id="signal-history"></div>
         <div id="sector-list"></div>
-        <div class="phase-legend">
-            <div class="phase-legend-title">Phases de momentum</div>
-            <div class="phase-legend-item"><span class="phase-dot" style="background:#22c55e"></span><b>Positif</b> — Le secteur surperforme, momentum confirme</div>
-            <div class="phase-legend-item"><span class="phase-dot" style="background:#f59e0b"></span><b>Essoufflement</b> — Le momentum faiblit</div>
-            <div class="phase-legend-item"><span class="phase-dot" style="background:#ef4444"></span><b>Negatif</b> — Le secteur sous-performe</div>
-        </div>
         <div class="sidebar-footer">Mis a jour chaque soir apres la cloture US</div>
     </aside>
 

@@ -105,7 +105,7 @@ def compute_cmf(high, low, close, volume, period=21):
     return float(val) if not np.isnan(val) else 0.0
 
 
-def compute_rs(close, benchmark, period=10):
+def compute_rs(close, benchmark, period=20):
     """JdK RS-Ratio and RS-Momentum. Returns current + 5-day-ago values."""
     rs = close / benchmark
     rs_sma = rs.rolling(period).mean()
@@ -229,26 +229,18 @@ def detect_rotations(data):
 
         indicators[t] = {"mfi": mfi, "cmf": cmf, "rs_ratio": rs_ratio, "rs_momentum": rs_mom}
 
-        # Momentum phase (3 phases: positif / essoufflement / negatif)
-        r5 = ret_5d[t]
+        # Momentum phase — 4 RRG quadrants
         if rs_ratio >= 100 and rs_mom >= 100:
-            phase = "positif"
+            phase = "leading"
         elif rs_ratio < 100 and rs_mom >= 100:
-            phase = "positif"
+            phase = "improving"
         elif rs_ratio >= 100 and rs_mom < 100:
-            phase = "essoufflement"
+            phase = "weakening"
         else:
-            phase = "negatif"
-
-        # Override: a sector losing money can't be "positif"
-        if r5 < -0.003 and phase == "positif":
-            phase = "essoufflement" if rs_ratio >= 100 else "negatif"
+            phase = "lagging"
 
         # Phase value 0-100 — composite of RS-Ratio + RS-Momentum
         phase_value = float(np.clip(((rs_ratio - 95) + (rs_mom - 95)) / 20 * 100, 0, 100))
-        # Cap phase value for negative-return sectors
-        if r5 < -0.003:
-            phase_value = min(phase_value, 40.0)
 
         # Phase trend: delta vs 5 days ago
         phase_value_prev = float(np.clip(((rs_ratio_prev - 95) + (rs_mom_prev - 95)) / 20 * 100, 0, 100))
@@ -446,17 +438,15 @@ def generate_sample_data():
         ret_5d = bias * 3 + rng.normal(0, 0.008)
         ret_20d = bias * 10 + rng.normal(0, 0.015)
 
-        if (rs_ratio >= 100 and rs_mom >= 100) or (rs_ratio < 100 and rs_mom >= 100):
-            phase = "positif"
+        if rs_ratio >= 100 and rs_mom >= 100:
+            phase = "leading"
+        elif rs_ratio < 100 and rs_mom >= 100:
+            phase = "improving"
         elif rs_ratio >= 100 and rs_mom < 100:
-            phase = "essoufflement"
+            phase = "weakening"
         else:
-            phase = "negatif"
-        if ret_5d < -0.003 and phase == "positif":
-            phase = "essoufflement" if rs_ratio >= 100 else "negatif"
+            phase = "lagging"
         phase_value = float(np.clip(((rs_ratio - 95) + (rs_mom - 95)) / 20 * 100, 0, 100))
-        if ret_5d < -0.003:
-            phase_value = min(phase_value, 40.0)
 
         nodes.append({
             "id": etf,
@@ -584,24 +574,50 @@ def compute_sector_detail(etf, data_all):
         # RS-Ratio/Momentum vs SPY (market)
         rs_ratio, rs_mom, rs_ratio_prev, rs_mom_prev = compute_rs(c, spy)
 
-        # Phase (same logic as sector level)
+        # Phase — 4 RRG quadrants
         if rs_ratio >= 100 and rs_mom >= 100:
-            phase = "positif"
+            phase = "leading"
         elif rs_ratio < 100 and rs_mom >= 100:
-            phase = "positif"
+            phase = "improving"
         elif rs_ratio >= 100 and rs_mom < 100:
-            phase = "essoufflement"
+            phase = "weakening"
         else:
-            phase = "negatif"
-        if r5 < -0.003 and phase == "positif":
-            phase = "essoufflement" if rs_ratio >= 100 else "negatif"
+            phase = "lagging"
 
         phase_value = float(np.clip(((rs_ratio - 95) + (rs_mom - 95)) / 20 * 100, 0, 100))
-        if r5 < -0.003:
-            phase_value = min(phase_value, 40.0)
 
         phase_value_prev = float(np.clip(((rs_ratio_prev - 95) + (rs_mom_prev - 95)) / 20 * 100, 0, 100))
         phase_delta = round(phase_value - phase_value_prev, 1)
+
+        # Days in current phase: compute phase series for last 30 days
+        days_in_phase = 0
+        if len(c) >= 60:
+            _rs = c / spy.reindex(c.index)
+            _rs_sma = _rs.rolling(20).mean()
+            _rr = (_rs / _rs_sma) * 100
+            _rm = (_rr / _rr.shift(20)) * 100
+            _phases = pd.Series("lagging", index=_rr.index)
+            _phases[(_rr >= 100) & (_rm >= 100)] = "leading"
+            _phases[(_rr >= 100) & (_rm < 100)] = "weakening"
+            _phases[(_rr < 100) & (_rm >= 100)] = "improving"
+            _phases = _phases.dropna().tail(30).values
+            if len(_phases) > 1:
+                current = _phases[-1]
+                count = 0
+                for k in range(len(_phases) - 1, -1, -1):
+                    if _phases[k] == current:
+                        count += 1
+                    else:
+                        break
+                days_in_phase = count
+        previous_phase = None
+        if len(c) >= 60 and len(_phases) > 1:
+            # Find the phase before the current streak
+            current = _phases[-1]
+            for k in range(len(_phases) - days_in_phase - 1, -1, -1):
+                if _phases[k] != current:
+                    previous_phase = _phases[k]
+                    break
 
         # Leader/laggard vs sector ETF
         sector_relative = "leader" if r5 > sector_r5 else "laggard"
@@ -628,6 +644,8 @@ def compute_sector_detail(etf, data_all):
             "rs_ratio": round(rs_ratio, 1),
             "rs_momentum": round(rs_mom, 1),
             "sector_relative": sector_relative,
+            "days_in_phase": days_in_phase,
+            "previous_phase": previous_phase,
             "_dollar_vol": dollar_vol,
         })
 
@@ -639,7 +657,7 @@ def compute_sector_detail(etf, data_all):
             del s["_dollar_vol"]
 
     # Sort by phase then phase_value
-    phase_order = {"positif": 0, "essoufflement": 1, "negatif": 2}
+    phase_order = {"leading": 0, "improving": 1, "weakening": 2, "lagging": 3}
     stocks.sort(key=lambda s: (phase_order.get(s["momentum_phase"], 2), -s["phase_value"]))
 
     # Pairwise return correlations between stocks (20-day)
@@ -670,6 +688,238 @@ def compute_sector_detail(etf, data_all):
         "stocks": stocks,
         "correlations": correlations,
     }
+
+
+# ---------------------------------------------------------------------------
+# Signal history — backfill + daily tracking
+# ---------------------------------------------------------------------------
+def backfill_signal_history(data_all):
+    """Replay 90 days of price data to build full signal history."""
+    close = data_all["Close"]
+    spy = close[BENCHMARK]
+
+    # Build ticker → sector mapping
+    ticker_sector = {}
+    for etf, holdings in SECTOR_HOLDINGS.items():
+        for t in holdings:
+            if t in close.columns:
+                ticker_sector[t] = etf
+
+    all_tickers = list(ticker_sector.keys())
+
+    # Compute full phase series for each stock
+    phase_series = {}
+    for ticker in all_tickers:
+        c = close[ticker].dropna()
+        if len(c) < 40:
+            continue
+        common = c.index.intersection(spy.index)
+        c = c.loc[common]
+        s = spy.loc[common]
+        if len(c) < 40:
+            continue
+
+        rs = c / s
+        rs_sma = rs.rolling(20).mean()
+        rr = (rs / rs_sma) * 100
+        rm = (rr / rr.shift(20)) * 100
+
+        phases = pd.Series(np.nan, index=rr.index)
+        valid = rm.dropna().index
+        phases.loc[valid] = "lagging"
+        mask_rr = rr.loc[valid]
+        mask_rm = rm.loc[valid]
+        phases.loc[valid[(mask_rr >= 100) & (mask_rm >= 100)]] = "leading"
+        phases.loc[valid[(mask_rr >= 100) & (mask_rm < 100)]] = "weakening"
+        phases.loc[valid[(mask_rr < 100) & (mask_rm >= 100)]] = "improving"
+        phase_series[ticker] = phases.dropna()
+
+    # Get trading days (last 60 usable days)
+    trading_days = spy.dropna().index
+    # Need at least 30 days warmup for RS
+    start_idx = max(0, len(trading_days) - 60)
+    replay_days = trading_days[start_idx:]
+
+    history = []
+    active_signals = {}  # ticker → signal dict
+
+    for i, day in enumerate(replay_days):
+        date_str = day.strftime("%Y-%m-%d")
+        spy_price = float(spy.loc[day])
+
+        for ticker in phase_series:
+            ps = phase_series[ticker]
+            if day not in ps.index:
+                continue
+
+            phase_today = ps.loc[day]
+
+            # Find yesterday's phase
+            day_pos = ps.index.get_loc(day)
+            if day_pos == 0:
+                continue
+            phase_yesterday = ps.iloc[day_pos - 1]
+
+            # Check for new signal: entering improving
+            if phase_today == "improving" and phase_yesterday != "improving":
+                if ticker not in active_signals and ticker in close.columns:
+                    stock_price = float(close[ticker].loc[day])
+                    if not np.isnan(stock_price):
+                        etf = ticker_sector[ticker]
+                        sig = {
+                            "ticker": ticker,
+                            "sector": etf,
+                            "sector_name": SECTOR_ETFS[etf]["name"],
+                            "open_date": date_str,
+                            "open_price": stock_price,
+                            "spy_open_price": spy_price,
+                            "current_phase": "improving",
+                            "days_active": 0,
+                            "return_vs_spy": 0.0,
+                            "return_abs": 0.0,
+                            "status": "active",
+                            "close_date": None,
+                            "close_reason": None,
+                        }
+                        active_signals[ticker] = sig
+                        history.append(sig)
+
+            # Update active signals
+            if ticker in active_signals:
+                sig = active_signals[ticker]
+                stock_price = float(close[ticker].loc[day]) if ticker in close.columns else np.nan
+                if not np.isnan(stock_price):
+                    stock_ret = stock_price / sig["open_price"] - 1
+                    spy_ret = spy_price / sig["spy_open_price"] - 1
+                    sig["return_vs_spy"] = round(stock_ret - spy_ret, 5)
+                    sig["return_abs"] = round(stock_ret, 5)
+                sig["current_phase"] = phase_today
+                open_date = datetime.strptime(sig["open_date"], "%Y-%m-%d")
+                sig["days_active"] = (day.to_pydatetime().replace(tzinfo=None) - open_date).days
+
+                # Close conditions
+                if phase_today == "leading":
+                    sig["status"] = "closed"
+                    sig["close_date"] = date_str
+                    sig["close_reason"] = "confirmed"
+                    del active_signals[ticker]
+                elif phase_today in ("weakening", "lagging"):
+                    sig["status"] = "closed"
+                    sig["close_date"] = date_str
+                    sig["close_reason"] = "reversed"
+                    del active_signals[ticker]
+                elif sig["days_active"] > 30:
+                    sig["status"] = "closed"
+                    sig["close_date"] = date_str
+                    sig["close_reason"] = "expired"
+                    del active_signals[ticker]
+
+    # Sort: active first, then closed by recency
+    history.sort(key=lambda s: (0 if s["status"] == "active" else 1, -(s.get("days_active") or 0)))
+
+    active = [s for s in history if s["status"] == "active"]
+    closed = [s for s in history if s["status"] == "closed"]
+    wins = [s for s in closed if s.get("return_vs_spy", 0) > 0]
+    print(f"  Backfill: {len(history)} signals ({len(active)} active, "
+          f"{len(closed)} closed, {len(wins)}/{len(closed)} wins)")
+
+    return history
+
+
+def update_signal_history(result, data_all, history_path):
+    """Track signals: open on Accélération entry, close on Confirmé or failure."""
+    history = []
+    if history_path.exists():
+        with open(history_path) as f:
+            try:
+                history = json.load(f)
+            except json.JSONDecodeError:
+                history = []
+
+    today = result["metadata"]["date"]
+    close = data_all["Close"]
+    spy_close = float(close[BENCHMARK].iloc[-1])
+
+    # Build phase lookup from current signals + sector detail files
+    phase_lookup = {}
+    sectors_dir = history_path.parent / "sectors"
+    for etf in SECTOR_ETFS:
+        sector_file = sectors_dir / f"{etf}.json"
+        if sector_file.exists():
+            with open(sector_file) as f:
+                sector_data = json.load(f)
+            for s in sector_data["stocks"]:
+                phase_lookup[s["id"]] = s["momentum_phase"]
+
+    # Update existing active signals
+    for sig in history:
+        if sig["status"] != "active":
+            continue
+
+        ticker = sig["ticker"]
+        if ticker not in close.columns or np.isnan(close[ticker].iloc[-1]):
+            continue
+
+        current_price = float(close[ticker].iloc[-1])
+        stock_return = current_price / sig["open_price"] - 1
+        spy_return = spy_close / sig["spy_open_price"] - 1
+        sig["return_vs_spy"] = round(stock_return - spy_return, 5)
+        sig["return_abs"] = round(stock_return, 5)
+        sig["current_phase"] = phase_lookup.get(ticker, sig.get("current_phase", "improving"))
+        sig["days_active"] = (datetime.strptime(today, "%Y-%m-%d") - datetime.strptime(sig["open_date"], "%Y-%m-%d")).days
+
+        # Close conditions
+        if sig["current_phase"] == "leading":
+            sig["status"] = "closed"
+            sig["close_date"] = today
+            sig["close_reason"] = "confirmed"
+        elif sig["current_phase"] in ("weakening", "lagging"):
+            sig["status"] = "closed"
+            sig["close_date"] = today
+            sig["close_reason"] = "reversed"
+        elif sig["days_active"] > 30:
+            sig["status"] = "closed"
+            sig["close_date"] = today
+            sig["close_reason"] = "expired"
+
+    # Find new signals: stocks entering improving (days_in_phase <= 2) not already tracked
+    existing_active = {s["ticker"] for s in history if s["status"] == "active"}
+    for sig in result.get("signals", []):
+        if sig["phase"] != "improving" or sig["days_in_phase"] > 2:
+            continue
+        ticker = sig["ticker"]
+        if ticker in existing_active:
+            continue
+        if ticker not in close.columns or np.isnan(close[ticker].iloc[-1]):
+            continue
+
+        history.append({
+            "ticker": ticker,
+            "sector": sig["sector"],
+            "sector_name": sig["sector_name"],
+            "open_date": today,
+            "open_price": float(close[ticker].iloc[-1]),
+            "spy_open_price": spy_close,
+            "current_phase": "improving",
+            "days_active": 0,
+            "return_vs_spy": 0.0,
+            "return_abs": 0.0,
+            "status": "active",
+            "close_date": None,
+            "close_reason": None,
+        })
+
+    # Purge signals older than 60 days (keep active regardless)
+    cutoff = (datetime.strptime(today, "%Y-%m-%d") - timedelta(days=60)).strftime("%Y-%m-%d")
+    history = [s for s in history if s["status"] == "active" or s["open_date"] >= cutoff]
+
+    # Sort: active first (newest first), then closed (newest first)
+    history.sort(key=lambda s: (0 if s["status"] == "active" else 1, -(s.get("days_active") or 0)))
+
+    with open(history_path, "w") as f:
+        json.dump(history, f, indent=2)
+
+    return history
 
 
 # ---------------------------------------------------------------------------
@@ -724,16 +974,8 @@ def main():
             # Remove duplicate columns
             data_all[field] = data_all[field].loc[:, ~data_all[field].columns.duplicated()]
 
-    with open(output_path, "w") as f:
-        json.dump(result, f, indent=2)
-
-    js_path = output_path.parent / "data.js"
-    with open(js_path, "w") as f:
-        f.write("window.ROTATION_DATA = ")
-        json.dump(result, f, indent=2)
-        f.write(";\n")
-
-    # Generate sector detail files
+    # Generate sector detail files + collect signals
+    signals = []
     if data_all is not None:
         sectors_dir = output_path.parent / "sectors"
         sectors_dir.mkdir(exist_ok=True)
@@ -743,8 +985,75 @@ def main():
                 with open(sectors_dir / f"{etf}.json", "w") as f:
                     json.dump(detail, f, indent=2)
                 print(f"  {etf}: {len(detail['stocks'])} stocks")
+
+                # Collect fresh signals (days_in_phase <= 5)
+                sector_name = SECTOR_ETFS[etf]["name"]
+                for s in detail["stocks"]:
+                    dip = s.get("days_in_phase", 99)
+                    phase = s["momentum_phase"]
+                    prev = s.get("previous_phase")
+                    if dip <= 5 and phase in ("improving", "leading"):
+                        signals.append({
+                            "ticker": s["id"],
+                            "sector": etf,
+                            "sector_name": sector_name,
+                            "phase": phase,
+                            "previous_phase": prev,
+                            "days_in_phase": dip,
+                            "return_5d": s["return_5d"],
+                            "phase_value": s["phase_value"],
+                        })
             else:
                 print(f"  {etf}: no data")
+
+    # Sort signals: improving first, then by days_in_phase
+    signals.sort(key=lambda s: (0 if s["phase"] == "improving" else 1, s["days_in_phase"]))
+    result["signals"] = signals
+    print(f"  Signals: {len([s for s in signals if s['phase'] == 'improving'])} acceleration, "
+          f"{len([s for s in signals if s['phase'] == 'leading'])} confirme")
+
+    # Signal history: backfill on first run, then daily update
+    history_path = output_path.parent / "signals_history.json"
+    if data_all is not None:
+        needs_backfill = not history_path.exists()
+        if not needs_backfill:
+            try:
+                with open(history_path) as f:
+                    existing = json.load(f)
+                needs_backfill = len(existing) == 0 or all(
+                    s.get("days_active", 0) == 0 for s in existing
+                )
+            except (json.JSONDecodeError, KeyError):
+                needs_backfill = True
+
+        if needs_backfill:
+            print("  Backfilling signal history from 90 days of data...")
+            history = backfill_signal_history(data_all)
+            with open(history_path, "w") as f:
+                json.dump(history, f, indent=2)
+        else:
+            history = update_signal_history(result, data_all, history_path)
+            active = [s for s in history if s["status"] == "active"]
+            closed = [s for s in history if s["status"] == "closed"]
+            wins = [s for s in closed if s.get("return_vs_spy", 0) > 0]
+            print(f"  Signal history: {len(active)} active, {len(closed)} closed "
+                  f"({len(wins)}/{len(closed)} wins)")
+
+        # Load final history for output
+        with open(history_path) as f:
+            result["signals_history"] = json.load(f)
+    else:
+        result["signals_history"] = []
+
+    # Re-write with signals included
+    with open(output_path, "w") as f:
+        json.dump(result, f, indent=2)
+
+    js_path = output_path.parent / "data.js"
+    with open(js_path, "w") as f:
+        f.write("window.ROTATION_DATA = ")
+        json.dump(result, f, indent=2)
+        f.write(";\n")
 
     meta = result["metadata"]
     print(f"\nDone! {meta['date']}")
