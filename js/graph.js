@@ -552,11 +552,14 @@ class RotationGraph {
                     corrHtml = `<div style="color:var(--text-muted);font-size:0.65rem;margin-top:3px">Correle : ${items}</div>`;
                 }
             }
+            const rsi = n.rsi != null ? Math.round(n.rsi) : null;
+            const rsiColor = rsi != null ? (rsi < 50 ? "var(--green)" : rsi < 70 ? "var(--text-muted)" : "var(--orange)") : "var(--text-muted)";
+            const rsiHtml = rsi != null ? `<span style="color:${rsiColor};font-weight:600">RSI ${rsi}</span> · ` : "";
             tip.innerHTML = `
                 <div class="ticker">${n.id}</div>
                 <div style="color:${pc};font-weight:700">${phases[n.momentum_phase] || "?"}</div>
                 <div>1 sem: <span class="${n.return_5d >= 0 ? 'positive' : 'negative'}">${n.return_5d >= 0 ? '+' : ''}${r5}%</span> · 1 mois: <span class="${n.return_20d >= 0 ? 'positive' : 'negative'}">${n.return_20d >= 0 ? '+' : ''}${r20}%</span></div>
-                <div style="color:var(--text-muted);font-size:0.68rem">Vol: ${n.volume_ratio.toFixed(1)}x</div>${corrHtml}`;
+                <div style="color:var(--text-muted);font-size:0.68rem">${rsiHtml}Vol: ${n.volume_ratio.toFixed(1)}x</div>${corrHtml}`;
             tip.classList.add("visible");
         } else if (this.hoveredLink) {
             // Global rotation link

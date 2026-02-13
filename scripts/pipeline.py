@@ -636,6 +636,14 @@ def compute_sector_detail(etf, data_all):
         v_now = volume[ticker].iloc[-1] if ticker in volume.columns else 1
         vol_ratio = float(v_now / v_avg) if v_avg > 0 and not np.isnan(v_avg) else 1.0
 
+        # RSI
+        rsi_val = 50.0
+        if len(c) >= 14:
+            rsi_s = compute_rsi_series(c)
+            rv = rsi_s.iloc[-1]
+            if not np.isnan(rv):
+                rsi_val = round(float(rv), 1)
+
         # Market weight proxy: price * avg daily volume (dollar volume)
         price = float(c.iloc[-1]) if len(c) > 0 else 0
         avg_vol = float(volume[ticker].rolling(20).mean().iloc[-1]) if ticker in volume.columns else 0
@@ -652,6 +660,7 @@ def compute_sector_detail(etf, data_all):
             "phase_delta": phase_delta,
             "rs_ratio": round(rs_ratio, 1),
             "rs_momentum": round(rs_mom, 1),
+            "rsi": rsi_val,
             "sector_relative": sector_relative,
             "days_in_phase": days_in_phase,
             "previous_phase": previous_phase,
