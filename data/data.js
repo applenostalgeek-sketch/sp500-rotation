@@ -1,7 +1,7 @@
 window.ROTATION_DATA = {
   "metadata": {
     "date": "2026-02-14",
-    "generated_at": "2026-02-14T18:57:59Z",
+    "generated_at": "2026-02-14T22:55:45Z",
     "market_state": "normal",
     "avg_correlation": 0.041,
     "total_sectors": 11,
