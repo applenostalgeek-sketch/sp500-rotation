@@ -2,7 +2,7 @@
   "etf": "XLV",
   "sector_name": "Sante",
   "sector_color": "#22c55e",
-  "date": "2026-02-13",
+  "date": "2026-02-14",
   "stocks": [
     {
       "id": "ABBV",
@@ -19,14 +19,14 @@
       "sector_relative": "leader",
       "days_in_phase": 7,
       "previous_phase": "improving",
-      "weight": 45.8
+      "weight": 45.6
     },
     {
       "id": "GILD",
       "name": "GILD",
       "return_5d": 0.02176,
       "return_20d": 0.24073,
-      "volume_ratio": 0.76,
+      "volume_ratio": 0.77,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -36,14 +36,14 @@
       "sector_relative": "leader",
       "days_in_phase": 20,
       "previous_phase": "improving",
-      "weight": 35.4
+      "weight": 35.2
     },
     {
       "id": "VRTX",
       "name": "VRTX",
       "return_5d": 0.04375,
       "return_20d": 0.11354,
-      "volume_ratio": 1.76,
+      "volume_ratio": 1.77,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 31.9,
@@ -53,7 +53,24 @@
       "sector_relative": "leader",
       "days_in_phase": 2,
       "previous_phase": "improving",
-      "weight": 20.8
+      "weight": 20.7
+    },
+    {
+      "id": "AMGN",
+      "name": "AMGN",
+      "return_5d": -0.01083,
+      "return_20d": 0.12511,
+      "volume_ratio": 0.75,
+      "momentum_phase": "leading",
+      "phase_value": 92.0,
+      "phase_delta": -8.0,
+      "rs_ratio": 104.1,
+      "rs_momentum": 104.3,
+      "rsi": 61.7,
+      "sector_relative": "laggard",
+      "days_in_phase": 20,
+      "previous_phase": "improving",
+      "weight": 30.2
     },
     {
       "id": "MRK",
@@ -70,7 +87,7 @@
       "sector_relative": "leader",
       "days_in_phase": 10,
       "previous_phase": "weakening",
-      "weight": 44.4
+      "weight": 44.2
     },
     {
       "id": "BMY",
@@ -90,28 +107,11 @@
       "weight": 21.2
     },
     {
-      "id": "AMGN",
-      "name": "AMGN",
-      "return_5d": -0.01764,
-      "return_20d": 0.11737,
-      "volume_ratio": 0.75,
-      "momentum_phase": "leading",
-      "phase_value": 85.2,
-      "phase_delta": -14.8,
-      "rs_ratio": 103.4,
-      "rs_momentum": 103.6,
-      "rsi": 60.6,
-      "sector_relative": "laggard",
-      "days_in_phase": 20,
-      "previous_phase": "improving",
-      "weight": 30.3
-    },
-    {
       "id": "CI",
       "name": "CI",
       "return_5d": -0.01005,
       "return_20d": 0.07064,
-      "volume_ratio": 0.54,
+      "volume_ratio": 0.56,
       "momentum_phase": "leading",
       "phase_value": 81.5,
       "phase_delta": -13.2,
@@ -138,7 +138,7 @@
       "sector_relative": "leader",
       "days_in_phase": 21,
       "previous_phase": "weakening",
-      "weight": 38.7
+      "weight": 38.5
     },
     {
       "id": "ABT",
@@ -155,7 +155,7 @@
       "sector_relative": "leader",
       "days_in_phase": 1,
       "previous_phase": "improving",
-      "weight": 42.1
+      "weight": 41.9
     },
     {
       "id": "ZTS",
@@ -172,24 +172,24 @@
       "sector_relative": "laggard",
       "days_in_phase": 7,
       "previous_phase": "weakening",
-      "weight": 16.3
+      "weight": 16.2
     },
     {
       "id": "LLY",
       "name": "LLY",
-      "return_5d": -0.00447,
-      "return_20d": 0.00154,
-      "volume_ratio": 0.58,
+      "return_5d": -0.00281,
+      "return_20d": 0.00321,
+      "volume_ratio": 0.74,
       "momentum_phase": "improving",
-      "phase_value": 56.3,
-      "phase_delta": 11.6,
-      "rs_ratio": 98.5,
-      "rs_momentum": 102.7,
-      "rsi": 47.1,
+      "phase_value": 57.9,
+      "phase_delta": 13.2,
+      "rs_ratio": 98.7,
+      "rs_momentum": 102.9,
+      "rsi": 47.4,
       "sector_relative": "laggard",
       "days_in_phase": 2,
       "previous_phase": "lagging",
-      "weight": 95.8
+      "weight": 96.2
     },
     {
       "id": "ISRG",
@@ -206,14 +206,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 1,
       "previous_phase": "lagging",
-      "weight": 30.0
+      "weight": 29.9
     },
     {
       "id": "JNJ",
       "name": "JNJ",
       "return_5d": 0.02016,
       "return_20d": 0.11337,
-      "volume_ratio": 1.29,
+      "volume_ratio": 1.36,
       "momentum_phase": "weakening",
       "phase_value": 73.3,
       "phase_delta": -26.7,
@@ -230,7 +230,7 @@
       "name": "SYK",
       "return_5d": 0.028,
       "return_20d": 0.00624,
-      "volume_ratio": 0.85,
+      "volume_ratio": 1.05,
       "momentum_phase": "weakening",
       "phase_value": 49.0,
       "phase_delta": 21.7,
@@ -240,7 +240,7 @@
       "sector_relative": "leader",
       "days_in_phase": 1,
       "previous_phase": "leading",
-      "weight": 20.6
+      "weight": 20.7
     },
     {
       "id": "MDT",
@@ -257,14 +257,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 2,
       "previous_phase": "leading",
-      "weight": 23.5
+      "weight": 23.4
     },
     {
       "id": "ELV",
       "name": "ELV",
       "return_5d": 0.05893,
       "return_20d": -0.07488,
-      "volume_ratio": 0.67,
+      "volume_ratio": 0.71,
       "momentum_phase": "lagging",
       "phase_value": 10.1,
       "phase_delta": 10.1,
@@ -274,14 +274,14 @@
       "sector_relative": "leader",
       "days_in_phase": 14,
       "previous_phase": "leading",
-      "weight": 17.8
+      "weight": 17.7
     },
     {
       "id": "UNH",
       "name": "UNH",
       "return_5d": 0.06344,
       "return_20d": -0.11428,
-      "volume_ratio": 0.68,
+      "volume_ratio": 0.77,
       "momentum_phase": "lagging",
       "phase_value": 9.5,
       "phase_delta": 9.5,
@@ -308,14 +308,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 12,
       "previous_phase": "weakening",
-      "weight": 36.5
+      "weight": 36.3
     },
     {
       "id": "DHR",
       "name": "DHR",
       "return_5d": -0.01883,
       "return_20d": -0.0992,
-      "volume_ratio": 0.88,
+      "volume_ratio": 1.13,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -325,7 +325,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 13,
       "previous_phase": "leading",
-      "weight": 25.0
+      "weight": 25.2
     },
     {
       "id": "BSX",
@@ -342,7 +342,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 10,
       "previous_phase": "leading",
-      "weight": 40.5
+      "weight": 40.3
     }
   ],
   "correlations": [
@@ -359,7 +359,7 @@
     {
       "source": "AMGN",
       "target": "LLY",
-      "correlation": 0.762
+      "correlation": 0.761
     },
     {
       "source": "PFE",
@@ -369,7 +369,7 @@
     {
       "source": "LLY",
       "target": "BSX",
-      "correlation": -0.712
+      "correlation": -0.711
     },
     {
       "source": "TMO",
@@ -384,12 +384,17 @@
     {
       "source": "AMGN",
       "target": "PFE",
-      "correlation": 0.667
+      "correlation": 0.665
     },
     {
       "source": "AMGN",
       "target": "BSX",
-      "correlation": -0.649
+      "correlation": -0.641
+    },
+    {
+      "source": "AMGN",
+      "target": "ZTS",
+      "correlation": 0.631
     },
     {
       "source": "ABBV",
@@ -397,24 +402,24 @@
       "correlation": 0.63
     },
     {
-      "source": "AMGN",
-      "target": "ZTS",
-      "correlation": 0.626
-    },
-    {
       "source": "PFE",
       "target": "LLY",
       "correlation": 0.618
     },
     {
-      "source": "BMY",
-      "target": "AMGN",
-      "correlation": 0.584
+      "source": "AMGN",
+      "target": "BMY",
+      "correlation": 0.591
     },
     {
       "source": "MRK",
       "target": "BMY",
       "correlation": 0.571
+    },
+    {
+      "source": "VRTX",
+      "target": "AMGN",
+      "correlation": 0.548
     },
     {
       "source": "BMY",
@@ -424,17 +429,7 @@
     {
       "source": "VRTX",
       "target": "LLY",
-      "correlation": 0.517
-    },
-    {
-      "source": "VRTX",
-      "target": "AMGN",
-      "correlation": 0.515
-    },
-    {
-      "source": "AMGN",
-      "target": "DHR",
-      "correlation": 0.513
+      "correlation": 0.523
     },
     {
       "source": "ZTS",
@@ -444,7 +439,12 @@
     {
       "source": "ZTS",
       "target": "LLY",
-      "correlation": 0.509
+      "correlation": 0.51
+    },
+    {
+      "source": "AMGN",
+      "target": "DHR",
+      "correlation": 0.507
     }
   ]
 }

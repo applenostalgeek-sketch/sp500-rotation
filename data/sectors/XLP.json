@@ -2,24 +2,24 @@
   "etf": "XLP",
   "sector_name": "Conso. Essentiels",
   "sector_color": "#06b6d4",
-  "date": "2026-02-13",
+  "date": "2026-02-14",
   "stocks": [
     {
       "id": "KR",
       "name": "KR",
-      "return_5d": 0.01641,
-      "return_20d": 0.12755,
-      "volume_ratio": 0.65,
+      "return_5d": 0.0215,
+      "return_20d": 0.13321,
+      "volume_ratio": 0.9,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 17.3,
-      "rs_ratio": 103.7,
-      "rs_momentum": 107.7,
-      "rsi": 73.8,
+      "rs_ratio": 104.2,
+      "rs_momentum": 108.2,
+      "rsi": 74.4,
       "sector_relative": "laggard",
       "days_in_phase": 8,
       "previous_phase": "lagging",
-      "weight": 8.2
+      "weight": 8.3
     },
     {
       "id": "KMB",
@@ -60,7 +60,7 @@
       "name": "SYY",
       "return_5d": 0.0473,
       "return_20d": 0.14924,
-      "volume_ratio": 0.7,
+      "volume_ratio": 0.85,
       "momentum_phase": "leading",
       "phase_value": 75.5,
       "phase_delta": 4.1,
@@ -94,7 +94,7 @@
       "name": "CL",
       "return_5d": 0.02666,
       "return_20d": 0.15076,
-      "volume_ratio": 0.51,
+      "volume_ratio": 0.7,
       "momentum_phase": "leading",
       "phase_value": 64.6,
       "phase_delta": -1.6,
@@ -104,7 +104,7 @@
       "sector_relative": "leader",
       "days_in_phase": 13,
       "previous_phase": "weakening",
-      "weight": 11.9
+      "weight": 12.0
     },
     {
       "id": "GIS",
@@ -145,7 +145,7 @@
       "name": "PG",
       "return_5d": 0.01742,
       "return_20d": 0.11538,
-      "volume_ratio": 0.92,
+      "volume_ratio": 1.15,
       "momentum_phase": "improving",
       "phase_value": 61.7,
       "phase_delta": -6.8,
@@ -155,14 +155,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 1,
       "previous_phase": "leading",
-      "weight": 31.4
+      "weight": 31.8
     },
     {
       "id": "KHC",
       "name": "KHC",
       "return_5d": 0.00895,
       "return_20d": 0.05397,
-      "volume_ratio": 0.72,
+      "volume_ratio": 0.74,
       "momentum_phase": "improving",
       "phase_value": 54.1,
       "phase_delta": 0.7,
@@ -172,7 +172,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 3,
       "previous_phase": "leading",
-      "weight": 7.5
+      "weight": 7.6
     },
     {
       "id": "CLX",
@@ -196,7 +196,7 @@
       "name": "HSY",
       "return_5d": -0.03453,
       "return_20d": 0.12551,
-      "volume_ratio": 0.69,
+      "volume_ratio": 0.88,
       "momentum_phase": "weakening",
       "phase_value": 59.1,
       "phase_delta": -40.9,
@@ -206,7 +206,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 1,
       "previous_phase": "leading",
-      "weight": 9.0
+      "weight": 9.1
     },
     {
       "id": "MDLZ",
@@ -247,7 +247,7 @@
       "name": "PM",
       "return_5d": 0.03124,
       "return_20d": 0.08,
-      "volume_ratio": 0.61,
+      "volume_ratio": 0.63,
       "momentum_phase": "lagging",
       "phase_value": 34.9,
       "phase_delta": -5.8,
@@ -298,7 +298,7 @@
       "name": "STZ",
       "return_5d": -0.08746,
       "return_20d": -0.04066,
-      "volume_ratio": 2.15,
+      "volume_ratio": 2.38,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": -14.9,
@@ -308,7 +308,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 6,
       "previous_phase": "weakening",
-      "weight": 6.1
+      "weight": 6.2
     },
     {
       "id": "ADM",

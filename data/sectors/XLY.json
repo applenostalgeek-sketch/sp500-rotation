@@ -2,14 +2,14 @@
   "etf": "XLY",
   "sector_name": "Conso. Discretionnaire",
   "sector_color": "#f97316",
-  "date": "2026-02-13",
+  "date": "2026-02-14",
   "stocks": [
     {
       "id": "MCD",
       "name": "MCD",
       "return_5d": 0.00608,
       "return_20d": 0.06554,
-      "volume_ratio": 0.84,
+      "volume_ratio": 1.05,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -75,15 +75,15 @@
     {
       "id": "F",
       "name": "F",
-      "return_5d": 0.039,
-      "return_20d": 0.03824,
+      "return_5d": 0.05025,
+      "return_20d": 0.04948,
       "volume_ratio": 1.2,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 42.1,
-      "rs_ratio": 106.1,
-      "rs_momentum": 105.2,
-      "rsi": 66.2,
+      "rs_ratio": 107.2,
+      "rs_momentum": 106.3,
+      "rsi": 68.5,
       "sector_relative": "leader",
       "days_in_phase": 4,
       "previous_phase": "weakening",
@@ -145,7 +145,7 @@
       "name": "YUM",
       "return_5d": 0.01051,
       "return_20d": 0.00193,
-      "volume_ratio": 0.76,
+      "volume_ratio": 0.96,
       "momentum_phase": "leading",
       "phase_value": 85.3,
       "phase_delta": -14.7,
@@ -230,7 +230,7 @@
       "name": "LOW",
       "return_5d": 0.03792,
       "return_20d": 0.0401,
-      "volume_ratio": 0.52,
+      "volume_ratio": 0.77,
       "momentum_phase": "weakening",
       "phase_value": 80.7,
       "phase_delta": -7.6,
@@ -247,7 +247,7 @@
       "name": "HD",
       "return_5d": 0.02638,
       "return_20d": 0.02862,
-      "volume_ratio": 0.52,
+      "volume_ratio": 0.7,
       "momentum_phase": "weakening",
       "phase_value": 77.6,
       "phase_delta": -13.7,
@@ -262,15 +262,15 @@
     {
       "id": "SBUX",
       "name": "SBUX",
-      "return_5d": -0.05243,
-      "return_20d": 0.0086,
+      "return_5d": -0.04632,
+      "return_20d": 0.01511,
       "volume_ratio": 0.77,
       "momentum_phase": "weakening",
-      "phase_value": 34.4,
-      "phase_delta": -65.6,
-      "rs_ratio": 101.3,
-      "rs_momentum": 95.6,
-      "rsi": 44.5,
+      "phase_value": 40.5,
+      "phase_delta": -59.5,
+      "rs_ratio": 101.9,
+      "rs_momentum": 96.1,
+      "rsi": 45.7,
       "sector_relative": "laggard",
       "days_in_phase": 1,
       "previous_phase": "leading",
@@ -298,7 +298,7 @@
       "name": "BKNG",
       "return_5d": -0.02276,
       "return_20d": -0.19064,
-      "volume_ratio": 1.49,
+      "volume_ratio": 1.55,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -332,7 +332,7 @@
       "name": "EBAY",
       "return_5d": -0.05701,
       "return_20d": -0.11448,
-      "volume_ratio": 1.04,
+      "volume_ratio": 1.22,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -359,7 +359,7 @@
     {
       "source": "F",
       "target": "GM",
-      "correlation": 0.811
+      "correlation": 0.807
     },
     {
       "source": "MCD",
@@ -397,6 +397,11 @@
       "correlation": 0.592
     },
     {
+      "source": "SBUX",
+      "target": "CMG",
+      "correlation": 0.584
+    },
+    {
       "source": "DHI",
       "target": "APTV",
       "correlation": 0.582
@@ -415,11 +420,6 @@
       "source": "MAR",
       "target": "HD",
       "correlation": 0.565
-    },
-    {
-      "source": "SBUX",
-      "target": "CMG",
-      "correlation": 0.557
     },
     {
       "source": "DHI",
@@ -442,9 +442,9 @@
       "correlation": 0.523
     },
     {
-      "source": "F",
-      "target": "YUM",
-      "correlation": 0.506
+      "source": "APTV",
+      "target": "CMG",
+      "correlation": 0.501
     }
   ]
 }
