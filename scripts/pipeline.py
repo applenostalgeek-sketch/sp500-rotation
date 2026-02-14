@@ -381,41 +381,72 @@ def detect_rotations(data):
 
 
 def _generate_narrative(nodes, rotations, market_state, avg_corr):
-    """Generate a simple, factual sentence."""
+    """Generate a rich, readable market narrative."""
     if market_state == "high_correlation":
         return "Tous les secteurs bougent ensemble — pas de rotation notable."
 
+    # Classify sectors
+    gaining = sorted([n for n in nodes if n["return_5d"] > 0.005],
+                     key=lambda x: -x["return_5d"])
+    losing = sorted([n for n in nodes if n["return_5d"] < -0.005],
+                    key=lambda x: x["return_5d"])
+    flat = [n for n in nodes if abs(n["return_5d"]) <= 0.005]
+
+    # Detect rotation type
+    defensive = {"Services Publics", "Conso. Essentiels", "Sante", "Immobilier"}
+    cyclical = {"Technologie", "Finance", "Conso. Discretionnaire", "Communication", "Industrie"}
+
+    gaining_names = {n["name"] for n in gaining}
+    losing_names = {n["name"] for n in losing}
+
+    rotation_type = None
+    if gaining_names & defensive and losing_names & cyclical:
+        rotation_type = "defensive"
+    elif gaining_names & cyclical and losing_names & defensive:
+        rotation_type = "offensive"
+
     parts = []
 
-    # Top confirmed rotation
-    if rotations:
-        r = rotations[0]
-        parts.append(f"{r['target_name']} surperforme {r['source_name']} cette semaine")
-        confirms = []
-        if r.get("volume_confirmed"):
-            confirms.append("volumes")
-        if r.get("cmf_confirmed"):
-            confirms.append("flux acheteurs")
-        if confirms:
-            parts[-1] += f", confirme par les {' et '.join(confirms)}"
+    # Opening: rotation type
+    if rotation_type == "defensive":
+        parts.append("Rotation défensive en cours")
+    elif rotation_type == "offensive":
+        parts.append("Rotation vers les cycliques")
 
-    # Overall picture
-    gaining = sorted([n for n in nodes if n["return_5d"] > 0.01],
-                     key=lambda x: -x["return_5d"])
-    losing = sorted([n for n in nodes if n["return_5d"] < -0.01],
-                    key=lambda x: x["return_5d"])
+    # Winners
+    if gaining:
+        top = gaining[:3]
+        names = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in top)
+        if rotation_type:
+            parts.append(f"{names} en tête")
+        else:
+            parts.append(f"En hausse : {names}")
 
-    if gaining and not rotations:
-        names = " et ".join(n["name"] for n in gaining[:2])
-        parts.append(f"{names} en hausse cette semaine")
+    # Losers
     if losing:
-        names = " et ".join(n["name"] for n in losing[:2])
-        parts.append(f"{names} en baisse")
+        bottom = losing[:3]
+        names = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in bottom)
+        parts.append(f"en repli : {names}")
+
+    # Volume confirmation
+    if rotations:
+        confirmed = [r for r in rotations[:3]
+                     if r.get("volume_confirmed") or r.get("cmf_confirmed")]
+        if confirmed:
+            parts.append("les volumes confirment le mouvement")
 
     if not parts:
-        return "Semaine calme, pas de rotation sectorielle notable."
+        if flat and len(flat) >= 8:
+            return "Semaine calme, les secteurs évoluent sans direction claire."
+        return "Pas de rotation sectorielle notable cette semaine."
 
-    return ". ".join(parts) + "."
+    # Join with proper punctuation
+    narrative = ". ".join(p[0].upper() + p[1:] for p in parts[:2])
+    if len(parts) > 2:
+        narrative += " — " + ", ".join(parts[2:])
+    narrative += "."
+
+    return narrative
 
 
 # ---------------------------------------------------------------------------

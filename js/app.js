@@ -33,46 +33,14 @@ function displayPV(node) {
     return 5 + pv * 13;                                // 5-18%
 }
 
-/* ---------- Signal history ---------- */
-function renderSignalHistory(data) {
+/* ---------- Market narrative ---------- */
+function renderNarrative(data) {
     const container = document.getElementById("signal-history");
     if (!container) return;
-    const history = data.signals_history || [];
-    if (history.length === 0) { container.innerHTML = ""; return; }
+    const narrative = data.metadata?.narrative;
+    if (!narrative) { container.innerHTML = ""; return; }
 
-    const active = history.filter(s => s.status === "active");
-
-    let html = "";
-
-    if (active.length > 0) {
-        html += '<div class="sh-section-title">Actions à suivre</div>';
-        for (const s of active) {
-            const ret = (s.return_abs * 100).toFixed(1);
-            const retClass = s.return_abs >= 0 ? "positive" : "negative";
-            const retSign = s.return_abs >= 0 ? "+" : "";
-            const retHtml = ret === "0.0"
-                ? `<span class="sh-ret" style="color:var(--text-muted)">nouveau</span>`
-                : `<span class="sh-ret ${retClass}">${retSign}${ret}%</span>`;
-            const rsi = s.rsi != null ? Math.round(s.rsi) : null;
-            const rsiHtml = rsi != null
-                ? `<span class="sh-rsi" style="color:${rsi < 50 ? 'var(--green)' : rsi < 70 ? 'var(--text-muted)' : 'var(--orange)'}">${rsi}</span>`
-                : "";
-            html += `
-                <div class="sh-row sh-active" data-sector="${s.sector}">
-                    <span class="sh-ticker">${s.ticker}</span>
-                    ${rsiHtml}
-                    <span class="sh-meta">J${s.days_active} · ${s.sector_name}</span>
-                    ${retHtml}
-                </div>`;
-        }
-    }
-
-    container.innerHTML = html;
-
-    // Click active signal → enter sector
-    container.querySelectorAll(".sh-active").forEach(row => {
-        row.addEventListener("click", () => enterSector(row.dataset.sector));
-    });
+    container.innerHTML = `<div class="narrative">${narrative}</div>`;
 }
 
 /* ---------- Sidebar (sector list) ---------- */
@@ -225,7 +193,7 @@ function onBackToGlobal() {
     const sidebarTitle = document.querySelector(".sidebar-title");
     if (sidebarTitle) sidebarTitle.textContent = "Secteurs S&P 500";
 
-    renderSignalHistory(appData);
+    renderNarrative(appData);
     renderSidebar(appData);
     const sigHist = document.getElementById("signal-history");
     if (sigHist) sigHist.style.display = "";
@@ -264,7 +232,7 @@ async function init() {
         updateEl.textContent = `Dernière mise à jour : ${dateStr} à ${timeStr} UTC`;
     }
 
-    renderSignalHistory(appData);
+    renderNarrative(appData);
     renderSidebar(appData);
 
     graphView = new RotationGraph(document.getElementById("graph-canvas"), appData);
