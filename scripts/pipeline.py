@@ -324,7 +324,7 @@ def detect_rotations(data):
                 max(0, mfi_div) * 0.20 +
                 (vol_conf * 0.15 if vol_confirms else 0)
             )
-            if score <= 0.5:
+            if score <= 0.7:
                 continue  # Only strong, confirmed signals
 
             # Correlation
@@ -505,7 +505,7 @@ def generate_sample_data():
                 max(0, mfi_div) * 0.20 +
                 (vol_conf * 0.15 if vol_confirms else 0)
             )
-            if score > 0.5:
+            if score > 0.7:
                 rotations.append({
                     "source": src["id"],
                     "target": tgt["id"],
