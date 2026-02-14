@@ -255,6 +255,34 @@ def detect_rotations(data):
         phase_value_prev = float(np.clip(((rs_ratio_prev - 95) + (rs_mom_prev - 95)) / 20 * 100, 0, 100))
         phase_delta = round(phase_value - phase_value_prev, 1)
 
+        # Days in current phase & previous phase (sector vs benchmark)
+        days_in_phase = 0
+        previous_phase = None
+        _rs = close[t] / benchmark
+        _rs_sma = _rs.rolling(20).mean()
+        _rr = (_rs / _rs_sma) * 100
+        _rm = (_rr / _rr.shift(20)) * 100
+        _phases = pd.Series("lagging", index=_rr.dropna().index)
+        _rr_v = _rr.loc[_phases.index]
+        _rm_v = _rm.loc[_phases.index]
+        _phases[(_rr_v >= 100) & (_rm_v >= 100)] = "leading"
+        _phases[(_rr_v >= 100) & (_rm_v < 100)] = "weakening"
+        _phases[(_rr_v < 100) & (_rm_v >= 100)] = "improving"
+        _phase_arr = _phases.dropna().tail(60).values
+        if len(_phase_arr) > 1:
+            current = _phase_arr[-1]
+            count = 0
+            for k in range(len(_phase_arr) - 1, -1, -1):
+                if _phase_arr[k] == current:
+                    count += 1
+                else:
+                    break
+            days_in_phase = count
+            for k in range(len(_phase_arr) - days_in_phase - 1, -1, -1):
+                if _phase_arr[k] != current:
+                    previous_phase = _phase_arr[k]
+                    break
+
         nodes.append({
             "id": t,
             "name": meta["name"],
@@ -273,6 +301,8 @@ def detect_rotations(data):
             "phase_delta": phase_delta,
             "rs_ratio": round(rs_ratio, 1),
             "rs_momentum": round(rs_mom, 1),
+            "days_in_phase": days_in_phase,
+            "previous_phase": previous_phase,
         })
 
     # --- Pairwise rotation scoring ---
@@ -381,70 +411,70 @@ def detect_rotations(data):
 
 
 def _generate_narrative(nodes, rotations, market_state, avg_corr):
-    """Generate a rich, readable market narrative."""
+    """Generate a narrative focused on what changed, not what is."""
+    PHASE_LABELS = {
+        "leading": "Surperformance",
+        "improving": "Rebond",
+        "weakening": "Essoufflement",
+        "lagging": "Sous pression",
+    }
+
     if market_state == "high_correlation":
         return "Tous les secteurs bougent ensemble — pas de rotation notable."
 
-    # Classify sectors
-    gaining = sorted([n for n in nodes if n["return_5d"] > 0.005],
-                     key=lambda x: -x["return_5d"])
-    losing = sorted([n for n in nodes if n["return_5d"] < -0.005],
-                    key=lambda x: x["return_5d"])
-    flat = [n for n in nodes if abs(n["return_5d"]) <= 0.005]
-
-    # Detect rotation type
-    defensive = {"Services Publics", "Conso. Essentiels", "Sante", "Immobilier"}
-    cyclical = {"Technologie", "Finance", "Conso. Discretionnaire", "Communication", "Industrie"}
-
-    gaining_names = {n["name"] for n in gaining}
-    losing_names = {n["name"] for n in losing}
-
-    rotation_type = None
-    if gaining_names & defensive and losing_names & cyclical:
-        rotation_type = "defensive"
-    elif gaining_names & cyclical and losing_names & defensive:
-        rotation_type = "offensive"
-
     parts = []
 
-    # Opening: rotation type
-    if rotation_type == "defensive":
-        parts.append("Rotation défensive en cours")
-    elif rotation_type == "offensive":
-        parts.append("Rotation vers les cycliques")
+    # 1) Phase transitions — the most valuable info
+    transitions = []
+    for n in nodes:
+        prev = n.get("previous_phase")
+        curr = n["momentum_phase"]
+        dip = n.get("days_in_phase", 0)
+        if prev and prev != curr and dip <= 5:
+            transitions.append(n)
 
-    # Winners
-    if gaining:
-        top = gaining[:3]
-        names = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in top)
-        if rotation_type:
-            parts.append(f"{names} en tête")
-        else:
-            parts.append(f"En hausse : {names}")
+    if transitions:
+        for n in transitions[:2]:
+            prev_label = PHASE_LABELS.get(n["previous_phase"], n["previous_phase"])
+            curr_label = PHASE_LABELS.get(n["momentum_phase"], n["momentum_phase"])
+            parts.append(f"{n['name']} passe en {curr_label} (était en {prev_label})")
 
-    # Losers
-    if losing:
-        bottom = losing[:3]
-        names = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in bottom)
-        parts.append(f"en repli : {names}")
+    # 2) Persistence — who's been leading/lagging for a while
+    persistent = [n for n in nodes
+                  if n.get("days_in_phase", 0) >= 15
+                  and n["momentum_phase"] in ("leading", "lagging")]
+    if persistent:
+        persistent.sort(key=lambda x: -x.get("days_in_phase", 0))
+        for n in persistent[:2]:
+            label = PHASE_LABELS[n["momentum_phase"]]
+            weeks = n["days_in_phase"] // 5
+            if weeks >= 2:
+                parts.append(f"{n['name']} en {label} depuis {weeks} semaines")
 
-    # Volume confirmation
-    if rotations:
-        confirmed = [r for r in rotations[:3]
-                     if r.get("volume_confirmed") or r.get("cmf_confirmed")]
-        if confirmed:
-            parts.append("les volumes confirment le mouvement")
+    # 3) Breadth — how many sectors are up/down
+    up = sum(1 for n in nodes if n["return_5d"] > 0.002)
+    total = len(nodes)
+    if up >= total - 1:
+        parts.append(f"{up} secteurs sur {total} en hausse cette semaine")
+    elif up <= 2:
+        parts.append(f"seulement {up} secteur{'s' if up > 1 else ''} en hausse cette semaine")
 
+    # 4) Fallback if nothing notable
     if not parts:
-        if flat and len(flat) >= 8:
+        flat = sum(1 for n in nodes if abs(n["return_5d"]) <= 0.005)
+        if flat >= 8:
             return "Semaine calme, les secteurs évoluent sans direction claire."
-        return "Pas de rotation sectorielle notable cette semaine."
+        # Simple top/bottom summary
+        gaining = sorted(nodes, key=lambda x: -x["return_5d"])[:2]
+        losing = sorted(nodes, key=lambda x: x["return_5d"])[:2]
+        tops = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in gaining)
+        bots = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in losing)
+        return f"En tête : {tops}. En retrait : {bots}."
 
-    # Join with proper punctuation
-    narrative = ". ".join(p[0].upper() + p[1:] for p in parts[:2])
-    if len(parts) > 2:
-        narrative += " — " + ", ".join(parts[2:])
-    narrative += "."
+    # Join sentences
+    narrative = ". ".join(p[0].upper() + p[1:] for p in parts)
+    if not narrative.endswith("."):
+        narrative += "."
 
     return narrative
 

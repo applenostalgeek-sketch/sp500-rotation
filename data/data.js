@@ -1,13 +1,13 @@
 window.ROTATION_DATA = {
   "metadata": {
     "date": "2026-02-14",
-    "generated_at": "2026-02-14T18:14:54Z",
+    "generated_at": "2026-02-14T18:57:59Z",
     "market_state": "normal",
     "avg_correlation": 0.041,
     "total_sectors": 11,
     "significant_rotations": 10,
     "benchmark_return": 0.0007,
-    "narrative": "Rotation d\u00e9fensive en cours. Services Publics (+6.9%), Immobilier (+3.0%), Conso. Essentiels (+2.4%) en t\u00eate \u2014 en repli : Finance (-4.2%), Technologie (-2.6%), Communication (-2.0%), les volumes confirment le mouvement."
+    "narrative": "Communication passe en Rebond (\u00e9tait en Surperformance). Finance passe en Rebond (\u00e9tait en Surperformance). Energie en Surperformance depuis 5 semaines. Conso. Essentiels en Surperformance depuis 5 semaines."
   },
   "nodes": [
     {
@@ -27,7 +27,9 @@ window.ROTATION_DATA = {
       "phase_value": 91.4,
       "phase_delta": 20.0,
       "rs_ratio": 106.3,
-      "rs_momentum": 102.0
+      "rs_momentum": 102.0,
+      "days_in_phase": 9,
+      "previous_phase": "weakening"
     },
     {
       "id": "XLC",
@@ -46,7 +48,9 @@ window.ROTATION_DATA = {
       "phase_value": 50.2,
       "phase_delta": 9.0,
       "rs_ratio": 99.2,
-      "rs_momentum": 100.8
+      "rs_momentum": 100.8,
+      "days_in_phase": 3,
+      "previous_phase": "leading"
     },
     {
       "id": "XLE",
@@ -65,7 +69,9 @@ window.ROTATION_DATA = {
       "phase_value": 100.0,
       "phase_delta": 0.0,
       "rs_ratio": 107.4,
-      "rs_momentum": 103.3
+      "rs_momentum": 103.3,
+      "days_in_phase": 26,
+      "previous_phase": "improving"
     },
     {
       "id": "XLF",
@@ -84,7 +90,9 @@ window.ROTATION_DATA = {
       "phase_value": 39.6,
       "phase_delta": -14.1,
       "rs_ratio": 97.9,
-      "rs_momentum": 100.1
+      "rs_momentum": 100.1,
+      "days_in_phase": 5,
+      "previous_phase": "leading"
     },
     {
       "id": "XLI",
@@ -103,7 +111,9 @@ window.ROTATION_DATA = {
       "phase_value": 77.3,
       "phase_delta": -9.7,
       "rs_ratio": 104.5,
-      "rs_momentum": 100.9
+      "rs_momentum": 100.9,
+      "days_in_phase": 12,
+      "previous_phase": "weakening"
     },
     {
       "id": "XLK",
@@ -122,7 +132,9 @@ window.ROTATION_DATA = {
       "phase_value": 36.9,
       "phase_delta": 4.1,
       "rs_ratio": 98.5,
-      "rs_momentum": 98.9
+      "rs_momentum": 98.9,
+      "days_in_phase": 11,
+      "previous_phase": "leading"
     },
     {
       "id": "XLP",
@@ -141,7 +153,9 @@ window.ROTATION_DATA = {
       "phase_value": 94.6,
       "phase_delta": -5.4,
       "rs_ratio": 106.4,
-      "rs_momentum": 102.5
+      "rs_momentum": 102.5,
+      "days_in_phase": 25,
+      "previous_phase": "improving"
     },
     {
       "id": "XLRE",
@@ -160,7 +174,9 @@ window.ROTATION_DATA = {
       "phase_value": 92.9,
       "phase_delta": 23.1,
       "rs_ratio": 105.4,
-      "rs_momentum": 103.2
+      "rs_momentum": 103.2,
+      "days_in_phase": 8,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLU",
@@ -179,7 +195,9 @@ window.ROTATION_DATA = {
       "phase_value": 100.0,
       "phase_delta": 31.7,
       "rs_ratio": 108.0,
-      "rs_momentum": 106.6
+      "rs_momentum": 106.6,
+      "days_in_phase": 9,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLV",
@@ -198,7 +216,9 @@ window.ROTATION_DATA = {
       "phase_value": 72.1,
       "phase_delta": 19.3,
       "rs_ratio": 102.1,
-      "rs_momentum": 102.3
+      "rs_momentum": 102.3,
+      "days_in_phase": 2,
+      "previous_phase": "improving"
     },
     {
       "id": "XLY",
@@ -217,7 +237,9 @@ window.ROTATION_DATA = {
       "phase_value": 27.7,
       "phase_delta": 12.4,
       "rs_ratio": 97.8,
-      "rs_momentum": 97.8
+      "rs_momentum": 97.8,
+      "days_in_phase": 8,
+      "previous_phase": "improving"
     }
   ],
   "rotations": [

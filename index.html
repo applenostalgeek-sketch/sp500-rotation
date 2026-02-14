@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <main>
+    <main id="graph-view">
         <canvas id="graph-canvas"></canvas>
         <div id="tooltip" class="tooltip"></div>
 
         <div class="graph-legend">
             <div class="graph-legend-item"><span class="phase-dot" style="background:#22c55e"></span>Surperformance</div>
-            <div class="graph-legend-item"><span class="phase-dot" style="background:#eab308"></span>Accélération</div>
+            <div class="graph-legend-item"><span class="phase-dot" style="background:#eab308"></span>Rebond</div>
             <div class="graph-legend-item"><span class="phase-dot" style="background:#f97316"></span>Essoufflement</div>
             <div class="graph-legend-item"><span class="phase-dot" style="background:#ef4444"></span>Sous pression</div>
             <div class="graph-legend-separator"></div>
@@ -21,18 +21,36 @@
         </div>
     </main>
 
-    <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Ouvrir le panneau">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
+    <div id="bottom-bar" class="bottom-bar">
+        <div class="bottom-bar-content">
+            <div class="bottom-bar-narrative">
+                <div id="narrative-text"></div>
+                <div id="last-update"></div>
+            </div>
+        </div>
+    </div>
 
-    <aside id="sidebar">
-        <button class="sidebar-close" id="sidebar-close" aria-label="Fermer">&times;</button>
-        <div class="sidebar-title">Secteurs S&P 500</div>
-        <div id="last-update" class="sidebar-update"></div>
-        <div id="signal-history"></div>
-        <div id="sector-list"></div>
-        <div class="sidebar-footer">Mis a jour chaque soir apres la cloture US</div>
-    </aside>
+    <div id="onboarding" class="onboarding-overlay">
+        <div class="onboarding-card">
+            <div class="onboarding-title">Rotation Sectorielle S&P 500</div>
+            <div class="onboarding-body">
+                <div class="onboarding-item">
+                    <span class="phase-dot" style="background:#22c55e"></span>
+                    <span>Les secteurs à <strong>droite</strong> surperforment le marché, ceux à <strong>gauche</strong> sous-performent</span>
+                </div>
+                <div class="onboarding-item">
+                    <span class="phase-dot" style="background:#eab308"></span>
+                    <span>Les secteurs en <strong>bleu</strong> rebondissent (momentum positif malgré une sous-performance)</span>
+                </div>
+                <div class="onboarding-item">
+                    <span class="legend-arrow">&#8594;</span>
+                    <span>Les <strong>flèches</strong> relient les secteurs dont les trajectoires divergent cette semaine</span>
+                </div>
+            </div>
+            <div class="onboarding-tip">Cliquez sur un secteur pour voir ses actions</div>
+            <button id="onboarding-dismiss" class="onboarding-btn">Compris</button>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <script src="data/data.js"></script>

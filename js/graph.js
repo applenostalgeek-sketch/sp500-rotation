@@ -519,7 +519,7 @@ class RotationGraph {
             const n = this.hoveredNode;
             const r5 = (n.return_5d * 100).toFixed(1);
             const r20 = (n.return_20d * 100).toFixed(1);
-            const phases = { leading: "Surperformance", improving: "Accélération", weakening: "Essoufflement", lagging: "Sous pression" };
+            const phases = { leading: "Surperformance", improving: "Rebond", weakening: "Essoufflement", lagging: "Sous pression" };
             const pc = this._phaseColor(n.momentum_phase);
             tip.innerHTML = `
                 <div class="ticker">${n.name}</div>
@@ -533,7 +533,7 @@ class RotationGraph {
             const n = this.hoveredNode;
             const r5 = (n.return_5d * 100).toFixed(1);
             const r20 = (n.return_20d * 100).toFixed(1);
-            const phases = { leading: "Surperformance", improving: "Accélération", weakening: "Essoufflement", lagging: "Sous pression" };
+            const phases = { leading: "Surperformance", improving: "Rebond", weakening: "Essoufflement", lagging: "Sous pression" };
             const pc = this._phaseColor(n.momentum_phase);
             // Find top correlations for this stock
             let corrHtml = "";
