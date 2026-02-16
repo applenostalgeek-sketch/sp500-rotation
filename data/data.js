@@ -1,13 +1,15 @@
 window.ROTATION_DATA = {
   "metadata": {
-    "date": "2026-02-14",
-    "generated_at": "2026-02-14T22:55:45Z",
+    "date": "2026-02-16",
+    "generated_at": "2026-02-15T23:25:19Z",
     "market_state": "normal",
     "avg_correlation": 0.041,
     "total_sectors": 11,
-    "significant_rotations": 10,
     "benchmark_return": 0.0007,
-    "narrative": "Communication passe en Rebond (\u00e9tait en Surperformance). Finance passe en Rebond (\u00e9tait en Surperformance). Energie en Surperformance depuis 5 semaines. Conso. Essentiels en Surperformance depuis 5 semaines."
+    "regime": "late_cycle",
+    "regime_label": "Defensives en tete",
+    "regime_confidence": 0.57,
+    "narrative": "Finance passe en Rebond. Un positionnement historiquement associe aux fins de cycle."
   },
   "nodes": [
     {
@@ -28,8 +30,8 @@ window.ROTATION_DATA = {
       "phase_delta": 20.0,
       "rs_ratio": 106.3,
       "rs_momentum": 102.0,
-      "days_in_phase": 9,
-      "previous_phase": "weakening"
+      "days_in_phase": 56,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLC",
@@ -44,13 +46,13 @@ window.ROTATION_DATA = {
       "mfi": 36.1,
       "cmf": -0.023,
       "trend": 0.005,
-      "momentum_phase": "improving",
+      "momentum_phase": "leading",
       "phase_value": 50.2,
       "phase_delta": 9.0,
       "rs_ratio": 99.2,
       "rs_momentum": 100.8,
-      "days_in_phase": 3,
-      "previous_phase": "leading"
+      "days_in_phase": 8,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLE",
@@ -70,8 +72,8 @@ window.ROTATION_DATA = {
       "phase_delta": 0.0,
       "rs_ratio": 107.4,
       "rs_momentum": 103.3,
-      "days_in_phase": 26,
-      "previous_phase": "improving"
+      "days_in_phase": 22,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLF",
@@ -91,8 +93,8 @@ window.ROTATION_DATA = {
       "phase_delta": -14.1,
       "rs_ratio": 97.9,
       "rs_momentum": 100.1,
-      "days_in_phase": 5,
-      "previous_phase": "leading"
+      "days_in_phase": 1,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLI",
@@ -112,8 +114,8 @@ window.ROTATION_DATA = {
       "phase_delta": -9.7,
       "rs_ratio": 104.5,
       "rs_momentum": 100.9,
-      "days_in_phase": 12,
-      "previous_phase": "weakening"
+      "days_in_phase": 41,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLK",
@@ -133,7 +135,7 @@ window.ROTATION_DATA = {
       "phase_delta": 4.1,
       "rs_ratio": 98.5,
       "rs_momentum": 98.9,
-      "days_in_phase": 11,
+      "days_in_phase": 7,
       "previous_phase": "leading"
     },
     {
@@ -154,8 +156,8 @@ window.ROTATION_DATA = {
       "phase_delta": -5.4,
       "rs_ratio": 106.4,
       "rs_momentum": 102.5,
-      "days_in_phase": 25,
-      "previous_phase": "improving"
+      "days_in_phase": 21,
+      "previous_phase": "lagging"
     },
     {
       "id": "XLRE",
@@ -175,8 +177,8 @@ window.ROTATION_DATA = {
       "phase_delta": 23.1,
       "rs_ratio": 105.4,
       "rs_momentum": 103.2,
-      "days_in_phase": 8,
-      "previous_phase": "lagging"
+      "days_in_phase": 19,
+      "previous_phase": "improving"
     },
     {
       "id": "XLU",
@@ -196,8 +198,8 @@ window.ROTATION_DATA = {
       "phase_delta": 31.7,
       "rs_ratio": 108.0,
       "rs_momentum": 106.6,
-      "days_in_phase": 9,
-      "previous_phase": "lagging"
+      "days_in_phase": 18,
+      "previous_phase": "improving"
     },
     {
       "id": "XLV",
@@ -212,13 +214,13 @@ window.ROTATION_DATA = {
       "mfi": 45.8,
       "cmf": -0.029,
       "trend": -0.01,
-      "momentum_phase": "leading",
+      "momentum_phase": "lagging",
       "phase_value": 72.1,
       "phase_delta": 19.3,
       "rs_ratio": 102.1,
       "rs_momentum": 102.3,
-      "days_in_phase": 2,
-      "previous_phase": "improving"
+      "days_in_phase": 10,
+      "previous_phase": "leading"
     },
     {
       "id": "XLY",
@@ -238,782 +240,32 @@ window.ROTATION_DATA = {
       "phase_delta": 12.4,
       "rs_ratio": 97.8,
       "rs_momentum": 97.8,
-      "days_in_phase": 8,
-      "previous_phase": "improving"
-    }
-  ],
-  "rotations": [
-    {
-      "source": "XLF",
-      "target": "XLU",
-      "source_name": "Finance",
-      "target_name": "Services Publics",
-      "score": 3.893,
-      "return_divergence": 10.09,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": -0.337
-    },
-    {
-      "source": "XLC",
-      "target": "XLU",
-      "source_name": "Communication",
-      "target_name": "Services Publics",
-      "score": 3.175,
-      "return_divergence": 8.25,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": -0.166
-    },
-    {
-      "source": "XLK",
-      "target": "XLU",
-      "source_name": "Technologie",
-      "target_name": "Services Publics",
-      "score": 2.781,
-      "return_divergence": 7.0,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": 0.039
-    },
-    {
-      "source": "XLY",
-      "target": "XLU",
-      "source_name": "Conso. Discretionnaire",
-      "target_name": "Services Publics",
-      "score": 2.688,
-      "return_divergence": 6.66,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": 0.092
-    },
-    {
-      "source": "XLF",
-      "target": "XLB",
-      "source_name": "Finance",
-      "target_name": "Materiaux",
-      "score": 2.578,
-      "return_divergence": 6.42,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": -0.006
-    },
-    {
-      "source": "XLF",
-      "target": "XLRE",
-      "source_name": "Finance",
-      "target_name": "Immobilier",
-      "score": 2.517,
-      "return_divergence": 6.31,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": 0.198
-    },
-    {
-      "source": "XLV",
-      "target": "XLU",
-      "source_name": "Sante",
-      "target_name": "Services Publics",
-      "score": 2.252,
-      "return_divergence": 5.6,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": -0.047
-    },
-    {
-      "source": "XLE",
-      "target": "XLU",
-      "source_name": "Energie",
-      "target_name": "Services Publics",
-      "score": 2.172,
-      "return_divergence": 5.63,
-      "volume_confirmed": true,
-      "cmf_confirmed": false,
-      "correlation": 0.18
-    },
-    {
-      "source": "XLF",
-      "target": "XLP",
-      "source_name": "Finance",
-      "target_name": "Conso. Essentiels",
-      "score": 2.127,
-      "return_divergence": 4.93,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": -0.02
-    },
-    {
-      "source": "XLI",
-      "target": "XLU",
-      "source_name": "Industrie",
-      "target_name": "Services Publics",
-      "score": 2.079,
-      "return_divergence": 5.32,
-      "volume_confirmed": true,
-      "cmf_confirmed": true,
-      "correlation": 0.289
+      "days_in_phase": 29,
+      "previous_phase": "leading"
     }
   ],
   "signals": [
-    {
-      "ticker": "ORCL",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.02267,
-      "phase_value": 60.2,
-      "rs_momentum": 102.2
-    },
-    {
-      "ticker": "CSCO",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.11443,
-      "phase_value": 51.3,
-      "rs_momentum": 100.8
-    },
-    {
-      "ticker": "CRM",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.02221,
-      "phase_value": 35.4,
-      "rs_momentum": 103.7
-    },
-    {
-      "ticker": "MSFT",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.02969,
-      "phase_value": 28.2,
-      "rs_momentum": 100.3
-    },
-    {
-      "ticker": "V",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": -0.03333,
-      "phase_value": 66.3,
-      "rs_momentum": 103.9
-    },
-    {
-      "ticker": "MA",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": -0.0317,
-      "phase_value": 64.6,
-      "rs_momentum": 103.1
-    },
-    {
-      "ticker": "ISRG",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.0142,
-      "phase_value": 32.4,
-      "rs_momentum": 101.2
-    },
-    {
-      "ticker": "KO",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": 0.00911,
-      "phase_value": 61.9,
-      "rs_momentum": 103.1
-    },
-    {
-      "ticker": "PG",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": 0.01742,
-      "phase_value": 61.7,
-      "rs_momentum": 103.0
-    },
-    {
-      "ticker": "DUK",
-      "sector": "XLU",
-      "sector_name": "Services Publics",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.06221,
-      "phase_value": 49.4,
-      "rs_momentum": 100.3
-    },
-    {
-      "ticker": "ECL",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": 0.03821,
-      "phase_value": 48.7,
-      "rs_momentum": 100.5
-    },
-    {
-      "ticker": "REG",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": 0.00158,
-      "phase_value": 59.0,
-      "rs_momentum": 102.0
-    },
-    {
-      "ticker": "NOW",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.0309,
-      "phase_value": 57.6,
-      "rs_momentum": 107.2
-    },
-    {
-      "ticker": "AXP",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 2,
-      "return_5d": -0.06161,
-      "phase_value": 43.4,
-      "rs_momentum": 100.8
-    },
-    {
-      "ticker": "LLY",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.00281,
-      "phase_value": 57.9,
-      "rs_momentum": 102.9
-    },
-    {
-      "ticker": "META",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 2,
-      "return_5d": -0.0553,
-      "phase_value": 49.6,
-      "rs_momentum": 102.0
-    },
-    {
-      "ticker": "GE",
-      "sector": "XLI",
-      "sector_name": "Industrie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.0042,
-      "phase_value": 54.0,
-      "rs_momentum": 101.9
-    },
-    {
-      "ticker": "GIS",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 2,
-      "return_5d": 0.00499,
-      "phase_value": 62.7,
-      "rs_momentum": 103.4
-    },
-    {
-      "ticker": "FANG",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.01916,
-      "phase_value": 55.6,
-      "rs_momentum": 102.2
-    },
-    {
-      "ticker": "MLM",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.02425,
-      "phase_value": 48.5,
-      "rs_momentum": 102.2
-    },
-    {
-      "ticker": "AVY",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.03346,
-      "phase_value": 45.8,
-      "rs_momentum": 100.6
-    },
-    {
-      "ticker": "EQR",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 2,
-      "return_5d": -0.01253,
-      "phase_value": 47.3,
-      "rs_momentum": 101.5
-    },
-    {
-      "ticker": "ADBE",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.01098,
-      "phase_value": 64.9,
-      "rs_momentum": 107.3
-    },
-    {
-      "ticker": "QCOM",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": 0.01274,
-      "phase_value": 61.5,
-      "rs_momentum": 105.0
-    },
-    {
-      "ticker": "KHC",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 3,
-      "return_5d": 0.00895,
-      "phase_value": 54.1,
-      "rs_momentum": 102.2
-    },
-    {
-      "ticker": "SPG",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "improving",
-      "previous_phase": "leading",
-      "days_in_phase": 3,
-      "return_5d": 0.00132,
-      "phase_value": 64.5,
-      "rs_momentum": 103.8
-    },
     {
       "ticker": "WM",
       "sector": "XLI",
       "sector_name": "Industrie",
       "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
+      "previous_phase": "leading",
+      "days_in_phase": 1,
       "return_5d": 0.01744,
       "phase_value": 65.6,
       "rs_momentum": 103.6
     },
     {
-      "ticker": "WFC",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": -0.08065,
-      "phase_value": 75.1,
-      "rs_momentum": 104.6
-    },
-    {
-      "ticker": "ABT",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": 0.0145,
-      "phase_value": 60.2,
-      "rs_momentum": 101.8
-    },
-    {
-      "ticker": "ORLY",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 1,
-      "return_5d": 0.04249,
-      "phase_value": 77.9,
-      "rs_momentum": 102.4
-    },
-    {
-      "ticker": "NKE",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 1,
-      "return_5d": 0.01154,
-      "phase_value": 73.7,
-      "rs_momentum": 101.5
-    },
-    {
-      "ticker": "PH",
-      "sector": "XLI",
-      "sector_name": "Industrie",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 1,
-      "return_5d": 0.02337,
-      "phase_value": 62.1,
-      "rs_momentum": 101.0
-    },
-    {
-      "ticker": "VMC",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": 0.00101,
-      "phase_value": 71.1,
-      "rs_momentum": 103.6
-    },
-    {
-      "ticker": "LIN",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": 0.05404,
-      "phase_value": 67.1,
-      "rs_momentum": 103.2
-    },
-    {
-      "ticker": "CCI",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.08787,
-      "phase_value": 56.4,
-      "rs_momentum": 100.3
-    },
-    {
-      "ticker": "PLD",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 1,
-      "return_5d": 0.01231,
-      "phase_value": 53.6,
-      "rs_momentum": 100.3
-    },
-    {
-      "ticker": "VRTX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": 0.04375,
-      "phase_value": 100.0,
-      "rs_momentum": 109.1
-    },
-    {
-      "ticker": "APTV",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 2,
-      "return_5d": 0.02195,
-      "phase_value": 100.0,
-      "rs_momentum": 108.1
-    },
-    {
-      "ticker": "GM",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": 0.00496,
-      "phase_value": 80.7,
-      "rs_momentum": 104.4
-    },
-    {
-      "ticker": "WBD",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 2,
-      "return_5d": 0.02867,
-      "phase_value": 71.6,
-      "rs_momentum": 101.9
-    },
-    {
-      "ticker": "EA",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.00124,
-      "phase_value": 55.6,
-      "rs_momentum": 100.2
-    },
-    {
-      "ticker": "WMT",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 2,
-      "return_5d": 0.03775,
-      "phase_value": 81.1,
-      "rs_momentum": 103.3
-    },
-    {
-      "ticker": "WMB",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": 0.06529,
-      "phase_value": 91.6,
-      "rs_momentum": 106.3
-    },
-    {
       "ticker": "KMI",
       "sector": "XLE",
       "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 2,
+      "phase": "improving",
+      "previous_phase": "weakening",
+      "days_in_phase": 3,
       "return_5d": 0.04292,
       "phase_value": 85.5,
       "rs_momentum": 105.5
-    },
-    {
-      "ticker": "EOG",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.06024,
-      "phase_value": 79.6,
-      "rs_momentum": 104.0
-    },
-    {
-      "ticker": "COP",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": 0.02512,
-      "phase_value": 67.8,
-      "rs_momentum": 102.2
-    },
-    {
-      "ticker": "EXC",
-      "sector": "XLU",
-      "sector_name": "Services Publics",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.10257,
-      "phase_value": 67.7,
-      "rs_momentum": 102.2
-    },
-    {
-      "ticker": "AEP",
-      "sector": "XLU",
-      "sector_name": "Services Publics",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.08148,
-      "phase_value": 60.8,
-      "rs_momentum": 100.6
-    },
-    {
-      "ticker": "IFF",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": 0.10402,
-      "phase_value": 100.0,
-      "rs_momentum": 107.6
-    },
-    {
-      "ticker": "IRM",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 2,
-      "return_5d": 0.13133,
-      "phase_value": 100.0,
-      "rs_momentum": 104.4
-    },
-    {
-      "ticker": "AMT",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.10587,
-      "phase_value": 74.3,
-      "rs_momentum": 101.7
-    },
-    {
-      "ticker": "PGR",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": 0.01489,
-      "phase_value": 91.9,
-      "rs_momentum": 105.6
-    },
-    {
-      "ticker": "LYV",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 3,
-      "return_5d": 0.07004,
-      "phase_value": 100.0,
-      "rs_momentum": 108.6
-    },
-    {
-      "ticker": "DLR",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 3,
-      "return_5d": 0.05136,
-      "phase_value": 88.2,
-      "rs_momentum": 103.5
-    },
-    {
-      "ticker": "ADI",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": 0.04375,
-      "phase_value": 100.0,
-      "rs_momentum": 103.2
-    },
-    {
-      "ticker": "DHI",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": 0.09303,
-      "phase_value": 100.0,
-      "rs_momentum": 104.4
-    },
-    {
-      "ticker": "F",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": 0.05025,
-      "phase_value": 100.0,
-      "rs_momentum": 106.3
-    },
-    {
-      "ticker": "KMB",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 4,
-      "return_5d": 0.04499,
-      "phase_value": 83.1,
-      "rs_momentum": 105.4
-    },
-    {
-      "ticker": "PSX",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": 0.01441,
-      "phase_value": 67.3,
-      "rs_momentum": 101.9
-    },
-    {
-      "ticker": "EQIX",
-      "sector": "XLRE",
-      "sector_name": "Immobilier",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": 0.11478,
-      "phase_value": 100.0,
-      "rs_momentum": 109.6
     },
     {
       "ticker": "TSLA",
@@ -1021,35 +273,249 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 5,
+      "days_in_phase": 1,
       "return_5d": 0.00029,
       "phase_value": 91.5,
       "rs_momentum": 106.7
-    },
-    {
-      "ticker": "UPS",
-      "sector": "XLI",
-      "sector_name": "Industrie",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 5,
-      "return_5d": 0.01119,
-      "phase_value": 77.5,
-      "rs_momentum": 102.3
     },
     {
       "ticker": "OKE",
       "sector": "XLE",
       "sector_name": "Energie",
       "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 5,
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
       "return_5d": 0.03585,
       "phase_value": 97.6,
       "rs_momentum": 107.0
+    },
+    {
+      "ticker": "AVGO",
+      "sector": "XLK",
+      "sector_name": "Technologie",
+      "phase": "leading",
+      "previous_phase": "improving",
+      "days_in_phase": 2,
+      "return_5d": -0.05457,
+      "phase_value": 64.5,
+      "rs_momentum": 101.7
+    },
+    {
+      "ticker": "DD",
+      "sector": "XLB",
+      "sector_name": "Materiaux",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 2,
+      "return_5d": 0.06624,
+      "phase_value": 100.0,
+      "rs_momentum": 105.9
+    },
+    {
+      "ticker": "CI",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 3,
+      "return_5d": -0.01005,
+      "phase_value": 81.5,
+      "rs_momentum": 103.2
+    },
+    {
+      "ticker": "ZTS",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 3,
+      "return_5d": -0.00511,
+      "phase_value": 55.5,
+      "rs_momentum": 100.9
+    },
+    {
+      "ticker": "WELL",
+      "sector": "XLRE",
+      "sector_name": "Immobilier",
+      "phase": "leading",
+      "previous_phase": "improving",
+      "days_in_phase": 3,
+      "return_5d": 0.06829,
+      "phase_value": 100.0,
+      "rs_momentum": 108.1
+    },
+    {
+      "ticker": "TJX",
+      "sector": "XLY",
+      "sector_name": "Conso. Discretionnaire",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 4,
+      "return_5d": -0.0086,
+      "phase_value": 100.0,
+      "rs_momentum": 105.3
+    },
+    {
+      "ticker": "KR",
+      "sector": "XLP",
+      "sector_name": "Conso. Essentiels",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 4,
+      "return_5d": 0.0215,
+      "phase_value": 100.0,
+      "rs_momentum": 108.2
+    },
+    {
+      "ticker": "MPC",
+      "sector": "XLE",
+      "sector_name": "Energie",
+      "phase": "leading",
+      "previous_phase": "improving",
+      "days_in_phase": 4,
+      "return_5d": -0.0049,
+      "phase_value": 80.8,
+      "rs_momentum": 103.3
+    },
+    {
+      "ticker": "ATO",
+      "sector": "XLU",
+      "sector_name": "Services Publics",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 4,
+      "return_5d": 0.04543,
+      "phase_value": 39.9,
+      "rs_momentum": 99.4
+    },
+    {
+      "ticker": "BAC",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": -0.06843,
+      "phase_value": 83.5,
+      "rs_momentum": 105.2
+    },
+    {
+      "ticker": "JPM",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": -0.0607,
+      "phase_value": 77.0,
+      "rs_momentum": 104.0
+    },
+    {
+      "ticker": "WFC",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": -0.08065,
+      "phase_value": 75.1,
+      "rs_momentum": 104.6
+    },
+    {
+      "ticker": "YUM",
+      "sector": "XLY",
+      "sector_name": "Conso. Discretionnaire",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.01051,
+      "phase_value": 85.3,
+      "rs_momentum": 101.6
+    },
+    {
+      "ticker": "CMCSA",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "leading",
+      "previous_phase": "weakening",
+      "days_in_phase": 5,
+      "return_5d": -0.00127,
+      "phase_value": 100.0,
+      "rs_momentum": 104.0
+    },
+    {
+      "ticker": "TMUS",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.11049,
+      "phase_value": 100.0,
+      "rs_momentum": 118.1
+    },
+    {
+      "ticker": "NSC",
+      "sector": "XLI",
+      "sector_name": "Industrie",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.03016,
+      "phase_value": 96.7,
+      "rs_momentum": 106.8
+    },
+    {
+      "ticker": "BALL",
+      "sector": "XLB",
+      "sector_name": "Materiaux",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.0096,
+      "phase_value": 100.0,
+      "rs_momentum": 106.2
+    },
+    {
+      "ticker": "HST",
+      "sector": "XLRE",
+      "sector_name": "Immobilier",
+      "phase": "leading",
+      "previous_phase": "weakening",
+      "days_in_phase": 5,
+      "return_5d": 0.01791,
+      "phase_value": 60.0,
+      "rs_momentum": 101.6
+    },
+    {
+      "ticker": "PLD",
+      "sector": "XLRE",
+      "sector_name": "Immobilier",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.01231,
+      "phase_value": 53.6,
+      "rs_momentum": 100.3
     }
   ],
   "signals_history": [
+    {
+      "ticker": "WM",
+      "sector": "XLI",
+      "sector_name": "Industrie",
+      "open_date": "2026-02-15",
+      "open_price": 234.52000427246094,
+      "spy_open_price": 681.75,
+      "current_phase": "improving",
+      "days_active": 1,
+      "return_vs_spy": 0.0,
+      "return_abs": 0.0,
+      "rsi": 57.0,
+      "status": "active",
+      "close_date": null,
+      "close_reason": null
+    },
     {
       "ticker": "CRM",
       "sector": "XLK",
@@ -1057,14 +523,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 188.93499755859375,
       "spy_open_price": 681.239990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "lagging",
+      "days_active": 2,
       "return_vs_spy": 0.00341,
       "return_abs": 0.00415,
       "rsi": 18.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "reversed"
     },
     {
       "ticker": "V",
@@ -1073,14 +539,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 313.4541931152344,
       "spy_open_price": 681.239990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "lagging",
+      "days_active": 2,
       "return_vs_spy": 0.00125,
       "return_abs": 0.002,
       "rsi": 39.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "reversed"
     },
     {
       "ticker": "MA",
@@ -1089,14 +555,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 518.1691284179688,
       "spy_open_price": 681.239990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "leading",
+      "days_active": 2,
       "return_vs_spy": -0.00038,
       "return_abs": 0.00037,
       "rsi": 46.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "confirmed"
     },
     {
       "ticker": "PG",
@@ -1105,14 +571,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 160.58999633789062,
       "spy_open_price": 681.239990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "leading",
+      "days_active": 2,
       "return_vs_spy": -0.00399,
       "return_abs": -0.00324,
       "rsi": 77.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "confirmed"
     },
     {
       "ticker": "KO",
@@ -1121,14 +587,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 78.69999694824219,
       "spy_open_price": 681.239990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "leading",
+      "days_active": 2,
       "return_vs_spy": -0.001,
       "return_abs": -0.00025,
       "rsi": 75.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "confirmed"
     },
     {
       "ticker": "NOW",
@@ -1137,14 +603,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 107.16999816894531,
       "spy_open_price": 680.989990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "lagging",
+      "days_active": 2,
       "return_vs_spy": -0.00196,
       "return_abs": -0.00084,
       "rsi": 25.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "reversed"
     },
     {
       "ticker": "LLY",
@@ -1153,14 +619,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-13",
       "open_price": 1044.9300537109375,
       "spy_open_price": 680.989990234375,
-      "current_phase": "improving",
-      "days_active": 1,
+      "current_phase": "lagging",
+      "days_active": 2,
       "return_vs_spy": -0.00583,
       "return_abs": -0.00472,
       "rsi": 48.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "reversed"
     },
     {
       "ticker": "GIS",
@@ -1169,14 +635,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-12",
       "open_price": 48.58000183105469,
       "spy_open_price": 681.27001953125,
-      "current_phase": "improving",
-      "days_active": 2,
+      "current_phase": "lagging",
+      "days_active": 3,
       "return_vs_spy": -0.00564,
       "return_abs": -0.00494,
       "rsi": 75.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "reversed"
     },
     {
       "ticker": "META",
@@ -1185,14 +651,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-12",
       "open_price": 649.8099975585938,
       "spy_open_price": 681.27001953125,
-      "current_phase": "improving",
-      "days_active": 2,
+      "current_phase": "leading",
+      "days_active": 3,
       "return_vs_spy": -0.01616,
       "return_abs": -0.01545,
       "rsi": 48.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "confirmed"
     },
     {
       "ticker": "KHC",
@@ -1201,14 +667,14 @@ window.ROTATION_DATA = {
       "open_date": "2026-02-11",
       "open_price": 24.989999771118164,
       "spy_open_price": 691.9600219726562,
-      "current_phase": "improving",
-      "days_active": 3,
+      "current_phase": "lagging",
+      "days_active": 4,
       "return_vs_spy": 0.00715,
       "return_abs": -0.0076,
       "rsi": 78.0,
-      "status": "active",
-      "close_date": null,
-      "close_reason": null
+      "status": "closed",
+      "close_date": "2026-02-15",
+      "close_reason": "reversed"
     },
     {
       "ticker": "WFC",
@@ -1819,22 +1285,6 @@ window.ROTATION_DATA = {
       "close_reason": "confirmed"
     },
     {
-      "ticker": "BSX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "open_date": "2025-12-17",
-      "open_price": 94.4800033569336,
-      "spy_open_price": 669.4219360351562,
-      "current_phase": "leading",
-      "days_active": 19,
-      "return_vs_spy": -0.01675,
-      "return_abs": 0.01058,
-      "rsi": 27.0,
-      "status": "closed",
-      "close_date": "2026-01-05",
-      "close_reason": "confirmed"
-    },
-    {
       "ticker": "ABT",
       "sector": "XLV",
       "sector_name": "Sante",
@@ -1960,38 +1410,6 @@ window.ROTATION_DATA = {
       "rsi": 35.0,
       "status": "closed",
       "close_date": "2025-12-22",
-      "close_reason": "confirmed"
-    },
-    {
-      "ticker": "HD",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "open_date": "2025-12-17",
-      "open_price": 356.75,
-      "spy_open_price": 669.4219360351562,
-      "current_phase": "lagging",
-      "days_active": 2,
-      "return_vs_spy": -0.04962,
-      "return_abs": -0.03294,
-      "rsi": 53.0,
-      "status": "closed",
-      "close_date": "2025-12-19",
-      "close_reason": "reversed"
-    },
-    {
-      "ticker": "CE",
-      "sector": "XLB",
-      "sector_name": "Materiaux",
-      "open_date": "2025-12-16",
-      "open_price": 40.95000076293945,
-      "spy_open_price": 676.8699340820312,
-      "current_phase": "leading",
-      "days_active": 1,
-      "return_vs_spy": 0.02614,
-      "return_abs": 0.01514,
-      "rsi": 56.0,
-      "status": "closed",
-      "close_date": "2025-12-17",
       "close_reason": "confirmed"
     }
   ]

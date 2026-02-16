@@ -2,7 +2,7 @@
   "etf": "XLY",
   "sector_name": "Conso. Discretionnaire",
   "sector_color": "#f97316",
-  "date": "2026-02-14",
+  "date": "2026-02-16",
   "stocks": [
     {
       "id": "MCD",
@@ -17,8 +17,8 @@
       "rs_momentum": 107.7,
       "rsi": 70.1,
       "sector_relative": "leader",
-      "days_in_phase": 15,
-      "previous_phase": "improving",
+      "days_in_phase": 11,
+      "previous_phase": "lagging",
       "weight": 4.3
     },
     {
@@ -34,8 +34,8 @@
       "rs_momentum": 105.3,
       "rsi": 61.5,
       "sector_relative": "leader",
-      "days_in_phase": 8,
-      "previous_phase": "improving",
+      "days_in_phase": 4,
+      "previous_phase": "lagging",
       "weight": 3.6
     },
     {
@@ -51,26 +51,9 @@
       "rs_momentum": 109.2,
       "rsi": 75.8,
       "sector_relative": "leader",
-      "days_in_phase": 7,
+      "days_in_phase": 26,
       "previous_phase": "weakening",
       "weight": 2.4
-    },
-    {
-      "id": "DHI",
-      "name": "DHI",
-      "return_5d": 0.09303,
-      "return_20d": 0.07886,
-      "volume_ratio": 0.75,
-      "momentum_phase": "leading",
-      "phase_value": 100.0,
-      "phase_delta": 0.0,
-      "rs_ratio": 111.7,
-      "rs_momentum": 104.4,
-      "rsi": 77.2,
-      "sector_relative": "leader",
-      "days_in_phase": 4,
-      "previous_phase": "weakening",
-      "weight": 2.3
     },
     {
       "id": "F",
@@ -85,26 +68,9 @@
       "rs_momentum": 106.3,
       "rsi": 68.5,
       "sector_relative": "leader",
-      "days_in_phase": 4,
-      "previous_phase": "weakening",
+      "days_in_phase": 26,
+      "previous_phase": "lagging",
       "weight": 4.0
-    },
-    {
-      "id": "APTV",
-      "name": "APTV",
-      "return_5d": 0.02195,
-      "return_20d": 0.08383,
-      "volume_ratio": 1.0,
-      "momentum_phase": "leading",
-      "phase_value": 100.0,
-      "phase_delta": 32.2,
-      "rs_ratio": 110.2,
-      "rs_momentum": 108.1,
-      "rsi": 68.9,
-      "sector_relative": "leader",
-      "days_in_phase": 2,
-      "previous_phase": "weakening",
-      "weight": 0.8
     },
     {
       "id": "ROST",
@@ -119,8 +85,8 @@
       "rs_momentum": 102.9,
       "rsi": 72.2,
       "sector_relative": "leader",
-      "days_in_phase": 7,
-      "previous_phase": "weakening",
+      "days_in_phase": 19,
+      "previous_phase": "lagging",
       "weight": 1.9
     },
     {
@@ -136,7 +102,7 @@
       "rs_momentum": 106.7,
       "rsi": 41.9,
       "sector_relative": "leader",
-      "days_in_phase": 5,
+      "days_in_phase": 1,
       "previous_phase": "improving",
       "weight": 100.0
     },
@@ -153,8 +119,8 @@
       "rs_momentum": 101.6,
       "rsi": 67.9,
       "sector_relative": "leader",
-      "days_in_phase": 9,
-      "previous_phase": "weakening",
+      "days_in_phase": 5,
+      "previous_phase": "lagging",
       "weight": 1.4
     },
     {
@@ -170,8 +136,8 @@
       "rs_momentum": 104.4,
       "rsi": 53.4,
       "sector_relative": "leader",
-      "days_in_phase": 2,
-      "previous_phase": "improving",
+      "days_in_phase": 8,
+      "previous_phase": "lagging",
       "weight": 2.9
     },
     {
@@ -187,9 +153,26 @@
       "rs_momentum": 102.4,
       "rsi": 39.1,
       "sector_relative": "leader",
-      "days_in_phase": 1,
-      "previous_phase": "weakening",
+      "days_in_phase": 20,
+      "previous_phase": "lagging",
       "weight": 2.5
+    },
+    {
+      "id": "HD",
+      "name": "HD",
+      "return_5d": 0.02638,
+      "return_20d": 0.02862,
+      "volume_ratio": 0.7,
+      "momentum_phase": "leading",
+      "phase_value": 77.6,
+      "phase_delta": -13.7,
+      "rs_ratio": 105.6,
+      "rs_momentum": 99.9,
+      "rsi": 54.3,
+      "sector_relative": "leader",
+      "days_in_phase": 22,
+      "previous_phase": "improving",
+      "weight": 6.2
     },
     {
       "id": "NKE",
@@ -204,9 +187,43 @@
       "rs_momentum": 101.5,
       "rsi": 44.7,
       "sector_relative": "leader",
-      "days_in_phase": 1,
-      "previous_phase": "weakening",
+      "days_in_phase": 19,
+      "previous_phase": "lagging",
       "weight": 3.5
+    },
+    {
+      "id": "SBUX",
+      "name": "SBUX",
+      "return_5d": -0.04632,
+      "return_20d": 0.01511,
+      "volume_ratio": 0.77,
+      "momentum_phase": "leading",
+      "phase_value": 40.5,
+      "phase_delta": -59.5,
+      "rs_ratio": 101.9,
+      "rs_momentum": 96.1,
+      "rsi": 45.7,
+      "sector_relative": "laggard",
+      "days_in_phase": 26,
+      "previous_phase": "lagging",
+      "weight": 4.2
+    },
+    {
+      "id": "DHI",
+      "name": "DHI",
+      "return_5d": 0.09303,
+      "return_20d": 0.07886,
+      "volume_ratio": 0.75,
+      "momentum_phase": "improving",
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 111.7,
+      "rs_momentum": 104.4,
+      "rsi": 77.2,
+      "sector_relative": "leader",
+      "days_in_phase": 12,
+      "previous_phase": "leading",
+      "weight": 2.3
     },
     {
       "id": "LEN",
@@ -221,8 +238,8 @@
       "rs_momentum": 100.0,
       "rsi": 78.9,
       "sector_relative": "leader",
-      "days_in_phase": 5,
-      "previous_phase": "leading",
+      "days_in_phase": 1,
+      "previous_phase": "improving",
       "weight": 1.3
     },
     {
@@ -238,43 +255,26 @@
       "rs_momentum": 98.6,
       "rsi": 61.9,
       "sector_relative": "leader",
-      "days_in_phase": 5,
+      "days_in_phase": 1,
       "previous_phase": "leading",
       "weight": 3.2
     },
     {
-      "id": "HD",
-      "name": "HD",
-      "return_5d": 0.02638,
-      "return_20d": 0.02862,
-      "volume_ratio": 0.7,
-      "momentum_phase": "weakening",
-      "phase_value": 77.6,
-      "phase_delta": -13.7,
-      "rs_ratio": 105.6,
-      "rs_momentum": 99.9,
-      "rsi": 54.3,
+      "id": "APTV",
+      "name": "APTV",
+      "return_5d": 0.02195,
+      "return_20d": 0.08383,
+      "volume_ratio": 1.0,
+      "momentum_phase": "lagging",
+      "phase_value": 100.0,
+      "phase_delta": 32.2,
+      "rs_ratio": 110.2,
+      "rs_momentum": 108.1,
+      "rsi": 68.9,
       "sector_relative": "leader",
-      "days_in_phase": 1,
+      "days_in_phase": 13,
       "previous_phase": "leading",
-      "weight": 6.2
-    },
-    {
-      "id": "SBUX",
-      "name": "SBUX",
-      "return_5d": -0.04632,
-      "return_20d": 0.01511,
-      "volume_ratio": 0.77,
-      "momentum_phase": "weakening",
-      "phase_value": 40.5,
-      "phase_delta": -59.5,
-      "rs_ratio": 101.9,
-      "rs_momentum": 96.1,
-      "rsi": 45.7,
-      "sector_relative": "laggard",
-      "days_in_phase": 1,
-      "previous_phase": "leading",
-      "weight": 4.2
+      "weight": 0.8
     },
     {
       "id": "AMZN",
@@ -289,8 +289,8 @@
       "rs_momentum": 89.8,
       "rsi": 16.7,
       "sector_relative": "laggard",
-      "days_in_phase": 8,
-      "previous_phase": "weakening",
+      "days_in_phase": 4,
+      "previous_phase": "leading",
       "weight": 46.5
     },
     {
@@ -306,8 +306,8 @@
       "rs_momentum": 93.7,
       "rsi": 18.5,
       "sector_relative": "laggard",
-      "days_in_phase": 26,
-      "previous_phase": "weakening",
+      "days_in_phase": 22,
+      "previous_phase": "leading",
       "weight": 6.4
     },
     {
@@ -323,7 +323,7 @@
       "rs_momentum": 92.2,
       "rsi": 31.9,
       "sector_relative": "laggard",
-      "days_in_phase": 4,
+      "days_in_phase": 9,
       "previous_phase": "weakening",
       "weight": 2.9
     },
@@ -340,8 +340,8 @@
       "rs_momentum": 87.9,
       "rsi": 28.5,
       "sector_relative": "laggard",
-      "days_in_phase": 8,
-      "previous_phase": "weakening",
+      "days_in_phase": 4,
+      "previous_phase": "leading",
       "weight": 1.6
     }
   ],
@@ -352,8 +352,8 @@
       "correlation": 0.935
     },
     {
-      "source": "LOW",
-      "target": "HD",
+      "source": "HD",
+      "target": "LOW",
       "correlation": 0.876
     },
     {
@@ -382,13 +382,13 @@
       "correlation": 0.62
     },
     {
-      "source": "NKE",
-      "target": "HD",
+      "source": "HD",
+      "target": "NKE",
       "correlation": 0.62
     },
     {
-      "source": "APTV",
-      "target": "LEN",
+      "source": "LEN",
+      "target": "APTV",
       "correlation": 0.612
     },
     {
@@ -407,8 +407,8 @@
       "correlation": 0.582
     },
     {
-      "source": "APTV",
-      "target": "NKE",
+      "source": "NKE",
+      "target": "APTV",
       "correlation": 0.577
     },
     {
@@ -422,8 +422,8 @@
       "correlation": 0.565
     },
     {
-      "source": "DHI",
-      "target": "HD",
+      "source": "HD",
+      "target": "DHI",
       "correlation": 0.546
     },
     {

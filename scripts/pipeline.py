@@ -79,6 +79,64 @@ def fetch_ohlcv(period: str = "2y"):
 
 
 # ---------------------------------------------------------------------------
+# Phase smoothing (confirmation filter)
+# ---------------------------------------------------------------------------
+PHASE_CONFIRM_DAYS = 5  # Must stay in new quadrant for N days to confirm
+
+def classify_phase(rs_ratio, rs_momentum):
+    """Raw phase from RS-Ratio / RS-Momentum quadrant."""
+    if rs_ratio >= 100 and rs_momentum >= 100:
+        return "leading"
+    elif rs_ratio < 100 and rs_momentum >= 100:
+        return "improving"
+    elif rs_ratio >= 100 and rs_momentum < 100:
+        return "weakening"
+    else:
+        return "lagging"
+
+
+def smooth_phase_series(raw_phases, confirm_days=PHASE_CONFIRM_DAYS):
+    """Apply N-day confirmation filter to a raw phase series.
+
+    A phase transition is only confirmed when the new phase has been
+    observed for `confirm_days` consecutive days. Until confirmed,
+    the previous phase is maintained.
+
+    Args:
+        raw_phases: list/array of raw phase strings
+        confirm_days: number of consecutive days required to confirm
+
+    Returns:
+        list of smoothed phase strings (same length)
+    """
+    if len(raw_phases) == 0:
+        return []
+
+    smoothed = [raw_phases[0]]
+    confirmed = raw_phases[0]
+    pending = None
+    pending_count = 0
+
+    for i in range(1, len(raw_phases)):
+        raw = raw_phases[i]
+        if raw == confirmed:
+            pending = None
+            pending_count = 0
+        elif raw == pending:
+            pending_count += 1
+            if pending_count >= confirm_days:
+                confirmed = pending
+                pending = None
+                pending_count = 0
+        else:
+            pending = raw
+            pending_count = 1
+        smoothed.append(confirmed)
+
+    return smoothed
+
+
+# ---------------------------------------------------------------------------
 # Indicator calculations
 # ---------------------------------------------------------------------------
 def compute_rsi_series(close, period=14):
@@ -212,12 +270,14 @@ def detect_rotations(data):
     bench_5d = float(benchmark.iloc[-1] / benchmark.iloc[-5] - 1) if len(benchmark) >= 5 else 0
     bench_20d = float(benchmark.iloc[-1] / benchmark.iloc[-20] - 1) if len(benchmark) >= 20 else 0
     residuals_5d = {}
+    residuals_20d = {}
     for t in valid:
         r5 = close[t].iloc[-1] / close[t].iloc[-5] - 1 if len(close) >= 5 else 0
         r20 = close[t].iloc[-1] / close[t].iloc[-20] - 1 if len(close) >= 20 else 0
         ret_5d[t] = float(r5) if not np.isnan(r5) else 0.0
         ret_20d[t] = float(r20) if not np.isnan(r20) else 0.0
         residuals_5d[t] = ret_5d[t] - betas[t] * bench_5d
+        residuals_20d[t] = ret_20d[t] - betas[t] * bench_20d
 
     # Volume ratio
     vol_avg = ind_volume.rolling(20).mean()
@@ -238,16 +298,6 @@ def detect_rotations(data):
 
         indicators[t] = {"mfi": mfi, "cmf": cmf, "rs_ratio": rs_ratio, "rs_momentum": rs_mom}
 
-        # Momentum phase — 4 RRG quadrants
-        if rs_ratio >= 100 and rs_mom >= 100:
-            phase = "leading"
-        elif rs_ratio < 100 and rs_mom >= 100:
-            phase = "improving"
-        elif rs_ratio >= 100 and rs_mom < 100:
-            phase = "weakening"
-        else:
-            phase = "lagging"
-
         # Phase value 0-100 — composite of RS-Ratio + RS-Momentum
         phase_value = float(np.clip(((rs_ratio - 95) + (rs_mom - 95)) / 20 * 100, 0, 100))
 
@@ -255,32 +305,35 @@ def detect_rotations(data):
         phase_value_prev = float(np.clip(((rs_ratio_prev - 95) + (rs_mom_prev - 95)) / 20 * 100, 0, 100))
         phase_delta = round(phase_value - phase_value_prev, 1)
 
-        # Days in current phase & previous phase (sector vs benchmark)
+        # Smoothed phase: compute raw phase series, then apply confirmation filter
         days_in_phase = 0
         previous_phase = None
         _rs = close[t] / benchmark
         _rs_sma = _rs.rolling(20).mean()
         _rr = (_rs / _rs_sma) * 100
         _rm = (_rr / _rr.shift(20)) * 100
-        _phases = pd.Series("lagging", index=_rr.dropna().index)
-        _rr_v = _rr.loc[_phases.index]
-        _rm_v = _rm.loc[_phases.index]
-        _phases[(_rr_v >= 100) & (_rm_v >= 100)] = "leading"
-        _phases[(_rr_v >= 100) & (_rm_v < 100)] = "weakening"
-        _phases[(_rr_v < 100) & (_rm_v >= 100)] = "improving"
-        _phase_arr = _phases.dropna().tail(60).values
-        if len(_phase_arr) > 1:
-            current = _phase_arr[-1]
+        _raw_phases = []
+        _valid_idx = _rm.dropna().index
+        for _day in _valid_idx:
+            _raw_phases.append(classify_phase(float(_rr.loc[_day]), float(_rm.loc[_day])))
+
+        # Apply smoothing on last 90 days (enough context for confirmation)
+        _raw_tail = _raw_phases[-90:] if len(_raw_phases) > 90 else _raw_phases
+        _smoothed = smooth_phase_series(_raw_tail)
+        phase = _smoothed[-1] if _smoothed else classify_phase(rs_ratio, rs_mom)
+
+        if len(_smoothed) > 1:
+            current = _smoothed[-1]
             count = 0
-            for k in range(len(_phase_arr) - 1, -1, -1):
-                if _phase_arr[k] == current:
+            for k in range(len(_smoothed) - 1, -1, -1):
+                if _smoothed[k] == current:
                     count += 1
                 else:
                     break
             days_in_phase = count
-            for k in range(len(_phase_arr) - days_in_phase - 1, -1, -1):
-                if _phase_arr[k] != current:
-                    previous_phase = _phase_arr[k]
+            for k in range(len(_smoothed) - days_in_phase - 1, -1, -1):
+                if _smoothed[k] != current:
+                    previous_phase = _smoothed[k]
                     break
 
         nodes.append({
@@ -305,81 +358,14 @@ def detect_rotations(data):
             "previous_phase": previous_phase,
         })
 
-    # --- Pairwise rotation scoring ---
-    # 20-day residual return correlation
+    # Market state — inter-sector correlation
     beta_adj = pd.DataFrame(
         bench_returns.values.reshape(-1, 1) * np.array([betas[t] for t in valid]).reshape(1, -1),
         index=returns.index, columns=valid,
     )
     resid_returns = returns[valid] - beta_adj
-    corr_window = min(20, len(resid_returns) - 1)
-    recent_resid = resid_returns.tail(corr_window)
+    recent_resid = resid_returns.tail(min(20, len(resid_returns) - 1))
 
-    rotations = []
-    for i, src in enumerate(valid):
-        for tgt in valid[i + 1:]:
-            # Determine direction: who outperforms over the week
-            ret_div = residuals_5d[tgt] - residuals_5d[src]
-            if abs(ret_div) < 0.01:
-                continue  # Need at least 1% divergence over 5 days
-
-            # Always orient from source (underperformer) to target (outperformer)
-            if ret_div < 0:
-                src_t, tgt_t = tgt, src
-                ret_div = -ret_div
-            else:
-                src_t, tgt_t = src, tgt
-
-            # --- Confirmation filters ---
-            tgt_cmf = indicators[tgt_t]["cmf"]
-            src_cmf = indicators[src_t]["cmf"]
-            # CMF: target must have positive buying pressure
-            cmf_confirms = tgt_cmf > 0 and tgt_cmf > src_cmf
-            # Volume: at least one sector must be above average
-            vol_tgt = vol_ratio_all[tgt_t]
-            vol_src = vol_ratio_all[src_t]
-            vol_confirms = max(vol_tgt, vol_src) >= 1.0
-
-            # Must have at least one confirmation
-            if not cmf_confirms and not vol_confirms:
-                continue
-
-            # Composite score
-            mfi_div = (indicators[tgt_t]["mfi"] - indicators[src_t]["mfi"]) / 100
-            cmf_div = tgt_cmf - src_cmf
-            vol_conf = (vol_tgt + vol_src) / 2
-            score = (
-                ret_div * 100 * 0.35 +
-                (max(0, cmf_div) * 0.30 if cmf_confirms else 0) +
-                max(0, mfi_div) * 0.20 +
-                (vol_conf * 0.15 if vol_confirms else 0)
-            )
-            if score <= 0.7:
-                continue  # Only strong, confirmed signals
-
-            # Correlation
-            if src_t in recent_resid.columns and tgt_t in recent_resid.columns:
-                corr = recent_resid[src_t].corr(recent_resid[tgt_t])
-                corr = float(corr) if not np.isnan(corr) else 0
-            else:
-                corr = 0
-
-            rotations.append({
-                "source": src_t,
-                "target": tgt_t,
-                "source_name": SECTOR_ETFS[src_t]["name"],
-                "target_name": SECTOR_ETFS[tgt_t]["name"],
-                "score": round(score, 3),
-                "return_divergence": round(ret_div * 100, 2),
-                "volume_confirmed": vol_confirms,
-                "cmf_confirmed": cmf_confirms,
-                "correlation": round(corr, 3),
-            })
-
-    rotations.sort(key=lambda x: x["score"], reverse=True)
-    rotations = rotations[:10]
-
-    # Market state
     if len(recent_resid.columns) > 1:
         corr_matrix = recent_resid.corr()
         mask = np.triu(np.ones_like(corr_matrix, dtype=bool), k=1)
@@ -391,8 +377,9 @@ def detect_rotations(data):
         avg_corr = 0.0
     market_state = "high_correlation" if avg_corr > 0.7 else "normal"
 
-    # Narrative
-    narrative = _generate_narrative(nodes, rotations, market_state, avg_corr)
+    # Narrative + regime
+    regime, regime_label, regime_confidence, narrative = \
+        _generate_narrative(nodes, [], market_state, avg_corr)
 
     return {
         "metadata": {
@@ -401,17 +388,85 @@ def detect_rotations(data):
             "market_state": market_state,
             "avg_correlation": round(avg_corr, 3),
             "total_sectors": len(valid),
-            "significant_rotations": len(rotations),
             "benchmark_return": round(float(latest_bench), 5),
+            "regime": regime,
+            "regime_label": regime_label,
+            "regime_confidence": regime_confidence,
             "narrative": narrative,
         },
         "nodes": nodes,
-        "rotations": rotations,
     }
 
 
+# ---------------------------------------------------------------------------
+# Market regime detection (Fidelity business cycle framework)
+# ---------------------------------------------------------------------------
+REGIME_PROFILES = {
+    "early_cycle": {
+        "leaders": {"XLF", "XLY", "XLI", "XLRE"},
+        "laggers": {"XLU", "XLV", "XLP"},
+        "label": "Cycliques en tete",
+        "context": "un schema typique de reprise economique",
+    },
+    "mid_cycle": {
+        "leaders": {"XLK", "XLC", "XLI", "XLY"},
+        "laggers": {"XLE", "XLU", "XLRE"},
+        "label": "Croissance en tete",
+        "context": "une configuration classique de phase d'expansion",
+    },
+    "late_cycle": {
+        "leaders": {"XLE", "XLV", "XLP", "XLU"},
+        "laggers": {"XLK", "XLY", "XLC"},
+        "label": "Defensives en tete",
+        "context": "un positionnement historiquement associe aux fins de cycle",
+    },
+    "contraction": {
+        "leaders": {"XLU", "XLV", "XLP"},
+        "laggers": {"XLF", "XLI", "XLY", "XLK", "XLE"},
+        "label": "Mode prudence",
+        "context": "un repli vers les valeurs refuges",
+    },
+}
+
+
+def _detect_regime(nodes):
+    """Infer market regime from sector rotation pattern."""
+    actual_leaders = {n["id"] for n in nodes
+                      if n["momentum_phase"] in ("leading", "improving")}
+    actual_laggers = {n["id"] for n in nodes
+                      if n["momentum_phase"] in ("lagging", "weakening")}
+
+    best_regime = None
+    best_score = -999
+    best_confidence = 0.0
+
+    for regime, profile in REGIME_PROFILES.items():
+        expected_leaders = profile["leaders"]
+        expected_laggers = profile["laggers"]
+        total = len(expected_leaders) + len(expected_laggers)
+
+        leader_matches = len(actual_leaders & expected_leaders)
+        lagger_matches = len(actual_laggers & expected_laggers)
+        leader_contra = len(actual_laggers & expected_leaders)
+        lagger_contra = len(actual_leaders & expected_laggers)
+
+        score = leader_matches + lagger_matches - 0.5 * (leader_contra + lagger_contra)
+        confidence = score / total if total > 0 else 0
+
+        if score > best_score:
+            best_score = score
+            best_regime = regime
+            best_confidence = confidence
+
+    if best_confidence < 0.3:
+        return "mixed", "Marche mixte", 0.0
+
+    profile = REGIME_PROFILES[best_regime]
+    return best_regime, profile["label"], round(best_confidence, 2)
+
+
 def _generate_narrative(nodes, rotations, market_state, avg_corr):
-    """Generate a narrative focused on what changed, not what is."""
+    """Generate concise narrative: one sentence for the bar, context as second sentence."""
     PHASE_LABELS = {
         "leading": "Surperformance",
         "improving": "Rebond",
@@ -419,69 +474,191 @@ def _generate_narrative(nodes, rotations, market_state, avg_corr):
         "lagging": "Sous pression",
     }
 
+    regime, regime_label, confidence = _detect_regime(nodes)
+
+    # High correlation — everything moves together
     if market_state == "high_correlation":
-        return "Tous les secteurs bougent ensemble — pas de rotation notable."
+        return (regime, regime_label, confidence,
+                "Les secteurs évoluent de concert, peu de rotation.")
 
-    parts = []
-
-    # 1) Phase transitions — the most valuable info
-    transitions = []
-    for n in nodes:
-        prev = n.get("previous_phase")
-        curr = n["momentum_phase"]
-        dip = n.get("days_in_phase", 0)
-        if prev and prev != curr and dip <= 5:
-            transitions.append(n)
+    # 1) Phase transitions — most newsworthy, grouped by target phase
+    transitions = [n for n in nodes
+                   if n.get("previous_phase")
+                   and n["previous_phase"] != n["momentum_phase"]
+                   and n.get("days_in_phase", 0) <= 5]
 
     if transitions:
-        for n in transitions[:2]:
-            prev_label = PHASE_LABELS.get(n["previous_phase"], n["previous_phase"])
-            curr_label = PHASE_LABELS.get(n["momentum_phase"], n["momentum_phase"])
-            parts.append(f"{n['name']} passe en {curr_label} (était en {prev_label})")
+        by_phase = {}
+        for n in transitions:
+            by_phase.setdefault(n["momentum_phase"], []).append(n["name"])
 
-    # 2) Persistence — who's been leading/lagging for a while
-    persistent = [n for n in nodes
-                  if n.get("days_in_phase", 0) >= 15
-                  and n["momentum_phase"] in ("leading", "lagging")]
-    if persistent:
-        persistent.sort(key=lambda x: -x.get("days_in_phase", 0))
-        for n in persistent[:2]:
-            label = PHASE_LABELS[n["momentum_phase"]]
-            weeks = n["days_in_phase"] // 5
-            if weeks >= 2:
-                parts.append(f"{n['name']} en {label} depuis {weeks} semaines")
+        parts = []
+        for phase, names in by_phase.items():
+            label = PHASE_LABELS[phase]
+            if len(names) == 1:
+                parts.append(f"{names[0]} passe en {label}")
+            else:
+                joined = " et ".join(names[:3])
+                parts.append(f"{joined} passent en {label}")
 
-    # 3) Breadth — how many sectors are up/down
-    up = sum(1 for n in nodes if n["return_5d"] > 0.002)
-    total = len(nodes)
-    if up >= total - 1:
-        parts.append(f"{up} secteurs sur {total} en hausse cette semaine")
-    elif up <= 2:
-        parts.append(f"seulement {up} secteur{'s' if up > 1 else ''} en hausse cette semaine")
+        headline = ", ".join(parts[:2])
+    else:
+        # 2) No transitions — show leaders vs laggers
+        leaders = sorted(
+            [n for n in nodes if n["momentum_phase"] == "leading"],
+            key=lambda x: -x["rs_momentum"])
+        laggers = sorted(
+            [n for n in nodes if n["momentum_phase"] == "lagging"],
+            key=lambda x: x["rs_momentum"])
 
-    # 4) Fallback if nothing notable
-    if not parts:
-        flat = sum(1 for n in nodes if abs(n["return_5d"]) <= 0.005)
-        if flat >= 8:
-            return "Semaine calme, les secteurs évoluent sans direction claire."
-        # Simple top/bottom summary
-        gaining = sorted(nodes, key=lambda x: -x["return_5d"])[:2]
-        losing = sorted(nodes, key=lambda x: x["return_5d"])[:2]
-        tops = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in gaining)
-        bots = ", ".join(f"{n['name']} ({n['return_5d']*100:+.1f}%)" for n in losing)
-        return f"En tête : {tops}. En retrait : {bots}."
+        if leaders and laggers:
+            tops = " et ".join(n["name"] for n in leaders[:2])
+            bots = " et ".join(n["name"] for n in laggers[:2])
+            headline = f"{tops} mènent, {bots} décrochent"
+        elif leaders:
+            tops = " et ".join(n["name"] for n in leaders[:3])
+            headline = f"{tops} en tête du marché"
+        elif laggers:
+            bots = " et ".join(n["name"] for n in laggers[:3])
+            headline = f"Pression sur {bots}"
+        else:
+            headline = "Positions stables, pas de mouvement notable"
 
-    # Join sentences
-    narrative = ". ".join(p[0].upper() + p[1:] for p in parts)
-    if not narrative.endswith("."):
-        narrative += "."
+    # Build full narrative: headline + optional context as second sentence
+    narrative = headline + "."
+    if confidence >= 0.4 and regime != "mixed":
+        context = REGIME_PROFILES[regime]["context"]
+        narrative += f" {context[0].upper()}{context[1:]}."
 
-    return narrative
+    return (regime, regime_label, confidence, narrative)
 
 
 # ---------------------------------------------------------------------------
 # Sample data (for testing without API)
 # ---------------------------------------------------------------------------
+def generate_sector_history(data, days=90):
+    """Generate historical RS-Ratio/RS-Momentum snapshots for RRG playback."""
+    etfs = list(SECTOR_ETFS.keys())
+    close = data["Close"][etfs].dropna(axis=1, how="all")
+    high = data["High"][etfs].dropna(axis=1, how="all")
+    low = data["Low"][etfs].dropna(axis=1, how="all")
+    volume = data["Volume"][etfs].dropna(axis=1, how="all")
+    benchmark = data["Close"][BENCHMARK]
+    valid = sorted(set(close.columns) & set(high.columns) & set(low.columns) & set(volume.columns))
+
+    # Compute full RS series per sector
+    rs_full = {}
+    for t in valid:
+        rs = close[t] / benchmark
+        rs_sma = rs.rolling(20).mean()
+        rr = (rs / rs_sma) * 100
+        rm = (rr / rr.shift(20)) * 100
+        rs_full[t] = {"rr": rr, "rm": rm}
+
+    # Compute full CMF series per sector (21-day rolling)
+    cmf_full = {}
+    for t in valid:
+        hl_range = high[t] - low[t]
+        hl_range = hl_range.replace(0, np.nan)
+        mfm = ((close[t] - low[t]) - (high[t] - close[t])) / hl_range
+        mfv = mfm * volume[t]
+        cmf_series = mfv.rolling(21).sum() / volume[t].rolling(21).sum()
+        cmf_full[t] = cmf_series
+
+    # Compute 20-day return per sector (for Flow Map Y-axis)
+    ret_full = {}
+    for t in valid:
+        ret_full[t] = close[t].pct_change(20)
+
+    # Compute distance to 50-day MA per sector (for Signal Actif condition)
+    ma50_full = {}
+    for t in valid:
+        ma50 = close[t].rolling(50).mean()
+        ma50_full[t] = (close[t] / ma50) - 1  # negative = below MA50
+
+    trading_days = benchmark.dropna().index[-days:]
+    dates = [d.strftime("%Y-%m-%d") for d in trading_days]
+
+    sectors = {}
+    for t in valid:
+        rr = rs_full[t]["rr"]
+        rm = rs_full[t]["rm"]
+        cmf_s = cmf_full[t]
+        ret_s = ret_full[t]
+        ma50_s = ma50_full[t]
+        r_vals = []
+        m_vals = []
+        c_vals = []
+        ret_vals = []
+        ma50_vals = []
+        raw_phases = []
+        for day in trading_days:
+            r = float(rr.loc[day]) if day in rr.index and not np.isnan(rr.loc[day]) else None
+            m = float(rm.loc[day]) if day in rm.index and not np.isnan(rm.loc[day]) else None
+            c = float(cmf_s.loc[day]) if day in cmf_s.index and not np.isnan(cmf_s.loc[day]) else 0.0
+            ret = float(ret_s.loc[day]) if day in ret_s.index and not np.isnan(ret_s.loc[day]) else None
+            ma50d = float(ma50_s.loc[day]) if day in ma50_s.index and not np.isnan(ma50_s.loc[day]) else None
+            r_vals.append(round(r, 2) if r is not None else None)
+            m_vals.append(round(m, 2) if m is not None else None)
+            c_vals.append(round(c, 3))
+            ret_vals.append(round(ret, 4) if ret is not None else None)
+            ma50_vals.append(round(ma50d, 4) if ma50d is not None else None)
+            if r is not None and m is not None:
+                raw_phases.append(classify_phase(r, m))
+            elif raw_phases:
+                raw_phases.append(raw_phases[-1])  # carry forward
+            else:
+                raw_phases.append("lagging")
+
+        # Smooth phases with confirmation, but use full history for warmup
+        # Get raw phases for the full RS series (not just last N days)
+        full_raw = []
+        for day in rr.dropna().index:
+            if day in rm.index and not np.isnan(rm.loc[day]):
+                full_raw.append(classify_phase(float(rr.loc[day]), float(rm.loc[day])))
+        full_smoothed = smooth_phase_series(full_raw)
+        # Extract the last `days` smoothed values (aligned with trading_days)
+        p_vals = full_smoothed[-len(trading_days):] if len(full_smoothed) >= len(trading_days) else raw_phases
+
+        sectors[t] = {
+            "r": r_vals, "m": m_vals, "p": p_vals, "c": c_vals, "ret": ret_vals,
+            "ma50": ma50_vals,
+            "w": SECTOR_ETFS[t]["weight"],
+            "name": SECTOR_ETFS[t]["name"], "color": SECTOR_ETFS[t]["color"],
+        }
+
+    return {"dates": dates, "sectors": sectors}
+
+
+def _generate_sample_history(days=90):
+    """Generate synthetic sector history for --sample mode."""
+    rng = np.random.default_rng(99)
+    dates = [(datetime.now() - timedelta(days=days - i)).strftime("%Y-%m-%d")
+             for i in range(days)]
+
+    # Each sector starts at a random RS position and drifts
+    sectors = {}
+    for etf, meta in SECTOR_ETFS.items():
+        r_base = 98 + rng.normal(0, 2)
+        m_base = 98 + rng.normal(0, 2)
+        drift_r = rng.normal(0.02, 0.01)
+        drift_m = rng.normal(0.01, 0.015)
+        r_vals, m_vals = [], []
+        for i in range(days):
+            r_base += drift_r + rng.normal(0, 0.15)
+            m_base += drift_m + rng.normal(0, 0.2)
+            r_vals.append(round(float(np.clip(r_base, 94, 106)), 2))
+            m_vals.append(round(float(np.clip(m_base, 94, 106)), 2))
+        raw_phases = [classify_phase(r, m) for r, m in zip(r_vals, m_vals)]
+        p_vals = smooth_phase_series(raw_phases)
+        sectors[etf] = {
+            "r": r_vals, "m": m_vals, "p": p_vals,
+            "name": meta["name"], "color": meta["color"],
+        }
+
+    return {"dates": dates, "sectors": sectors}
+
+
 def generate_sample_data():
     """Generate synthetic sector rotation data."""
     rng = np.random.default_rng(42)
@@ -538,52 +715,8 @@ def generate_sample_data():
             "rs_momentum": rs_mom,
         })
 
-    # Build rotations from biased data (with confirmation filters)
-    rotations = []
-    for i in range(len(nodes)):
-        for j in range(i + 1, len(nodes)):
-            ni, nj = nodes[i], nodes[j]
-            ret_div = nj["residual_return"] - ni["residual_return"]
-            if abs(ret_div) < 0.01:
-                continue
-            if ret_div < 0:
-                src, tgt = nj, ni
-                ret_div = -ret_div
-            else:
-                src, tgt = ni, nj
-
-            cmf_confirms = tgt["cmf"] > 0 and tgt["cmf"] > src["cmf"]
-            vol_confirms = max(src["volume_ratio"], tgt["volume_ratio"]) >= 1.0
-            if not cmf_confirms and not vol_confirms:
-                continue
-
-            mfi_div = (tgt["mfi"] - src["mfi"]) / 100
-            cmf_div = tgt["cmf"] - src["cmf"]
-            vol_conf = (src["volume_ratio"] + tgt["volume_ratio"]) / 2
-            corr = float(rng.uniform(-0.5, 0.3))
-            score = (
-                ret_div * 100 * 0.35 +
-                (max(0, cmf_div) * 0.30 if cmf_confirms else 0) +
-                max(0, mfi_div) * 0.20 +
-                (vol_conf * 0.15 if vol_confirms else 0)
-            )
-            if score > 0.7:
-                rotations.append({
-                    "source": src["id"],
-                    "target": tgt["id"],
-                    "source_name": src["name"],
-                    "target_name": tgt["name"],
-                    "score": round(score, 3),
-                    "return_divergence": round(ret_div * 100, 2),
-                    "volume_confirmed": vol_confirms,
-                    "cmf_confirmed": cmf_confirms,
-                    "correlation": round(corr, 3),
-                })
-
-    rotations.sort(key=lambda x: x["score"], reverse=True)
-    rotations = rotations[:10]
-
-    narrative = _generate_narrative(nodes, rotations, "normal", 0.35)
+    regime, regime_label, regime_confidence, narrative = \
+        _generate_narrative(nodes, [], "normal", 0.35)
 
     return {
         "metadata": {
@@ -591,12 +724,13 @@ def generate_sample_data():
             "market_state": "normal",
             "avg_correlation": 0.35,
             "total_sectors": len(nodes),
-            "significant_rotations": len(rotations),
             "benchmark_return": bench_ret,
+            "regime": regime,
+            "regime_label": regime_label,
+            "regime_confidence": regime_confidence,
             "narrative": narrative,
         },
         "nodes": nodes,
-        "rotations": rotations,
     }
 
 
@@ -645,50 +779,38 @@ def compute_sector_detail(etf, data_all):
         # RS-Ratio/Momentum vs sector ETF
         rs_ratio, rs_mom, rs_ratio_prev, rs_mom_prev = compute_rs(c, sector_close)
 
-        # Phase — 4 RRG quadrants
-        if rs_ratio >= 100 and rs_mom >= 100:
-            phase = "leading"
-        elif rs_ratio < 100 and rs_mom >= 100:
-            phase = "improving"
-        elif rs_ratio >= 100 and rs_mom < 100:
-            phase = "weakening"
-        else:
-            phase = "lagging"
-
         phase_value = float(np.clip(((rs_ratio - 95) + (rs_mom - 95)) / 20 * 100, 0, 100))
 
         phase_value_prev = float(np.clip(((rs_ratio_prev - 95) + (rs_mom_prev - 95)) / 20 * 100, 0, 100))
         phase_delta = round(phase_value - phase_value_prev, 1)
 
-        # Days in current phase: compute phase series for last 30 days
+        # Smoothed phase: compute raw series then apply confirmation filter
         days_in_phase = 0
+        previous_phase = None
+        phase = classify_phase(rs_ratio, rs_mom)  # fallback
         if len(c) >= 60:
             _rs = c / sector_close.reindex(c.index)
             _rs_sma = _rs.rolling(20).mean()
             _rr = (_rs / _rs_sma) * 100
             _rm = (_rr / _rr.shift(20)) * 100
-            _phases = pd.Series("lagging", index=_rr.index)
-            _phases[(_rr >= 100) & (_rm >= 100)] = "leading"
-            _phases[(_rr >= 100) & (_rm < 100)] = "weakening"
-            _phases[(_rr < 100) & (_rm >= 100)] = "improving"
-            _phases = _phases.dropna().tail(30).values
-            if len(_phases) > 1:
-                current = _phases[-1]
+            _raw_phases = []
+            for _day in _rm.dropna().index:
+                _raw_phases.append(classify_phase(float(_rr.loc[_day]), float(_rm.loc[_day])))
+            _smoothed = smooth_phase_series(_raw_phases[-60:])
+            if _smoothed:
+                phase = _smoothed[-1]
+                current = _smoothed[-1]
                 count = 0
-                for k in range(len(_phases) - 1, -1, -1):
-                    if _phases[k] == current:
+                for k in range(len(_smoothed) - 1, -1, -1):
+                    if _smoothed[k] == current:
                         count += 1
                     else:
                         break
                 days_in_phase = count
-        previous_phase = None
-        if len(c) >= 60 and len(_phases) > 1:
-            # Find the phase before the current streak
-            current = _phases[-1]
-            for k in range(len(_phases) - days_in_phase - 1, -1, -1):
-                if _phases[k] != current:
-                    previous_phase = _phases[k]
-                    break
+                for k in range(len(_smoothed) - days_in_phase - 1, -1, -1):
+                    if _smoothed[k] != current:
+                        previous_phase = _smoothed[k]
+                        break
 
         # Leader/laggard vs sector ETF
         sector_relative = "leader" if r5 > sector_r5 else "laggard"
@@ -1061,6 +1183,7 @@ def main():
         print("Generating sample data...")
         result = generate_sample_data()
         data_all = None
+        data_etf = None
     else:
         global pd, yf
         import shutil as _shutil
@@ -1073,9 +1196,9 @@ def main():
         yf = _yf
 
         # Fetch sector ETFs + benchmark
-        data = fetch_ohlcv()
+        data_etf = fetch_ohlcv()
         print("Computing rotation signals...")
-        result = detect_rotations(data)
+        result = detect_rotations(data_etf)
 
         # Fetch individual holdings for sector detail
         all_holdings = []
@@ -1088,7 +1211,7 @@ def main():
         # Merge sector ETF data + stock data
         data_all = {}
         for field in ["Close", "High", "Low", "Volume"]:
-            sector_df = data[field]
+            sector_df = data_etf[field]
             stock_df = data_stocks[field] if field in data_stocks else _pd.DataFrame()
             data_all[field] = _pd.concat([sector_df, stock_df], axis=1)
             # Remove duplicate columns
@@ -1166,6 +1289,20 @@ def main():
     else:
         result["signals_history"] = []
 
+    # Generate sector history for RRG playback
+    rrg_history_path = output_path.parent / "history.json"
+    if data_etf is not None:
+        print("Generating sector history for RRG playback...")
+        rrg_history = generate_sector_history(data_etf, days=252)
+        with open(rrg_history_path, "w") as f:
+            json.dump(rrg_history, f)
+        print(f"  History: {len(rrg_history['dates'])} days, {len(rrg_history['sectors'])} sectors")
+    else:
+        # Sample mode
+        rrg_history = _generate_sample_history(days=90)
+        with open(rrg_history_path, "w") as f:
+            json.dump(rrg_history, f)
+
     # Re-write with signals included
     with open(output_path, "w") as f:
         json.dump(result, f, indent=2)
@@ -1179,7 +1316,7 @@ def main():
     meta = result["metadata"]
     print(f"\nDone! {meta['date']}")
     print(f"  Market state: {meta['market_state']} (avg corr: {meta['avg_correlation']})")
-    print(f"  Sectors: {meta['total_sectors']} | Rotations: {meta['significant_rotations']}")
+    print(f"  Sectors: {meta['total_sectors']}")
     print(f"  {meta.get('narrative', '')}")
     print(f"  Output: {output_path}")
 

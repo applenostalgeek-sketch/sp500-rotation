@@ -1,19 +1,35 @@
 [
   {
+    "ticker": "WM",
+    "sector": "XLI",
+    "sector_name": "Industrie",
+    "open_date": "2026-02-15",
+    "open_price": 234.52000427246094,
+    "spy_open_price": 681.75,
+    "current_phase": "improving",
+    "days_active": 1,
+    "return_vs_spy": 0.0,
+    "return_abs": 0.0,
+    "rsi": 57.0,
+    "status": "active",
+    "close_date": null,
+    "close_reason": null
+  },
+  {
     "ticker": "CRM",
     "sector": "XLK",
     "sector_name": "Technologie",
     "open_date": "2026-02-13",
     "open_price": 188.93499755859375,
     "spy_open_price": 681.239990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "lagging",
+    "days_active": 2,
     "return_vs_spy": 0.00341,
     "return_abs": 0.00415,
     "rsi": 18.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "reversed"
   },
   {
     "ticker": "V",
@@ -22,14 +38,14 @@
     "open_date": "2026-02-13",
     "open_price": 313.4541931152344,
     "spy_open_price": 681.239990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "lagging",
+    "days_active": 2,
     "return_vs_spy": 0.00125,
     "return_abs": 0.002,
     "rsi": 39.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "reversed"
   },
   {
     "ticker": "MA",
@@ -38,14 +54,14 @@
     "open_date": "2026-02-13",
     "open_price": 518.1691284179688,
     "spy_open_price": 681.239990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "leading",
+    "days_active": 2,
     "return_vs_spy": -0.00038,
     "return_abs": 0.00037,
     "rsi": 46.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "confirmed"
   },
   {
     "ticker": "PG",
@@ -54,14 +70,14 @@
     "open_date": "2026-02-13",
     "open_price": 160.58999633789062,
     "spy_open_price": 681.239990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "leading",
+    "days_active": 2,
     "return_vs_spy": -0.00399,
     "return_abs": -0.00324,
     "rsi": 77.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "confirmed"
   },
   {
     "ticker": "KO",
@@ -70,14 +86,14 @@
     "open_date": "2026-02-13",
     "open_price": 78.69999694824219,
     "spy_open_price": 681.239990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "leading",
+    "days_active": 2,
     "return_vs_spy": -0.001,
     "return_abs": -0.00025,
     "rsi": 75.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "confirmed"
   },
   {
     "ticker": "NOW",
@@ -86,14 +102,14 @@
     "open_date": "2026-02-13",
     "open_price": 107.16999816894531,
     "spy_open_price": 680.989990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "lagging",
+    "days_active": 2,
     "return_vs_spy": -0.00196,
     "return_abs": -0.00084,
     "rsi": 25.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "reversed"
   },
   {
     "ticker": "LLY",
@@ -102,14 +118,14 @@
     "open_date": "2026-02-13",
     "open_price": 1044.9300537109375,
     "spy_open_price": 680.989990234375,
-    "current_phase": "improving",
-    "days_active": 1,
+    "current_phase": "lagging",
+    "days_active": 2,
     "return_vs_spy": -0.00583,
     "return_abs": -0.00472,
     "rsi": 48.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "reversed"
   },
   {
     "ticker": "GIS",
@@ -118,14 +134,14 @@
     "open_date": "2026-02-12",
     "open_price": 48.58000183105469,
     "spy_open_price": 681.27001953125,
-    "current_phase": "improving",
-    "days_active": 2,
+    "current_phase": "lagging",
+    "days_active": 3,
     "return_vs_spy": -0.00564,
     "return_abs": -0.00494,
     "rsi": 75.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "reversed"
   },
   {
     "ticker": "META",
@@ -134,14 +150,14 @@
     "open_date": "2026-02-12",
     "open_price": 649.8099975585938,
     "spy_open_price": 681.27001953125,
-    "current_phase": "improving",
-    "days_active": 2,
+    "current_phase": "leading",
+    "days_active": 3,
     "return_vs_spy": -0.01616,
     "return_abs": -0.01545,
     "rsi": 48.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "confirmed"
   },
   {
     "ticker": "KHC",
@@ -150,14 +166,14 @@
     "open_date": "2026-02-11",
     "open_price": 24.989999771118164,
     "spy_open_price": 691.9600219726562,
-    "current_phase": "improving",
-    "days_active": 3,
+    "current_phase": "lagging",
+    "days_active": 4,
     "return_vs_spy": 0.00715,
     "return_abs": -0.0076,
     "rsi": 78.0,
-    "status": "active",
-    "close_date": null,
-    "close_reason": null
+    "status": "closed",
+    "close_date": "2026-02-15",
+    "close_reason": "reversed"
   },
   {
     "ticker": "WFC",
@@ -768,22 +784,6 @@
     "close_reason": "confirmed"
   },
   {
-    "ticker": "BSX",
-    "sector": "XLV",
-    "sector_name": "Sante",
-    "open_date": "2025-12-17",
-    "open_price": 94.4800033569336,
-    "spy_open_price": 669.4219360351562,
-    "current_phase": "leading",
-    "days_active": 19,
-    "return_vs_spy": -0.01675,
-    "return_abs": 0.01058,
-    "rsi": 27.0,
-    "status": "closed",
-    "close_date": "2026-01-05",
-    "close_reason": "confirmed"
-  },
-  {
     "ticker": "ABT",
     "sector": "XLV",
     "sector_name": "Sante",
@@ -909,38 +909,6 @@
     "rsi": 35.0,
     "status": "closed",
     "close_date": "2025-12-22",
-    "close_reason": "confirmed"
-  },
-  {
-    "ticker": "HD",
-    "sector": "XLY",
-    "sector_name": "Conso. Discretionnaire",
-    "open_date": "2025-12-17",
-    "open_price": 356.75,
-    "spy_open_price": 669.4219360351562,
-    "current_phase": "lagging",
-    "days_active": 2,
-    "return_vs_spy": -0.04962,
-    "return_abs": -0.03294,
-    "rsi": 53.0,
-    "status": "closed",
-    "close_date": "2025-12-19",
-    "close_reason": "reversed"
-  },
-  {
-    "ticker": "CE",
-    "sector": "XLB",
-    "sector_name": "Materiaux",
-    "open_date": "2025-12-16",
-    "open_price": 40.95000076293945,
-    "spy_open_price": 676.8699340820312,
-    "current_phase": "leading",
-    "days_active": 1,
-    "return_vs_spy": 0.02614,
-    "return_abs": 0.01514,
-    "rsi": 56.0,
-    "status": "closed",
-    "close_date": "2025-12-17",
     "close_reason": "confirmed"
   }
 ]
