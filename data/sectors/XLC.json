@@ -2,364 +2,364 @@
   "etf": "XLC",
   "sector_name": "Communication",
   "sector_color": "#ec4899",
-  "date": "2026-02-18",
+  "date": "2026-02-19",
   "stocks": [
     {
       "id": "T",
       "name": "T",
-      "return_5d": -0.02072,
-      "return_20d": 0.18638,
-      "volume_ratio": 0.64,
+      "return_5d": -0.03194,
+      "return_20d": 0.18236,
+      "volume_ratio": 0.5,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 108.3,
-      "rs_momentum": 107.4,
-      "rsi": 81.5,
+      "rs_ratio": 106.9,
+      "rs_momentum": 106.8,
+      "rsi": 77.6,
       "sector_relative": "laggard",
-      "days_in_phase": 11,
+      "days_in_phase": 12,
       "previous_phase": "improving",
       "weight": 11.9
     },
     {
       "id": "VZ",
       "name": "VZ",
-      "return_5d": -0.01879,
-      "return_20d": 0.22452,
-      "volume_ratio": 0.73,
+      "return_5d": -0.01658,
+      "return_20d": 0.23202,
+      "volume_ratio": 0.66,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 109.8,
-      "rs_momentum": 107.8,
-      "rsi": 83.1,
+      "rs_ratio": 109.5,
+      "rs_momentum": 108.2,
+      "rsi": 83.4,
       "sector_relative": "laggard",
-      "days_in_phase": 9,
+      "days_in_phase": 10,
       "previous_phase": "improving",
-      "weight": 15.9
+      "weight": 16.5
     },
     {
       "id": "TMUS",
       "name": "TMUS",
-      "return_5d": 0.01771,
-      "return_20d": 0.16149,
-      "volume_ratio": 0.74,
+      "return_5d": 0.00289,
+      "return_20d": 0.16134,
+      "volume_ratio": 0.64,
       "momentum_phase": "leading",
       "phase_value": 100.0,
-      "phase_delta": 9.4,
-      "rs_ratio": 109.4,
-      "rs_momentum": 113.7,
-      "rsi": 75.4,
-      "sector_relative": "leader",
-      "days_in_phase": 7,
+      "phase_delta": 0.0,
+      "rs_ratio": 109.1,
+      "rs_momentum": 114.2,
+      "rsi": 75.0,
+      "sector_relative": "laggard",
+      "days_in_phase": 8,
       "previous_phase": "lagging",
-      "weight": 13.2
+      "weight": 13.4
     },
     {
       "id": "CHTR",
       "name": "CHTR",
-      "return_5d": -0.00801,
-      "return_20d": 0.2763,
-      "volume_ratio": 0.5,
+      "return_5d": -0.02747,
+      "return_20d": 0.20174,
+      "volume_ratio": 0.56,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
-      "rs_ratio": 112.8,
-      "rs_momentum": 121.5,
-      "rsi": 83.6,
-      "sector_relative": "leader",
-      "days_in_phase": 9,
+      "rs_ratio": 107.6,
+      "rs_momentum": 114.6,
+      "rsi": 74.2,
+      "sector_relative": "laggard",
+      "days_in_phase": 10,
       "previous_phase": "lagging",
-      "weight": 5.0
+      "weight": 4.8
     },
     {
       "id": "LYV",
       "name": "LYV",
-      "return_5d": 0.0309,
-      "return_20d": 0.11502,
-      "volume_ratio": 1.31,
+      "return_5d": 0.01672,
+      "return_20d": 0.13986,
+      "volume_ratio": 1.37,
       "momentum_phase": "leading",
       "phase_value": 100.0,
-      "phase_delta": 38.6,
-      "rs_ratio": 107.8,
-      "rs_momentum": 107.6,
-      "rsi": 62.0,
+      "phase_delta": 13.7,
+      "rs_ratio": 107.9,
+      "rs_momentum": 109.5,
+      "rsi": 63.5,
       "sector_relative": "leader",
-      "days_in_phase": 1,
+      "days_in_phase": 2,
       "previous_phase": "lagging",
-      "weight": 3.5
-    },
-    {
-      "id": "CMCSA",
-      "name": "CMCSA",
-      "return_5d": -0.02709,
-      "return_20d": 0.0938,
-      "volume_ratio": 0.56,
-      "momentum_phase": "leading",
-      "phase_value": 85.3,
-      "phase_delta": -14.7,
-      "rs_ratio": 105.9,
-      "rs_momentum": 101.2,
-      "rsi": 79.7,
-      "sector_relative": "laggard",
-      "days_in_phase": 7,
-      "previous_phase": "weakening",
-      "weight": 9.5
-    },
-    {
-      "id": "META",
-      "name": "META",
-      "return_5d": -0.03809,
-      "return_20d": 0.04937,
-      "volume_ratio": 0.78,
-      "momentum_phase": "leading",
-      "phase_value": 49.4,
-      "phase_delta": -22.5,
-      "rs_ratio": 98.0,
-      "rs_momentum": 101.9,
-      "rsi": 43.8,
-      "sector_relative": "laggard",
-      "days_in_phase": 15,
-      "previous_phase": "lagging",
-      "weight": 99.1
+      "weight": 3.6
     },
     {
       "id": "WBD",
       "name": "WBD",
-      "return_5d": 0.02858,
-      "return_20d": 0.00911,
-      "volume_ratio": 0.71,
-      "momentum_phase": "lagging",
-      "phase_value": 93.2,
-      "phase_delta": 46.4,
-      "rs_ratio": 105.2,
-      "rs_momentum": 103.4,
-      "rsi": 60.7,
+      "return_5d": 0.01494,
+      "return_20d": 0.00599,
+      "volume_ratio": 1.04,
+      "momentum_phase": "leading",
+      "phase_value": 80.1,
+      "phase_delta": 29.8,
+      "rs_ratio": 103.8,
+      "rs_momentum": 102.2,
+      "rsi": 62.7,
       "sector_relative": "leader",
-      "days_in_phase": 15,
-      "previous_phase": "weakening",
-      "weight": 5.4
-    },
-    {
-      "id": "DIS",
-      "name": "DIS",
-      "return_5d": -0.00943,
-      "return_20d": -0.0538,
-      "volume_ratio": 0.52,
-      "momentum_phase": "lagging",
-      "phase_value": 54.0,
-      "phase_delta": 8.4,
-      "rs_ratio": 100.6,
-      "rs_momentum": 100.2,
-      "rsi": 46.7,
-      "sector_relative": "leader",
-      "days_in_phase": 14,
-      "previous_phase": "leading",
-      "weight": 12.4
-    },
-    {
-      "id": "EA",
-      "name": "EA",
-      "return_5d": -0.00994,
-      "return_20d": -0.0192,
-      "volume_ratio": 0.41,
-      "momentum_phase": "lagging",
-      "phase_value": 45.2,
-      "phase_delta": 0.7,
-      "rs_ratio": 101.0,
-      "rs_momentum": 98.1,
-      "rsi": 39.0,
-      "sector_relative": "leader",
-      "days_in_phase": 10,
-      "previous_phase": "leading",
+      "days_in_phase": 1,
+      "previous_phase": "lagging",
       "weight": 5.5
     },
     {
-      "id": "NFLX",
-      "name": "NFLX",
-      "return_5d": -0.02047,
-      "return_20d": -0.08634,
-      "volume_ratio": 0.59,
-      "momentum_phase": "lagging",
-      "phase_value": 29.3,
-      "phase_delta": -8.4,
-      "rs_ratio": 97.2,
-      "rs_momentum": 98.6,
-      "rsi": 31.1,
+      "id": "CMCSA",
+      "name": "CMCSA",
+      "return_5d": -0.01383,
+      "return_20d": 0.07355,
+      "volume_ratio": 0.65,
+      "momentum_phase": "leading",
+      "phase_value": 63.2,
+      "phase_delta": -36.8,
+      "rs_ratio": 104.2,
+      "rs_momentum": 98.4,
+      "rsi": 72.5,
       "sector_relative": "laggard",
-      "days_in_phase": 11,
-      "previous_phase": "improving",
-      "weight": 32.8
+      "days_in_phase": 8,
+      "previous_phase": "weakening",
+      "weight": 9.2
+    },
+    {
+      "id": "META",
+      "name": "META",
+      "return_5d": -0.00774,
+      "return_20d": -0.0044,
+      "volume_ratio": 0.54,
+      "momentum_phase": "improving",
+      "phase_value": 41.1,
+      "phase_delta": -37.3,
+      "rs_ratio": 97.6,
+      "rs_momentum": 100.7,
+      "rsi": 16.2,
+      "sector_relative": "laggard",
+      "days_in_phase": 1,
+      "previous_phase": "leading",
+      "weight": 99.5
     },
     {
       "id": "OMC",
       "name": "OMC",
-      "return_5d": 0.01212,
-      "return_20d": -0.10715,
-      "volume_ratio": 1.15,
+      "return_5d": 0.20321,
+      "return_20d": 0.02145,
+      "volume_ratio": 2.65,
       "momentum_phase": "lagging",
-      "phase_value": 19.6,
-      "phase_delta": 1.3,
-      "rs_ratio": 97.6,
-      "rs_momentum": 96.4,
-      "rsi": 38.2,
+      "phase_value": 100.0,
+      "phase_delta": 100.0,
+      "rs_ratio": 111.9,
+      "rs_momentum": 110.8,
+      "rsi": 57.0,
       "sector_relative": "leader",
-      "days_in_phase": 12,
+      "days_in_phase": 13,
       "previous_phase": "weakening",
-      "weight": 2.7
+      "weight": 3.6
     },
     {
-      "id": "GOOGL",
-      "name": "GOOGL",
-      "return_5d": -0.02454,
-      "return_20d": -0.07628,
-      "volume_ratio": 0.71,
+      "id": "EA",
+      "name": "EA",
+      "return_5d": -0.00289,
+      "return_20d": -0.02202,
+      "volume_ratio": 0.39,
       "momentum_phase": "lagging",
-      "phase_value": 0.0,
-      "phase_delta": 0.0,
-      "rs_ratio": 94.9,
-      "rs_momentum": 91.6,
-      "rsi": 19.8,
+      "phase_value": 45.0,
+      "phase_delta": -2.4,
+      "rs_ratio": 100.5,
+      "rs_momentum": 98.5,
+      "rsi": 38.2,
       "sector_relative": "laggard",
-      "days_in_phase": 4,
+      "days_in_phase": 11,
       "previous_phase": "leading",
-      "weight": 100.0
+      "weight": 5.6
+    },
+    {
+      "id": "DIS",
+      "name": "DIS",
+      "return_5d": 0.03536,
+      "return_20d": -0.06369,
+      "volume_ratio": 0.53,
+      "momentum_phase": "lagging",
+      "phase_value": 35.7,
+      "phase_delta": 0.8,
+      "rs_ratio": 99.5,
+      "rs_momentum": 97.7,
+      "rsi": 42.3,
+      "sector_relative": "leader",
+      "days_in_phase": 15,
+      "previous_phase": "leading",
+      "weight": 12.4
+    },
+    {
+      "id": "NFLX",
+      "name": "NFLX",
+      "return_5d": 0.01503,
+      "return_20d": -0.07829,
+      "volume_ratio": 0.65,
+      "momentum_phase": "lagging",
+      "phase_value": 31.2,
+      "phase_delta": 20.8,
+      "rs_ratio": 96.0,
+      "rs_momentum": 100.2,
+      "rsi": 32.0,
+      "sector_relative": "leader",
+      "days_in_phase": 12,
+      "previous_phase": "improving",
+      "weight": 29.6
     },
     {
       "id": "TTWO",
       "name": "TTWO",
-      "return_5d": -0.02335,
-      "return_20d": -0.16413,
-      "volume_ratio": 0.58,
+      "return_5d": 0.05784,
+      "return_20d": -0.16479,
+      "volume_ratio": 0.64,
+      "momentum_phase": "lagging",
+      "phase_value": 13.6,
+      "phase_delta": 13.6,
+      "rs_ratio": 95.0,
+      "rs_momentum": 97.7,
+      "rsi": 30.6,
+      "sector_relative": "leader",
+      "days_in_phase": 21,
+      "previous_phase": "leading",
+      "weight": 5.6
+    },
+    {
+      "id": "GOOGL",
+      "name": "GOOGL",
+      "return_5d": -0.0199,
+      "return_20d": -0.08377,
+      "volume_ratio": 0.65,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
-      "rs_ratio": 93.5,
-      "rs_momentum": 94.5,
-      "rsi": 27.9,
+      "rs_ratio": 94.7,
+      "rs_momentum": 90.9,
+      "rsi": 16.2,
       "sector_relative": "laggard",
-      "days_in_phase": 20,
+      "days_in_phase": 5,
       "previous_phase": "leading",
-      "weight": 5.4
+      "weight": 100.0
     },
     {
       "id": "FOX",
       "name": "FOX",
-      "return_5d": -0.05753,
-      "return_20d": -0.20177,
-      "volume_ratio": 1.11,
+      "return_5d": 0.00156,
+      "return_20d": -0.20852,
+      "volume_ratio": 0.92,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
-      "rs_ratio": 88.5,
-      "rs_momentum": 86.7,
-      "rsi": 16.2,
+      "rs_ratio": 87.8,
+      "rs_momentum": 86.6,
+      "rsi": 13.6,
       "sector_relative": "laggard",
-      "days_in_phase": 15,
+      "days_in_phase": 16,
       "previous_phase": "weakening",
       "weight": 0.8
     }
   ],
   "correlations": [
     {
-      "source": "T",
-      "target": "TMUS",
-      "correlation": 0.741
-    },
-    {
       "source": "CHTR",
       "target": "CMCSA",
-      "correlation": 0.72
+      "correlation": 0.759
+    },
+    {
+      "source": "T",
+      "target": "TMUS",
+      "correlation": 0.733
     },
     {
       "source": "VZ",
       "target": "TMUS",
-      "correlation": 0.676
+      "correlation": 0.675
     },
     {
       "source": "NFLX",
-      "target": "OMC",
-      "correlation": 0.644
+      "target": "FOX",
+      "correlation": 0.658
     },
     {
       "source": "VZ",
       "target": "TTWO",
-      "correlation": -0.638
+      "correlation": -0.633
     },
     {
       "source": "T",
       "target": "VZ",
-      "correlation": 0.624
-    },
-    {
-      "source": "NFLX",
-      "target": "FOX",
-      "correlation": 0.602
+      "correlation": 0.618
     },
     {
       "source": "TMUS",
       "target": "TTWO",
-      "correlation": -0.6
-    },
-    {
-      "source": "EA",
-      "target": "TTWO",
-      "correlation": 0.569
-    },
-    {
-      "source": "CMCSA",
-      "target": "DIS",
-      "correlation": 0.568
+      "correlation": -0.595
     },
     {
       "source": "T",
       "target": "TTWO",
-      "correlation": -0.558
-    },
-    {
-      "source": "CHTR",
-      "target": "OMC",
-      "correlation": 0.502
-    },
-    {
-      "source": "OMC",
-      "target": "FOX",
-      "correlation": 0.496
-    },
-    {
-      "source": "EA",
-      "target": "FOX",
-      "correlation": 0.481
-    },
-    {
-      "source": "TTWO",
-      "target": "FOX",
-      "correlation": 0.474
+      "correlation": -0.566
     },
     {
       "source": "WBD",
       "target": "GOOGL",
-      "correlation": -0.436
+      "correlation": -0.564
+    },
+    {
+      "source": "EA",
+      "target": "TTWO",
+      "correlation": 0.562
+    },
+    {
+      "source": "CMCSA",
+      "target": "DIS",
+      "correlation": 0.539
+    },
+    {
+      "source": "EA",
+      "target": "FOX",
+      "correlation": 0.48
+    },
+    {
+      "source": "TTWO",
+      "target": "FOX",
+      "correlation": 0.473
+    },
+    {
+      "source": "TMUS",
+      "target": "NFLX",
+      "correlation": -0.438
     },
     {
       "source": "DIS",
-      "target": "FOX",
+      "target": "NFLX",
+      "correlation": 0.436
+    },
+    {
+      "source": "META",
+      "target": "GOOGL",
       "correlation": 0.434
     },
     {
       "source": "NFLX",
       "target": "TTWO",
-      "correlation": 0.433
+      "correlation": 0.422
     },
     {
-      "source": "META",
+      "source": "DIS",
+      "target": "FOX",
+      "correlation": 0.414
+    },
+    {
+      "source": "T",
+      "target": "NFLX",
+      "correlation": -0.412
+    },
+    {
+      "source": "DIS",
       "target": "GOOGL",
-      "correlation": 0.43
-    },
-    {
-      "source": "VZ",
-      "target": "CHTR",
-      "correlation": 0.418
+      "correlation": -0.407
     }
   ]
 }
