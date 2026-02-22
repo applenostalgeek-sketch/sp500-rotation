@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WatchTheFlow — Flux Sectoriels S&P 500</title>
-    <meta name="description" content="Visualisez les flux sectoriels du S&P 500 sur un RRG interactif. Donnees de flux reels, zoom par secteur, screener 200+ actions.">
-    <meta property="og:title" content="WatchTheFlow — Flux Sectoriels S&P 500">
-    <meta property="og:description" content="Ou va l'argent dans le S&P 500 ? RRG interactif avec flux reels.">
+    <title>WatchTheFlow — Positions GOLD S&P 500</title>
+    <meta name="description" content="Suivez les positions GOLD actives du S&P 500. Days held, P&L, take profit +5%.">
+    <meta property="og:title" content="WatchTheFlow — Positions GOLD S&P 500">
+    <meta property="og:description" content="Positions actives, P&L en temps reel, objectif +5%.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- View switch -->
-    <div class="view-switch" id="view-switch">
-        <button class="view-btn active" data-view="graph">Rotation</button>
-        <button class="view-btn" data-view="screener">Screener</button>
-    </div>
-
-    <!-- Top bar (graph mode only) -->
+    <!-- Top bar -->
     <div class="top-bar" id="top-bar">
         <div id="bar-global" class="bar-mode">
             <a href="/" class="logo">
@@ -29,71 +23,36 @@
                 </svg>
                 <span class="logo-text">WatchTheFlow</span>
             </a>
-            <div class="meteo-compact" id="meteo-compact">
-                <span id="meteo-icon-sm"></span>
-                <span id="meteo-label-sm"></span>
-                <span class="meteo-sep">&middot;</span>
-                <span id="meteo-count"></span>
+            <div class="summary-compact" id="summary-compact">
+                <span id="gold-count"></span>
+                <span class="meteo-sep" id="summary-sep">&middot;</span>
+                <span id="watching-count"></span>
             </div>
             <span id="last-update" class="bar-date"></span>
         </div>
-        <div id="bar-sector" class="bar-mode" style="display:none">
-            <button id="sector-back" class="back-btn">&larr; Retour</button>
-            <span id="sector-title" class="sector-title"></span>
-        </div>
     </div>
 
-    <!-- RRG chart -->
+    <!-- Position chart -->
     <main id="chart-view">
-        <div id="sector-filters" class="sector-filters"></div>
         <div class="chart-canvas-wrap">
             <canvas id="chart-canvas"></canvas>
         </div>
         <div id="chart-tooltip" class="tooltip"></div>
     </main>
 
+    <!-- Watching bar -->
+    <div id="watching-bar" class="watching-bar" style="display:none"></div>
+
     <!-- Timeline -->
     <div id="timeline-bar" class="timeline-bar">
         <button id="timeline-play" class="timeline-play-btn">&#9654;</button>
         <input id="timeline-slider" type="range" min="0" max="89" value="89" class="timeline-slider">
+        <div class="trail-control" id="trail-control">
+            <input id="trail-slider" type="range" min="1" max="28" value="10" class="trail-range">
+            <span id="trail-val" class="trail-val">10j</span>
+        </div>
         <span id="timeline-date" class="timeline-date"></span>
     </div>
-
-    <!-- Screener view -->
-    <section id="screener-view" class="hidden">
-        <div class="screener-toolbar" id="screener-toolbar">
-            <input id="screener-search" type="text" placeholder="Rechercher un ticker..." class="screener-input">
-            <select id="screener-phase-filter" class="screener-select">
-                <option value="">Toutes phases</option>
-                <option value="leading">Leaders</option>
-                <option value="improving">En hausse</option>
-                <option value="weakening">En baisse</option>
-                <option value="lagging">A la traine</option>
-            </select>
-            <select id="screener-sector-filter" class="screener-select">
-                <option value="">Tous secteurs</option>
-            </select>
-        </div>
-        <div id="screener-stats" class="screener-stats"></div>
-        <div class="screener-table-wrap">
-            <table id="screener-table">
-                <thead>
-                    <tr>
-                        <th data-sort="id">Ticker</th>
-                        <th data-sort="sector_name">Secteur</th>
-                        <th data-sort="momentum_phase">Phase</th>
-                        <th data-sort="signal_streak" title="Signal contrarian: jours consecutifs d'outflow">Signal</th>
-                        <th data-sort="rsi">RSI</th>
-                        <th data-sort="return_5d">1 sem</th>
-                        <th data-sort="return_20d">1 mois</th>
-                        <th data-sort="rs_ratio">RS-Ratio</th>
-                        <th data-sort="rs_momentum">RS-Mom</th>
-                    </tr>
-                </thead>
-                <tbody id="screener-body"></tbody>
-            </table>
-        </div>
-    </section>
 
     <script src="js/timeline.js"></script>
     <script src="js/app.js"></script>

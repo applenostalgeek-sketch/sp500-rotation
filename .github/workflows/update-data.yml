@@ -27,6 +27,9 @@ jobs:
       - name: Run pipeline
         run: python scripts/pipeline.py
 
+      - name: Compute sector signals
+        run: python scripts/compute_signals.py
+
       - name: Check for changes
         id: check
         run: |
@@ -37,6 +40,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json data/data.js data/sectors/ data/signals_history.json data/history.json
+          git add data/latest.json data/data.js data/sectors/ data/signals_history.json data/history.json data/signals.json data/positions.json
           git commit -m "data: sector rotation $(date +'%Y-%m-%d')"
           git push

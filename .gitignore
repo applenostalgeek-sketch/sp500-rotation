@@ -8,3 +8,5 @@ venv/
 node_modules/
 demo-gauge.html
 js/sector-view.js
+scripts/sp500_ohlcv_20y.pkl
+scripts/results/

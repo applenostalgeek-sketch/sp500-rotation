@@ -586,11 +586,13 @@ def generate_sector_history(data, days=90):
         cmf_s = cmf_full[t]
         ret_s = ret_full[t]
         ma50_s = ma50_full[t]
+        close_s = close[t]
         r_vals = []
         m_vals = []
         c_vals = []
         ret_vals = []
         ma50_vals = []
+        close_vals = []
         raw_phases = []
         for day in trading_days:
             r = float(rr.loc[day]) if day in rr.index and not np.isnan(rr.loc[day]) else None
@@ -598,11 +600,13 @@ def generate_sector_history(data, days=90):
             c = float(cmf_s.loc[day]) if day in cmf_s.index and not np.isnan(cmf_s.loc[day]) else 0.0
             ret = float(ret_s.loc[day]) if day in ret_s.index and not np.isnan(ret_s.loc[day]) else None
             ma50d = float(ma50_s.loc[day]) if day in ma50_s.index and not np.isnan(ma50_s.loc[day]) else None
+            p = float(close_s.loc[day]) if day in close_s.index and not np.isnan(close_s.loc[day]) else None
             r_vals.append(round(r, 2) if r is not None else None)
             m_vals.append(round(m, 2) if m is not None else None)
             c_vals.append(round(c, 3))
             ret_vals.append(round(ret, 4) if ret is not None else None)
             ma50_vals.append(round(ma50d, 4) if ma50d is not None else None)
+            close_vals.append(round(p, 2) if p is not None else None)
             if r is not None and m is not None:
                 raw_phases.append(classify_phase(r, m))
             elif raw_phases:
@@ -622,12 +626,96 @@ def generate_sector_history(data, days=90):
 
         sectors[t] = {
             "r": r_vals, "m": m_vals, "p": p_vals, "c": c_vals, "ret": ret_vals,
-            "ma50": ma50_vals,
+            "ma50": ma50_vals, "close": close_vals,
             "w": SECTOR_ETFS[t]["weight"],
             "name": SECTOR_ETFS[t]["name"], "color": SECTOR_ETFS[t]["color"],
         }
 
     return {"dates": dates, "sectors": sectors}
+
+
+def generate_stock_history(data_all, days=252):
+    """Generate historical MA50 distance, RSI, CMF per stock per sector for timeline playback."""
+    benchmark = data_all["Close"][BENCHMARK]
+    trading_days = benchmark.dropna().index[-days:]
+    dates = [d.strftime("%Y-%m-%d") for d in trading_days]
+
+    close_all = data_all["Close"]
+    high_all = data_all["High"]
+    low_all = data_all["Low"]
+    volume_all = data_all["Volume"]
+
+    results = {}
+    for etf, holdings in SECTOR_HOLDINGS.items():
+        available = [h for h in holdings if h in close_all.columns and close_all[h].dropna().shape[0] > 80]
+        if not available:
+            continue
+
+        stocks = {}
+        for ticker in available:
+            c = close_all[ticker].dropna()
+            if len(c) < 80:
+                continue
+
+            # MA50 distance
+            ma50 = c.rolling(50).mean()
+            ma50_dist = (c / ma50) - 1
+
+            # RSI
+            rsi_s = compute_rsi_series(c)
+
+            # CMF
+            if ticker in high_all.columns and ticker in low_all.columns and ticker in volume_all.columns:
+                h = high_all[ticker]
+                l = low_all[ticker]
+                v = volume_all[ticker]
+                hl_range = h - l
+                hl_range = hl_range.replace(0, np.nan)
+                mfm = ((c - l) - (h - c)) / hl_range
+                mfv = mfm * v
+                cmf_s = mfv.rolling(21).sum() / v.rolling(21).sum()
+            else:
+                cmf_s = pd.Series(0.0, index=c.index)
+
+            # Weight: dollar volume based (stable proxy for importance)
+            recent_close = c.iloc[-20:].mean() if len(c) >= 20 else c.iloc[-1]
+            recent_vol = volume_all[ticker].iloc[-20:].mean() if ticker in volume_all.columns else 0
+            dollar_vol = float(recent_close * recent_vol) if not np.isnan(recent_close * recent_vol) else 0
+
+            ma50_vals = []
+            rsi_vals = []
+            cmf_vals = []
+            close_vals = []
+            for day in trading_days:
+                m = float(ma50_dist.loc[day]) if day in ma50_dist.index and not np.isnan(ma50_dist.loc[day]) else None
+                r = float(rsi_s.loc[day]) if day in rsi_s.index and not np.isnan(rsi_s.loc[day]) else None
+                cf = float(cmf_s.loc[day]) if day in cmf_s.index and not np.isnan(cmf_s.loc[day]) else None
+                p = float(c.loc[day]) if day in c.index and not np.isnan(c.loc[day]) else None
+                ma50_vals.append(round(m, 4) if m is not None else None)
+                rsi_vals.append(round(r, 1) if r is not None else None)
+                cmf_vals.append(round(cf, 3) if cf is not None else None)
+                close_vals.append(round(p, 2) if p is not None else None)
+
+            stocks[ticker] = {
+                "ma50": ma50_vals, "rsi": rsi_vals, "cmf": cmf_vals,
+                "close": close_vals, "dollar_vol": dollar_vol,
+            }
+
+        # Normalize weights (0-100 scale per sector)
+        max_dv = max((s["dollar_vol"] for s in stocks.values()), default=1) or 1
+        for s in stocks.values():
+            s["weight"] = round(s["dollar_vol"] / max_dv * 100, 1)
+            del s["dollar_vol"]
+
+        results[etf] = {
+            "dates": dates,
+            "etf": etf,
+            "sector_name": SECTOR_ETFS[etf]["name"],
+            "sector_color": SECTOR_ETFS[etf]["color"],
+            "stocks": stocks,
+        }
+
+    return results
 
 
 def _generate_sample_history(days=90):
@@ -1288,6 +1376,16 @@ def main():
             result["signals_history"] = json.load(f)
     else:
         result["signals_history"] = []
+
+    # Generate stock history per sector for timeline playback
+    if data_all is not None:
+        print("Generating stock history per sector...")
+        stock_histories = generate_stock_history(data_all, days=252)
+        for etf, sh in stock_histories.items():
+            sh_path = sectors_dir / f"{etf}_history.json"
+            with open(sh_path, "w") as f:
+                json.dump(sh, f)
+            print(f"  {etf}: {len(sh['stocks'])} stocks, {len(sh['dates'])} days")
 
     # Generate sector history for RRG playback
     rrg_history_path = output_path.parent / "history.json"
