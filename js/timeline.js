@@ -200,6 +200,41 @@ class RRGView {
         return signals;
     }
 
+    getSectorOverview() {
+        if (!this.data) return [];
+        const idx = this.currentIdx;
+        const positions = this._getActivePositions();
+
+        // Count positions per etf
+        const posCounts = {};
+        for (const p of positions) {
+            posCounts[p.etf] = (posCounts[p.etf] || 0) + 1;
+        }
+
+        const sectors = [];
+        for (const etf in this.data.sectors) {
+            const s = this.data.sectors[etf];
+            const stage = this._signalStage(etf, idx);
+            const streak = this._computeStreak(etf, idx);
+            const cmf = s.c && s.c[idx] != null ? s.c[idx] : 0;
+            const ma50 = s.ma50 && s.ma50[idx] != null ? s.ma50[idx] : null;
+            sectors.push({
+                etf,
+                name: s.name,
+                color: s.color,
+                stage,
+                streak,
+                cmf,
+                ma50,
+                posCount: posCounts[etf] || 0,
+            });
+        }
+        // Sort: actif first, then construction, then surveillance, then null
+        const order = { actif: 0, construction: 1, surveillance: 2 };
+        sectors.sort((a, b) => (order[a.stage] ?? 3) - (order[b.stage] ?? 3));
+        return sectors;
+    }
+
     /* ---- Position data ---- */
 
     _getActivePositions() {

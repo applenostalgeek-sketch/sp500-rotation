@@ -331,8 +331,8 @@ body {
     background: rgba(251, 191, 36, 0.06);
 }
 
-/* ---------- Gold Panel (slide-out) ---------- */
-.gold-panel {
+/* ---------- Slide-out Panels (shared) ---------- */
+.slide-panel {
     position: fixed;
     right: 0;
     top: 48px;
@@ -349,11 +349,11 @@ body {
     flex-direction: column;
 }
 
-.gold-panel.open {
+.slide-panel.open {
     transform: translateX(0);
 }
 
-.gold-panel-header {
+.slide-panel-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -506,6 +506,129 @@ body {
     padding: 32px 16px;
 }
 
+/* ---------- Sector Panel ---------- */
+.sp-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+}
+
+.sector-grid {
+    overflow-y: auto;
+    padding: 10px 12px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    align-content: start;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.08) transparent;
+}
+
+.sector-grid::-webkit-scrollbar { width: 4px; }
+.sector-grid::-webkit-scrollbar-track { background: transparent; }
+.sector-grid::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+
+.sc-card {
+    background: rgba(255, 255, 255, 0.025);
+    border-radius: 10px;
+    padding: 10px 12px;
+    border-left: 3px solid var(--text-dim);
+    transition: background 0.15s;
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sc-card:hover { background: rgba(255, 255, 255, 0.045); }
+
+.sc-card.gold {
+    border-left-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.04);
+}
+
+.sc-card.construction {
+    border-left-color: #f97316;
+    background: rgba(249, 115, 22, 0.03);
+}
+
+.sc-card.surveillance {
+    border-left-color: #64748b;
+    background: rgba(100, 116, 139, 0.03);
+}
+
+.sc-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.sc-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.sc-etf {
+    font-size: 0.58rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.sc-stage-badge {
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.sc-stage-badge.gold {
+    background: rgba(251, 191, 36, 0.12);
+    color: #fbbf24;
+}
+
+.sc-stage-badge.construction {
+    background: rgba(249, 115, 22, 0.12);
+    color: #f97316;
+}
+
+.sc-stage-badge.surveillance {
+    background: rgba(100, 116, 139, 0.12);
+    color: #94a3b8;
+}
+
+.sc-stage-badge.neutral {
+    background: rgba(100, 116, 139, 0.06);
+    color: var(--text-dim);
+}
+
+.sc-metrics {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.sc-metric {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.sc-metric b {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.sc-pos-count {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #fbbf24;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 600px) {
     .top-bar { padding: 0 12px; height: 42px; }
@@ -539,9 +662,9 @@ body {
     .timeline-play-btn { width: 36px; height: 36px; }
     .timeline-date { font-size: 0.62rem; min-width: 70px; }
 
-    .panel-toggle-btn { margin-left: 8px; padding: 2px 8px; font-size: 0.62rem; }
+    .panel-toggle-btn { margin-left: 6px; padding: 2px 6px; font-size: 0.58rem; }
 
-    .gold-panel {
+    .slide-panel {
         width: 100%;
         top: 42px;
     }

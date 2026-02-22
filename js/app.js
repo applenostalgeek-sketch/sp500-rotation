@@ -204,16 +204,21 @@ async function setupTimeline() {
         if (dateLabel) dateLabel.textContent = chartView.getDateLabel(idx);
         updateSummary();
         updateWatchingBar();
-        if (document.getElementById("gold-panel").classList.contains("open")) buildGoldPanel();
+        updateOpenPanels();
     });
 
     if (playBtn) playBtn.addEventListener("click", togglePlay);
 
-    // Panel toggle
+    // Panel toggles
     const panelToggle = document.getElementById("panel-toggle");
     if (panelToggle) panelToggle.addEventListener("click", toggleGoldPanel);
     const panelClose = document.getElementById("panel-close");
     if (panelClose) panelClose.addEventListener("click", toggleGoldPanel);
+
+    const sectorToggle = document.getElementById("sector-toggle");
+    if (sectorToggle) sectorToggle.addEventListener("click", toggleSectorPanel);
+    const sectorClose = document.getElementById("sector-close");
+    if (sectorClose) sectorClose.addEventListener("click", toggleSectorPanel);
 }
 
 function togglePlay() {
@@ -241,7 +246,7 @@ function togglePlay() {
         if (dateLabel) dateLabel.textContent = chartView.getDateLabel(cur + 1);
         updateSummary();
         updateWatchingBar();
-        if (document.getElementById("gold-panel").classList.contains("open")) buildGoldPanel();
+        updateOpenPanels();
     }, 150);
 }
 
@@ -250,6 +255,12 @@ function stopPlay() {
     const playBtn = document.getElementById("timeline-play");
     if (playBtn) playBtn.innerHTML = "&#9654;";
     if (timelineInterval) { clearInterval(timelineInterval); timelineInterval = null; }
+}
+
+/* ---------- Panel refresh ---------- */
+function updateOpenPanels() {
+    if (document.getElementById("gold-panel").classList.contains("open")) buildGoldPanel();
+    if (document.getElementById("sector-panel").classList.contains("open")) buildSectorPanel();
 }
 
 /* ---------- Gold Panel ---------- */
@@ -318,6 +329,13 @@ function buildGoldPanel() {
     list.innerHTML = html;
 }
 
+function closePanel(panelId, btnId, label) {
+    const panel = document.getElementById(panelId);
+    const btn = document.getElementById(btnId);
+    if (panel) panel.classList.remove("open");
+    if (btn) { btn.innerHTML = "&#9656; " + label; btn.classList.remove("active"); }
+}
+
 function toggleGoldPanel() {
     const panel = document.getElementById("gold-panel");
     const btn = document.getElementById("panel-toggle");
@@ -328,7 +346,64 @@ function toggleGoldPanel() {
         btn.innerHTML = isOpen ? "&#9666; Positions" : "&#9656; Positions";
         btn.classList.toggle("active", isOpen);
     }
-    if (isOpen) buildGoldPanel();
+    if (isOpen) {
+        closePanel("sector-panel", "sector-toggle", "Secteurs");
+        buildGoldPanel();
+    }
+}
+
+/* ---------- Sector Panel ---------- */
+function buildSectorPanel() {
+    const grid = document.getElementById("sector-panel-grid");
+    if (!grid || !chartView) return;
+
+    const sectors = chartView.getSectorOverview();
+    if (sectors.length === 0) { grid.innerHTML = ""; return; }
+
+    let html = "";
+    for (const s of sectors) {
+        const stageLabel = s.stage === "actif" ? "GOLD" : s.stage === "construction" ? "Construction" : s.stage === "surveillance" ? "Surveillance" : "Neutre";
+        const cardClass = s.stage === "actif" ? "gold" : s.stage || "";
+        const badgeClass = s.stage === "actif" ? "gold" : s.stage || "neutral";
+
+        html += `<div class="sc-card ${cardClass}">`;
+        html += `<div class="sc-card-top">`;
+        html += `<div><span class="sc-name" style="color:${s.color}">${s.name}</span> <span class="sc-etf">${s.etf}</span></div>`;
+        html += `<span class="sc-stage-badge ${badgeClass}">${stageLabel}</span>`;
+        html += `</div>`;
+
+        html += `<div class="sc-metrics">`;
+        if (s.streak > 0) {
+            html += `<span class="sc-metric">Streak <b>${s.streak}j</b></span>`;
+        }
+        if (s.cmf !== 0) {
+            const cmfColor = s.cmf <= -0.15 ? "#ef4444" : s.cmf < 0 ? "#f97316" : "#64748b";
+            html += `<span class="sc-metric">CMF <b style="color:${cmfColor}">${s.cmf.toFixed(2)}</b></span>`;
+        }
+        if (s.posCount > 0) {
+            html += `<span class="sc-pos-count">${s.posCount} pos.</span>`;
+        }
+        html += `</div>`;
+        html += `</div>`;
+    }
+
+    grid.innerHTML = html;
+}
+
+function toggleSectorPanel() {
+    const panel = document.getElementById("sector-panel");
+    const btn = document.getElementById("sector-toggle");
+    if (!panel) return;
+
+    const isOpen = panel.classList.toggle("open");
+    if (btn) {
+        btn.innerHTML = isOpen ? "&#9666; Secteurs" : "&#9656; Secteurs";
+        btn.classList.toggle("active", isOpen);
+    }
+    if (isOpen) {
+        closePanel("gold-panel", "panel-toggle", "Positions");
+        buildSectorPanel();
+    }
 }
 
 /* ---------- Init ---------- */

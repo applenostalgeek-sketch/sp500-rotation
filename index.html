@@ -29,6 +29,7 @@
                 <span id="watching-count"></span>
             </div>
             <button id="panel-toggle" class="panel-toggle-btn" title="Voir les positions">&#9656; Positions</button>
+            <button id="sector-toggle" class="panel-toggle-btn" title="Heatmap secteurs">&#9656; Secteurs</button>
             <span id="last-update" class="bar-date"></span>
         </div>
     </div>
@@ -55,8 +56,16 @@
         <span id="timeline-date" class="timeline-date"></span>
     </div>
 
-    <div id="gold-panel" class="gold-panel">
-        <div class="gold-panel-header">
+    <div id="sector-panel" class="slide-panel sector-panel">
+        <div class="slide-panel-header">
+            <span class="sp-title">Secteurs S&P 500</span>
+            <button id="sector-close" class="panel-close-btn">&times;</button>
+        </div>
+        <div id="sector-panel-grid" class="sector-grid"></div>
+    </div>
+
+    <div id="gold-panel" class="slide-panel gold-panel">
+        <div class="slide-panel-header">
             <span class="gp-title">Positions GOLD</span>
             <button id="panel-close" class="panel-close-btn">&times;</button>
         </div>
