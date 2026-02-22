@@ -507,6 +507,8 @@ body {
 }
 
 /* ---------- Sector Panel ---------- */
+.sector-panel { width: 360px; }
+
 .sp-title {
     font-size: 0.78rem;
     font-weight: 700;
@@ -537,6 +539,8 @@ body {
     border-left: 3px solid var(--text-dim);
     transition: background 0.15s;
     min-height: 72px;
+    min-width: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -563,7 +567,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 4px;
     margin-bottom: 4px;
+    min-width: 0;
+}
+
+.sc-card-top > div {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .sc-name {
