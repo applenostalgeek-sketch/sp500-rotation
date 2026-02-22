@@ -226,11 +226,37 @@ class RRGView {
                 daysHeld: idx - t.entryIdx,
                 currentPrice: price,
                 pnl: price / t.entryPrice - 1,
+                rsi: sd.rsi ? sd.rsi[idx] : null,
+                isNew: (idx - t.entryIdx) <= 1,
             });
         }
         this._posCache = positions;
         this._posCacheIdx = idx;
         return positions;
+    }
+
+    _getRecentlyClosedTrades() {
+        const idx = this.currentIdx;
+        const closed = [];
+        for (const t of this._tradeLog) {
+            if (t.exitIdx == null) continue;
+            if (idx - t.exitIdx > 1 || idx - t.exitIdx < 0) continue;
+            closed.push({
+                ticker: t.ticker,
+                etf: t.etf,
+                color: t.color,
+                sectorName: t.name,
+                entryPrice: t.entryPrice,
+                exitPrice: t.exitPrice,
+                entryDate: t.entryDate,
+                exitDate: t.exitDate,
+                entryIdx: t.entryIdx,
+                exitIdx: t.exitIdx,
+                days: t.exitIdx - t.entryIdx,
+                pnl: t.ret,
+            });
+        }
+        return closed;
     }
 
     getWatchingStocks() {
@@ -383,6 +409,12 @@ class RRGView {
         html += row("Prix d'entr\u00e9e", `$${p.entryPrice.toFixed(2)}`);
         html += row("Prix actuel", `$${p.currentPrice.toFixed(2)}`);
         html += row("Date d'entr\u00e9e", fmtDate(p.entryDate));
+
+        if (p.rsi != null) {
+            const rsiVal = p.rsi.toFixed(0);
+            const rsiColor = p.rsi < 30 ? "#3b82f6" : p.rsi > 70 ? "#f97316" : "#64748b";
+            html += `<div style="display:flex;justify-content:space-between;gap:12px"><span style="color:#64748b">RSI</span><span style="font-weight:600;color:${rsiColor}">${rsiVal}</span></div>`;
+        }
 
         html += `<div style="border-top:1px solid rgba(255,255,255,0.06);margin:6px 0"></div>`;
         html += `<div style="font-size:9px;color:#fbbf2480">Take profit : +5% | Backtest : 91% WR, +5.2% moy, 29j</div>`;

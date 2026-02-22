@@ -204,9 +204,16 @@ async function setupTimeline() {
         if (dateLabel) dateLabel.textContent = chartView.getDateLabel(idx);
         updateSummary();
         updateWatchingBar();
+        if (document.getElementById("gold-panel").classList.contains("open")) buildGoldPanel();
     });
 
     if (playBtn) playBtn.addEventListener("click", togglePlay);
+
+    // Panel toggle
+    const panelToggle = document.getElementById("panel-toggle");
+    if (panelToggle) panelToggle.addEventListener("click", toggleGoldPanel);
+    const panelClose = document.getElementById("panel-close");
+    if (panelClose) panelClose.addEventListener("click", toggleGoldPanel);
 }
 
 function togglePlay() {
@@ -234,6 +241,7 @@ function togglePlay() {
         if (dateLabel) dateLabel.textContent = chartView.getDateLabel(cur + 1);
         updateSummary();
         updateWatchingBar();
+        if (document.getElementById("gold-panel").classList.contains("open")) buildGoldPanel();
     }, 150);
 }
 
@@ -242,6 +250,85 @@ function stopPlay() {
     const playBtn = document.getElementById("timeline-play");
     if (playBtn) playBtn.innerHTML = "&#9654;";
     if (timelineInterval) { clearInterval(timelineInterval); timelineInterval = null; }
+}
+
+/* ---------- Gold Panel ---------- */
+function buildGoldPanel() {
+    const list = document.getElementById("gold-panel-list");
+    if (!list || !chartView) return;
+
+    const positions = chartView._getActivePositions();
+    const closed = chartView._getRecentlyClosedTrades();
+
+    if (positions.length === 0 && closed.length === 0) {
+        list.innerHTML = '<div class="gp-empty">Aucune position active</div>';
+        return;
+    }
+
+    // Sort: NEW first, then by daysHeld (recent first)
+    const sorted = [...positions].sort((a, b) => {
+        if (a.isNew && !b.isNew) return -1;
+        if (!a.isNew && b.isNew) return 1;
+        return a.daysHeld - b.daysHeld;
+    });
+
+    let html = "";
+
+    for (const p of sorted) {
+        const pnlPct = (p.pnl * 100).toFixed(1);
+        const pnlSign = p.pnl >= 0 ? "+" : "";
+        const pnlColor = p.pnl >= 0 ? "#22c55e" : "#ef4444";
+        const cardClass = p.isNew ? "gp-card new" : "gp-card";
+
+        let rsiHtml = "";
+        if (p.rsi != null) {
+            const rsiCls = p.rsi < 30 ? "oversold" : p.rsi > 70 ? "overbought" : "neutral";
+            rsiHtml = `<span class="gp-rsi ${rsiCls}">RSI ${p.rsi.toFixed(0)}</span>`;
+        }
+
+        const badgeHtml = p.isNew ? '<span class="gp-badge new">NEW</span>' : "";
+
+        html += `<div class="${cardClass}">`;
+        html += `<div class="gp-card-head">`;
+        html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}</span>`;
+        html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;
+        html += `</div>`;
+        html += `<div class="gp-row"><span>Jours</span><span>${p.daysHeld}j</span></div>`;
+        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>$${p.entryPrice.toFixed(2)}</span></div>`;
+        html += `<div class="gp-row"><span>Actuel</span><span>$${p.currentPrice.toFixed(2)}</span></div>`;
+        html += `<div class="gp-sector">${p.sectorName} \u00B7 ${p.etf}</div>`;
+        html += `</div>`;
+    }
+
+    // Closed trades (ghost cards)
+    for (const t of closed) {
+        const pnlPct = t.pnl != null ? (t.pnl * 100).toFixed(1) : "5.0";
+        html += `<div class="gp-card sold">`;
+        html += `<div class="gp-card-head">`;
+        html += `<span><span class="gp-ticker" style="color:${t.color}">${t.ticker}</span><span class="gp-badge sold">SOLD +5%</span></span>`;
+        html += `<span class="gp-pnl" style="color:#22c55e">+${pnlPct}%</span>`;
+        html += `</div>`;
+        html += `<div class="gp-row"><span>Dur\u00e9e</span><span>${t.days}j</span></div>`;
+        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>$${t.entryPrice.toFixed(2)}</span></div>`;
+        html += `<div class="gp-row"><span>Sortie</span><span>$${t.exitPrice.toFixed(2)}</span></div>`;
+        html += `<div class="gp-sector">${t.sectorName} \u00B7 ${t.etf}</div>`;
+        html += `</div>`;
+    }
+
+    list.innerHTML = html;
+}
+
+function toggleGoldPanel() {
+    const panel = document.getElementById("gold-panel");
+    const btn = document.getElementById("panel-toggle");
+    if (!panel) return;
+
+    const isOpen = panel.classList.toggle("open");
+    if (btn) {
+        btn.innerHTML = isOpen ? "&#9666; Positions" : "&#9656; Positions";
+        btn.classList.toggle("active", isOpen);
+    }
+    if (isOpen) buildGoldPanel();
 }
 
 /* ---------- Init ---------- */

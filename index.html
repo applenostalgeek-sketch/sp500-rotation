@@ -28,6 +28,7 @@
                 <span class="meteo-sep" id="summary-sep">&middot;</span>
                 <span id="watching-count"></span>
             </div>
+            <button id="panel-toggle" class="panel-toggle-btn" title="Voir les positions">&#9656; Positions</button>
             <span id="last-update" class="bar-date"></span>
         </div>
     </div>
@@ -52,6 +53,14 @@
             <span id="trail-val" class="trail-val">10j</span>
         </div>
         <span id="timeline-date" class="timeline-date"></span>
+    </div>
+
+    <div id="gold-panel" class="gold-panel">
+        <div class="gold-panel-header">
+            <span class="gp-title">Positions GOLD</span>
+            <button id="panel-close" class="panel-close-btn">&times;</button>
+        </div>
+        <div id="gold-panel-list" class="gold-panel-list"></div>
     </div>
 
     <script src="js/timeline.js"></script>
