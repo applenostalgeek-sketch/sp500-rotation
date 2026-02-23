@@ -62,7 +62,7 @@ SIGNAL_LABELS = {
 
 def download_data():
     """Download 1 year of OHLCV data for all sector ETFs + SPY."""
-    import shutil
+    import shutil, time
     for _cache_dir in [
         os.path.expanduser("~/Library/Caches/py-yfinance"),
         os.path.expanduser("~/.cache/py-yfinance"),
@@ -71,8 +71,19 @@ def download_data():
             shutil.rmtree(_cache_dir)
     end = datetime.date.today()
     start = end - datetime.timedelta(days=400)
-    data = yf.download(ALL_TICKERS, start=start, end=end, auto_adjust=True, progress=False)
-    return data
+    for attempt in range(1, 4):
+        try:
+            data = yf.download(ALL_TICKERS, start=start, end=end, auto_adjust=True, progress=False)
+            if data.empty:
+                raise RuntimeError("Empty data")
+            return data
+        except Exception as e:
+            if attempt < 3:
+                wait = attempt * 15
+                print(f"  Attempt {attempt} failed: {e}. Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                raise
 
 
 def compute_rsi(series, period=14):

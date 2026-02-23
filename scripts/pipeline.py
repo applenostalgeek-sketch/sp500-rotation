@@ -66,16 +66,32 @@ SECTOR_HOLDINGS = {
 
 
 # ---------------------------------------------------------------------------
-# Data fetching
+# Data fetching (with retry)
 # ---------------------------------------------------------------------------
+import time as _time
+
+def _download_with_retry(tickers, max_retries=3, **kwargs):
+    """Download from yfinance with retry on failure."""
+    for attempt in range(1, max_retries + 1):
+        try:
+            data = yf.download(tickers, progress=False, auto_adjust=True, **kwargs)
+            if data.empty:
+                raise RuntimeError("yfinance returned empty data")
+            return data
+        except Exception as e:
+            if attempt < max_retries:
+                wait = attempt * 15
+                print(f"  Attempt {attempt} failed: {e}. Retrying in {wait}s...")
+                _time.sleep(wait)
+            else:
+                raise RuntimeError(f"yfinance failed after {max_retries} attempts: {e}")
+
+
 def fetch_ohlcv(period: str = "2y"):
     """Download OHLCV data for all sector ETFs + SPY benchmark."""
     tickers = list(SECTOR_ETFS.keys()) + [BENCHMARK]
     print(f"Downloading {len(tickers)} ETFs ({period})...")
-    data = yf.download(tickers, period=period, progress=False, auto_adjust=True)
-    if data.empty:
-        raise RuntimeError("yfinance returned empty data")
-    return data
+    return _download_with_retry(tickers, period=period)
 
 
 # ---------------------------------------------------------------------------
@@ -1288,6 +1304,12 @@ def main():
         pd = _pd
         yf = _yf
 
+        # Disable yfinance SQLite cache to avoid 'database is locked' errors
+        try:
+            yf.set_tz_cache_location(os.path.join(os.path.expanduser("~"), ".yf_tz_cache"))
+        except Exception:
+            pass
+
         # Fetch sector ETFs + benchmark
         data_etf = fetch_ohlcv()
         print("Computing rotation signals...")
@@ -1299,7 +1321,7 @@ def main():
             all_holdings.extend(h_list)
         all_holdings = list(set(all_holdings))
         print(f"Downloading {len(all_holdings)} individual stocks for sector detail...")
-        data_stocks = yf.download(all_holdings, period="2y", progress=False, auto_adjust=True)
+        data_stocks = _download_with_retry(all_holdings, period="2y")
 
         # Merge sector ETF data + stock data
         data_all = {}
@@ -1422,6 +1444,23 @@ def main():
     print(f"  Sectors: {meta['total_sectors']}")
     print(f"  {meta.get('narrative', '')}")
     print(f"  Output: {output_path}")
+
+    # Validate data freshness (fail CI if data is stale)
+    if not args.sample and rrg_history_path.exists():
+        with open(rrg_history_path) as f:
+            h = json.load(f)
+        last_date = h["dates"][-1] if h.get("dates") else None
+        if last_date:
+            from datetime import date
+            data_date = date.fromisoformat(last_date)
+            today = date.today()
+            # Allow up to 4 days gap (weekend + holiday)
+            gap = (today - data_date).days
+            if gap > 4:
+                print(f"\nWARNING: Data is {gap} days old (last: {last_date}, today: {today})")
+                sys.exit(1)
+            else:
+                print(f"  Data freshness OK: {last_date} ({gap}d ago)")
 
 
 if __name__ == "__main__":

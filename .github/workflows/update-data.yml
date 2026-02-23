@@ -2,8 +2,8 @@ name: Update S&P 500 Sector Data
 
 on:
   schedule:
-    # 22h UTC lun-ven (1h apres fermeture US market)
-    - cron: '0 22 * * 1-5'
+    # 22h30 UTC lun-ven (~30min apres fermeture US, safe meme en ete)
+    - cron: '30 22 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
+
+      - name: Clear yfinance cache
+        run: rm -rf ~/.cache/py-yfinance ~/.yf_tz_cache
 
       - name: Run pipeline
         run: python scripts/pipeline.py
