@@ -144,6 +144,8 @@ def get_signals(data):
 
     # Cross-sector metrics
     all_60d_rets = pd.DataFrame({t: rel_ret_60d[t] for t in SECTORS})
+    # Drop rows where all values are NaN to avoid idxmin crash on weekends/holidays
+    all_60d_rets = all_60d_rets.dropna(how="all")
     dispersion = all_60d_rets.std(axis=1)
     disp_90pct = dispersion.rolling(min(len(dispersion), 252), min_periods=60).quantile(0.90)
     worst_sector = all_60d_rets.idxmin(axis=1, skipna=True)
