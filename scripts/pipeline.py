@@ -1275,9 +1275,14 @@ def main():
     else:
         global pd, yf
         import shutil as _shutil
-        _cache = os.path.expanduser("~/Library/Caches/py-yfinance")
-        if os.path.exists(_cache):
-            _shutil.rmtree(_cache)
+        # Clear yfinance cache on both macOS and Linux
+        for _cache_dir in [
+            os.path.expanduser("~/Library/Caches/py-yfinance"),  # macOS
+            os.path.expanduser("~/.cache/py-yfinance"),          # Linux
+        ]:
+            if os.path.exists(_cache_dir):
+                _shutil.rmtree(_cache_dir)
+                print(f"Cleared yfinance cache: {_cache_dir}")
         import pandas as _pd
         import yfinance as _yf
         pd = _pd
