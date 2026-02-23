@@ -1,0 +1,212 @@
+{
+  "date": "2026-02-20",
+  "timestamp": "2026-02-23T20:22:40Z",
+  "summary": {
+    "buy_count": 0,
+    "avoid_count": 6,
+    "neutral_count": 5,
+    "open_positions": 0
+  },
+  "sectors": [
+    {
+      "ticker": "XLK",
+      "name": "Technologie",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [],
+      "sell_signals": [],
+      "buy_count": 0,
+      "sell_count": 0,
+      "rsi": 44.4,
+      "cmf": -0.006,
+      "dist_ma50_pct": -2.1,
+      "rel_ret_60d_pct": -1.6,
+      "price": 140.88,
+      "ma50": 143.97,
+      "position": null
+    },
+    {
+      "ticker": "XLF",
+      "name": "Finance",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [],
+      "sell_signals": [],
+      "buy_count": 0,
+      "sell_count": 0,
+      "rsi": 43.7,
+      "cmf": -0.003,
+      "dist_ma50_pct": -3.0,
+      "rel_ret_60d_pct": -3.0,
+      "price": 52.49,
+      "ma50": 54.11,
+      "position": null
+    },
+    {
+      "ticker": "XLV",
+      "name": "Sante",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [],
+      "sell_signals": [],
+      "buy_count": 0,
+      "sell_count": 0,
+      "rsi": 56.8,
+      "cmf": -0.066,
+      "dist_ma50_pct": 0.7,
+      "rel_ret_60d_pct": -3.1,
+      "price": 156.82,
+      "ma50": 155.77,
+      "position": null
+    },
+    {
+      "ticker": "XLY",
+      "name": "Conso. Discret.",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [],
+      "sell_signals": [],
+      "buy_count": 0,
+      "sell_count": 0,
+      "rsi": 34.9,
+      "cmf": 0.035,
+      "dist_ma50_pct": -2.5,
+      "rel_ret_60d_pct": -0.5,
+      "price": 117.45,
+      "ma50": 120.5,
+      "position": null
+    },
+    {
+      "ticker": "XLU",
+      "name": "Services Publics",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [],
+      "sell_signals": [],
+      "buy_count": 0,
+      "sell_count": 0,
+      "rsi": 73.9,
+      "cmf": 0.054,
+      "dist_ma50_pct": 7.0,
+      "rel_ret_60d_pct": 1.0,
+      "price": 46.33,
+      "ma50": 43.29,
+      "position": null
+    },
+    {
+      "ticker": "XLC",
+      "name": "Communication",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 36.0,
+      "cmf": 0.133,
+      "dist_ma50_pct": 0.1,
+      "rel_ret_60d_pct": -0.2,
+      "price": 116.8,
+      "ma50": 116.73,
+      "position": null
+    },
+    {
+      "ticker": "XLP",
+      "name": "Conso. Essentiels",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M2"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 72.4,
+      "cmf": 0.161,
+      "dist_ma50_pct": 7.3,
+      "rel_ret_60d_pct": 8.8,
+      "price": 87.89,
+      "ma50": 81.91,
+      "position": null
+    },
+    {
+      "ticker": "XLE",
+      "name": "Energie",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M3"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 67.4,
+      "cmf": 0.209,
+      "dist_ma50_pct": 13.3,
+      "rel_ret_60d_pct": 18.9,
+      "price": 54.88,
+      "ma50": 48.42,
+      "position": null
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materiaux",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M3"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 69.1,
+      "cmf": 0.199,
+      "dist_ma50_pct": 9.2,
+      "rel_ret_60d_pct": 18.4,
+      "price": 52.96,
+      "ma50": 48.5,
+      "position": null
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Immobilier",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 69.8,
+      "cmf": 0.029,
+      "dist_ma50_pct": 5.7,
+      "rel_ret_60d_pct": 2.7,
+      "price": 43.56,
+      "ma50": 41.21,
+      "position": null
+    },
+    {
+      "ticker": "XLI",
+      "name": "Industrie",
+      "score": -2,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M2",
+        "M3"
+      ],
+      "buy_count": 0,
+      "sell_count": 2,
+      "rsi": 82.6,
+      "cmf": 0.084,
+      "dist_ma50_pct": 8.3,
+      "rel_ret_60d_pct": 13.9,
+      "price": 177.23,
+      "ma50": 163.66,
+      "position": null
+    }
+  ]
+}
