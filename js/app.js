@@ -119,7 +119,7 @@ function computeTradeLogSync() {
                     const isIn = states[i] && states[i].inTrade;
                     const wasIn = i > 0 && states[i - 1] && states[i - 1].inTrade;
 
-                    if (isIn && !wasIn && sd.ma50[i] != null && sd.ma50[i] <= -0.08) {
+                    if (isIn && !wasIn && sd.ma50[i] != null && sd.ma50[i] <= -0.20) {
                         const ei = i + 1;
                         if (ei < sd.close.length && sd.close[ei] != null) {
                             inTrade = true;

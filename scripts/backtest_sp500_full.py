@@ -31,27 +31,28 @@ def get_sp500_tickers():
 
 
 def compute_phase_series(stock_close, spy_close, period=20):
-    """Full phase series for one stock vs SPY."""
+    """Full phase series for one stock vs SPY. Returns (phases, rm_series)."""
     rs = stock_close / spy_close
     rs_sma = rs.rolling(period).mean()
     rr = (rs / rs_sma) * 100
     rm = (rr / rr.shift(period)) * 100
     valid = rm.dropna().index
     if len(valid) == 0:
-        return pd.Series(dtype=str)
+        return pd.Series(dtype=str), pd.Series(dtype=float)
     rr_v = rr.loc[valid]
     rm_v = rm.loc[valid]
     result = pd.Series("lagging", index=valid)
     result[(rr_v >= 100) & (rm_v >= 100)] = "leading"
     result[(rr_v >= 100) & (rm_v < 100)] = "weakening"
     result[(rr_v < 100) & (rm_v >= 100)] = "improving"
-    return result
+    return result, rm
 
 
 def run_backfill(close, spy, tickers, label):
     """Run backfill on a set of tickers. Returns history list."""
-    # Compute phase series
+    # Compute phase series + RS-Momentum
     phase_series = {}
+    rm_series = {}
     skipped = 0
     for ticker in tickers:
         if ticker not in close.columns:
@@ -67,9 +68,10 @@ def run_backfill(close, spy, tickers, label):
         if len(c) < 80:
             skipped += 1
             continue
-        ps = compute_phase_series(c, s, 20)
+        ps, rm = compute_phase_series(c, s, 20)
         if len(ps) > 20:
             phase_series[ticker] = ps
+            rm_series[ticker] = rm
 
     print(f"  {label}: {len(phase_series)} stocks with data, {skipped} skipped")
 
@@ -95,8 +97,11 @@ def run_backfill(close, spy, tickers, label):
                 continue
             phase_yesterday = ps.iloc[day_pos - 1]
 
-            # New signal
+            # New signal (RS-Momentum >= 101 filter)
             if phase_today == "improving" and phase_yesterday != "improving":
+                rm_val = rm_series[ticker].loc[day] if day in rm_series[ticker].index else 100
+                if rm_val < 101:
+                    continue
                 if ticker not in active and ticker in close.columns:
                     price = float(close[ticker].loc[day])
                     if not np.isnan(price):
