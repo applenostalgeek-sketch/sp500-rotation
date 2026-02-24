@@ -96,7 +96,7 @@ function computeTradeLogSync() {
             let entryIdx = null;
             let entryPrice = null;
 
-            for (let i = 0; i < states.length && i < sd.ma50.length; i++) {
+            for (let i = 0; i < sd.ma50.length; i++) {
                 if (inTrade) {
                     // Exit: Take Profit +5% (backtest: 91% WR, Sharpe 1.32)
                     const curPrice = sd.close[i];
@@ -116,10 +116,11 @@ function computeTradeLogSync() {
                         entryIdx = null;
                     }
                 } else {
-                    const isIn = states[i] && states[i].inTrade;
-                    const wasIn = i > 0 && states[i - 1] && states[i - 1].inTrade;
+                    // Entry: stock < -20% below MA50 (backtest: 91% WR, no sector gate)
+                    const wasBelowThreshold = i > 0 && sd.ma50[i-1] != null && sd.ma50[i-1] > -0.20;
+                    const isBelowThreshold = sd.ma50[i] != null && sd.ma50[i] <= -0.20;
 
-                    if (isIn && !wasIn && sd.ma50[i] != null && sd.ma50[i] <= -0.20) {
+                    if (isBelowThreshold && wasBelowThreshold) {
                         const ei = i + 1;
                         if (ei < sd.close.length && sd.close[ei] != null) {
                             inTrade = true;
