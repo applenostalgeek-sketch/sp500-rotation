@@ -38,8 +38,23 @@ SECTOR_ETFS = {
 SECTOR_ORDER = list(SECTOR_ETFS.keys())
 BENCHMARK = "SPY"
 
-# Top holdings per sector ETF (≈15-20 per sector)
-SECTOR_HOLDINGS = {
+# Mapping GICS sector names → sector ETF tickers
+GICS_TO_ETF = {
+    "Information Technology": "XLK",
+    "Financials": "XLF",
+    "Health Care": "XLV",
+    "Consumer Discretionary": "XLY",
+    "Communication Services": "XLC",
+    "Industrials": "XLI",
+    "Consumer Staples": "XLP",
+    "Energy": "XLE",
+    "Utilities": "XLU",
+    "Materials": "XLB",
+    "Real Estate": "XLRE",
+}
+
+# Fallback: top holdings per sector ETF (used if Wikipedia scrape fails)
+SECTOR_HOLDINGS_FALLBACK = {
     "XLK":  ["AAPL","MSFT","NVDA","AVGO","CRM","ADBE","AMD","CSCO","ACN","ORCL",
              "INTC","INTU","TXN","QCOM","AMAT","IBM","NOW","MU","LRCX","ADI"],
     "XLF":  ["BRK-B","JPM","V","MA","BAC","WFC","GS","SPGI","MS","AXP",
@@ -63,6 +78,52 @@ SECTOR_HOLDINGS = {
     "XLRE": ["PLD","AMT","CCI","EQIX","PSA","SPG","O","DLR","WELL","AVB",
              "EQR","VICI","IRM","MAA","ARE","KIM","ESS","UDR","HST","REG"],
 }
+
+
+def get_sp500_tickers():
+    """Scrape all S&P 500 tickers + sectors from Wikipedia, organized by ETF."""
+    import requests
+    url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+        resp = requests.get(url, headers=headers, timeout=15)
+        resp.raise_for_status()
+        from io import StringIO
+        tables = pd.read_html(StringIO(resp.text))
+        df = tables[0]
+        holdings = {etf: [] for etf in SECTOR_ETFS}
+        for _, row in df.iterrows():
+            ticker = row["Symbol"].replace(".", "-")
+            sector = row["GICS Sector"]
+            etf = GICS_TO_ETF.get(sector)
+            if etf and etf in holdings:
+                holdings[etf].append(ticker)
+        total = sum(len(v) for v in holdings.values())
+        print(f"Scraped {total} S&P 500 tickers from Wikipedia")
+        # Cache for fallback
+        project_root = Path(__file__).resolve().parent.parent
+        cache_file = project_root / "data" / "sp500_tickers_cache.json"
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(cache_file, "w") as f:
+            json.dump(holdings, f)
+        return holdings
+    except Exception as e:
+        print(f"Wikipedia scrape failed: {e}, trying fallback...")
+        return _fallback_sp500_tickers()
+
+
+def _fallback_sp500_tickers():
+    """Fallback: load from cache or use hardcoded top holdings."""
+    project_root = Path(__file__).resolve().parent.parent
+    cache_file = project_root / "data" / "sp500_tickers_cache.json"
+    if cache_file.exists():
+        with open(cache_file) as f:
+            holdings = json.load(f)
+        total = sum(len(v) for v in holdings.values())
+        print(f"Loaded {total} tickers from cache")
+        return holdings
+    print("Using hardcoded fallback (~209 stocks)")
+    return SECTOR_HOLDINGS_FALLBACK
 
 
 # ---------------------------------------------------------------------------
@@ -650,8 +711,10 @@ def generate_sector_history(data, days=90):
     return {"dates": dates, "sectors": sectors}
 
 
-def generate_stock_history(data_all, days=252):
+def generate_stock_history(data_all, days=252, sector_holdings=None):
     """Generate historical MA50 distance, RSI, CMF per stock per sector for timeline playback."""
+    if sector_holdings is None:
+        sector_holdings = SECTOR_HOLDINGS_FALLBACK
     benchmark = data_all["Close"][BENCHMARK]
     trading_days = benchmark.dropna().index[-days:]
     dates = [d.strftime("%Y-%m-%d") for d in trading_days]
@@ -662,7 +725,7 @@ def generate_stock_history(data_all, days=252):
     volume_all = data_all["Volume"]
 
     results = {}
-    for etf, holdings in SECTOR_HOLDINGS.items():
+    for etf, holdings in sector_holdings.items():
         available = [h for h in holdings if h in close_all.columns and close_all[h].dropna().shape[0] > 80]
         if not available:
             continue
@@ -841,9 +904,11 @@ def generate_sample_data():
 # ---------------------------------------------------------------------------
 # Sector detail — individual stock phases
 # ---------------------------------------------------------------------------
-def compute_sector_detail(etf, data_all):
+def compute_sector_detail(etf, data_all, sector_holdings=None):
     """Compute phases for individual stocks vs their sector ETF."""
-    holdings = SECTOR_HOLDINGS.get(etf, [])
+    if sector_holdings is None:
+        sector_holdings = SECTOR_HOLDINGS_FALLBACK
+    holdings = sector_holdings.get(etf, [])
     if not holdings:
         return None
 
@@ -999,14 +1064,16 @@ def compute_sector_detail(etf, data_all):
 # ---------------------------------------------------------------------------
 # Signal history — backfill + daily tracking
 # ---------------------------------------------------------------------------
-def backfill_signal_history(data_all):
+def backfill_signal_history(data_all, sector_holdings=None):
     """Replay 90 days of price data to build full signal history."""
+    if sector_holdings is None:
+        sector_holdings = SECTOR_HOLDINGS_FALLBACK
     close = data_all["Close"]
     spy = close[BENCHMARK]
 
     # Build ticker → sector mapping
     ticker_sector = {}
-    for etf, holdings in SECTOR_HOLDINGS.items():
+    for etf, holdings in sector_holdings.items():
         for t in holdings:
             if t in close.columns:
                 ticker_sector[t] = etf
@@ -1315,13 +1382,26 @@ def main():
         print("Computing rotation signals...")
         result = detect_rotations(data_etf)
 
-        # Fetch individual holdings for sector detail
+        # Get all S&P 500 tickers (scrape Wikipedia, fallback to cache/hardcoded)
+        active_holdings = get_sp500_tickers()
         all_holdings = []
-        for h_list in SECTOR_HOLDINGS.values():
+        for h_list in active_holdings.values():
             all_holdings.extend(h_list)
         all_holdings = list(set(all_holdings))
+
+        # Download in batches of 50 (like sp500-patterns)
         print(f"Downloading {len(all_holdings)} individual stocks for sector detail...")
-        data_stocks = _download_with_retry(all_holdings, period="2y")
+        batch_size = 50
+        all_stock_dfs = []
+        for i in range(0, len(all_holdings), batch_size):
+            batch = all_holdings[i:i+batch_size]
+            print(f"  Batch {i//batch_size + 1}/{(len(all_holdings)-1)//batch_size + 1}: {len(batch)} tickers...")
+            batch_data = _download_with_retry(batch, period="2y")
+            all_stock_dfs.append(batch_data)
+        # Merge all batches using concat on the top-level MultiIndex
+        data_stocks = _pd.concat(all_stock_dfs, axis=1)
+        # Remove duplicate columns
+        data_stocks = data_stocks.loc[:, ~data_stocks.columns.duplicated()]
 
         # Merge sector ETF data + stock data
         data_all = {}
@@ -1338,7 +1418,7 @@ def main():
         sectors_dir = output_path.parent / "sectors"
         sectors_dir.mkdir(exist_ok=True)
         for etf in SECTOR_ETFS:
-            detail = compute_sector_detail(etf, data_all)
+            detail = compute_sector_detail(etf, data_all, active_holdings)
             if detail:
                 with open(sectors_dir / f"{etf}.json", "w") as f:
                     json.dump(detail, f, indent=2)
@@ -1387,7 +1467,7 @@ def main():
 
         if needs_backfill:
             print("  Backfilling signal history from 2 years of data...")
-            history = backfill_signal_history(data_all)
+            history = backfill_signal_history(data_all, active_holdings)
             with open(history_path, "w") as f:
                 json.dump(history, f, indent=2)
         else:
@@ -1407,7 +1487,7 @@ def main():
     # Generate stock history per sector for timeline playback
     if data_all is not None:
         print("Generating stock history per sector...")
-        stock_histories = generate_stock_history(data_all, days=252)
+        stock_histories = generate_stock_history(data_all, days=252, sector_holdings=active_holdings)
         for etf, sh in stock_histories.items():
             sh_path = sectors_dir / f"{etf}_history.json"
             with open(sh_path, "w") as f:
