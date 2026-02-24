@@ -117,16 +117,10 @@ function computeTradeLogSync() {
                     }
                 } else {
                     // Entry: stock < -20% below MA50 (backtest: 91% WR, no sector gate)
-                    const wasBelowThreshold = i > 0 && sd.ma50[i-1] != null && sd.ma50[i-1] > -0.20;
-                    const isBelowThreshold = sd.ma50[i] != null && sd.ma50[i] <= -0.20;
-
-                    if (isBelowThreshold && wasBelowThreshold) {
-                        const ei = i + 1;
-                        if (ei < sd.close.length && sd.close[ei] != null) {
-                            inTrade = true;
-                            entryIdx = ei;
-                            entryPrice = sd.close[ei];
-                        }
+                    if (sd.ma50[i] != null && sd.ma50[i] < -0.20) {
+                        inTrade = true;
+                        entryIdx = i;
+                        entryPrice = sd.close[i];
                     }
                 }
             }
