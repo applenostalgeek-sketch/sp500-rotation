@@ -285,7 +285,7 @@ function buildGoldPanel() {
     // Sort buttons
     const sortOptions = [
         { key: "name", label: "A-Z" },
-        { key: "recent", label: "R\u00e9cent" },
+        { key: "rsi", label: "RSI" },
         { key: "pnl", label: "P&L" },
     ];
 
@@ -295,10 +295,10 @@ function buildGoldPanel() {
         } else if (goldPanelSort === "pnl") {
             return a.pnl - b.pnl; // worst first
         } else {
-            // recent: NEW first, then by daysHeld
-            if (a.isNew && !b.isNew) return -1;
-            if (!a.isNew && b.isNew) return 1;
-            return a.daysHeld - b.daysHeld;
+            // rsi: lowest RSI first (most oversold)
+            const rsiA = a.rsi != null ? a.rsi : 999;
+            const rsiB = b.rsi != null ? b.rsi : 999;
+            return rsiA - rsiB;
         }
     });
 
