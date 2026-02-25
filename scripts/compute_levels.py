@@ -329,71 +329,82 @@ def compute_rsi(df, period=14):
 
 
 def compute_score(trend, dist_ma50, dist_ma200, supports, resistances, rsi):
-    """Compute 0-100 score based on multiple factors."""
-    score = 50
+    """
+    Score 0-100: quality of the GOLD mean-reversion signal.
+    Higher = better bounce opportunity (oversold + strong support + good R/R).
+    """
+    score = 40  # base — already in GOLD so starts decent
 
-    # Trend
-    if trend == "Hausse":
-        score += 10
-    elif trend == "Baisse":
-        score -= 10
-
-    # MA50 position
-    if dist_ma50 > 0:
-        score += 5
-    else:
-        score -= 5
-
-    # MA200 position
-    if dist_ma200 > 0:
-        score += 5
-    else:
-        score -= 5
-
-    # Support/resistance proximity
-    nearest_support_dist = abs(supports[0]["dist_pct"]) if supports else 999
-    nearest_resistance_dist = abs(resistances[0]["dist_pct"]) if resistances else 999
-
-    if nearest_support_dist < 3 and nearest_resistance_dist > 5:
+    # RSI: deeply oversold = strong bounce potential
+    if rsi < 25:
+        score += 20
+    elif rsi < 30:
         score += 15
-    elif nearest_resistance_dist < 2:
-        score -= 10
-
-    # Support strength (first support confluence)
-    if supports:
-        top_strength = supports[0]["strength"]
-        if top_strength >= 4:
-            score += 10
-        elif top_strength >= 2:
-            score += 5
-        else:
-            score -= 3
-
-    # RSI
-    if rsi < 30:
+    elif rsi < 35:
         score += 10
     elif rsi < 40:
         score += 5
-    elif rsi > 70:
-        score -= 10
-    elif rsi > 60:
-        score -= 3
+
+    # Distance below MA50: sweet spot -20% to -30%
+    abs_dist = abs(dist_ma50)
+    if 20 <= abs_dist <= 28:
+        score += 10  # sweet spot from backtest
+    elif 28 < abs_dist <= 35:
+        score += 5   # still good
+    elif abs_dist > 40:
+        score -= 10  # may be in serious trouble
+
+    # Nearest support proximity: close floor = less downside risk
+    if supports:
+        s_dist = abs(supports[0]["dist_pct"])
+        if s_dist <= 2:
+            score += 12
+        elif s_dist <= 4:
+            score += 8
+        elif s_dist <= 7:
+            score += 4
+
+        # Support strength (confluence)
+        s_strength = supports[0]["strength"]
+        if s_strength >= 4:
+            score += 8
+        elif s_strength >= 3:
+            score += 5
+        elif s_strength >= 2:
+            score += 2
+    else:
+        score -= 5
+
+    # Risk/Reward ratio
+    if supports and resistances:
+        risk = abs(supports[0]["dist_pct"])
+        reward = abs(resistances[0]["dist_pct"])
+        if risk > 0:
+            rr = reward / risk
+            if rr >= 3:
+                score += 8
+            elif rr >= 2:
+                score += 5
+            elif rr >= 1:
+                score += 2
+            else:
+                score -= 3
 
     return max(0, min(100, score))
 
 
 def get_verdict(score):
-    """Return verdict tuple (label, text) based on score."""
-    if score >= 75:
-        return "FAVORABLE", "Le prix est bien place pour un achat"
-    elif score >= 60:
-        return "PLUTOT OK", "Conditions correctes, quelques signaux positifs"
-    elif score >= 45:
-        return "NEUTRE", "Pas de signal clair dans un sens ou l'autre"
-    elif score >= 30:
-        return "PRUDENCE", "Plusieurs signaux negatifs, mieux vaut attendre"
+    """Return verdict for GOLD signal quality."""
+    if score >= 80:
+        return "SIGNAL FORT", "Conditions ideales pour un rebond"
+    elif score >= 65:
+        return "BON SIGNAL", "Bonne configuration pour un rebond"
+    elif score >= 50:
+        return "SIGNAL CORRECT", "Conditions acceptables"
+    elif score >= 35:
+        return "SIGNAL FAIBLE", "Peu de catalyseurs pour un rebond"
     else:
-        return "DEFAVORABLE", "Conditions difficiles, risque eleve"
+        return "PRUDENCE", "Risque eleve malgre la survente"
 
 
 def rsi_label(rsi):

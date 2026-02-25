@@ -287,14 +287,19 @@ function buildGoldPanel() {
     const sortOptions = [
         { key: "name", label: "A-Z" },
         { key: "rsi", label: "RSI" },
-        { key: "pnl", label: "P&L" },
+        { key: "score", label: "Score" },
     ];
+
+    const _getScore = (ticker) => {
+        const info = levelsData && levelsData.stocks && levelsData.stocks[ticker];
+        return info ? info.score : 0;
+    };
 
     const sorted = [...positions].sort((a, b) => {
         if (goldPanelSort === "name") {
             return a.ticker.localeCompare(b.ticker);
-        } else if (goldPanelSort === "pnl") {
-            return a.pnl - b.pnl; // worst first
+        } else if (goldPanelSort === "score") {
+            return _getScore(b.ticker) - _getScore(a.ticker); // best first
         } else {
             // rsi: lowest RSI first (most oversold)
             const rsiA = a.rsi != null ? a.rsi : 999;
@@ -333,11 +338,16 @@ function buildGoldPanel() {
 
         const badgeHtml = p.isNew ? '<span class="gp-badge new">NEW</span>' : "";
 
+        const stockScore = _getScore(p.ticker);
+        const scoreColor = stockScore >= 80 ? "#22c55e" : stockScore >= 65 ? "#86efac" :
+            stockScore >= 50 ? "#fbbf24" : stockScore >= 35 ? "#f97316" : "#ef4444";
+        const scoreHtml = stockScore > 0 ? `<span class="gp-score" style="color:${scoreColor}">${stockScore}</span>` : "";
+
         const highlighted = chartView && chartView.hovered === p.ticker;
         const hlClass = highlighted ? " highlighted" : "";
         html += `<div class="${cardClass}${hlClass}" onclick="if(chartView){chartView.highlightTicker('${p.ticker}');buildGoldPanel()}showStockModal('${p.ticker}')">`;
         html += `<div class="gp-card-head">`;
-        html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}</span>`;
+        html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}${scoreHtml}</span>`;
         html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;
         html += `</div>`;
         html += `<div class="gp-row"><span>Jours</span><span>${p.daysHeld}j</span></div>`;
