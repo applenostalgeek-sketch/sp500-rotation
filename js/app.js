@@ -9,6 +9,7 @@ let timelineReady = false;
 let tradeLog = [];
 let tradeLogReady = false;
 let allStockHistories = {};
+let levelsData = null; // from data/levels.json
 
 function loadData() {
     if (window.ROTATION_DATA) return window.ROTATION_DATA;
@@ -334,7 +335,7 @@ function buildGoldPanel() {
 
         const highlighted = chartView && chartView.hovered === p.ticker;
         const hlClass = highlighted ? " highlighted" : "";
-        html += `<div class="${cardClass}${hlClass}" onclick="if(chartView){chartView.highlightTicker('${p.ticker}');buildGoldPanel()}">`;
+        html += `<div class="${cardClass}${hlClass}" onclick="if(chartView){chartView.highlightTicker('${p.ticker}');buildGoldPanel()}showStockModal('${p.ticker}')">`;
         html += `<div class="gp-card-head">`;
         html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}</span>`;
         html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;
@@ -441,9 +442,132 @@ function toggleSectorPanel() {
     }
 }
 
+/* ---------- Stock Detail Modal ---------- */
+function fetchLevels() {
+    fetch(`data/levels.json?t=${Date.now()}`)
+        .then(r => r.ok ? r.json() : null)
+        .then(d => { levelsData = d; })
+        .catch(() => { levelsData = null; });
+}
+
+function showStockModal(ticker) {
+    // Remove existing modal
+    const old = document.getElementById("stock-modal");
+    if (old) old.remove();
+
+    const info = levelsData && levelsData.stocks && levelsData.stocks[ticker];
+    if (!info) {
+        // No levels data — show basic info
+        return;
+    }
+
+    const isEur = goldPanelCurrency === "EUR" && eurUsdRate != null;
+    const rate = isEur ? eurUsdRate : 1;
+    const sym = isEur ? "\u20AC" : "$";
+
+    const scoreColor = info.score >= 75 ? "#22c55e" : info.score >= 60 ? "#86efac" :
+        info.score >= 45 ? "#fbbf24" : info.score >= 30 ? "#f97316" : "#ef4444";
+
+    const filled = Math.round(info.score / 5);
+    const scoreBar = "\u25A0".repeat(filled) + "\u00B7".repeat(20 - filled);
+
+    let html = `<div class="sm-overlay" onclick="closeStockModal()">`;
+    html += `<div class="sm-window" onclick="event.stopPropagation()">`;
+    html += `<button class="sm-close" onclick="closeStockModal()">&times;</button>`;
+
+    // Header
+    html += `<div class="sm-header">`;
+    html += `<span class="sm-ticker">${ticker}</span>`;
+    html += `<span class="sm-price">${sym}${(info.price * rate).toFixed(2)}</span>`;
+    html += `</div>`;
+
+    // Verdict
+    html += `<div class="sm-verdict" style="color:${scoreColor}">`;
+    html += `<div class="sm-verdict-label">${info.verdict}</div>`;
+    html += `<div class="sm-score-bar"><span style="color:${scoreColor}">${scoreBar}</span> ${info.score}/100</div>`;
+    html += `<div class="sm-verdict-text">${info.verdict_text}</div>`;
+    html += `</div>`;
+
+    // Quick stats
+    html += `<div class="sm-stats">`;
+    html += `<div class="sm-stat"><span>Tendance</span><span>${info.trend} (${info.swing_low.toFixed(0)} \u2192 ${info.swing_high.toFixed(0)})</span></div>`;
+    html += `<div class="sm-stat"><span>RSI</span><span>${info.rsi.toFixed(0)} (${info.rsi_label})</span></div>`;
+    html += `<div class="sm-stat"><span>vs MA50</span><span>${info.dist_ma50 > 0 ? "+" : ""}${info.dist_ma50.toFixed(1)}% (${info.ma50_label})</span></div>`;
+    html += `</div>`;
+
+    // Supports
+    html += `<div class="sm-section-title">Planchers (supports)</div>`;
+    if (info.supports && info.supports.length > 0) {
+        html += `<div class="sm-levels">`;
+        for (let i = 0; i < Math.min(info.supports.length, 4); i++) {
+            const s = info.supports[i];
+            const stars = "\u2605".repeat(Math.min(s.strength, 5));
+            html += `<div class="sm-level support">`;
+            html += `<span>#${i + 1}</span>`;
+            html += `<span>${sym}${(s.price * rate).toFixed(2)}</span>`;
+            html += `<span class="sm-dist">${s.dist_pct > 0 ? "+" : ""}${s.dist_pct.toFixed(1)}%</span>`;
+            html += `<span class="sm-stars">${stars}</span>`;
+            html += `</div>`;
+        }
+        html += `</div>`;
+    } else {
+        html += `<div class="sm-empty">Aucun plancher identifi\u00e9</div>`;
+    }
+
+    // Resistances
+    html += `<div class="sm-section-title">Plafonds (r\u00e9sistances)</div>`;
+    if (info.resistances && info.resistances.length > 0) {
+        html += `<div class="sm-levels">`;
+        for (let i = 0; i < Math.min(info.resistances.length, 4); i++) {
+            const r = info.resistances[i];
+            const stars = "\u2605".repeat(Math.min(r.strength, 5));
+            html += `<div class="sm-level resistance">`;
+            html += `<span>#${i + 1}</span>`;
+            html += `<span>${sym}${(r.price * rate).toFixed(2)}</span>`;
+            html += `<span class="sm-dist">+${r.dist_pct.toFixed(1)}%</span>`;
+            html += `<span class="sm-stars">${stars}</span>`;
+            html += `</div>`;
+        }
+        html += `</div>`;
+    } else {
+        html += `<div class="sm-empty">Aucun plafond identifi\u00e9</div>`;
+    }
+
+    // Risk / Reward
+    if (info.supports && info.supports.length > 0 && info.resistances && info.resistances.length > 0) {
+        const s1 = info.supports[0];
+        const r1 = info.resistances[0];
+        const risk = Math.abs(s1.dist_pct);
+        const reward = Math.abs(r1.dist_pct);
+        const rr = risk > 0 ? (reward / risk).toFixed(1) : "0.0";
+        const rrColor = reward / risk >= 2 ? "#22c55e" : reward / risk >= 1 ? "#fbbf24" : "#ef4444";
+        const rrLabel = reward / risk >= 2 ? "bon" : reward / risk >= 1 ? "correct" : "d\u00e9favorable";
+
+        html += `<div class="sm-section-title">Risque / Gain</div>`;
+        html += `<div class="sm-rr">`;
+        html += `<div><span class="sm-rr-down">\u25BC</span> Plancher #1 \u00e0 ${sym}${(s1.price * rate).toFixed(2)} <span class="sm-dist">(${s1.dist_pct.toFixed(1)}%)</span></div>`;
+        html += `<div><span class="sm-rr-up">\u25B2</span> Plafond #1 \u00e0 ${sym}${(r1.price * rate).toFixed(2)} <span class="sm-dist">(+${r1.dist_pct.toFixed(1)}%)</span></div>`;
+        html += `<div class="sm-rr-ratio">Ratio: <span style="color:${rrColor}">${rr}x (${rrLabel})</span></div>`;
+        html += `</div>`;
+    }
+
+    html += `</div></div>`;
+
+    const modal = document.createElement("div");
+    modal.id = "stock-modal";
+    modal.innerHTML = html;
+    document.body.appendChild(modal);
+}
+
+function closeStockModal() {
+    const m = document.getElementById("stock-modal");
+    if (m) m.remove();
+}
+
 /* ---------- Init ---------- */
 async function init() {
     fetchEurUsdRate();
+    fetchLevels();
     appData = await Promise.resolve(loadData());
     if (!appData || !appData.nodes) return;
 
