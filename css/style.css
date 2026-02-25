@@ -401,6 +401,32 @@ body {
 .gold-panel-list::-webkit-scrollbar-track { background: transparent; }
 .gold-panel-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
 
+/* ---------- Gold Panel Sort Bar ---------- */
+.gp-sort-bar {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.gp-sort-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #94a3b8;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.gp-sort-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: #e2e8f0;
+}
+.gp-sort-btn.active {
+    background: rgba(251,191,36,0.15);
+    border-color: rgba(251,191,36,0.3);
+    color: #fbbf24;
+}
+
 /* ---------- Gold Panel Cards ---------- */
 .gp-card {
     background: rgba(255, 255, 255, 0.03);

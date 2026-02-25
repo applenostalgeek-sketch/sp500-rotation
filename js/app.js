@@ -259,6 +259,8 @@ function updateOpenPanels() {
 }
 
 /* ---------- Gold Panel ---------- */
+let goldPanelSort = "name"; // "name" | "recent" | "pnl"
+
 function buildGoldPanel() {
     const list = document.getElementById("gold-panel-list");
     if (!list || !chartView) return;
@@ -271,14 +273,32 @@ function buildGoldPanel() {
         return;
     }
 
-    // Sort: NEW first, then by daysHeld (recent first)
+    // Sort buttons
+    const sortOptions = [
+        { key: "name", label: "A-Z" },
+        { key: "recent", label: "R\u00e9cent" },
+        { key: "pnl", label: "P&L" },
+    ];
+
     const sorted = [...positions].sort((a, b) => {
-        if (a.isNew && !b.isNew) return -1;
-        if (!a.isNew && b.isNew) return 1;
-        return a.daysHeld - b.daysHeld;
+        if (goldPanelSort === "name") {
+            return a.ticker.localeCompare(b.ticker);
+        } else if (goldPanelSort === "pnl") {
+            return a.pnl - b.pnl; // worst first
+        } else {
+            // recent: NEW first, then by daysHeld
+            if (a.isNew && !b.isNew) return -1;
+            if (!a.isNew && b.isNew) return 1;
+            return a.daysHeld - b.daysHeld;
+        }
     });
 
-    let html = "";
+    let html = '<div class="gp-sort-bar">';
+    for (const opt of sortOptions) {
+        const cls = opt.key === goldPanelSort ? "gp-sort-btn active" : "gp-sort-btn";
+        html += `<button class="${cls}" onclick="goldPanelSort='${opt.key}';buildGoldPanel()">${opt.label}</button>`;
+    }
+    html += '</div>';
 
     for (const p of sorted) {
         const pnlPct = (p.pnl * 100).toFixed(1);
