@@ -28,7 +28,12 @@ GOLD_THRESHOLD = -0.20  # ma50 <= -20%
 # ---------------------------------------------------------------------------
 
 def find_gold_stocks():
-    """Scan all sector history files and return tickers where last ma50 <= -20%."""
+    """
+    Scan all sector history files and replay the same entry/exit logic as app.js:
+    - Entry: stock goes below -20% of MA50
+    - Exit: Take Profit +5% from entry price
+    Returns tickers that are currently in an active GOLD trade.
+    """
     gold = {}
     for path in sorted(glob.glob(os.path.join(SECTORS_DIR, "*_history.json"))):
         with open(path) as f:
@@ -37,15 +42,35 @@ def find_gold_stocks():
         dates = data.get("dates", [])
         for ticker, info in data.get("stocks", {}).items():
             ma50_list = info.get("ma50", [])
-            if not ma50_list:
+            close_list = info.get("close", [])
+            rsi_list = info.get("rsi", [])
+            if not ma50_list or not close_list:
                 continue
-            last_ma50 = ma50_list[-1]
-            if last_ma50 is not None and last_ma50 <= GOLD_THRESHOLD:
+
+            # Replay trade logic (same as app.js)
+            in_trade = False
+            entry_price = None
+            for i in range(len(ma50_list)):
+                if in_trade:
+                    # Exit: TP +5%
+                    cur = close_list[i] if i < len(close_list) else None
+                    if cur is not None and entry_price and cur >= entry_price * 1.05:
+                        in_trade = False
+                        entry_price = None
+                else:
+                    # Entry: below -20% of MA50
+                    m = ma50_list[i]
+                    if m is not None and m < GOLD_THRESHOLD:
+                        in_trade = True
+                        entry_price = close_list[i] if i < len(close_list) else None
+
+            if in_trade:
+                last_ma50 = ma50_list[-1] if ma50_list[-1] is not None else 0
                 gold[ticker] = {
                     "sector": sector,
                     "ma50_pct": round(last_ma50 * 100, 2),
-                    "last_close": info.get("close", [None])[-1],
-                    "last_rsi": info.get("rsi", [None])[-1],
+                    "last_close": close_list[-1] if close_list else None,
+                    "last_rsi": rsi_list[-1] if rsi_list else None,
                     "last_date": dates[-1] if dates else None,
                 }
     return gold
