@@ -260,6 +260,15 @@ function updateOpenPanels() {
 
 /* ---------- Gold Panel ---------- */
 let goldPanelSort = "name"; // "name" | "recent" | "pnl"
+let goldPanelCurrency = "USD"; // "USD" | "EUR"
+let eurUsdRate = null; // fetched once on load
+
+function fetchEurUsdRate() {
+    fetch("https://api.exchangerate-api.com/v4/latest/USD")
+        .then(r => r.json())
+        .then(d => { eurUsdRate = d.rates && d.rates.EUR ? d.rates.EUR : null; })
+        .catch(() => { eurUsdRate = null; });
+}
 
 function buildGoldPanel() {
     const list = document.getElementById("gold-panel-list");
@@ -293,11 +302,20 @@ function buildGoldPanel() {
         }
     });
 
+    const isEur = goldPanelCurrency === "EUR" && eurUsdRate != null;
+    const rate = isEur ? eurUsdRate : 1;
+    const sym = isEur ? "\u20AC" : "$";
+
     let html = '<div class="gp-sort-bar">';
     for (const opt of sortOptions) {
         const cls = opt.key === goldPanelSort ? "gp-sort-btn active" : "gp-sort-btn";
         html += `<button class="${cls}" onclick="goldPanelSort='${opt.key}';buildGoldPanel()">${opt.label}</button>`;
     }
+    html += '<span class="gp-sort-spacer"></span>';
+    const usdCls = goldPanelCurrency === "USD" ? "gp-cur-btn active" : "gp-cur-btn";
+    const eurCls = goldPanelCurrency === "EUR" ? "gp-cur-btn active" : "gp-cur-btn";
+    html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
+    html += `<button class="${eurCls}" onclick="goldPanelCurrency='EUR';buildGoldPanel()">\u20AC</button>`;
     html += '</div>';
 
     for (const p of sorted) {
@@ -320,8 +338,8 @@ function buildGoldPanel() {
         html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;
         html += `</div>`;
         html += `<div class="gp-row"><span>Jours</span><span>${p.daysHeld}j</span></div>`;
-        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>$${p.entryPrice.toFixed(2)}</span></div>`;
-        html += `<div class="gp-row"><span>Actuel</span><span>$${p.currentPrice.toFixed(2)}</span></div>`;
+        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>${sym}${(p.entryPrice * rate).toFixed(2)}</span></div>`;
+        html += `<div class="gp-row"><span>Actuel</span><span>${sym}${(p.currentPrice * rate).toFixed(2)}</span></div>`;
         html += `<div class="gp-sector">${p.sectorName} \u00B7 ${p.etf}</div>`;
         html += `</div>`;
     }
@@ -335,8 +353,8 @@ function buildGoldPanel() {
         html += `<span class="gp-pnl" style="color:#22c55e">+${pnlPct}%</span>`;
         html += `</div>`;
         html += `<div class="gp-row"><span>Dur\u00e9e</span><span>${t.days}j</span></div>`;
-        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>$${t.entryPrice.toFixed(2)}</span></div>`;
-        html += `<div class="gp-row"><span>Sortie</span><span>$${t.exitPrice.toFixed(2)}</span></div>`;
+        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>${sym}${(t.entryPrice * rate).toFixed(2)}</span></div>`;
+        html += `<div class="gp-row"><span>Sortie</span><span>${sym}${(t.exitPrice * rate).toFixed(2)}</span></div>`;
         html += `<div class="gp-sector">${t.sectorName} \u00B7 ${t.etf}</div>`;
         html += `</div>`;
     }
@@ -423,6 +441,7 @@ function toggleSectorPanel() {
 
 /* ---------- Init ---------- */
 async function init() {
+    fetchEurUsdRate();
     appData = await Promise.resolve(loadData());
     if (!appData || !appData.nodes) return;
 

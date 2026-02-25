@@ -426,6 +426,30 @@ body {
     border-color: rgba(251,191,36,0.3);
     color: #fbbf24;
 }
+.gp-sort-spacer {
+    flex: 1;
+}
+.gp-cur-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #94a3b8;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    min-width: 28px;
+}
+.gp-cur-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: #e2e8f0;
+}
+.gp-cur-btn.active {
+    background: rgba(99,102,241,0.2);
+    border-color: rgba(99,102,241,0.4);
+    color: #818cf8;
+}
 
 /* ---------- Gold Panel Cards ---------- */
 .gp-card {
