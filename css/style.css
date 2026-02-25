@@ -459,10 +459,16 @@ body {
     margin-bottom: 8px;
     border-left: 3px solid transparent;
     transition: background 0.15s;
+    cursor: pointer;
 }
 
 .gp-card:hover {
     background: rgba(255, 255, 255, 0.05);
+}
+
+.gp-card.highlighted {
+    background: rgba(251, 191, 36, 0.1);
+    border-left-color: #fbbf24;
 }
 
 .gp-card.new {

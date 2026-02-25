@@ -332,7 +332,9 @@ function buildGoldPanel() {
 
         const badgeHtml = p.isNew ? '<span class="gp-badge new">NEW</span>' : "";
 
-        html += `<div class="${cardClass}">`;
+        const highlighted = chartView && chartView.hovered === p.ticker;
+        const hlClass = highlighted ? " highlighted" : "";
+        html += `<div class="${cardClass}${hlClass}" onclick="if(chartView){chartView.highlightTicker('${p.ticker}');buildGoldPanel()}">`;
         html += `<div class="gp-card-head">`;
         html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}</span>`;
         html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;

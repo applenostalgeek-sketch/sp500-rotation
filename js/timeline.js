@@ -34,6 +34,11 @@ class RRGView {
         this._setupInteraction();
     }
 
+    highlightTicker(ticker) {
+        this.hovered = this.hovered === ticker ? null : ticker;
+        this.draw();
+    }
+
     /* ---- Data loading ---- */
 
     async loadData() {
