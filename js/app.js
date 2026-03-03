@@ -271,12 +271,13 @@ function savePortfolio(pf) {
     localStorage.setItem(PORTFOLIO_KEY, JSON.stringify(pf));
 }
 
-function addToPortfolio(ticker, buyPrice, amount, tpPct) {
+function addToPortfolio(ticker, buyPrice, amount, tpPct, currency) {
     const pf = loadPortfolio();
     pf[ticker] = {
         buyPrice: parseFloat(buyPrice),
         amount: parseFloat(amount),
         tpPct: parseFloat(tpPct),
+        currency: currency || "EUR",
         date: new Date().toISOString().slice(0, 10),
     };
     savePortfolio(pf);
@@ -330,7 +331,7 @@ function importPortfolio() {
 
 /* ---------- Gold Panel ---------- */
 let goldPanelSort = "name"; // "name" | "recent" | "pnl" | "portfolio"
-let goldPanelCurrency = "USD"; // "USD" | "EUR"
+let goldPanelCurrency = "EUR"; // "EUR" | "USD"
 let eurUsdRate = null; // fetched once on load
 
 function fetchEurUsdRate() {
@@ -394,8 +395,8 @@ function buildGoldPanel() {
     html += '<span class="gp-sort-spacer"></span>';
     const usdCls = goldPanelCurrency === "USD" ? "gp-cur-btn active" : "gp-cur-btn";
     const eurCls = goldPanelCurrency === "EUR" ? "gp-cur-btn active" : "gp-cur-btn";
-    html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
     html += `<button class="${eurCls}" onclick="goldPanelCurrency='EUR';buildGoldPanel()">\u20AC</button>`;
+    html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
     html += '</div>';
 
     if (isPortfolioView) {
@@ -408,15 +409,31 @@ function buildGoldPanel() {
                 const pf = portfolio[ticker];
                 const sellPrice = calcSellPrice(pf.buyPrice, pf.amount, pf.tpPct);
                 const profitNet = pf.amount * pf.tpPct / 100;
+                const pfSym = pf.currency === "USD" ? "$" : "\u20AC";
+
+                // Current price from levels data (in display currency)
+                const lvl = levelsData && levelsData.stocks && levelsData.stocks[ticker];
+                let pnlHtml = "";
+                if (lvl && lvl.price) {
+                    // Convert market price ($) to portfolio currency
+                    const mktInPfCur = pf.currency === "USD" ? lvl.price : (eurUsdRate ? lvl.price * eurUsdRate : null);
+                    if (mktInPfCur != null) {
+                        const realPnl = ((mktInPfCur - pf.buyPrice) / pf.buyPrice * 100);
+                        const pnlColor = realPnl >= 0 ? "#22c55e" : "#ef4444";
+                        const pnlSign = realPnl >= 0 ? "+" : "";
+                        pnlHtml = `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${realPnl.toFixed(1)}%</span>`;
+                    }
+                }
+                if (!pnlHtml) pnlHtml = `<span class="gp-pnl" style="color:#22c55e">TP ${pf.tpPct}%</span>`;
 
                 html += `<div class="gp-card portfolio-card" onclick="showStockModal('${ticker}')">`;
                 html += `<div class="gp-card-head">`;
                 html += `<span><span class="gp-ticker">${ticker}</span></span>`;
-                html += `<span class="gp-pnl" style="color:#22c55e">TP ${pf.tpPct}%</span>`;
+                html += pnlHtml;
                 html += `</div>`;
-                html += `<div class="gp-row"><span>Achat</span><span>${pf.buyPrice.toFixed(2)}\u20AC le ${pf.date}</span></div>`;
-                html += `<div class="gp-row"><span>Montant</span><span>${pf.amount}\u20AC</span></div>`;
-                html += `<div class="gp-row gp-sell-target"><span>Vends \u00e0</span><span>${sellPrice.toFixed(2)}\u20AC (+${profitNet.toFixed(0)}\u20AC net)</span></div>`;
+                html += `<div class="gp-row"><span>Achat</span><span>${pfSym}${pf.buyPrice.toFixed(2)} le ${pf.date}</span></div>`;
+                html += `<div class="gp-row"><span>Montant</span><span>${pfSym}${pf.amount}</span></div>`;
+                html += `<div class="gp-row gp-sell-target"><span>Vends \u00e0</span><span>${pfSym}${sellPrice.toFixed(2)} (+${pfSym}${profitNet.toFixed(0)} net)</span></div>`;
                 html += `</div>`;
             }
 
@@ -675,21 +692,35 @@ function showStockModal(ticker) {
         // Already bought — show summary + sell target in levels context
         const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
         const profitNet = pfEntry.amount * pfEntry.tpPct / 100;
+        const pfSym = pfEntry.currency === "USD" ? "$" : "\u20AC";
+
+        // P&L: convert market price to portfolio currency
+        let pnlLine = "";
+        if (info.price) {
+            const mktInPfCur = pfEntry.currency === "USD" ? info.price : (eurUsdRate ? info.price * eurUsdRate : null);
+            if (mktInPfCur != null) {
+                const realPnl = ((mktInPfCur - pfEntry.buyPrice) / pfEntry.buyPrice * 100);
+                const pnlColor = realPnl >= 0 ? "#22c55e" : "#ef4444";
+                const pnlSign = realPnl >= 0 ? "+" : "";
+                pnlLine = `<div class="gp-row"><span>P&L actuel</span><span style="color:${pnlColor};font-weight:700">${pnlSign}${realPnl.toFixed(1)}%</span></div>`;
+            }
+        }
 
         html += `<div class="sm-buy-form">`;
-        html += `<div class="gp-row"><span>Achat</span><span>${pfEntry.buyPrice.toFixed(2)}\u20AC le ${pfEntry.date}</span></div>`;
-        html += `<div class="gp-row"><span>Montant</span><span>${pfEntry.amount}\u20AC</span></div>`;
-        html += `<div class="gp-row gp-sell-target"><span>Vends \u00e0</span><span style="color:#22c55e;font-weight:700">${sellPrice.toFixed(2)}\u20AC pour +${profitNet.toFixed(0)}\u20AC net</span></div>`;
+        html += `<div class="gp-row"><span>Achat</span><span>${pfSym}${pfEntry.buyPrice.toFixed(2)} le ${pfEntry.date}</span></div>`;
+        html += `<div class="gp-row"><span>Montant</span><span>${pfSym}${pfEntry.amount}</span></div>`;
+        html += pnlLine;
+        html += `<div class="gp-row gp-sell-target"><span>Vends \u00e0</span><span style="color:#22c55e;font-weight:700">${pfSym}${sellPrice.toFixed(2)} pour +${pfSym}${profitNet.toFixed(0)} net</span></div>`;
         html += `<button class="sm-buy-btn sold-btn" onclick="removeFromPortfolio('${ticker}');closeStockModal();showStockModal('${ticker}');buildGoldPanel()">Vendu / Retirer</button>`;
         html += `</div>`;
     } else {
         // Buy form
         const defaultPrice = info.price ? info.price.toFixed(2) : "";
         html += `<div class="sm-buy-form">`;
-        html += `<div class="sm-buy-row"><label>Prix d'achat (\u20AC)</label><input type="number" id="pf-buy-price" value="" placeholder="ex: 46.00" step="0.01" min="0"></div>`;
-        html += `<div class="sm-buy-row"><label>Montant (\u20AC)</label><input type="number" id="pf-amount" value="200" step="10" min="1"></div>`;
+        html += `<div class="sm-buy-row"><label>Prix d'achat (${sym})</label><input type="number" id="pf-buy-price" value="" placeholder="ex: ${isEur ? '46.00' : '50.00'}" step="0.01" min="0"></div>`;
+        html += `<div class="sm-buy-row"><label>Montant (${sym})</label><input type="number" id="pf-amount" value="200" step="10" min="1"></div>`;
         html += `<div class="sm-buy-row"><label>TP cible (%)</label><input type="number" id="pf-tp" value="5" step="0.5" min="0.5"></div>`;
-        html += `<button class="sm-buy-btn" onclick="addToPortfolio('${ticker}',document.getElementById('pf-buy-price').value,document.getElementById('pf-amount').value,document.getElementById('pf-tp').value);closeStockModal();showStockModal('${ticker}');buildGoldPanel()">J'ai achet\u00e9</button>`;
+        html += `<button class="sm-buy-btn" onclick="addToPortfolio('${ticker}',document.getElementById('pf-buy-price').value,document.getElementById('pf-amount').value,document.getElementById('pf-tp').value,'${goldPanelCurrency}');closeStockModal();showStockModal('${ticker}');buildGoldPanel()">J'ai achet\u00e9</button>`;
         html += `</div>`;
     }
 
@@ -701,11 +732,14 @@ function showStockModal(ticker) {
     document.body.appendChild(modal);
 
     // If in portfolio, insert TP and PRU into the levels lists
-    // Convert portfolio prices (€) to display currency (same as levels)
+    // Convert portfolio prices to display currency (same as levels)
     if (pfEntry) {
         const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
-        // Convert € to display currency: if display is USD, divide by eurUsdRate; if EUR, keep as-is
-        const toDisplay = (isEur || !eurUsdRate) ? 1 : (1 / eurUsdRate);
+        // Portfolio currency → display currency conversion
+        const pfIsEur = pfEntry.currency !== "USD";
+        let toDisplay = 1;
+        if (pfIsEur && !isEur && eurUsdRate) toDisplay = 1 / eurUsdRate; // € → $
+        if (!pfIsEur && isEur && eurUsdRate) toDisplay = eurUsdRate;     // $ → €
         const tpDisplay = sellPrice * toDisplay;
         const pruDisplay = pfEntry.buyPrice * toDisplay;
         const tpDist = info.price ? ((tpDisplay - info.price * rate) / (info.price * rate) * 100).toFixed(1) : "?";
