@@ -65,17 +65,38 @@ function updateWatchingBar() {
 }
 
 /* ---------- Load Stock Histories ---------- */
+async function loadSectorHistory(etf, attempt) {
+    try {
+        const r = await fetch(`data/sectors/${etf}_history.json?t=${Date.now()}`);
+        if (!r.ok) { console.warn(`[${etf}] HTTP ${r.status}`); return null; }
+        const text = await r.text();
+        try { return JSON.parse(text); }
+        catch (e) {
+            console.warn(`[${etf}] JSON parse error (attempt ${attempt}): ${e.message}, len=${text.length}`);
+            return null;
+        }
+    } catch (e) { console.warn(`[${etf}] fetch error: ${e.message}`); return null; }
+}
+
 async function loadAllStockHistories() {
     if (!chartView || !chartView.data) return;
     const etfs = Object.keys(chartView.data.sectors);
-    const histories = await Promise.all(etfs.map(etf =>
-        fetch(`data/sectors/${etf}_history.json?t=${Date.now()}`)
-            .then(r => r.ok ? r.json() : null)
-            .catch(() => null)
-    ));
+    const histories = await Promise.all(etfs.map(etf => loadSectorHistory(etf, 1)));
     allStockHistories = {};
+    const failed = [];
     for (let i = 0; i < etfs.length; i++) {
         if (histories[i]) allStockHistories[etfs[i]] = histories[i];
+        else failed.push(etfs[i]);
+    }
+    // Retry failed sectors once after 1s
+    if (failed.length > 0) {
+        console.warn(`Retrying ${failed.length} sector(s): ${failed.join(', ')}`);
+        await new Promise(r => setTimeout(r, 1000));
+        const retries = await Promise.all(failed.map(etf => loadSectorHistory(etf, 2)));
+        for (let i = 0; i < failed.length; i++) {
+            if (retries[i]) allStockHistories[failed[i]] = retries[i];
+            else console.error(`[${failed[i]}] Failed to load after 2 attempts`);
+        }
     }
 }
 
