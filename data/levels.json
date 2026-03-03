@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-02",
+  "date": "2026-03-03",
   "stocks": {
     "ACN": {
       "price": 205.93,
@@ -16,7 +16,7 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 203.79,
+          "price": 203.78,
           "dist_pct": -1.0,
           "strength": 1
         },
@@ -26,7 +26,7 @@
           "strength": 3
         },
         {
-          "price": 194.7,
+          "price": 194.66,
           "dist_pct": -5.5,
           "strength": 1
         },
@@ -43,7 +43,7 @@
           "strength": 2
         },
         {
-          "price": 212.31,
+          "price": 212.34,
           "dist_pct": 3.1,
           "strength": 2
         },
@@ -306,7 +306,7 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 75.14,
+          "price": 75.13,
           "dist_pct": -1.4,
           "strength": 2
         },
@@ -654,12 +654,12 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 317.7,
+          "price": 317.68,
           "dist_pct": -1.7,
           "strength": 3
         },
         {
-          "price": 311.92,
+          "price": 311.85,
           "dist_pct": -3.5,
           "strength": 2
         },
@@ -669,29 +669,29 @@
           "strength": 1
         },
         {
-          "price": 298.02,
-          "dist_pct": -7.8,
-          "strength": 3
+          "price": 300.0,
+          "dist_pct": -7.2,
+          "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 324.27,
+          "price": 324.26,
           "dist_pct": 0.4,
           "strength": 3
         },
         {
-          "price": 329.56,
+          "price": 329.57,
           "dist_pct": 2.0,
           "strength": 3
         },
         {
-          "price": 334.29,
+          "price": 334.32,
           "dist_pct": 3.5,
           "strength": 2
         },
         {
-          "price": 338.95,
+          "price": 339.08,
           "dist_pct": 4.9,
           "strength": 1
         }
@@ -896,7 +896,7 @@
           "strength": 2
         },
         {
-          "price": 209.73,
+          "price": 209.74,
           "dist_pct": -4.6,
           "strength": 1
         },
@@ -913,12 +913,12 @@
           "strength": 2
         },
         {
-          "price": 227.06,
+          "price": 227.05,
           "dist_pct": 3.2,
           "strength": 2
         },
         {
-          "price": 231.53,
+          "price": 231.52,
           "dist_pct": 5.3,
           "strength": 1
         },
@@ -949,13 +949,13 @@
           "strength": 4
         },
         {
-          "price": 49.21,
+          "price": 49.2,
           "dist_pct": -1.6,
           "strength": 2
         },
         {
-          "price": 46.99,
-          "dist_pct": -6.0,
+          "price": 46.96,
+          "dist_pct": -6.1,
           "strength": 2
         },
         {
@@ -976,8 +976,8 @@
           "strength": 3
         },
         {
-          "price": 51.95,
-          "dist_pct": 3.9,
+          "price": 51.98,
+          "dist_pct": 4.0,
           "strength": 1
         },
         {
@@ -1012,7 +1012,7 @@
           "strength": 4
         },
         {
-          "price": 59.76,
+          "price": 59.75,
           "dist_pct": -3.4,
           "strength": 3
         },
@@ -1024,12 +1024,12 @@
       ],
       "resistances": [
         {
-          "price": 62.56,
-          "dist_pct": 1.1,
+          "price": 62.57,
+          "dist_pct": 1.2,
           "strength": 1
         },
         {
-          "price": 63.27,
+          "price": 63.28,
           "dist_pct": 2.3,
           "strength": 1
         },
@@ -1418,7 +1418,7 @@
           "strength": 2
         },
         {
-          "price": 151.69,
+          "price": 151.7,
           "dist_pct": -4.8,
           "strength": 1
         },
@@ -1435,7 +1435,7 @@
           "strength": 2
         },
         {
-          "price": 164.02,
+          "price": 164.01,
           "dist_pct": 3.0,
           "strength": 2
         },
@@ -1556,7 +1556,7 @@
           "strength": 1
         },
         {
-          "price": 157.89,
+          "price": 157.88,
           "dist_pct": 3.6,
           "strength": 1
         },
@@ -1592,7 +1592,7 @@
           "strength": 3
         },
         {
-          "price": 102.56,
+          "price": 102.55,
           "dist_pct": -6.3,
           "strength": 1
         },
@@ -1609,17 +1609,17 @@
           "strength": 4
         },
         {
-          "price": 111.96,
+          "price": 111.97,
           "dist_pct": 2.3,
           "strength": 1
         },
         {
-          "price": 114.57,
+          "price": 114.58,
           "dist_pct": 4.7,
           "strength": 2
         },
         {
-          "price": 117.38,
+          "price": 117.39,
           "dist_pct": 7.3,
           "strength": 2
         }
@@ -1640,12 +1640,12 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 146.88,
+          "price": 146.87,
           "dist_pct": -1.6,
           "strength": 1
         },
         {
-          "price": 143.58,
+          "price": 143.56,
           "dist_pct": -3.8,
           "strength": 1
         },
@@ -1655,7 +1655,7 @@
           "strength": 1
         },
         {
-          "price": 138.04,
+          "price": 138.03,
           "dist_pct": -7.5,
           "strength": 3
         }
@@ -1698,18 +1698,18 @@
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 127.69,
-          "dist_pct": -0.5,
+          "price": 127.58,
+          "dist_pct": -0.6,
           "strength": 2
         },
         {
-          "price": 124.86,
-          "dist_pct": -2.7,
+          "price": 124.75,
+          "dist_pct": -2.8,
           "strength": 4
         },
         {
-          "price": 122.31,
-          "dist_pct": -4.7,
+          "price": 121.49,
+          "dist_pct": -5.3,
           "strength": 1
         },
         {
@@ -1720,24 +1720,24 @@
       ],
       "resistances": [
         {
-          "price": 130.55,
+          "price": 130.62,
           "dist_pct": 1.8,
           "strength": 3
         },
         {
-          "price": 133.1,
-          "dist_pct": 3.7,
+          "price": 133.51,
+          "dist_pct": 4.1,
           "strength": 1
         },
         {
-          "price": 135.8,
-          "dist_pct": 5.8,
+          "price": 135.51,
+          "dist_pct": 5.6,
+          "strength": 1
+        },
+        {
+          "price": 137.59,
+          "dist_pct": 7.2,
           "strength": 2
-        },
-        {
-          "price": 138.27,
-          "dist_pct": 7.8,
-          "strength": 1
         }
       ]
     },
@@ -1788,7 +1788,7 @@
           "strength": 1
         },
         {
-          "price": 33.73,
+          "price": 33.74,
           "dist_pct": 6.0,
           "strength": 3
         },
@@ -1872,17 +1872,17 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 354.32,
+          "price": 354.29,
           "dist_pct": -0.1,
           "strength": 1
         },
         {
-          "price": 349.69,
+          "price": 349.67,
           "dist_pct": -1.4,
           "strength": 4
         },
         {
-          "price": 344.25,
+          "price": 344.2,
           "dist_pct": -2.9,
           "strength": 2
         },
@@ -1894,17 +1894,17 @@
       ],
       "resistances": [
         {
-          "price": 359.93,
+          "price": 359.96,
           "dist_pct": 1.5,
           "strength": 1
         },
         {
-          "price": 365.24,
+          "price": 365.3,
           "dist_pct": 3.0,
           "strength": 1
         },
         {
-          "price": 370.43,
+          "price": 370.49,
           "dist_pct": 4.5,
           "strength": 2
         },
@@ -1945,14 +1945,14 @@
           "strength": 1
         },
         {
-          "price": 271.91,
+          "price": 271.88,
           "dist_pct": -7.8,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 300.13,
+          "price": 300.14,
           "dist_pct": 1.8,
           "strength": 5
         },
@@ -1988,46 +1988,46 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 133.81,
-          "dist_pct": -0.1,
+          "price": 133.79,
+          "dist_pct": -0.2,
           "strength": 2
         },
         {
-          "price": 131.89,
-          "dist_pct": -1.6,
+          "price": 131.78,
+          "dist_pct": -1.7,
           "strength": 1
         },
         {
-          "price": 129.66,
-          "dist_pct": -3.2,
+          "price": 129.59,
+          "dist_pct": -3.3,
           "strength": 3
         },
         {
-          "price": 123.35,
-          "dist_pct": -8.0,
+          "price": 122.87,
+          "dist_pct": -8.3,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 136.18,
-          "dist_pct": 1.6,
+          "price": 136.23,
+          "dist_pct": 1.7,
           "strength": 1
         },
         {
-          "price": 139.55,
-          "dist_pct": 4.1,
+          "price": 139.28,
+          "dist_pct": 3.9,
           "strength": 3
+        },
+        {
+          "price": 140.68,
+          "dist_pct": 5.0,
+          "strength": 1
         },
         {
           "price": 146.08,
           "dist_pct": 9.0,
           "strength": 3
-        },
-        {
-          "price": 149.34,
-          "dist_pct": 11.4,
-          "strength": 2
         }
       ]
     }
