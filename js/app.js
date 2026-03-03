@@ -10,6 +10,7 @@ let tradeLog = [];
 let tradeLogReady = false;
 let allStockHistories = {};
 let levelsData = null; // from data/levels.json
+const ALL_SECTOR_ETFS = ["XLB","XLC","XLE","XLF","XLI","XLK","XLP","XLRE","XLU","XLV","XLY"];
 
 function loadData() {
     if (window.ROTATION_DATA) return window.ROTATION_DATA;
@@ -79,8 +80,7 @@ async function loadSectorHistory(etf, attempt) {
 }
 
 async function loadAllStockHistories() {
-    if (!chartView || !chartView.data) return;
-    const etfs = Object.keys(chartView.data.sectors);
+    const etfs = ALL_SECTOR_ETFS;
     const histories = await Promise.all(etfs.map(etf => loadSectorHistory(etf, 1)));
     allStockHistories = {};
     const failed = [];
@@ -103,14 +103,11 @@ async function loadAllStockHistories() {
 /* ---------- Compute Trade Log ---------- */
 function computeTradeLogSync() {
     tradeLog = [];
-    if (!chartView || !chartView.data || !chartView._tradeStates) return;
+    if (!chartView || !chartView.data) return;
 
-    const etfs = Object.keys(chartView.data.sectors);
-
-    for (const etf of etfs) {
-        const states = chartView._tradeStates[etf];
+    for (const etf of ALL_SECTOR_ETFS) {
         const sh = allStockHistories[etf];
-        if (!states || !sh) continue;
+        if (!sh) continue;
 
         for (const [ticker, sd] of Object.entries(sh.stocks)) {
             if (!sd.close || !sd.ma50) continue;
