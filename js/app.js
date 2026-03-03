@@ -259,8 +259,77 @@ function updateOpenPanels() {
     if (document.getElementById("sector-panel").classList.contains("open")) buildSectorPanel();
 }
 
+/* ---------- Portfolio (localStorage) ---------- */
+const PORTFOLIO_KEY = "wtf_portfolio";
+
+function loadPortfolio() {
+    try { return JSON.parse(localStorage.getItem(PORTFOLIO_KEY)) || {}; }
+    catch { return {}; }
+}
+
+function savePortfolio(pf) {
+    localStorage.setItem(PORTFOLIO_KEY, JSON.stringify(pf));
+}
+
+function addToPortfolio(ticker, buyPrice, amount, tpPct) {
+    const pf = loadPortfolio();
+    pf[ticker] = {
+        buyPrice: parseFloat(buyPrice),
+        amount: parseFloat(amount),
+        tpPct: parseFloat(tpPct),
+        date: new Date().toISOString().slice(0, 10),
+    };
+    savePortfolio(pf);
+}
+
+function removeFromPortfolio(ticker) {
+    const pf = loadPortfolio();
+    delete pf[ticker];
+    savePortfolio(pf);
+}
+
+function calcSellPrice(buyPrice, amount, tpPct) {
+    // prixVente = prixAchat × (montant + montant×TP/100 + 2) / montant
+    // The +2 accounts for TR fees: 1€ buy + 1€ sell
+    return buyPrice * (amount + amount * tpPct / 100 + 2) / amount;
+}
+
+function exportPortfolio() {
+    const pf = loadPortfolio();
+    const json = JSON.stringify(pf, null, 2);
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "portefeuille.json";
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function importPortfolio() {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".json";
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                const imported = JSON.parse(ev.target.result);
+                const current = loadPortfolio();
+                Object.assign(current, imported);
+                savePortfolio(current);
+                buildGoldPanel();
+            } catch { alert("Fichier JSON invalide"); }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
 /* ---------- Gold Panel ---------- */
-let goldPanelSort = "name"; // "name" | "recent" | "pnl"
+let goldPanelSort = "name"; // "name" | "recent" | "pnl" | "portfolio"
 let goldPanelCurrency = "USD"; // "USD" | "EUR"
 let eurUsdRate = null; // fetched once on load
 
@@ -278,7 +347,8 @@ function buildGoldPanel() {
     const positions = chartView._getActivePositions();
     const closed = chartView._getRecentlyClosedTrades();
 
-    if (positions.length === 0 && closed.length === 0) {
+    const pfCount = Object.keys(loadPortfolio()).length;
+    if (positions.length === 0 && closed.length === 0 && goldPanelSort !== "portfolio") {
         list.innerHTML = '<div class="gp-empty">Aucune position active</div>';
         return;
     }
@@ -288,6 +358,7 @@ function buildGoldPanel() {
         { key: "name", label: "A-Z" },
         { key: "rsi", label: "RSI" },
         { key: "score", label: "Score" },
+        { key: "portfolio", label: "Portef." },
     ];
 
     const _getScore = (ticker) => {
@@ -295,8 +366,11 @@ function buildGoldPanel() {
         return info ? info.score : 0;
     };
 
+    const portfolio = loadPortfolio();
+    const isPortfolioView = goldPanelSort === "portfolio";
+
     const sorted = [...positions].sort((a, b) => {
-        if (goldPanelSort === "name") {
+        if (goldPanelSort === "name" || goldPanelSort === "portfolio") {
             return a.ticker.localeCompare(b.ticker);
         } else if (goldPanelSort === "score") {
             return _getScore(b.ticker) - _getScore(a.ticker); // best first
@@ -324,52 +398,115 @@ function buildGoldPanel() {
     html += `<button class="${eurCls}" onclick="goldPanelCurrency='EUR';buildGoldPanel()">\u20AC</button>`;
     html += '</div>';
 
-    for (const p of sorted) {
-        const pnlPct = (p.pnl * 100).toFixed(1);
-        const pnlSign = p.pnl >= 0 ? "+" : "";
-        const pnlColor = p.pnl >= 0 ? "#22c55e" : "#ef4444";
-        const cardClass = p.isNew ? "gp-card new" : "gp-card";
+    if (isPortfolioView) {
+        // Portfolio view: show only stocks in the portfolio
+        const pfTickers = Object.keys(portfolio);
+        if (pfTickers.length === 0) {
+            html += '<div class="gp-empty">Aucun achat enregistr\u00e9<br><span style="font-size:0.65rem;color:#475569">Cliquez sur un stock \u2192 "J\'ai achet\u00e9"</span></div>';
+        } else {
+            // Build a price map from active positions
+            const priceMap = {};
+            for (const p of positions) priceMap[p.ticker] = p.currentPrice;
+            for (const t of closed) if (t.exitPrice) priceMap[t.ticker] = t.exitPrice;
 
-        let rsiHtml = "";
-        if (p.rsi != null) {
-            const rsiCls = p.rsi < 30 ? "oversold" : p.rsi > 70 ? "overbought" : "neutral";
-            rsiHtml = `<span class="gp-rsi ${rsiCls}">RSI ${p.rsi.toFixed(0)}</span>`;
+            // Also try levelsData for tickers not in active positions
+            for (const tk of pfTickers) {
+                if (!priceMap[tk] && levelsData && levelsData.stocks && levelsData.stocks[tk]) {
+                    priceMap[tk] = levelsData.stocks[tk].price;
+                }
+            }
+
+            for (const ticker of pfTickers.sort()) {
+                const pf = portfolio[ticker];
+                const curPrice = priceMap[ticker];
+                const sellPrice = calcSellPrice(pf.buyPrice, pf.amount, pf.tpPct);
+                const profitNet = pf.amount * pf.tpPct / 100;
+
+                let realPnlPct = null;
+                let distance = null;
+                if (curPrice) {
+                    realPnlPct = ((curPrice - pf.buyPrice) / pf.buyPrice * 100);
+                    distance = ((sellPrice - curPrice) / curPrice * 100);
+                }
+
+                const isReady = distance != null && distance <= 1;
+                const cardCls = isReady ? "gp-card portfolio-card ready" : "gp-card portfolio-card";
+
+                html += `<div class="${cardCls}" onclick="showStockModal('${ticker}')">`;
+                html += `<div class="gp-card-head">`;
+                html += `<span><span class="gp-ticker">${ticker}</span>`;
+                if (isReady) html += '<span class="gp-badge ready">PR\u00caT</span>';
+                html += `</span>`;
+                if (realPnlPct != null) {
+                    const pnlColor = realPnlPct >= 0 ? "#22c55e" : "#ef4444";
+                    const pnlSign = realPnlPct >= 0 ? "+" : "";
+                    html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${realPnlPct.toFixed(1)}%</span>`;
+                }
+                html += `</div>`;
+                html += `<div class="gp-row"><span>Achat</span><span>$${pf.buyPrice.toFixed(2)} le ${pf.date}</span></div>`;
+                if (curPrice) html += `<div class="gp-row"><span>Actuel</span><span>$${curPrice.toFixed(2)}</span></div>`;
+                html += `<div class="gp-row gp-sell-target"><span>Vente TP ${pf.tpPct}%</span><span>$${sellPrice.toFixed(2)} (+${profitNet.toFixed(0)}\u20AC)</span></div>`;
+                if (distance != null) {
+                    const distColor = distance <= 1 ? "#22c55e" : distance <= 3 ? "#fbbf24" : "#94a3b8";
+                    html += `<div class="gp-row"><span>Distance</span><span style="color:${distColor}">encore +${distance.toFixed(1)}%</span></div>`;
+                }
+                html += `</div>`;
+            }
+
+            // Export / Import buttons
+            html += '<div class="portfolio-actions">';
+            html += '<button class="gp-sort-btn" onclick="exportPortfolio()">Exporter</button>';
+            html += '<button class="gp-sort-btn" onclick="importPortfolio()">Importer</button>';
+            html += '</div>';
+        }
+    } else {
+        for (const p of sorted) {
+            const pnlPct = (p.pnl * 100).toFixed(1);
+            const pnlSign = p.pnl >= 0 ? "+" : "";
+            const pnlColor = p.pnl >= 0 ? "#22c55e" : "#ef4444";
+            const cardClass = p.isNew ? "gp-card new" : "gp-card";
+
+            let rsiHtml = "";
+            if (p.rsi != null) {
+                const rsiCls = p.rsi < 30 ? "oversold" : p.rsi > 70 ? "overbought" : "neutral";
+                rsiHtml = `<span class="gp-rsi ${rsiCls}">RSI ${p.rsi.toFixed(0)}</span>`;
+            }
+
+            const badgeHtml = p.isNew ? '<span class="gp-badge new">NEW</span>' : "";
+
+            const stockScore = _getScore(p.ticker);
+            const scoreColor = stockScore >= 80 ? "#22c55e" : stockScore >= 65 ? "#86efac" :
+                stockScore >= 50 ? "#fbbf24" : stockScore >= 35 ? "#f97316" : "#ef4444";
+            const scoreHtml = stockScore > 0 ? `<span class="gp-score" style="color:${scoreColor}">${stockScore}</span>` : "";
+
+            const highlighted = chartView && chartView.hovered === p.ticker;
+            const hlClass = highlighted ? " highlighted" : "";
+            html += `<div class="${cardClass}${hlClass}" onclick="if(chartView){chartView.highlightTicker('${p.ticker}');buildGoldPanel()}showStockModal('${p.ticker}')">`;
+            html += `<div class="gp-card-head">`;
+            html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}${scoreHtml}</span>`;
+            html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;
+            html += `</div>`;
+            html += `<div class="gp-row"><span>Jours</span><span>${p.daysHeld}j</span></div>`;
+            html += `<div class="gp-row"><span>Entr\u00e9e</span><span>${sym}${(p.entryPrice * rate).toFixed(2)}</span></div>`;
+            html += `<div class="gp-row"><span>Actuel</span><span>${sym}${(p.currentPrice * rate).toFixed(2)}</span></div>`;
+            html += `<div class="gp-sector">${p.sectorName} \u00B7 ${p.etf}</div>`;
+            html += `</div>`;
         }
 
-        const badgeHtml = p.isNew ? '<span class="gp-badge new">NEW</span>' : "";
-
-        const stockScore = _getScore(p.ticker);
-        const scoreColor = stockScore >= 80 ? "#22c55e" : stockScore >= 65 ? "#86efac" :
-            stockScore >= 50 ? "#fbbf24" : stockScore >= 35 ? "#f97316" : "#ef4444";
-        const scoreHtml = stockScore > 0 ? `<span class="gp-score" style="color:${scoreColor}">${stockScore}</span>` : "";
-
-        const highlighted = chartView && chartView.hovered === p.ticker;
-        const hlClass = highlighted ? " highlighted" : "";
-        html += `<div class="${cardClass}${hlClass}" onclick="if(chartView){chartView.highlightTicker('${p.ticker}');buildGoldPanel()}showStockModal('${p.ticker}')">`;
-        html += `<div class="gp-card-head">`;
-        html += `<span><span class="gp-ticker" style="color:${p.color}">${p.ticker}</span>${badgeHtml}${rsiHtml}${scoreHtml}</span>`;
-        html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${pnlPct}%</span>`;
-        html += `</div>`;
-        html += `<div class="gp-row"><span>Jours</span><span>${p.daysHeld}j</span></div>`;
-        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>${sym}${(p.entryPrice * rate).toFixed(2)}</span></div>`;
-        html += `<div class="gp-row"><span>Actuel</span><span>${sym}${(p.currentPrice * rate).toFixed(2)}</span></div>`;
-        html += `<div class="gp-sector">${p.sectorName} \u00B7 ${p.etf}</div>`;
-        html += `</div>`;
-    }
-
-    // Closed trades (ghost cards)
-    for (const t of closed) {
-        const pnlPct = t.pnl != null ? (t.pnl * 100).toFixed(1) : "5.0";
-        html += `<div class="gp-card sold">`;
-        html += `<div class="gp-card-head">`;
-        html += `<span><span class="gp-ticker" style="color:${t.color}">${t.ticker}</span><span class="gp-badge sold">SOLD +5%</span></span>`;
-        html += `<span class="gp-pnl" style="color:#22c55e">+${pnlPct}%</span>`;
-        html += `</div>`;
-        html += `<div class="gp-row"><span>Dur\u00e9e</span><span>${t.days}j</span></div>`;
-        html += `<div class="gp-row"><span>Entr\u00e9e</span><span>${sym}${(t.entryPrice * rate).toFixed(2)}</span></div>`;
-        html += `<div class="gp-row"><span>Sortie</span><span>${sym}${(t.exitPrice * rate).toFixed(2)}</span></div>`;
-        html += `<div class="gp-sector">${t.sectorName} \u00B7 ${t.etf}</div>`;
-        html += `</div>`;
+        // Closed trades (ghost cards)
+        for (const t of closed) {
+            const pnlPct = t.pnl != null ? (t.pnl * 100).toFixed(1) : "5.0";
+            html += `<div class="gp-card sold">`;
+            html += `<div class="gp-card-head">`;
+            html += `<span><span class="gp-ticker" style="color:${t.color}">${t.ticker}</span><span class="gp-badge sold">SOLD +5%</span></span>`;
+            html += `<span class="gp-pnl" style="color:#22c55e">+${pnlPct}%</span>`;
+            html += `</div>`;
+            html += `<div class="gp-row"><span>Dur\u00e9e</span><span>${t.days}j</span></div>`;
+            html += `<div class="gp-row"><span>Entr\u00e9e</span><span>${sym}${(t.entryPrice * rate).toFixed(2)}</span></div>`;
+            html += `<div class="gp-row"><span>Sortie</span><span>${sym}${(t.exitPrice * rate).toFixed(2)}</span></div>`;
+            html += `<div class="gp-sector">${t.sectorName} \u00B7 ${t.etf}</div>`;
+            html += `</div>`;
+        }
     }
 
     list.innerHTML = html;
@@ -561,12 +698,88 @@ function showStockModal(ticker) {
         html += `</div>`;
     }
 
+    // Portfolio section: buy form or summary
+    const portfolio = loadPortfolio();
+    const pfEntry = portfolio[ticker];
+
+    html += `<div class="sm-section-title">Mon Portefeuille</div>`;
+
+    if (pfEntry) {
+        // Already bought — show summary + sell target in levels context
+        const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
+        const profitNet = pfEntry.amount * pfEntry.tpPct / 100;
+        const realPnl = info.price ? ((info.price - pfEntry.buyPrice) / pfEntry.buyPrice * 100) : null;
+        const distance = info.price ? ((sellPrice - info.price) / info.price * 100) : null;
+
+        html += `<div class="sm-buy-form">`;
+        html += `<div class="gp-row"><span>Achat</span><span>$${pfEntry.buyPrice.toFixed(2)} le ${pfEntry.date}</span></div>`;
+        html += `<div class="gp-row"><span>Montant</span><span>${pfEntry.amount}\u20AC</span></div>`;
+        if (realPnl != null) {
+            const pnlColor = realPnl >= 0 ? "#22c55e" : "#ef4444";
+            const pnlSign = realPnl >= 0 ? "+" : "";
+            html += `<div class="gp-row"><span>P&L actuel</span><span style="color:${pnlColor};font-weight:700">${pnlSign}${realPnl.toFixed(1)}%</span></div>`;
+        }
+        html += `<div class="gp-row gp-sell-target"><span>Vente TP ${pfEntry.tpPct}%</span><span style="color:#22c55e;font-weight:700">$${sellPrice.toFixed(2)} (+${profitNet.toFixed(0)}\u20AC)</span></div>`;
+        if (distance != null) {
+            const distColor = distance <= 1 ? "#22c55e" : distance <= 3 ? "#fbbf24" : "#94a3b8";
+            html += `<div class="gp-row"><span>Distance</span><span style="color:${distColor}">encore +${distance.toFixed(1)}%</span></div>`;
+        }
+        html += `<button class="sm-buy-btn sold-btn" onclick="removeFromPortfolio('${ticker}');closeStockModal();showStockModal('${ticker}');buildGoldPanel()">Vendu / Retirer</button>`;
+        html += `</div>`;
+    } else {
+        // Buy form
+        const defaultPrice = info.price ? info.price.toFixed(2) : "";
+        html += `<div class="sm-buy-form">`;
+        html += `<div class="sm-buy-row"><label>Prix d'achat ($)</label><input type="number" id="pf-buy-price" value="${defaultPrice}" step="0.01" min="0"></div>`;
+        html += `<div class="sm-buy-row"><label>Montant (\u20AC)</label><input type="number" id="pf-amount" value="200" step="10" min="1"></div>`;
+        html += `<div class="sm-buy-row"><label>TP cible (%)</label><input type="number" id="pf-tp" value="5" step="0.5" min="0.5"></div>`;
+        html += `<button class="sm-buy-btn" onclick="addToPortfolio('${ticker}',document.getElementById('pf-buy-price').value,document.getElementById('pf-amount').value,document.getElementById('pf-tp').value);closeStockModal();showStockModal('${ticker}');buildGoldPanel()">J'ai achet\u00e9</button>`;
+        html += `</div>`;
+    }
+
     html += `</div></div>`;
 
     const modal = document.createElement("div");
     modal.id = "stock-modal";
     modal.innerHTML = html;
     document.body.appendChild(modal);
+
+    // If in portfolio, insert sell target into resistances and buy price into supports
+    if (pfEntry && info.price) {
+        const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
+        const sellDist = ((sellPrice - info.price) / info.price * 100).toFixed(1);
+        const buyDist = ((pfEntry.buyPrice - info.price) / info.price * 100).toFixed(1);
+        const levelsContainers = modal.querySelectorAll(".sm-levels");
+
+        // Insert TP into resistances (2nd .sm-levels)
+        const resistanceLevels = levelsContainers.length >= 2 ? levelsContainers[1] : null;
+        if (resistanceLevels) {
+            const tpLevel = document.createElement("div");
+            tpLevel.className = "sm-level resistance sm-level-tp";
+            tpLevel.innerHTML = `<span>TP</span><span>$${sellPrice.toFixed(2)}</span><span class="sm-dist">+${sellDist}%</span><span class="sm-stars" style="color:#22c55e">\u2605</span>`;
+            // Insert in sorted position (by price ascending)
+            let inserted = false;
+            for (const child of resistanceLevels.children) {
+                const priceEl = child.querySelectorAll("span")[1];
+                if (priceEl) {
+                    const p = parseFloat(priceEl.textContent.replace(/[$\u20AC]/g, ""));
+                    if (sellPrice < p) { resistanceLevels.insertBefore(tpLevel, child); inserted = true; break; }
+                }
+            }
+            if (!inserted) resistanceLevels.appendChild(tpLevel);
+        }
+
+        // Insert buy price into supports (1st .sm-levels)
+        const supportLevels = levelsContainers.length >= 1 ? levelsContainers[0] : null;
+        if (supportLevels) {
+            const buyLevel = document.createElement("div");
+            buyLevel.className = "sm-level support sm-level-tp";
+            buyLevel.style.background = "rgba(99, 102, 241, 0.08)";
+            buyLevel.style.border = "1px dashed rgba(99, 102, 241, 0.3)";
+            buyLevel.innerHTML = `<span>PRU</span><span>$${pfEntry.buyPrice.toFixed(2)}</span><span class="sm-dist">${buyDist}%</span><span class="sm-stars" style="color:#818cf8">\u2605</span>`;
+            supportLevels.insertBefore(buyLevel, supportLevels.firstChild);
+        }
+    }
 }
 
 function closeStockModal() {
