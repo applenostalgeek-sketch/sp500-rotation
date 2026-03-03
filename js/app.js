@@ -344,12 +344,23 @@ let goldPanelSort = "name"; // "name" | "recent" | "pnl" | "portfolio"
 let goldPanelCurrency = "EUR"; // "EUR" | "USD"
 let goldPanelFilter = ""; // ticker search filter
 let eurUsdRate = null; // fetched once on load
+let eurUsdFallback = false; // true if using hardcoded rate
+
+const EUR_USD_FALLBACK = 0.92; // ~Mar 2026 approximate rate
 
 function fetchEurUsdRate() {
     fetch("https://api.exchangerate-api.com/v4/latest/USD")
-        .then(r => r.json())
-        .then(d => { eurUsdRate = d.rates && d.rates.EUR ? d.rates.EUR : null; })
-        .catch(() => { eurUsdRate = null; });
+        .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+        .then(d => {
+            if (d.rates && d.rates.EUR) {
+                eurUsdRate = d.rates.EUR;
+                eurUsdFallback = false;
+            } else { throw new Error(); }
+        })
+        .catch(() => {
+            eurUsdRate = EUR_USD_FALLBACK;
+            eurUsdFallback = true;
+        });
 }
 
 function buildGoldPanel() {
@@ -406,6 +417,7 @@ function buildGoldPanel() {
     const usdCls = goldPanelCurrency === "USD" ? "gp-cur-btn active" : "gp-cur-btn";
     html += `<button class="${eurCls}" onclick="goldPanelCurrency='EUR';buildGoldPanel()">\u20AC</button>`;
     html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
+    if (eurUsdFallback) html += '<span class="gp-rate-warn" title="Taux EUR/USD approximatif (API indisponible)">~fx</span>';
     html += '</div>';
 
     // Second row: Portfolio tab + default amount

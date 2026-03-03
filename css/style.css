@@ -851,6 +851,17 @@ body {
     color: #e2e8f0;
 }
 
+/* ---------- Rate Warning ---------- */
+.gp-rate-warn {
+    font-size: 9px;
+    color: #f97316;
+    background: rgba(249,115,22,0.1);
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin-left: 4px;
+    cursor: help;
+}
+
 /* ---------- Sort Bar Row 2 ---------- */
 .gp-sort-bar-2 {
     margin-top: -4px;
