@@ -65,6 +65,25 @@ function updateWatchingBar() {
     bar.style.display = "";
 }
 
+/* ---------- Solo mode badge ---------- */
+function updateSoloBadge() {
+    const badge = document.getElementById("solo-badge");
+    if (!badge || !chartView) return;
+    if (chartView.soloTicker) {
+        badge.textContent = "\u2715 " + chartView.soloTicker;
+        badge.style.display = "";
+        badge.onclick = () => {
+            chartView.soloTicker = null;
+            chartView.hovered = null;
+            chartView._posCache = null;
+            chartView.draw();
+            badge.style.display = "none";
+        };
+    } else {
+        badge.style.display = "none";
+    }
+}
+
 /* ---------- Load Stock Histories ---------- */
 async function loadSectorHistory(etf, attempt) {
     try {

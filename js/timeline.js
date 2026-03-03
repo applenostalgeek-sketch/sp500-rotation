@@ -13,6 +13,7 @@ class RRGView {
         this.height = 0;
         this.active = false;
         this.hovered = null; // ticker string or null
+        this.soloTicker = null; // when set, only show this ticker on chart
 
         /* kept for app.js compatibility */
         this.hiddenSectors = new Set();
@@ -396,8 +397,23 @@ class RRGView {
         });
 
         this.canvas.addEventListener("mouseleave", () => {
-            if (this.hovered) { this.hovered = null; this.draw(); }
+            if (this.soloTicker) { this.hovered = this.soloTicker; }
+            else if (this.hovered) { this.hovered = null; }
+            this.draw();
             if (tooltip) tooltip.classList.remove("visible");
+        });
+
+        this.canvas.addEventListener("click", (e) => {
+            if (!this.active) return;
+            const rect = this.canvas.getBoundingClientRect();
+            const hit = this._hitTest(e.clientX - rect.left, e.clientY - rect.top);
+            if (hit) {
+                this.soloTicker = this.soloTicker === hit ? null : hit;
+                this.hovered = this.soloTicker;
+                this._posCache = null;
+                this.draw();
+                if (typeof updateSoloBadge === "function") updateSoloBadge();
+            }
         });
 
         this.canvas.addEventListener("touchstart", (e) => {
@@ -649,6 +665,7 @@ class RRGView {
         const positions = this._getActivePositions();
 
         for (const p of positions) {
+            if (this.soloTicker && p.ticker !== this.soloTicker) continue;
             const sh = this._stockHistories[p.etf];
             const sd = sh && sh.stocks[p.ticker];
             if (!sd || !sd.close) continue;
@@ -699,6 +716,7 @@ class RRGView {
         const hoverR = m ? 9 : 12;
 
         for (const p of positions) {
+            if (this.soloTicker && p.ticker !== this.soloTicker) continue;
             const scr = this._toScreen(p.daysHeld, p.pnl);
             const isH = this.hovered === p.ticker;
             const dimmed = this.hovered && !isH;
