@@ -332,6 +332,7 @@ function importPortfolio() {
 /* ---------- Gold Panel ---------- */
 let goldPanelSort = "name"; // "name" | "recent" | "pnl" | "portfolio"
 let goldPanelCurrency = "EUR"; // "EUR" | "USD"
+let goldPanelFilter = ""; // ticker search filter
 let eurUsdRate = null; // fetched once on load
 
 function fetchEurUsdRate() {
@@ -376,12 +377,11 @@ function buildGoldPanel() {
         } else if (goldPanelSort === "score") {
             return _getScore(b.ticker) - _getScore(a.ticker); // best first
         } else {
-            // rsi: lowest RSI first (most oversold)
             const rsiA = a.rsi != null ? a.rsi : 999;
             const rsiB = b.rsi != null ? b.rsi : 999;
             return rsiA - rsiB;
         }
-    });
+    }).filter(p => !goldPanelFilter || p.ticker.includes(goldPanelFilter));
 
     const isEur = goldPanelCurrency === "EUR" && eurUsdRate != null;
     const rate = isEur ? eurUsdRate : 1;
@@ -399,9 +399,12 @@ function buildGoldPanel() {
     html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
     html += '</div>';
 
+    // Search filter
+    html += `<input type="text" class="gp-search" id="gp-search" placeholder="Filtrer par ticker..." value="${goldPanelFilter}" oninput="goldPanelFilter=this.value.toUpperCase();buildGoldPanel()">`;
+
     if (isPortfolioView) {
         // Portfolio view: show only stocks in the portfolio
-        const pfTickers = Object.keys(portfolio);
+        const pfTickers = Object.keys(portfolio).filter(t => !goldPanelFilter || t.includes(goldPanelFilter));
         if (pfTickers.length === 0) {
             html += '<div class="gp-empty">Aucun achat enregistr\u00e9<br><span style="font-size:0.65rem;color:#475569">Cliquez sur un stock \u2192 "J\'ai achet\u00e9"</span></div>';
         } else {
@@ -478,7 +481,8 @@ function buildGoldPanel() {
         }
 
         // Closed trades (ghost cards)
-        for (const t of closed) {
+        const filteredClosed = closed.filter(t => !goldPanelFilter || t.ticker.includes(goldPanelFilter));
+        for (const t of filteredClosed) {
             const pnlPct = t.pnl != null ? (t.pnl * 100).toFixed(1) : "5.0";
             html += `<div class="gp-card sold">`;
             html += `<div class="gp-card-head">`;
@@ -494,6 +498,12 @@ function buildGoldPanel() {
     }
 
     list.innerHTML = html;
+
+    // Restore focus on search input after rebuild
+    if (goldPanelFilter) {
+        const input = document.getElementById("gp-search");
+        if (input) { input.focus(); input.selectionStart = input.selectionEnd = input.value.length; }
+    }
 }
 
 function closePanel(panelId, btnId, label) {

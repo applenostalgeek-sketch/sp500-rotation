@@ -851,6 +851,27 @@ body {
     color: #e2e8f0;
 }
 
+/* ---------- Panel Search ---------- */
+.gp-search {
+    width: 100%;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    color: #e2e8f0;
+    font-size: 12px;
+    font-family: inherit;
+    outline: none;
+}
+.gp-search:focus {
+    border-color: rgba(251,191,36,0.3);
+    background: rgba(255,255,255,0.06);
+}
+.gp-search::placeholder {
+    color: #475569;
+}
+
 /* ---------- Portfolio ---------- */
 .portfolio-card {
     border-left-color: #6366f1;
