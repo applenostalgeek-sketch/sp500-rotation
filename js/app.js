@@ -741,20 +741,28 @@ function showStockModal(ticker) {
     modal.innerHTML = html;
     document.body.appendChild(modal);
 
-    // If in portfolio, insert TP and PRU into the levels lists
-    // Convert portfolio prices to display currency (same as levels)
-    if (pfEntry) {
-        const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
-        // Portfolio currency → display currency conversion
-        const pfIsEur = pfEntry.currency !== "USD";
-        let toDisplay = 1;
-        if (pfIsEur && !isEur && eurUsdRate) toDisplay = 1 / eurUsdRate; // € → $
-        if (!pfIsEur && isEur && eurUsdRate) toDisplay = eurUsdRate;     // $ → €
-        const tpDisplay = sellPrice * toDisplay;
-        const pruDisplay = pfEntry.buyPrice * toDisplay;
-        const tpDist = info.price ? ((tpDisplay - info.price * rate) / (info.price * rate) * 100).toFixed(1) : "?";
-        const pruDist = info.price ? ((pruDisplay - info.price * rate) / (info.price * rate) * 100).toFixed(1) : "?";
+    // Insert TP into resistances (always) and PRU into supports (if bought)
+    // If in portfolio: use real values. Otherwise: theoretical TP based on current price.
+    if (info.price) {
+        const displayPrice = info.price * rate; // current price in display currency
+        let tpDisplay, tpLabel;
 
+        if (pfEntry) {
+            const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
+            const pfIsEur = pfEntry.currency !== "USD";
+            let toDisplay = 1;
+            if (pfIsEur && !isEur && eurUsdRate) toDisplay = 1 / eurUsdRate;
+            if (!pfIsEur && isEur && eurUsdRate) toDisplay = eurUsdRate;
+            tpDisplay = sellPrice * toDisplay;
+            tpLabel = `TP${pfEntry.tpPct}%`;
+        } else {
+            // Theoretical: if buying now at display price, 200 amount, 5% TP
+            const theoSell = calcSellPrice(displayPrice, 200, 5);
+            tpDisplay = theoSell;
+            tpLabel = "TP5%";
+        }
+
+        const tpDist = ((tpDisplay - displayPrice) / displayPrice * 100).toFixed(1);
         const levelsContainers = modal.querySelectorAll(".sm-levels");
 
         // Insert TP into resistances (2nd .sm-levels)
@@ -762,8 +770,7 @@ function showStockModal(ticker) {
             const rList = levelsContainers[1];
             const tpEl = document.createElement("div");
             tpEl.className = "sm-level resistance sm-level-tp";
-            tpEl.innerHTML = `<span>TP</span><span>${sym}${tpDisplay.toFixed(2)}</span><span class="sm-dist">+${tpDist}%</span><span class="sm-stars" style="color:#22c55e">\u2605</span>`;
-            // Insert sorted by price
+            tpEl.innerHTML = `<span>${tpLabel}</span><span>${sym}${tpDisplay.toFixed(2)}</span><span class="sm-dist">+${tpDist}%</span><span class="sm-stars" style="color:#22c55e">\u2605</span>`;
             let inserted = false;
             for (const child of rList.children) {
                 const priceText = child.querySelectorAll("span")[1];
@@ -775,15 +782,21 @@ function showStockModal(ticker) {
             if (!inserted) rList.appendChild(tpEl);
         }
 
-        // Insert PRU into supports (1st .sm-levels)
-        if (levelsContainers.length >= 1) {
+        // Insert PRU into supports (only if bought)
+        if (pfEntry && levelsContainers.length >= 1) {
+            const pfIsEur = pfEntry.currency !== "USD";
+            let toDisplay = 1;
+            if (pfIsEur && !isEur && eurUsdRate) toDisplay = 1 / eurUsdRate;
+            if (!pfIsEur && isEur && eurUsdRate) toDisplay = eurUsdRate;
+            const pruDisplay = pfEntry.buyPrice * toDisplay;
+            const pruDist = ((pruDisplay - displayPrice) / displayPrice * 100).toFixed(1);
+
             const sList = levelsContainers[0];
             const pruEl = document.createElement("div");
             pruEl.className = "sm-level support sm-level-tp";
             pruEl.style.background = "rgba(99, 102, 241, 0.08)";
             pruEl.style.border = "1px dashed rgba(99, 102, 241, 0.3)";
             pruEl.innerHTML = `<span>PRU</span><span>${sym}${pruDisplay.toFixed(2)}</span><span class="sm-dist">${pruDist}%</span><span class="sm-stars" style="color:#818cf8">\u2605</span>`;
-            // Insert sorted by price (supports are closest first = highest price first)
             let inserted = false;
             for (const child of sList.children) {
                 const priceText = child.querySelectorAll("span")[1];
