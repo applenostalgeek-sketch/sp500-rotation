@@ -404,52 +404,19 @@ function buildGoldPanel() {
         if (pfTickers.length === 0) {
             html += '<div class="gp-empty">Aucun achat enregistr\u00e9<br><span style="font-size:0.65rem;color:#475569">Cliquez sur un stock \u2192 "J\'ai achet\u00e9"</span></div>';
         } else {
-            // Build a price map from active positions
-            const priceMap = {};
-            for (const p of positions) priceMap[p.ticker] = p.currentPrice;
-            for (const t of closed) if (t.exitPrice) priceMap[t.ticker] = t.exitPrice;
-
-            // Also try levelsData for tickers not in active positions
-            for (const tk of pfTickers) {
-                if (!priceMap[tk] && levelsData && levelsData.stocks && levelsData.stocks[tk]) {
-                    priceMap[tk] = levelsData.stocks[tk].price;
-                }
-            }
-
             for (const ticker of pfTickers.sort()) {
                 const pf = portfolio[ticker];
-                const curPrice = priceMap[ticker];
                 const sellPrice = calcSellPrice(pf.buyPrice, pf.amount, pf.tpPct);
                 const profitNet = pf.amount * pf.tpPct / 100;
 
-                let realPnlPct = null;
-                let distance = null;
-                if (curPrice) {
-                    realPnlPct = ((curPrice - pf.buyPrice) / pf.buyPrice * 100);
-                    distance = ((sellPrice - curPrice) / curPrice * 100);
-                }
-
-                const isReady = distance != null && distance <= 1;
-                const cardCls = isReady ? "gp-card portfolio-card ready" : "gp-card portfolio-card";
-
-                html += `<div class="${cardCls}" onclick="showStockModal('${ticker}')">`;
+                html += `<div class="gp-card portfolio-card" onclick="showStockModal('${ticker}')">`;
                 html += `<div class="gp-card-head">`;
-                html += `<span><span class="gp-ticker">${ticker}</span>`;
-                if (isReady) html += '<span class="gp-badge ready">PR\u00caT</span>';
-                html += `</span>`;
-                if (realPnlPct != null) {
-                    const pnlColor = realPnlPct >= 0 ? "#22c55e" : "#ef4444";
-                    const pnlSign = realPnlPct >= 0 ? "+" : "";
-                    html += `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${realPnlPct.toFixed(1)}%</span>`;
-                }
+                html += `<span><span class="gp-ticker">${ticker}</span></span>`;
+                html += `<span class="gp-pnl" style="color:#22c55e">TP ${pf.tpPct}%</span>`;
                 html += `</div>`;
-                html += `<div class="gp-row"><span>Achat</span><span>$${pf.buyPrice.toFixed(2)} le ${pf.date}</span></div>`;
-                if (curPrice) html += `<div class="gp-row"><span>Actuel</span><span>$${curPrice.toFixed(2)}</span></div>`;
-                html += `<div class="gp-row gp-sell-target"><span>Vente TP ${pf.tpPct}%</span><span>$${sellPrice.toFixed(2)} (+${profitNet.toFixed(0)}\u20AC)</span></div>`;
-                if (distance != null) {
-                    const distColor = distance <= 1 ? "#22c55e" : distance <= 3 ? "#fbbf24" : "#94a3b8";
-                    html += `<div class="gp-row"><span>Distance</span><span style="color:${distColor}">encore +${distance.toFixed(1)}%</span></div>`;
-                }
+                html += `<div class="gp-row"><span>Achat</span><span>${pf.buyPrice.toFixed(2)}\u20AC le ${pf.date}</span></div>`;
+                html += `<div class="gp-row"><span>Montant</span><span>${pf.amount}\u20AC</span></div>`;
+                html += `<div class="gp-row gp-sell-target"><span>Vends \u00e0</span><span>${sellPrice.toFixed(2)}\u20AC (+${profitNet.toFixed(0)}\u20AC net)</span></div>`;
                 html += `</div>`;
             }
 
@@ -708,29 +675,18 @@ function showStockModal(ticker) {
         // Already bought — show summary + sell target in levels context
         const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
         const profitNet = pfEntry.amount * pfEntry.tpPct / 100;
-        const realPnl = info.price ? ((info.price - pfEntry.buyPrice) / pfEntry.buyPrice * 100) : null;
-        const distance = info.price ? ((sellPrice - info.price) / info.price * 100) : null;
 
         html += `<div class="sm-buy-form">`;
-        html += `<div class="gp-row"><span>Achat</span><span>$${pfEntry.buyPrice.toFixed(2)} le ${pfEntry.date}</span></div>`;
+        html += `<div class="gp-row"><span>Achat</span><span>${pfEntry.buyPrice.toFixed(2)}\u20AC le ${pfEntry.date}</span></div>`;
         html += `<div class="gp-row"><span>Montant</span><span>${pfEntry.amount}\u20AC</span></div>`;
-        if (realPnl != null) {
-            const pnlColor = realPnl >= 0 ? "#22c55e" : "#ef4444";
-            const pnlSign = realPnl >= 0 ? "+" : "";
-            html += `<div class="gp-row"><span>P&L actuel</span><span style="color:${pnlColor};font-weight:700">${pnlSign}${realPnl.toFixed(1)}%</span></div>`;
-        }
-        html += `<div class="gp-row gp-sell-target"><span>Vente TP ${pfEntry.tpPct}%</span><span style="color:#22c55e;font-weight:700">$${sellPrice.toFixed(2)} (+${profitNet.toFixed(0)}\u20AC)</span></div>`;
-        if (distance != null) {
-            const distColor = distance <= 1 ? "#22c55e" : distance <= 3 ? "#fbbf24" : "#94a3b8";
-            html += `<div class="gp-row"><span>Distance</span><span style="color:${distColor}">encore +${distance.toFixed(1)}%</span></div>`;
-        }
+        html += `<div class="gp-row gp-sell-target"><span>Vends \u00e0</span><span style="color:#22c55e;font-weight:700">${sellPrice.toFixed(2)}\u20AC pour +${profitNet.toFixed(0)}\u20AC net</span></div>`;
         html += `<button class="sm-buy-btn sold-btn" onclick="removeFromPortfolio('${ticker}');closeStockModal();showStockModal('${ticker}');buildGoldPanel()">Vendu / Retirer</button>`;
         html += `</div>`;
     } else {
         // Buy form
         const defaultPrice = info.price ? info.price.toFixed(2) : "";
         html += `<div class="sm-buy-form">`;
-        html += `<div class="sm-buy-row"><label>Prix d'achat ($)</label><input type="number" id="pf-buy-price" value="${defaultPrice}" step="0.01" min="0"></div>`;
+        html += `<div class="sm-buy-row"><label>Prix d'achat (\u20AC)</label><input type="number" id="pf-buy-price" value="" placeholder="ex: 46.00" step="0.01" min="0"></div>`;
         html += `<div class="sm-buy-row"><label>Montant (\u20AC)</label><input type="number" id="pf-amount" value="200" step="10" min="1"></div>`;
         html += `<div class="sm-buy-row"><label>TP cible (%)</label><input type="number" id="pf-tp" value="5" step="0.5" min="0.5"></div>`;
         html += `<button class="sm-buy-btn" onclick="addToPortfolio('${ticker}',document.getElementById('pf-buy-price').value,document.getElementById('pf-amount').value,document.getElementById('pf-tp').value);closeStockModal();showStockModal('${ticker}');buildGoldPanel()">J'ai achet\u00e9</button>`;
@@ -744,42 +700,6 @@ function showStockModal(ticker) {
     modal.innerHTML = html;
     document.body.appendChild(modal);
 
-    // If in portfolio, insert sell target into resistances and buy price into supports
-    if (pfEntry && info.price) {
-        const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
-        const sellDist = ((sellPrice - info.price) / info.price * 100).toFixed(1);
-        const buyDist = ((pfEntry.buyPrice - info.price) / info.price * 100).toFixed(1);
-        const levelsContainers = modal.querySelectorAll(".sm-levels");
-
-        // Insert TP into resistances (2nd .sm-levels)
-        const resistanceLevels = levelsContainers.length >= 2 ? levelsContainers[1] : null;
-        if (resistanceLevels) {
-            const tpLevel = document.createElement("div");
-            tpLevel.className = "sm-level resistance sm-level-tp";
-            tpLevel.innerHTML = `<span>TP</span><span>$${sellPrice.toFixed(2)}</span><span class="sm-dist">+${sellDist}%</span><span class="sm-stars" style="color:#22c55e">\u2605</span>`;
-            // Insert in sorted position (by price ascending)
-            let inserted = false;
-            for (const child of resistanceLevels.children) {
-                const priceEl = child.querySelectorAll("span")[1];
-                if (priceEl) {
-                    const p = parseFloat(priceEl.textContent.replace(/[$\u20AC]/g, ""));
-                    if (sellPrice < p) { resistanceLevels.insertBefore(tpLevel, child); inserted = true; break; }
-                }
-            }
-            if (!inserted) resistanceLevels.appendChild(tpLevel);
-        }
-
-        // Insert buy price into supports (1st .sm-levels)
-        const supportLevels = levelsContainers.length >= 1 ? levelsContainers[0] : null;
-        if (supportLevels) {
-            const buyLevel = document.createElement("div");
-            buyLevel.className = "sm-level support sm-level-tp";
-            buyLevel.style.background = "rgba(99, 102, 241, 0.08)";
-            buyLevel.style.border = "1px dashed rgba(99, 102, 241, 0.3)";
-            buyLevel.innerHTML = `<span>PRU</span><span>$${pfEntry.buyPrice.toFixed(2)}</span><span class="sm-dist">${buyDist}%</span><span class="sm-stars" style="color:#818cf8">\u2605</span>`;
-            supportLevels.insertBefore(buyLevel, supportLevels.firstChild);
-        }
-    }
 }
 
 function closeStockModal() {
