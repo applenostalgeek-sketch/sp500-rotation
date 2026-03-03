@@ -370,7 +370,6 @@ function buildGoldPanel() {
         { key: "name", label: "A-Z" },
         { key: "rsi", label: "RSI" },
         { key: "score", label: "Score" },
-        { key: "portfolio", label: "Portef." },
     ];
 
     const _getScore = (ticker) => {
@@ -403,12 +402,19 @@ function buildGoldPanel() {
         html += `<button class="${cls}" onclick="goldPanelSort='${opt.key}';buildGoldPanel()">${opt.label}</button>`;
     }
     html += '<span class="gp-sort-spacer"></span>';
-    html += `<span class="gp-amount-chip" onclick="this.style.display='none';this.nextElementSibling.style.display='';this.nextElementSibling.focus()" title="Montant par d\u00e9faut">${getDefaultAmount()}\u20AC</span>`;
-    html += `<input type="number" class="gp-amount-input" style="display:none" value="${getDefaultAmount()}" min="1" step="1" onblur="setDefaultAmount(this.value);buildGoldPanel()" onkeydown="if(event.key==='Enter'){this.blur()}">`;
     const eurCls = goldPanelCurrency === "EUR" ? "gp-cur-btn active" : "gp-cur-btn";
     const usdCls = goldPanelCurrency === "USD" ? "gp-cur-btn active" : "gp-cur-btn";
     html += `<button class="${eurCls}" onclick="goldPanelCurrency='EUR';buildGoldPanel()">\u20AC</button>`;
     html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
+    html += '</div>';
+
+    // Second row: Portfolio tab + default amount
+    const pfCls = isPortfolioView ? "gp-sort-btn active" : "gp-sort-btn";
+    html += '<div class="gp-sort-bar gp-sort-bar-2">';
+    html += `<button class="${pfCls}" onclick="goldPanelSort='${isPortfolioView ? 'name' : 'portfolio'}';buildGoldPanel()">Portef.</button>`;
+    html += '<span class="gp-sort-spacer"></span>';
+    html += `<span class="gp-amount-chip" onclick="this.style.display='none';this.nextElementSibling.style.display='';this.nextElementSibling.focus()" title="Montant par d\u00e9faut">${getDefaultAmount()}\u20AC</span>`;
+    html += `<input type="number" class="gp-amount-input" style="display:none" value="${getDefaultAmount()}" min="1" step="1" onblur="setDefaultAmount(this.value);buildGoldPanel()" onkeydown="if(event.key==='Enter'){this.blur()}">`;
     html += '</div>';
 
     // Search filter
