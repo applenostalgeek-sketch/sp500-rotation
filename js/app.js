@@ -421,10 +421,10 @@ function buildGoldPanel() {
                     // Convert market price ($) to portfolio currency
                     const mktInPfCur = pf.currency === "USD" ? lvl.price : (eurUsdRate ? lvl.price * eurUsdRate : null);
                     if (mktInPfCur != null) {
-                        const realPnl = ((mktInPfCur - pf.buyPrice) / pf.buyPrice * 100);
-                        const pnlColor = realPnl >= 0 ? "#22c55e" : "#ef4444";
-                        const pnlSign = realPnl >= 0 ? "+" : "";
-                        pnlHtml = `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${realPnl.toFixed(1)}%</span>`;
+                        const netPnl = (pf.amount * (mktInPfCur / pf.buyPrice - 1) - 2) / pf.amount * 100;
+                        const pnlColor = netPnl >= 0 ? "#22c55e" : "#ef4444";
+                        const pnlSign = netPnl >= 0 ? "+" : "";
+                        pnlHtml = `<span class="gp-pnl" style="color:${pnlColor}">${pnlSign}${netPnl.toFixed(1)}%</span>`;
                     }
                 }
                 if (!pnlHtml) pnlHtml = `<span class="gp-pnl" style="color:#22c55e">TP ${pf.tpPct}%</span>`;
@@ -709,10 +709,10 @@ function showStockModal(ticker) {
         if (info.price) {
             const mktInPfCur = pfEntry.currency === "USD" ? info.price : (eurUsdRate ? info.price * eurUsdRate : null);
             if (mktInPfCur != null) {
-                const realPnl = ((mktInPfCur - pfEntry.buyPrice) / pfEntry.buyPrice * 100);
-                const pnlColor = realPnl >= 0 ? "#22c55e" : "#ef4444";
-                const pnlSign = realPnl >= 0 ? "+" : "";
-                pnlLine = `<div class="gp-row"><span>P&L actuel</span><span style="color:${pnlColor};font-weight:700">${pnlSign}${realPnl.toFixed(1)}%</span></div>`;
+                const netPnl = (pfEntry.amount * (mktInPfCur / pfEntry.buyPrice - 1) - 2) / pfEntry.amount * 100;
+                const pnlColor = netPnl >= 0 ? "#22c55e" : "#ef4444";
+                const pnlSign = netPnl >= 0 ? "+" : "";
+                pnlLine = `<div class="gp-row"><span>P&L net</span><span style="color:${pnlColor};font-weight:700">${pnlSign}${netPnl.toFixed(1)}%</span></div>`;
             }
         }
 
