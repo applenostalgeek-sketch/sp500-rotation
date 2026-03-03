@@ -700,6 +700,57 @@ function showStockModal(ticker) {
     modal.innerHTML = html;
     document.body.appendChild(modal);
 
+    // If in portfolio, insert TP and PRU into the levels lists
+    // Convert portfolio prices (€) to display currency (same as levels)
+    if (pfEntry) {
+        const sellPrice = calcSellPrice(pfEntry.buyPrice, pfEntry.amount, pfEntry.tpPct);
+        // Convert € to display currency: if display is USD, divide by eurUsdRate; if EUR, keep as-is
+        const toDisplay = (isEur || !eurUsdRate) ? 1 : (1 / eurUsdRate);
+        const tpDisplay = sellPrice * toDisplay;
+        const pruDisplay = pfEntry.buyPrice * toDisplay;
+        const tpDist = info.price ? ((tpDisplay - info.price * rate) / (info.price * rate) * 100).toFixed(1) : "?";
+        const pruDist = info.price ? ((pruDisplay - info.price * rate) / (info.price * rate) * 100).toFixed(1) : "?";
+
+        const levelsContainers = modal.querySelectorAll(".sm-levels");
+
+        // Insert TP into resistances (2nd .sm-levels)
+        if (levelsContainers.length >= 2) {
+            const rList = levelsContainers[1];
+            const tpEl = document.createElement("div");
+            tpEl.className = "sm-level resistance sm-level-tp";
+            tpEl.innerHTML = `<span>TP</span><span>${sym}${tpDisplay.toFixed(2)}</span><span class="sm-dist">+${tpDist}%</span><span class="sm-stars" style="color:#22c55e">\u2605</span>`;
+            // Insert sorted by price
+            let inserted = false;
+            for (const child of rList.children) {
+                const priceText = child.querySelectorAll("span")[1];
+                if (priceText) {
+                    const p = parseFloat(priceText.textContent.replace(/[$\u20AC]/g, ""));
+                    if (tpDisplay < p) { rList.insertBefore(tpEl, child); inserted = true; break; }
+                }
+            }
+            if (!inserted) rList.appendChild(tpEl);
+        }
+
+        // Insert PRU into supports (1st .sm-levels)
+        if (levelsContainers.length >= 1) {
+            const sList = levelsContainers[0];
+            const pruEl = document.createElement("div");
+            pruEl.className = "sm-level support sm-level-tp";
+            pruEl.style.background = "rgba(99, 102, 241, 0.08)";
+            pruEl.style.border = "1px dashed rgba(99, 102, 241, 0.3)";
+            pruEl.innerHTML = `<span>PRU</span><span>${sym}${pruDisplay.toFixed(2)}</span><span class="sm-dist">${pruDist}%</span><span class="sm-stars" style="color:#818cf8">\u2605</span>`;
+            // Insert sorted by price (supports are closest first = highest price first)
+            let inserted = false;
+            for (const child of sList.children) {
+                const priceText = child.querySelectorAll("span")[1];
+                if (priceText) {
+                    const p = parseFloat(priceText.textContent.replace(/[$\u20AC]/g, ""));
+                    if (pruDisplay > p) { sList.insertBefore(pruEl, child); inserted = true; break; }
+                }
+            }
+            if (!inserted) sList.appendChild(pruEl);
+        }
+    }
 }
 
 function closeStockModal() {
