@@ -758,6 +758,18 @@ body {
     font-weight: 800;
     color: #fbbf24;
 }
+.sm-copy {
+    background: rgba(251,191,36,0.15);
+    border: 1px solid rgba(251,191,36,0.3);
+    color: #fbbf24;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 8px;
+    vertical-align: middle;
+}
 .sm-price {
     font-size: 18px;
     color: #e2e8f0;

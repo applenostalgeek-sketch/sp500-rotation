@@ -487,7 +487,7 @@ function showStockModal(ticker) {
 
     // Header
     html += `<div class="sm-header">`;
-    html += `<span class="sm-ticker">${ticker}</span>`;
+    html += `<span><span class="sm-ticker">${ticker}</span><button class="sm-copy" onclick="navigator.clipboard.writeText('${ticker}');this.textContent='OK';setTimeout(()=>this.textContent='Copier',1000)">Copier</button></span>`;
     html += `<span class="sm-price">${sym}${(info.price * rate).toFixed(2)}</span>`;
     html += `</div>`;
 
