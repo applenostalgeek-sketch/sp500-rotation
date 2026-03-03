@@ -261,6 +261,16 @@ function updateOpenPanels() {
 
 /* ---------- Portfolio (localStorage) ---------- */
 const PORTFOLIO_KEY = "wtf_portfolio";
+const DEFAULT_AMOUNT_KEY = "wtf_default_amount";
+
+function getDefaultAmount() {
+    return parseFloat(localStorage.getItem(DEFAULT_AMOUNT_KEY)) || 200;
+}
+
+function setDefaultAmount(val) {
+    const n = parseFloat(val);
+    if (n > 0) localStorage.setItem(DEFAULT_AMOUNT_KEY, n);
+}
 
 function loadPortfolio() {
     try { return JSON.parse(localStorage.getItem(PORTFOLIO_KEY)) || {}; }
@@ -393,8 +403,10 @@ function buildGoldPanel() {
         html += `<button class="${cls}" onclick="goldPanelSort='${opt.key}';buildGoldPanel()">${opt.label}</button>`;
     }
     html += '<span class="gp-sort-spacer"></span>';
-    const usdCls = goldPanelCurrency === "USD" ? "gp-cur-btn active" : "gp-cur-btn";
+    html += `<span class="gp-amount-chip" onclick="this.style.display='none';this.nextElementSibling.style.display='';this.nextElementSibling.focus()" title="Montant par d\u00e9faut">${getDefaultAmount()}\u20AC</span>`;
+    html += `<input type="number" class="gp-amount-input" style="display:none" value="${getDefaultAmount()}" min="1" step="1" onblur="setDefaultAmount(this.value);buildGoldPanel()" onkeydown="if(event.key==='Enter'){this.blur()}">`;
     const eurCls = goldPanelCurrency === "EUR" ? "gp-cur-btn active" : "gp-cur-btn";
+    const usdCls = goldPanelCurrency === "USD" ? "gp-cur-btn active" : "gp-cur-btn";
     html += `<button class="${eurCls}" onclick="goldPanelCurrency='EUR';buildGoldPanel()">\u20AC</button>`;
     html += `<button class="${usdCls}" onclick="goldPanelCurrency='USD';buildGoldPanel()">$</button>`;
     html += '</div>';
@@ -728,7 +740,7 @@ function showStockModal(ticker) {
         const defaultPrice = info.price ? info.price.toFixed(2) : "";
         html += `<div class="sm-buy-form">`;
         html += `<div class="sm-buy-row"><label>Prix d'achat (${sym})</label><input type="number" id="pf-buy-price" value="" placeholder="ex: ${isEur ? '46.00' : '50.00'}" step="0.01" min="0"></div>`;
-        html += `<div class="sm-buy-row"><label>Montant (${sym})</label><input type="number" id="pf-amount" value="200" step="10" min="1"></div>`;
+        html += `<div class="sm-buy-row"><label>Montant (${sym})</label><input type="number" id="pf-amount" value="${getDefaultAmount()}" step="10" min="1"></div>`;
         html += `<div class="sm-buy-row"><label>TP cible (%)</label><input type="number" id="pf-tp" value="5" step="0.5" min="0.5"></div>`;
         html += `<button class="sm-buy-btn" onclick="addToPortfolio('${ticker}',document.getElementById('pf-buy-price').value,document.getElementById('pf-amount').value,document.getElementById('pf-tp').value,'${goldPanelCurrency}');closeStockModal();showStockModal('${ticker}');buildGoldPanel()">J'ai achet\u00e9</button>`;
         html += `</div>`;
@@ -757,7 +769,7 @@ function showStockModal(ticker) {
             tpLabel = `TP${pfEntry.tpPct}%`;
         } else {
             // Theoretical: if buying now at display price, 200 amount, 5% TP
-            const theoSell = calcSellPrice(displayPrice, 200, 5);
+            const theoSell = calcSellPrice(displayPrice, getDefaultAmount(), 5);
             tpDisplay = theoSell;
             tpLabel = "TP5%";
         }
