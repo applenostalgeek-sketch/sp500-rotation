@@ -1,10 +1,10 @@
 {
   "metadata": {
     "date": "2026-03-03",
-    "generated_at": "2026-03-03T08:14:06Z",
+    "generated_at": "2026-03-03T10:02:18Z",
     "market_state": "normal",
-    "avg_correlation": 0.063,
-    "total_sectors": 10,
+    "avg_correlation": 0.037,
+    "total_sectors": 11,
     "benchmark_return": 0.00057,
     "regime": "contraction",
     "regime_label": "Mode prudence",
@@ -31,6 +31,27 @@
       "rs_ratio": 101.6,
       "rs_momentum": 100.5,
       "days_in_phase": 5,
+      "previous_phase": "leading"
+    },
+    {
+      "id": "XLC",
+      "name": "Communication",
+      "color": "#ec4899",
+      "weight": 9.0,
+      "daily_return": -0.00152,
+      "return_5d": 0.01472,
+      "return_20d": -0.01504,
+      "residual_return": 0.01552,
+      "volume_ratio": 1.3,
+      "mfi": 45.4,
+      "cmf": 0.172,
+      "trend": -0.025,
+      "momentum_phase": "improving",
+      "phase_value": 52.0,
+      "phase_delta": 4.3,
+      "rs_ratio": 101.4,
+      "rs_momentum": 99.0,
+      "days_in_phase": 9,
       "previous_phase": "leading"
     },
     {
@@ -236,6 +257,17 @@
       "rs_momentum": 100.0
     },
     {
+      "ticker": "TTD",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "improving",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": -0.02486,
+      "phase_value": 73.2,
+      "rs_momentum": 112.1
+    },
+    {
       "ticker": "WYNN",
       "sector": "XLY",
       "sector_name": "Conso. Discretionnaire",
@@ -245,6 +277,17 @@
       "return_5d": -0.05482,
       "phase_value": 22.5,
       "rs_momentum": 100.4
+    },
+    {
+      "ticker": "DIS",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "improving",
+      "previous_phase": "lagging",
+      "days_in_phase": 2,
+      "return_5d": -0.01622,
+      "phase_value": 34.7,
+      "rs_momentum": 99.7
     },
     {
       "ticker": "CVX",
@@ -311,259 +354,6 @@
       "return_5d": 0.01004,
       "phase_value": 66.3,
       "rs_momentum": 102.2
-    },
-    {
-      "ticker": "GOOGL",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01409,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "GOOG",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01467,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "T",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01199,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CHTR",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.0041,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CMCSA",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.02499,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "EA",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00124,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "FOXA",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01447,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "FOX",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.0103,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "LYV",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02424,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "MTCH",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.0,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "META",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02231,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "NFLX",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.24411,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "NWSA",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03408,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "NWS",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01421,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "OMC",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03517,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "PSKY",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.28393,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "TMUS",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.02176,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "TTWO",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.04746,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "TKO",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.07436,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "TTD",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.02486,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "VZ",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00241,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "DIS",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01622,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "WBD",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.0223,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
     },
     {
       "ticker": "BRO",
@@ -720,6 +510,28 @@
       "rs_momentum": 105.2
     },
     {
+      "ticker": "OMC",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 4,
+      "return_5d": 0.03517,
+      "phase_value": 100.0,
+      "rs_momentum": 117.5
+    },
+    {
+      "ticker": "MTCH",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "leading",
+      "previous_phase": "improving",
+      "days_in_phase": 4,
+      "return_5d": 0.0,
+      "phase_value": 66.2,
+      "rs_momentum": 103.9
+    },
+    {
       "ticker": "OXY",
       "sector": "XLE",
       "sector_name": "Energie",
@@ -798,6 +610,22 @@
     }
   ],
   "signals_history": [
+    {
+      "ticker": "TTD",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "open_date": "2026-03-03",
+      "open_price": 24.31999969482422,
+      "spy_open_price": 686.3800048828125,
+      "current_phase": "improving",
+      "days_active": 0,
+      "return_vs_spy": 0.0,
+      "return_abs": 0.0,
+      "rsi": 34.0,
+      "status": "active",
+      "close_date": null,
+      "close_reason": null
+    },
     {
       "ticker": "WYNN",
       "sector": "XLY",

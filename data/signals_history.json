@@ -1,5 +1,21 @@
 [
   {
+    "ticker": "TTD",
+    "sector": "XLC",
+    "sector_name": "Communication",
+    "open_date": "2026-03-03",
+    "open_price": 24.31999969482422,
+    "spy_open_price": 686.3800048828125,
+    "current_phase": "improving",
+    "days_active": 0,
+    "return_vs_spy": 0.0,
+    "return_abs": 0.0,
+    "rsi": 34.0,
+    "status": "active",
+    "close_date": null,
+    "close_reason": null
+  },
+  {
     "ticker": "WYNN",
     "sector": "XLY",
     "sector_name": "Conso. Discretionnaire",
