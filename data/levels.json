@@ -1,1246 +1,1246 @@
 {
-  "date": "2026-03-19",
+  "date": "2026-03-20",
   "stocks": {
     "ARE": {
-      "price": 49.52,
-      "date": "19/03/2026",
-      "score": 64,
+      "price": 47.39,
+      "date": "20/03/2026",
+      "score": 61,
       "verdict": "SIGNAL CORRECT",
       "verdict_text": "Conditions acceptables",
       "trend": "Baisse",
       "swing_high": 84.13,
       "swing_low": 43.46,
-      "rsi": 32.5,
+      "rsi": 30.8,
       "rsi_label": "Bas",
-      "dist_ma50": -8.0,
-      "ma50_label": "En-dessous",
+      "dist_ma50": -11.8,
+      "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 49.04,
-          "dist_pct": -1.0,
-          "strength": 1
-        },
-        {
-          "price": 48.41,
-          "dist_pct": -2.2,
-          "strength": 3
-        },
-        {
-          "price": 47.33,
-          "dist_pct": -4.4,
+          "price": 46.67,
+          "dist_pct": -1.5,
           "strength": 2
+        },
+        {
+          "price": 45.92,
+          "dist_pct": -3.1,
+          "strength": 1
         },
         {
           "price": 45.0,
-          "dist_pct": -9.1,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 50.17,
-          "dist_pct": 1.3,
-          "strength": 4
-        },
-        {
-          "price": 50.9,
-          "dist_pct": 2.8,
-          "strength": 2
-        },
-        {
-          "price": 51.64,
-          "dist_pct": 4.3,
-          "strength": 3
-        },
-        {
-          "price": 52.54,
-          "dist_pct": 6.1,
-          "strength": 2
-        }
-      ]
-    },
-    "ARES": {
-      "price": 107.99,
-      "date": "19/03/2026",
-      "score": 59,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 177.6,
-      "swing_low": 94.51,
-      "rsi": 47.0,
-      "rsi_label": "Neutre",
-      "dist_ma50": -18.6,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 106.99,
-          "dist_pct": -0.9,
-          "strength": 3
-        },
-        {
-          "price": 104.81,
-          "dist_pct": -2.9,
+          "dist_pct": -5.0,
           "strength": 1
         },
         {
-          "price": 101.63,
-          "dist_pct": -5.9,
-          "strength": 1
-        },
-        {
-          "price": 99.92,
-          "dist_pct": -7.5,
-          "strength": 2
-        }
-      ],
-      "resistances": [
-        {
-          "price": 109.65,
-          "dist_pct": 1.5,
-          "strength": 4
-        },
-        {
-          "price": 111.65,
-          "dist_pct": 3.4,
-          "strength": 4
-        },
-        {
-          "price": 114.77,
-          "dist_pct": 6.3,
-          "strength": 2
-        },
-        {
-          "price": 117.8,
-          "dist_pct": 9.1,
-          "strength": 1
-        }
-      ]
-    },
-    "BLDR": {
-      "price": 84.49,
-      "date": "19/03/2026",
-      "score": 92,
-      "verdict": "SIGNAL FORT",
-      "verdict_text": "Conditions ideales pour un rebond",
-      "trend": "Baisse",
-      "swing_high": 131.5,
-      "swing_low": 82.75,
-      "rsi": 20.7,
-      "rsi_label": "Survente",
-      "dist_ma50": -23.6,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 84.37,
-          "dist_pct": -0.1,
-          "strength": 2
-        },
-        {
-          "price": 82.98,
-          "dist_pct": -1.8,
-          "strength": 1
-        },
-        {
-          "price": 81.47,
-          "dist_pct": -3.6,
-          "strength": 1
-        },
-        {
-          "price": 80.0,
-          "dist_pct": -5.3,
-          "strength": 2
-        }
-      ],
-      "resistances": [
-        {
-          "price": 86.1,
-          "dist_pct": 1.9,
-          "strength": 2
-        },
-        {
-          "price": 87.05,
-          "dist_pct": 3.0,
-          "strength": 1
-        },
-        {
-          "price": 88.56,
-          "dist_pct": 4.8,
-          "strength": 1
-        },
-        {
-          "price": 90.16,
-          "dist_pct": 6.7,
-          "strength": 2
-        }
-      ]
-    },
-    "BSX": {
-      "price": 69.89,
-      "date": "19/03/2026",
-      "score": 66,
-      "verdict": "BON SIGNAL",
-      "verdict_text": "Bonne configuration pour un rebond",
-      "trend": "Baisse",
-      "swing_high": 105.65,
-      "swing_low": 67.56,
-      "rsi": 26.9,
-      "rsi_label": "Survente",
-      "dist_ma50": -13.7,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 68.63,
-          "dist_pct": -1.8,
-          "strength": 2
-        },
-        {
-          "price": 67.48,
-          "dist_pct": -3.4,
-          "strength": 3
-        },
-        {
-          "price": 63.62,
-          "dist_pct": -9.0,
-          "strength": 1
-        },
-        {
-          "price": 60.0,
-          "dist_pct": -14.2,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 69.99,
-          "dist_pct": 0.1,
-          "strength": 3
-        },
-        {
-          "price": 71.37,
-          "dist_pct": 2.1,
-          "strength": 2
-        },
-        {
-          "price": 72.68,
-          "dist_pct": 4.0,
-          "strength": 4
-        },
-        {
-          "price": 74.32,
-          "dist_pct": 6.3,
-          "strength": 2
-        }
-      ]
-    },
-    "BX": {
-      "price": 113.47,
-      "date": "19/03/2026",
-      "score": 62,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 174.69,
-      "swing_low": 101.73,
-      "rsi": 50.1,
-      "rsi_label": "Neutre",
-      "dist_ma50": -13.2,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 112.01,
-          "dist_pct": -1.3,
-          "strength": 5
-        },
-        {
-          "price": 109.64,
-          "dist_pct": -3.4,
-          "strength": 2
-        },
-        {
-          "price": 107.91,
-          "dist_pct": -4.9,
-          "strength": 1
-        },
-        {
-          "price": 105.09,
-          "dist_pct": -7.4,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 115.32,
-          "dist_pct": 1.6,
-          "strength": 4
-        },
-        {
-          "price": 117.62,
-          "dist_pct": 3.7,
-          "strength": 2
-        },
-        {
-          "price": 120.92,
-          "dist_pct": 6.6,
-          "strength": 3
-        },
-        {
-          "price": 123.83,
-          "dist_pct": 9.1,
-          "strength": 1
-        }
-      ]
-    },
-    "CCL": {
-      "price": 24.94,
-      "date": "19/03/2026",
-      "score": 74,
-      "verdict": "BON SIGNAL",
-      "verdict_text": "Bonne configuration pour un rebond",
-      "trend": "Baisse",
-      "swing_high": 33.87,
-      "swing_low": 23.47,
-      "rsi": 21.8,
-      "rsi_label": "Survente",
-      "dist_ma50": -15.8,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 24.57,
-          "dist_pct": -1.5,
-          "strength": 3
-        },
-        {
-          "price": 24.25,
-          "dist_pct": -2.8,
-          "strength": 1
-        },
-        {
-          "price": 23.9,
-          "dist_pct": -4.2,
-          "strength": 2
-        },
-        {
-          "price": 23.49,
-          "dist_pct": -5.8,
-          "strength": 2
-        }
-      ],
-      "resistances": [
-        {
-          "price": 25.08,
-          "dist_pct": 0.6,
-          "strength": 2
-        },
-        {
-          "price": 25.33,
-          "dist_pct": 1.6,
-          "strength": 1
-        },
-        {
-          "price": 25.71,
-          "dist_pct": 3.1,
-          "strength": 3
-        },
-        {
-          "price": 26.04,
-          "dist_pct": 4.4,
-          "strength": 1
-        }
-      ]
-    },
-    "CHTR": {
-      "price": 211.63,
-      "date": "19/03/2026",
-      "score": 61,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 285.82,
-      "swing_low": 180.38,
-      "rsi": 32.0,
-      "rsi_label": "Bas",
-      "dist_ma50": -2.4,
-      "ma50_label": "En-dessous",
-      "supports": [
-        {
-          "price": 208.86,
-          "dist_pct": -1.3,
-          "strength": 2
-        },
-        {
-          "price": 204.31,
-          "dist_pct": -3.5,
-          "strength": 4
-        },
-        {
-          "price": 200.0,
-          "dist_pct": -5.5,
-          "strength": 1
-        },
-        {
-          "price": 193.05,
-          "dist_pct": -8.8,
-          "strength": 2
-        }
-      ],
-      "resistances": [
-        {
-          "price": 213.0,
-          "dist_pct": 0.6,
-          "strength": 2
-        },
-        {
-          "price": 216.14,
-          "dist_pct": 2.1,
-          "strength": 3
-        },
-        {
-          "price": 221.79,
-          "dist_pct": 4.8,
-          "strength": 4
-        },
-        {
-          "price": 224.72,
-          "dist_pct": 6.2,
-          "strength": 4
-        }
-      ]
-    },
-    "CPB": {
-      "price": 21.03,
-      "date": "19/03/2026",
-      "score": 69,
-      "verdict": "BON SIGNAL",
-      "verdict_text": "Bonne configuration pour un rebond",
-      "trend": "Baisse",
-      "swing_high": 31.84,
-      "swing_low": 20.87,
-      "rsi": 12.5,
-      "rsi_label": "Survente",
-      "dist_ma50": -19.9,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 20.74,
-          "dist_pct": -1.4,
-          "strength": 1
-        },
-        {
-          "price": 19.96,
-          "dist_pct": -5.1,
-          "strength": 3
-        },
-        {
-          "price": 15.0,
-          "dist_pct": -28.7,
-          "strength": 1
-        },
-        {
-          "price": 10.0,
-          "dist_pct": -52.4,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 21.06,
-          "dist_pct": 0.1,
-          "strength": 2
-        },
-        {
-          "price": 21.28,
-          "dist_pct": 1.2,
-          "strength": 1
-        },
-        {
-          "price": 21.61,
-          "dist_pct": 2.8,
-          "strength": 2
-        },
-        {
-          "price": 22.93,
-          "dist_pct": 9.0,
-          "strength": 1
-        }
-      ]
-    },
-    "CRL": {
-      "price": 153.05,
-      "date": "19/03/2026",
-      "score": 69,
-      "verdict": "BON SIGNAL",
-      "verdict_text": "Bonne configuration pour un rebond",
-      "trend": "Baisse",
-      "swing_high": 228.88,
-      "swing_low": 145.32,
-      "rsi": 29.1,
-      "rsi_label": "Survente",
-      "dist_ma50": -18.5,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 151.01,
-          "dist_pct": -1.3,
-          "strength": 1
-        },
-        {
-          "price": 149.42,
-          "dist_pct": -2.4,
-          "strength": 3
-        },
-        {
-          "price": 146.76,
-          "dist_pct": -4.1,
-          "strength": 3
-        },
-        {
-          "price": 144.21,
-          "dist_pct": -5.8,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 155.03,
-          "dist_pct": 1.3,
-          "strength": 3
-        },
-        {
-          "price": 156.97,
-          "dist_pct": 2.6,
-          "strength": 1
-        },
-        {
-          "price": 160.3,
-          "dist_pct": 4.7,
-          "strength": 3
-        },
-        {
-          "price": 162.99,
-          "dist_pct": 6.5,
-          "strength": 3
-        }
-      ]
-    },
-    "CSGP": {
-      "price": 42.82,
-      "date": "19/03/2026",
-      "score": 62,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 85.24,
-      "swing_low": 41.84,
-      "rsi": 42.6,
-      "rsi_label": "Neutre",
-      "dist_ma50": -19.1,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 42.78,
-          "dist_pct": -0.1,
-          "strength": 2
-        },
-        {
-          "price": 41.92,
-          "dist_pct": -2.1,
-          "strength": 1
-        },
-        {
-          "price": 41.43,
-          "dist_pct": -3.2,
-          "strength": 1
-        },
-        {
-          "price": 41.02,
-          "dist_pct": -4.2,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 43.56,
-          "dist_pct": 1.7,
-          "strength": 2
-        },
-        {
-          "price": 44.46,
-          "dist_pct": 3.8,
-          "strength": 1
-        },
-        {
-          "price": 45.29,
-          "dist_pct": 5.8,
-          "strength": 3
-        },
-        {
-          "price": 46.1,
-          "dist_pct": 7.7,
-          "strength": 2
-        }
-      ]
-    },
-    "CTSH": {
-      "price": 61.55,
-      "date": "19/03/2026",
-      "score": 64,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 86.59,
-      "swing_low": 59.35,
-      "rsi": 38.8,
-      "rsi_label": "Bas",
-      "dist_ma50": -15.0,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 61.04,
-          "dist_pct": -0.8,
-          "strength": 2
-        },
-        {
-          "price": 60.06,
-          "dist_pct": -2.4,
-          "strength": 4
-        },
-        {
-          "price": 58.98,
-          "dist_pct": -4.2,
-          "strength": 1
-        },
-        {
-          "price": 58.26,
-          "dist_pct": -5.3,
-          "strength": 1
-        }
-      ],
-      "resistances": [
-        {
-          "price": 62.79,
-          "dist_pct": 2.0,
-          "strength": 4
-        },
-        {
-          "price": 63.94,
-          "dist_pct": 3.9,
-          "strength": 2
-        },
-        {
-          "price": 65.5,
-          "dist_pct": 6.4,
-          "strength": 4
-        },
-        {
-          "price": 66.58,
-          "dist_pct": 8.2,
-          "strength": 2
-        }
-      ]
-    },
-    "CVNA": {
-      "price": 294.18,
-      "date": "19/03/2026",
-      "score": 77,
-      "verdict": "BON SIGNAL",
-      "verdict_text": "Bonne configuration pour un rebond",
-      "trend": "Baisse",
-      "swing_high": 486.89,
-      "swing_low": 275.4,
-      "rsi": 35.8,
-      "rsi_label": "Bas",
-      "dist_ma50": -22.4,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 290.27,
-          "dist_pct": -1.3,
-          "strength": 4
-        },
-        {
-          "price": 285.16,
-          "dist_pct": -3.1,
-          "strength": 2
-        },
-        {
-          "price": 280.72,
-          "dist_pct": -4.6,
-          "strength": 1
-        },
-        {
-          "price": 275.0,
+          "price": 44.32,
           "dist_pct": -6.5,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 300.54,
-          "dist_pct": 2.2,
+          "price": 47.92,
+          "dist_pct": 1.1,
           "strength": 3
         },
         {
-          "price": 304.72,
-          "dist_pct": 3.6,
+          "price": 48.65,
+          "dist_pct": 2.7,
           "strength": 1
         },
         {
-          "price": 311.11,
+          "price": 50.12,
           "dist_pct": 5.8,
-          "strength": 2
+          "strength": 4
         },
         {
-          "price": 318.19,
-          "dist_pct": 8.2,
-          "strength": 4
+          "price": 50.72,
+          "dist_pct": 7.0,
+          "strength": 2
         }
       ]
     },
-    "EPAM": {
-      "price": 135.67,
-      "date": "19/03/2026",
-      "score": 64,
+    "ARES": {
+      "price": 105.87,
+      "date": "20/03/2026",
+      "score": 56,
       "verdict": "SIGNAL CORRECT",
       "verdict_text": "Conditions acceptables",
       "trend": "Baisse",
-      "swing_high": 222.53,
-      "swing_low": 125.57,
-      "rsi": 39.6,
-      "rsi_label": "Bas",
-      "dist_ma50": -22.2,
+      "swing_high": 177.6,
+      "swing_low": 94.51,
+      "rsi": 43.0,
+      "rsi_label": "Neutre",
+      "dist_ma50": -19.5,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 132.98,
-          "dist_pct": -2.0,
+          "price": 105.02,
+          "dist_pct": -0.8,
+          "strength": 2
+        },
+        {
+          "price": 103.42,
+          "dist_pct": -2.3,
           "strength": 1
         },
         {
-          "price": 130.15,
-          "dist_pct": -4.1,
-          "strength": 2
+          "price": 99.72,
+          "dist_pct": -5.8,
+          "strength": 3
         },
         {
-          "price": 128.65,
-          "dist_pct": -5.2,
-          "strength": 2
-        },
-        {
-          "price": 125.57,
-          "dist_pct": -7.4,
+          "price": 96.27,
+          "dist_pct": -9.1,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 136.49,
-          "dist_pct": 0.6,
-          "strength": 1
-        },
-        {
-          "price": 138.59,
-          "dist_pct": 2.2,
-          "strength": 5
-        },
-        {
-          "price": 140.42,
-          "dist_pct": 3.5,
+          "price": 106.94,
+          "dist_pct": 1.0,
           "strength": 2
         },
         {
-          "price": 142.69,
-          "dist_pct": 5.2,
+          "price": 108.77,
+          "dist_pct": 2.7,
+          "strength": 3
+        },
+        {
+          "price": 110.62,
+          "dist_pct": 4.5,
+          "strength": 4
+        },
+        {
+          "price": 112.23,
+          "dist_pct": 6.0,
           "strength": 1
         }
       ]
     },
+    "BLDR": {
+      "price": 81.22,
+      "date": "20/03/2026",
+      "score": 79,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
+      "trend": "Baisse",
+      "swing_high": 131.5,
+      "swing_low": 80.0,
+      "rsi": 21.7,
+      "rsi_label": "Survente",
+      "dist_ma50": -26.3,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 80.0,
+          "dist_pct": -1.5,
+          "strength": 1
+        },
+        {
+          "price": 79.01,
+          "dist_pct": -2.7,
+          "strength": 2
+        },
+        {
+          "price": 77.42,
+          "dist_pct": -4.7,
+          "strength": 1
+        },
+        {
+          "price": 71.04,
+          "dist_pct": -12.5,
+          "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 81.56,
+          "dist_pct": 0.4,
+          "strength": 2
+        },
+        {
+          "price": 83.8,
+          "dist_pct": 3.2,
+          "strength": 1
+        },
+        {
+          "price": 86.18,
+          "dist_pct": 6.1,
+          "strength": 2
+        },
+        {
+          "price": 88.28,
+          "dist_pct": 8.7,
+          "strength": 1
+        }
+      ]
+    },
+    "BSX": {
+      "price": 69.48,
+      "date": "20/03/2026",
+      "score": 66,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
+      "trend": "Baisse",
+      "swing_high": 105.65,
+      "swing_low": 67.56,
+      "rsi": 27.3,
+      "rsi_label": "Survente",
+      "dist_ma50": -13.6,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 68.72,
+          "dist_pct": -1.1,
+          "strength": 2
+        },
+        {
+          "price": 67.15,
+          "dist_pct": -3.4,
+          "strength": 3
+        },
+        {
+          "price": 60.0,
+          "dist_pct": -13.6,
+          "strength": 1
+        },
+        {
+          "price": 50.0,
+          "dist_pct": -28.0,
+          "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 69.97,
+          "dist_pct": 0.7,
+          "strength": 3
+        },
+        {
+          "price": 71.33,
+          "dist_pct": 2.7,
+          "strength": 2
+        },
+        {
+          "price": 72.4,
+          "dist_pct": 4.2,
+          "strength": 3
+        },
+        {
+          "price": 74.49,
+          "dist_pct": 7.2,
+          "strength": 1
+        }
+      ]
+    },
+    "BX": {
+      "price": 110.43,
+      "date": "20/03/2026",
+      "score": 56,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 173.65,
+      "swing_low": 101.73,
+      "rsi": 43.5,
+      "rsi_label": "Neutre",
+      "dist_ma50": -15.0,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 109.55,
+          "dist_pct": -0.8,
+          "strength": 2
+        },
+        {
+          "price": 107.83,
+          "dist_pct": -2.4,
+          "strength": 2
+        },
+        {
+          "price": 105.09,
+          "dist_pct": -4.8,
+          "strength": 1
+        },
+        {
+          "price": 103.49,
+          "dist_pct": -6.3,
+          "strength": 2
+        }
+      ],
+      "resistances": [
+        {
+          "price": 111.73,
+          "dist_pct": 1.2,
+          "strength": 5
+        },
+        {
+          "price": 114.8,
+          "dist_pct": 4.0,
+          "strength": 3
+        },
+        {
+          "price": 116.69,
+          "dist_pct": 5.7,
+          "strength": 2
+        },
+        {
+          "price": 120.42,
+          "dist_pct": 9.0,
+          "strength": 3
+        }
+      ]
+    },
+    "CCL": {
+      "price": 24.12,
+      "date": "20/03/2026",
+      "score": 74,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
+      "trend": "Baisse",
+      "swing_high": 33.87,
+      "swing_low": 23.47,
+      "rsi": 25.2,
+      "rsi_label": "Survente",
+      "dist_ma50": -18.1,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 23.85,
+          "dist_pct": -1.1,
+          "strength": 3
+        },
+        {
+          "price": 23.41,
+          "dist_pct": -2.9,
+          "strength": 2
+        },
+        {
+          "price": 22.11,
+          "dist_pct": -8.3,
+          "strength": 2
+        },
+        {
+          "price": 21.46,
+          "dist_pct": -11.0,
+          "strength": 2
+        }
+      ],
+      "resistances": [
+        {
+          "price": 24.46,
+          "dist_pct": 1.4,
+          "strength": 2
+        },
+        {
+          "price": 25.09,
+          "dist_pct": 4.0,
+          "strength": 3
+        },
+        {
+          "price": 25.63,
+          "dist_pct": 6.3,
+          "strength": 3
+        },
+        {
+          "price": 26.04,
+          "dist_pct": 8.0,
+          "strength": 1
+        }
+      ]
+    },
+    "CHTR": {
+      "price": 213.01,
+      "date": "20/03/2026",
+      "score": 61,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 285.82,
+      "swing_low": 180.38,
+      "rsi": 34.4,
+      "rsi_label": "Bas",
+      "dist_ma50": -1.8,
+      "ma50_label": "En-dessous",
+      "supports": [
+        {
+          "price": 208.73,
+          "dist_pct": -2.0,
+          "strength": 2
+        },
+        {
+          "price": 204.59,
+          "dist_pct": -4.0,
+          "strength": 4
+        },
+        {
+          "price": 200.0,
+          "dist_pct": -6.1,
+          "strength": 1
+        },
+        {
+          "price": 193.69,
+          "dist_pct": -9.1,
+          "strength": 2
+        }
+      ],
+      "resistances": [
+        {
+          "price": 213.24,
+          "dist_pct": 0.1,
+          "strength": 2
+        },
+        {
+          "price": 216.5,
+          "dist_pct": 1.6,
+          "strength": 3
+        },
+        {
+          "price": 220.73,
+          "dist_pct": 3.6,
+          "strength": 3
+        },
+        {
+          "price": 224.04,
+          "dist_pct": 5.2,
+          "strength": 6
+        }
+      ]
+    },
+    "CPB": {
+      "price": 21.07,
+      "date": "20/03/2026",
+      "score": 82,
+      "verdict": "SIGNAL FORT",
+      "verdict_text": "Conditions ideales pour un rebond",
+      "trend": "Baisse",
+      "swing_high": 31.61,
+      "swing_low": 20.8,
+      "rsi": 14.1,
+      "rsi_label": "Survente",
+      "dist_ma50": -19.5,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 20.97,
+          "dist_pct": -0.5,
+          "strength": 2
+        },
+        {
+          "price": 20.62,
+          "dist_pct": -2.1,
+          "strength": 1
+        },
+        {
+          "price": 19.99,
+          "dist_pct": -5.1,
+          "strength": 2
+        },
+        {
+          "price": 19.46,
+          "dist_pct": -7.6,
+          "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 21.41,
+          "dist_pct": 1.6,
+          "strength": 2
+        },
+        {
+          "price": 21.66,
+          "dist_pct": 2.8,
+          "strength": 1
+        },
+        {
+          "price": 22.93,
+          "dist_pct": 8.8,
+          "strength": 1
+        },
+        {
+          "price": 23.27,
+          "dist_pct": 10.4,
+          "strength": 1
+        }
+      ]
+    },
+    "CRL": {
+      "price": 153.6,
+      "date": "20/03/2026",
+      "score": 64,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 228.88,
+      "swing_low": 145.47,
+      "rsi": 29.6,
+      "rsi_label": "Survente",
+      "dist_ma50": -17.7,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 150.99,
+          "dist_pct": -1.7,
+          "strength": 1
+        },
+        {
+          "price": 149.22,
+          "dist_pct": -2.9,
+          "strength": 3
+        },
+        {
+          "price": 146.69,
+          "dist_pct": -4.5,
+          "strength": 2
+        },
+        {
+          "price": 144.73,
+          "dist_pct": -5.8,
+          "strength": 2
+        }
+      ],
+      "resistances": [
+        {
+          "price": 153.9,
+          "dist_pct": 0.2,
+          "strength": 2
+        },
+        {
+          "price": 155.92,
+          "dist_pct": 1.5,
+          "strength": 2
+        },
+        {
+          "price": 159.9,
+          "dist_pct": 4.1,
+          "strength": 3
+        },
+        {
+          "price": 161.99,
+          "dist_pct": 5.5,
+          "strength": 1
+        }
+      ]
+    },
+    "CSGP": {
+      "price": 42.9,
+      "date": "20/03/2026",
+      "score": 62,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 85.24,
+      "swing_low": 41.84,
+      "rsi": 40.4,
+      "rsi_label": "Neutre",
+      "dist_ma50": -18.3,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 42.77,
+          "dist_pct": -0.3,
+          "strength": 2
+        },
+        {
+          "price": 42.16,
+          "dist_pct": -1.7,
+          "strength": 1
+        },
+        {
+          "price": 41.35,
+          "dist_pct": -3.6,
+          "strength": 2
+        },
+        {
+          "price": 40.0,
+          "dist_pct": -6.8,
+          "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 43.47,
+          "dist_pct": 1.3,
+          "strength": 2
+        },
+        {
+          "price": 44.01,
+          "dist_pct": 2.6,
+          "strength": 1
+        },
+        {
+          "price": 44.88,
+          "dist_pct": 4.6,
+          "strength": 2
+        },
+        {
+          "price": 45.58,
+          "dist_pct": 6.2,
+          "strength": 3
+        }
+      ]
+    },
+    "CTSH": {
+      "price": 62.07,
+      "date": "20/03/2026",
+      "score": 51,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Hausse",
+      "swing_high": 86.59,
+      "swing_low": 59.36,
+      "rsi": 44.2,
+      "rsi_label": "Neutre",
+      "dist_ma50": -13.7,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 61.35,
+          "dist_pct": -1.2,
+          "strength": 2
+        },
+        {
+          "price": 60.2,
+          "dist_pct": -3.0,
+          "strength": 4
+        },
+        {
+          "price": 58.7,
+          "dist_pct": -5.4,
+          "strength": 2
+        },
+        {
+          "price": 50.0,
+          "dist_pct": -19.4,
+          "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 62.76,
+          "dist_pct": 1.1,
+          "strength": 3
+        },
+        {
+          "price": 63.84,
+          "dist_pct": 2.9,
+          "strength": 2
+        },
+        {
+          "price": 65.54,
+          "dist_pct": 5.6,
+          "strength": 3
+        },
+        {
+          "price": 66.45,
+          "dist_pct": 7.1,
+          "strength": 2
+        }
+      ]
+    },
+    "CVNA": {
+      "price": 281.28,
+      "date": "20/03/2026",
+      "score": 62,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 486.89,
+      "swing_low": 275.39,
+      "rsi": 35.4,
+      "rsi_label": "Bas",
+      "dist_ma50": -25.2,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 274.95,
+          "dist_pct": -2.3,
+          "strength": 2
+        },
+        {
+          "price": 268.51,
+          "dist_pct": -4.5,
+          "strength": 1
+        },
+        {
+          "price": 260.49,
+          "dist_pct": -7.4,
+          "strength": 1
+        },
+        {
+          "price": 250.0,
+          "dist_pct": -11.1,
+          "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 282.28,
+          "dist_pct": 0.4,
+          "strength": 4
+        },
+        {
+          "price": 290.53,
+          "dist_pct": 3.3,
+          "strength": 3
+        },
+        {
+          "price": 299.02,
+          "dist_pct": 6.3,
+          "strength": 3
+        },
+        {
+          "price": 304.42,
+          "dist_pct": 8.2,
+          "strength": 2
+        }
+      ]
+    },
+    "EPAM": {
+      "price": 137.43,
+      "date": "20/03/2026",
+      "score": 59,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Hausse",
+      "swing_high": 222.53,
+      "swing_low": 125.57,
+      "rsi": 46.6,
+      "rsi_label": "Neutre",
+      "dist_ma50": -20.5,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 135.71,
+          "dist_pct": -1.3,
+          "strength": 1
+        },
+        {
+          "price": 132.8,
+          "dist_pct": -3.4,
+          "strength": 1
+        },
+        {
+          "price": 130.0,
+          "dist_pct": -5.4,
+          "strength": 1
+        },
+        {
+          "price": 128.61,
+          "dist_pct": -6.4,
+          "strength": 2
+        }
+      ],
+      "resistances": [
+        {
+          "price": 138.87,
+          "dist_pct": 1.0,
+          "strength": 6
+        },
+        {
+          "price": 141.49,
+          "dist_pct": 3.0,
+          "strength": 2
+        },
+        {
+          "price": 144.36,
+          "dist_pct": 5.0,
+          "strength": 1
+        },
+        {
+          "price": 147.62,
+          "dist_pct": 7.4,
+          "strength": 4
+        }
+      ]
+    },
     "FDS": {
-      "price": 208.84,
-      "date": "19/03/2026",
-      "score": 57,
+      "price": 209.27,
+      "date": "20/03/2026",
+      "score": 54,
       "verdict": "SIGNAL CORRECT",
       "verdict_text": "Conditions acceptables",
       "trend": "Hausse",
       "swing_high": 304.53,
       "swing_low": 184.05,
-      "rsi": 40.0,
-      "rsi_label": "Neutre",
-      "dist_ma50": -10.8,
+      "rsi": 35.7,
+      "rsi_label": "Bas",
+      "dist_ma50": -10.0,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 207.85,
-          "dist_pct": -0.5,
+          "price": 206.04,
+          "dist_pct": -1.5,
           "strength": 1
         },
         {
-          "price": 203.66,
-          "dist_pct": -2.5,
+          "price": 201.86,
+          "dist_pct": -3.5,
+          "strength": 4
+        },
+        {
+          "price": 192.9,
+          "dist_pct": -7.8,
           "strength": 2
         },
         {
-          "price": 199.94,
-          "dist_pct": -4.3,
-          "strength": 2
-        },
-        {
-          "price": 190.3,
-          "dist_pct": -8.9,
+          "price": 189.08,
+          "dist_pct": -9.6,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 211.83,
-          "dist_pct": 1.4,
+          "price": 209.23,
+          "dist_pct": -0.0,
+          "strength": 1
+        },
+        {
+          "price": 212.09,
+          "dist_pct": 1.3,
           "strength": 4
         },
         {
-          "price": 215.82,
-          "dist_pct": 3.3,
+          "price": 215.64,
+          "dist_pct": 3.0,
           "strength": 1
         },
         {
-          "price": 220.3,
-          "dist_pct": 5.5,
+          "price": 218.87,
+          "dist_pct": 4.6,
           "strength": 1
-        },
-        {
-          "price": 225.08,
-          "dist_pct": 7.8,
-          "strength": 2
         }
       ]
     },
     "FICO": {
-      "price": 1113.16,
-      "date": "19/03/2026",
-      "score": 81,
-      "verdict": "SIGNAL FORT",
-      "verdict_text": "Conditions ideales pour un rebond",
+      "price": 1127.62,
+      "date": "20/03/2026",
+      "score": 69,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
       "swing_high": 1998.01,
       "swing_low": 1068.67,
-      "rsi": 27.3,
+      "rsi": 29.0,
       "rsi_label": "Survente",
-      "dist_ma50": -20.9,
+      "dist_ma50": -19.4,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 1096.81,
-          "dist_pct": -1.5,
-          "strength": 2
+          "price": 1112.57,
+          "dist_pct": -1.3,
+          "strength": 1
         },
         {
-          "price": 1082.68,
-          "dist_pct": -2.7,
-          "strength": 1
+          "price": 1093.58,
+          "dist_pct": -3.0,
+          "strength": 3
         },
         {
           "price": 1068.67,
-          "dist_pct": -4.0,
+          "dist_pct": -5.2,
           "strength": 1
         },
         {
-          "price": 1052.2,
-          "dist_pct": -5.5,
+          "price": 1036.18,
+          "dist_pct": -8.1,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 1137.84,
-          "dist_pct": 2.2,
+          "price": 1143.25,
+          "dist_pct": 1.4,
           "strength": 1
         },
         {
-          "price": 1169.9,
-          "dist_pct": 5.1,
+          "price": 1170.1,
+          "dist_pct": 3.8,
           "strength": 2
         },
         {
           "price": 1196.55,
-          "dist_pct": 7.5,
+          "dist_pct": 6.1,
           "strength": 2
         },
         {
-          "price": 1223.48,
-          "dist_pct": 9.9,
+          "price": 1238.23,
+          "dist_pct": 9.8,
           "strength": 1
         }
       ]
     },
     "FIS": {
-      "price": 49.26,
-      "date": "19/03/2026",
+      "price": 49.79,
+      "date": "20/03/2026",
       "score": 49,
       "verdict": "SIGNAL FAIBLE",
       "verdict_text": "Peu de catalyseurs pour un rebond",
       "trend": "Hausse",
       "swing_high": 68.13,
       "swing_low": 45.77,
-      "rsi": 41.3,
+      "rsi": 51.6,
       "rsi_label": "Neutre",
-      "dist_ma50": -8.0,
+      "dist_ma50": -6.4,
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 48.41,
-          "dist_pct": -1.7,
+          "price": 49.23,
+          "dist_pct": -1.1,
           "strength": 1
         },
         {
-          "price": 47.56,
-          "dist_pct": -3.5,
-          "strength": 2
-        },
-        {
-          "price": 46.4,
-          "dist_pct": -5.8,
+          "price": 48.2,
+          "dist_pct": -3.2,
           "strength": 1
         },
         {
-          "price": 45.77,
-          "dist_pct": -7.1,
+          "price": 47.67,
+          "dist_pct": -4.3,
           "strength": 1
+        },
+        {
+          "price": 46.1,
+          "dist_pct": -7.4,
+          "strength": 3
         }
       ],
       "resistances": [
         {
-          "price": 49.67,
-          "dist_pct": 0.8,
-          "strength": 4
+          "price": 50.01,
+          "dist_pct": 0.4,
+          "strength": 5
         },
         {
-          "price": 50.19,
-          "dist_pct": 1.9,
+          "price": 50.79,
+          "dist_pct": 2.0,
           "strength": 3
         },
         {
-          "price": 50.92,
-          "dist_pct": 3.4,
-          "strength": 3
-        },
-        {
-          "price": 51.88,
-          "dist_pct": 5.3,
+          "price": 51.66,
+          "dist_pct": 3.8,
           "strength": 2
+        },
+        {
+          "price": 53.22,
+          "dist_pct": 6.9,
+          "strength": 1
         }
       ]
     },
     "FISV": {
-      "price": 57.02,
-      "date": "19/03/2026",
-      "score": 64,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
+      "price": 57.07,
+      "date": "20/03/2026",
+      "score": 70,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
-      "swing_high": 130.77,
+      "swing_high": 130.64,
       "swing_low": 55.87,
-      "rsi": 31.4,
+      "rsi": 32.6,
       "rsi_label": "Bas",
-      "dist_ma50": -8.8,
+      "dist_ma50": -8.4,
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 55.97,
+          "price": 56.94,
+          "dist_pct": -0.2,
+          "strength": 1
+        },
+        {
+          "price": 56.06,
           "dist_pct": -1.8,
           "strength": 3
         },
         {
-          "price": 55.01,
-          "dist_pct": -3.5,
-          "strength": 2
-        },
-        {
-          "price": 51.68,
-          "dist_pct": -9.4,
+          "price": 54.75,
+          "dist_pct": -4.1,
           "strength": 1
         },
         {
-          "price": 50.0,
-          "dist_pct": -12.3,
+          "price": 54.16,
+          "dist_pct": -5.1,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 57.13,
-          "dist_pct": 0.2,
+          "price": 57.8,
+          "dist_pct": 1.3,
+          "strength": 2
+        },
+        {
+          "price": 58.64,
+          "dist_pct": 2.8,
           "strength": 1
         },
         {
-          "price": 58.01,
-          "dist_pct": 1.7,
-          "strength": 2
+          "price": 59.73,
+          "dist_pct": 4.7,
+          "strength": 4
         },
         {
-          "price": 59.78,
-          "dist_pct": 4.8,
-          "strength": 5
-        },
-        {
-          "price": 60.67,
-          "dist_pct": 6.4,
-          "strength": 2
+          "price": 60.95,
+          "dist_pct": 6.8,
+          "strength": 1
         }
       ]
     },
     "GDDY": {
-      "price": 83.66,
-      "date": "19/03/2026",
-      "score": 49,
-      "verdict": "SIGNAL FAIBLE",
-      "verdict_text": "Peu de catalyseurs pour un rebond",
+      "price": 84.89,
+      "date": "20/03/2026",
+      "score": 54,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
       "trend": "Baisse",
       "swing_high": 142.49,
       "swing_low": 73.06,
-      "rsi": 43.5,
+      "rsi": 43.8,
       "rsi_label": "Neutre",
-      "dist_ma50": -12.4,
+      "dist_ma50": -10.5,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 82.04,
-          "dist_pct": -1.9,
+          "price": 83.83,
+          "dist_pct": -1.2,
           "strength": 1
         },
         {
-          "price": 80.21,
-          "dist_pct": -4.1,
+          "price": 82.74,
+          "dist_pct": -2.5,
+          "strength": 1
+        },
+        {
+          "price": 80.3,
+          "dist_pct": -5.4,
           "strength": 2
         },
         {
-          "price": 78.8,
-          "dist_pct": -5.8,
-          "strength": 2
-        },
-        {
-          "price": 74.77,
-          "dist_pct": -10.6,
+          "price": 79.12,
+          "dist_pct": -6.8,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 84.43,
-          "dist_pct": 0.9,
+          "price": 86.82,
+          "dist_pct": 2.3,
+          "strength": 3
+        },
+        {
+          "price": 89.5,
+          "dist_pct": 5.4,
+          "strength": 3
+        },
+        {
+          "price": 92.51,
+          "dist_pct": 9.0,
           "strength": 1
         },
         {
-          "price": 86.05,
-          "dist_pct": 2.9,
+          "price": 93.86,
+          "dist_pct": 10.6,
           "strength": 1
-        },
-        {
-          "price": 87.3,
-          "dist_pct": 4.4,
-          "strength": 2
-        },
-        {
-          "price": 88.88,
-          "dist_pct": 6.2,
-          "strength": 2
         }
       ]
     },
     "GPC": {
-      "price": 99.09,
-      "date": "19/03/2026",
+      "price": 96.38,
+      "date": "20/03/2026",
       "score": 79,
       "verdict": "BON SIGNAL",
       "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
       "swing_high": 150.19,
-      "swing_low": 98.14,
-      "rsi": 7.5,
+      "swing_low": 96.08,
+      "rsi": 6.9,
       "rsi_label": "Survente",
-      "dist_ma50": -21.4,
+      "dist_ma50": -23.3,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 97.98,
-          "dist_pct": -1.1,
+          "price": 94.99,
+          "dist_pct": -1.4,
           "strength": 1
         },
         {
-          "price": 96.87,
-          "dist_pct": -2.2,
-          "strength": 1
-        },
-        {
-          "price": 93.38,
-          "dist_pct": -5.8,
+          "price": 93.59,
+          "dist_pct": -2.9,
           "strength": 1
         },
         {
           "price": 90.0,
-          "dist_pct": -9.2,
+          "dist_pct": -6.6,
+          "strength": 1
+        },
+        {
+          "price": 88.32,
+          "dist_pct": -8.4,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 99.34,
-          "dist_pct": 0.3,
-          "strength": 4
-        },
-        {
-          "price": 100.53,
-          "dist_pct": 1.5,
-          "strength": 3
-        },
-        {
-          "price": 102.29,
-          "dist_pct": 3.2,
+          "price": 96.49,
+          "dist_pct": 0.1,
           "strength": 2
         },
         {
-          "price": 104.46,
-          "dist_pct": 5.4,
+          "price": 97.47,
+          "dist_pct": 1.1,
           "strength": 1
+        },
+        {
+          "price": 98.91,
+          "dist_pct": 2.6,
+          "strength": 2
+        },
+        {
+          "price": 100.34,
+          "dist_pct": 4.1,
+          "strength": 2
         }
       ]
     },
     "HOOD": {
-      "price": 74.16,
-      "date": "19/03/2026",
-      "score": 57,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 153.86,
-      "swing_low": 69.22,
-      "rsi": 47.4,
-      "rsi_label": "Neutre",
-      "dist_ma50": -16.5,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 73.67,
-          "dist_pct": -0.7,
-          "strength": 1
-        },
-        {
-          "price": 72.19,
-          "dist_pct": -2.7,
-          "strength": 1
-        },
-        {
-          "price": 71.34,
-          "dist_pct": -3.8,
-          "strength": 2
-        },
-        {
-          "price": 70.21,
-          "dist_pct": -5.3,
-          "strength": 3
-        }
-      ],
-      "resistances": [
-        {
-          "price": 75.61,
-          "dist_pct": 2.0,
-          "strength": 2
-        },
-        {
-          "price": 76.93,
-          "dist_pct": 3.7,
-          "strength": 3
-        },
-        {
-          "price": 78.01,
-          "dist_pct": 5.2,
-          "strength": 2
-        },
-        {
-          "price": 79.11,
-          "dist_pct": 6.7,
-          "strength": 1
-        }
-      ]
-    },
-    "HUM": {
-      "price": 166.45,
-      "date": "19/03/2026",
-      "score": 79,
+      "price": 70.89,
+      "date": "20/03/2026",
+      "score": 67,
       "verdict": "BON SIGNAL",
       "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
-      "swing_high": 301.76,
-      "swing_low": 163.6,
-      "rsi": 20.9,
-      "rsi_label": "Survente",
+      "swing_high": 153.86,
+      "swing_low": 69.22,
+      "rsi": 38.0,
+      "rsi_label": "Bas",
       "dist_ma50": -19.3,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 163.62,
-          "dist_pct": -1.7,
-          "strength": 3
+          "price": 70.5,
+          "dist_pct": -0.6,
+          "strength": 4
         },
         {
-          "price": 160.5,
-          "dist_pct": -3.6,
-          "strength": 3
-        },
-        {
-          "price": 150.13,
-          "dist_pct": -9.8,
+          "price": 69.31,
+          "dist_pct": -2.2,
           "strength": 2
         },
         {
-          "price": 140.0,
-          "dist_pct": -15.9,
+          "price": 67.9,
+          "dist_pct": -4.2,
+          "strength": 1
+        },
+        {
+          "price": 63.74,
+          "dist_pct": -10.1,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 170.02,
-          "dist_pct": 2.1,
-          "strength": 4
-        },
-        {
-          "price": 173.27,
-          "dist_pct": 4.1,
+          "price": 71.4,
+          "dist_pct": 0.7,
           "strength": 1
         },
         {
-          "price": 177.4,
-          "dist_pct": 6.6,
+          "price": 72.89,
+          "dist_pct": 2.8,
+          "strength": 1
+        },
+        {
+          "price": 75.23,
+          "dist_pct": 6.1,
+          "strength": 2
+        },
+        {
+          "price": 76.51,
+          "dist_pct": 7.9,
+          "strength": 3
+        }
+      ]
+    },
+    "HUM": {
+      "price": 169.9,
+      "date": "20/03/2026",
+      "score": 64,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 301.76,
+      "swing_low": 163.12,
+      "rsi": 29.1,
+      "rsi_label": "Survente",
+      "dist_ma50": -16.8,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 167.87,
+          "dist_pct": -1.2,
+          "strength": 1
+        },
+        {
+          "price": 164.14,
+          "dist_pct": -3.4,
           "strength": 3
         },
         {
-          "price": 180.0,
-          "dist_pct": 8.1,
+          "price": 160.36,
+          "dist_pct": -5.6,
+          "strength": 3
+        },
+        {
+          "price": 150.0,
+          "dist_pct": -11.7,
           "strength": 1
+        }
+      ],
+      "resistances": [
+        {
+          "price": 170.2,
+          "dist_pct": 0.2,
+          "strength": 3
+        },
+        {
+          "price": 172.94,
+          "dist_pct": 1.8,
+          "strength": 2
+        },
+        {
+          "price": 176.21,
+          "dist_pct": 3.7,
+          "strength": 3
+        },
+        {
+          "price": 180.04,
+          "dist_pct": 6.0,
+          "strength": 2
         }
       ]
     },
     "INTU": {
-      "price": 455.24,
-      "date": "19/03/2026",
-      "score": 51,
+      "price": 455.56,
+      "date": "20/03/2026",
+      "score": 59,
       "verdict": "SIGNAL CORRECT",
       "verdict_text": "Conditions acceptables",
       "trend": "Hausse",
       "swing_high": 701.38,
       "swing_low": 349.0,
-      "rsi": 64.2,
+      "rsi": 61.9,
       "rsi_label": "Haut",
-      "dist_ma50": -4.0,
+      "dist_ma50": -3.1,
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 448.93,
-          "dist_pct": -1.4,
+          "price": 451.51,
+          "dist_pct": -0.9,
           "strength": 2
         },
         {
-          "price": 442.12,
-          "dist_pct": -2.9,
+          "price": 444.02,
+          "dist_pct": -2.5,
           "strength": 2
         },
         {
@@ -1249,610 +1249,610 @@
           "strength": 1
         },
         {
-          "price": 428.48,
-          "dist_pct": -5.9,
-          "strength": 4
+          "price": 430.08,
+          "dist_pct": -5.6,
+          "strength": 6
         }
       ],
       "resistances": [
         {
-          "price": 458.93,
-          "dist_pct": 0.8,
+          "price": 465.39,
+          "dist_pct": 2.2,
           "strength": 1
         },
         {
-          "price": 468.23,
-          "dist_pct": 2.9,
+          "price": 470.14,
+          "dist_pct": 3.2,
           "strength": 2
         },
         {
-          "price": 475.47,
-          "dist_pct": 4.4,
-          "strength": 3
+          "price": 475.11,
+          "dist_pct": 4.3,
+          "strength": 2
         },
         {
-          "price": 485.14,
+          "price": 485.62,
           "dist_pct": 6.6,
           "strength": 3
         }
       ]
     },
     "IQV": {
-      "price": 166.47,
-      "date": "19/03/2026",
-      "score": 59,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
+      "price": 166.07,
+      "date": "20/03/2026",
+      "score": 65,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Hausse",
       "swing_high": 247.05,
       "swing_low": 156.67,
-      "rsi": 35.3,
+      "rsi": 39.1,
       "rsi_label": "Bas",
-      "dist_ma50": -15.6,
+      "dist_ma50": -15.2,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 163.62,
-          "dist_pct": -1.7,
-          "strength": 3
-        },
-        {
-          "price": 161.49,
-          "dist_pct": -3.0,
-          "strength": 2
-        },
-        {
-          "price": 159.33,
-          "dist_pct": -4.3,
-          "strength": 3
-        },
-        {
-          "price": 156.54,
-          "dist_pct": -6.0,
+          "price": 165.81,
+          "dist_pct": -0.2,
           "strength": 1
+        },
+        {
+          "price": 163.02,
+          "dist_pct": -1.8,
+          "strength": 4
+        },
+        {
+          "price": 159.35,
+          "dist_pct": -4.0,
+          "strength": 3
+        },
+        {
+          "price": 156.41,
+          "dist_pct": -5.8,
+          "strength": 2
         }
       ],
       "resistances": [
         {
-          "price": 166.66,
-          "dist_pct": 0.1,
-          "strength": 1
-        },
-        {
-          "price": 169.75,
-          "dist_pct": 2.0,
+          "price": 169.51,
+          "dist_pct": 2.1,
           "strength": 6
         },
         {
-          "price": 172.76,
-          "dist_pct": 3.8,
-          "strength": 2
-        },
-        {
-          "price": 174.96,
-          "dist_pct": 5.1,
-          "strength": 1
-        }
-      ]
-    },
-    "KKR": {
-      "price": 90.6,
-      "date": "19/03/2026",
-      "score": 54,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
-      "trend": "Baisse",
-      "swing_high": 144.58,
-      "swing_low": 82.67,
-      "rsi": 55.5,
-      "rsi_label": "Neutre",
-      "dist_ma50": -14.6,
-      "ma50_label": "Bien en-dessous",
-      "supports": [
-        {
-          "price": 89.86,
-          "dist_pct": -0.8,
-          "strength": 3
-        },
-        {
-          "price": 87.63,
-          "dist_pct": -3.3,
-          "strength": 2
-        },
-        {
-          "price": 85.25,
-          "dist_pct": -5.9,
-          "strength": 1
-        },
-        {
-          "price": 84.21,
-          "dist_pct": -7.1,
-          "strength": 2
-        }
-      ],
-      "resistances": [
-        {
-          "price": 91.26,
-          "dist_pct": 0.7,
-          "strength": 3
-        },
-        {
-          "price": 92.56,
-          "dist_pct": 2.2,
-          "strength": 2
-        },
-        {
-          "price": 93.82,
+          "price": 172.1,
           "dist_pct": 3.6,
           "strength": 2
         },
         {
-          "price": 96.78,
-          "dist_pct": 6.8,
+          "price": 176.72,
+          "dist_pct": 6.4,
+          "strength": 1
+        },
+        {
+          "price": 179.46,
+          "dist_pct": 8.1,
           "strength": 3
         }
       ]
     },
-    "MOH": {
-      "price": 142.21,
-      "date": "19/03/2026",
-      "score": 67,
-      "verdict": "BON SIGNAL",
-      "verdict_text": "Bonne configuration pour un rebond",
+    "KKR": {
+      "price": 90.0,
+      "date": "20/03/2026",
+      "score": 49,
+      "verdict": "SIGNAL FAIBLE",
+      "verdict_text": "Peu de catalyseurs pour un rebond",
       "trend": "Baisse",
-      "swing_high": 206.89,
-      "swing_low": 121.06,
-      "rsi": 38.3,
-      "rsi_label": "Bas",
-      "dist_ma50": -11.9,
+      "swing_high": 144.58,
+      "swing_low": 82.67,
+      "rsi": 48.7,
+      "rsi_label": "Neutre",
+      "dist_ma50": -14.5,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 139.81,
-          "dist_pct": -1.7,
-          "strength": 4
-        },
-        {
-          "price": 137.61,
-          "dist_pct": -3.2,
+          "price": 88.9,
+          "dist_pct": -1.2,
           "strength": 1
         },
         {
-          "price": 136.15,
-          "dist_pct": -4.3,
-          "strength": 1
+          "price": 87.53,
+          "dist_pct": -2.7,
+          "strength": 2
         },
         {
-          "price": 133.4,
-          "dist_pct": -6.2,
-          "strength": 1
+          "price": 84.96,
+          "dist_pct": -5.6,
+          "strength": 2
+        },
+        {
+          "price": 83.82,
+          "dist_pct": -6.9,
+          "strength": 2
         }
       ],
       "resistances": [
         {
-          "price": 145.23,
-          "dist_pct": 2.1,
+          "price": 90.32,
+          "dist_pct": 0.4,
+          "strength": 5
+        },
+        {
+          "price": 92.46,
+          "dist_pct": 2.7,
+          "strength": 2
+        },
+        {
+          "price": 94.02,
+          "dist_pct": 4.5,
           "strength": 1
         },
         {
-          "price": 147.96,
-          "dist_pct": 4.0,
+          "price": 96.94,
+          "dist_pct": 7.7,
+          "strength": 4
+        }
+      ]
+    },
+    "MOH": {
+      "price": 139.41,
+      "date": "20/03/2026",
+      "score": 56,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Baisse",
+      "swing_high": 206.89,
+      "swing_low": 121.06,
+      "rsi": 37.4,
+      "rsi_label": "Bas",
+      "dist_ma50": -13.2,
+      "ma50_label": "Bien en-dessous",
+      "supports": [
+        {
+          "price": 137.26,
+          "dist_pct": -1.5,
+          "strength": 2
+        },
+        {
+          "price": 133.4,
+          "dist_pct": -4.3,
+          "strength": 1
+        },
+        {
+          "price": 131.1,
+          "dist_pct": -6.0,
+          "strength": 1
+        },
+        {
+          "price": 129.78,
+          "dist_pct": -6.9,
+          "strength": 2
+        }
+      ],
+      "resistances": [
+        {
+          "price": 139.69,
+          "dist_pct": 0.2,
           "strength": 4
         },
         {
-          "price": 150.0,
-          "dist_pct": 5.5,
+          "price": 141.51,
+          "dist_pct": 1.5,
           "strength": 1
         },
         {
-          "price": 151.79,
-          "dist_pct": 6.7,
+          "price": 143.6,
+          "dist_pct": 3.0,
+          "strength": 1
+        },
+        {
+          "price": 145.16,
+          "dist_pct": 4.1,
           "strength": 1
         }
       ]
     },
     "ORCL": {
-      "price": 155.52,
-      "date": "19/03/2026",
-      "score": 56,
+      "price": 149.68,
+      "date": "20/03/2026",
+      "score": 51,
       "verdict": "SIGNAL CORRECT",
       "verdict_text": "Conditions acceptables",
       "trend": "Hausse",
       "swing_high": 321.69,
       "swing_low": 135.25,
-      "rsi": 61.6,
-      "rsi_label": "Haut",
-      "dist_ma50": -4.8,
+      "rsi": 50.5,
+      "rsi_label": "Neutre",
+      "dist_ma50": -7.9,
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 154.33,
-          "dist_pct": -0.8,
+          "price": 148.01,
+          "dist_pct": -1.1,
           "strength": 2
         },
         {
-          "price": 152.05,
-          "dist_pct": -2.2,
-          "strength": 3
+          "price": 145.06,
+          "dist_pct": -3.1,
+          "strength": 1
         },
         {
-          "price": 149.76,
-          "dist_pct": -3.7,
-          "strength": 3
+          "price": 141.88,
+          "dist_pct": -5.2,
+          "strength": 1
         },
         {
-          "price": 145.75,
-          "dist_pct": -6.3,
+          "price": 140.0,
+          "dist_pct": -6.5,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 156.85,
-          "dist_pct": 0.9,
-          "strength": 1
-        },
-        {
-          "price": 159.33,
-          "dist_pct": 2.4,
+          "price": 150.15,
+          "dist_pct": 0.3,
           "strength": 2
         },
         {
-          "price": 162.32,
-          "dist_pct": 4.4,
+          "price": 152.23,
+          "dist_pct": 1.7,
           "strength": 4
         },
         {
-          "price": 166.04,
-          "dist_pct": 6.8,
+          "price": 154.98,
+          "dist_pct": 3.5,
+          "strength": 2
+        },
+        {
+          "price": 157.36,
+          "dist_pct": 5.1,
           "strength": 2
         }
       ]
     },
     "PAYC": {
-      "price": 124.15,
-      "date": "19/03/2026",
-      "score": 49,
-      "verdict": "SIGNAL FAIBLE",
-      "verdict_text": "Peu de catalyseurs pour un rebond",
+      "price": 124.82,
+      "date": "20/03/2026",
+      "score": 62,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
       "trend": "Hausse",
-      "swing_high": 218.09,
+      "swing_high": 217.65,
       "swing_low": 104.61,
-      "rsi": 47.9,
+      "rsi": 44.8,
       "rsi_label": "Neutre",
-      "dist_ma50": -7.5,
+      "dist_ma50": -6.6,
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 122.59,
-          "dist_pct": -1.3,
-          "strength": 1
-        },
-        {
-          "price": 120.52,
-          "dist_pct": -2.9,
+          "price": 124.59,
+          "dist_pct": -0.2,
           "strength": 2
         },
         {
-          "price": 118.61,
-          "dist_pct": -4.5,
+          "price": 122.06,
+          "dist_pct": -2.2,
           "strength": 1
         },
         {
-          "price": 115.18,
-          "dist_pct": -7.2,
+          "price": 119.31,
+          "dist_pct": -4.4,
+          "strength": 3
+        },
+        {
+          "price": 115.56,
+          "dist_pct": -7.4,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 124.97,
-          "dist_pct": 0.7,
+          "price": 127.65,
+          "dist_pct": 2.3,
+          "strength": 3
+        },
+        {
+          "price": 130.14,
+          "dist_pct": 4.3,
+          "strength": 3
+        },
+        {
+          "price": 133.09,
+          "dist_pct": 6.6,
           "strength": 2
         },
         {
-          "price": 127.36,
-          "dist_pct": 2.6,
-          "strength": 3
-        },
-        {
-          "price": 130.36,
-          "dist_pct": 5.0,
-          "strength": 3
-        },
-        {
-          "price": 134.24,
-          "dist_pct": 8.1,
+          "price": 136.15,
+          "dist_pct": 9.1,
           "strength": 1
         }
       ]
     },
     "SMCI": {
-      "price": 30.79,
-      "date": "19/03/2026",
-      "score": 54,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
+      "price": 20.53,
+      "date": "20/03/2026",
+      "score": 70,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
       "swing_high": 58.78,
-      "swing_low": 27.75,
-      "rsi": 42.0,
-      "rsi_label": "Neutre",
-      "dist_ma50": -1.5,
-      "ma50_label": "En-dessous",
+      "swing_low": 20.35,
+      "rsi": 21.3,
+      "rsi_label": "Survente",
+      "dist_ma50": -33.9,
+      "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 30.47,
-          "dist_pct": -1.0,
-          "strength": 1
-        },
-        {
-          "price": 30.0,
+          "price": 20.0,
           "dist_pct": -2.6,
-          "strength": 4
-        },
-        {
-          "price": 29.43,
-          "dist_pct": -4.4,
           "strength": 1
         },
         {
-          "price": 28.99,
-          "dist_pct": -5.8,
+          "price": 19.56,
+          "dist_pct": -4.7,
           "strength": 1
+        },
+        {
+          "price": 18.58,
+          "dist_pct": -9.5,
+          "strength": 1
+        },
+        {
+          "price": 14.93,
+          "dist_pct": -27.3,
+          "strength": 2
         }
       ],
       "resistances": [
         {
-          "price": 31.27,
-          "dist_pct": 1.6,
-          "strength": 3
+          "price": 20.53,
+          "dist_pct": -0.0,
+          "strength": 1
         },
         {
-          "price": 31.71,
-          "dist_pct": 3.0,
-          "strength": 3
+          "price": 21.33,
+          "dist_pct": 3.9,
+          "strength": 1
         },
         {
-          "price": 32.12,
-          "dist_pct": 4.3,
-          "strength": 2
+          "price": 22.3,
+          "dist_pct": 8.6,
+          "strength": 1
         },
         {
-          "price": 33.3,
-          "dist_pct": 8.2,
+          "price": 24.07,
+          "dist_pct": 17.2,
           "strength": 1
         }
       ]
     },
     "TTD": {
-      "price": 23.51,
-      "date": "19/03/2026",
-      "score": 45,
-      "verdict": "SIGNAL FAIBLE",
-      "verdict_text": "Peu de catalyseurs pour un rebond",
+      "price": 24.11,
+      "date": "20/03/2026",
+      "score": 60,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
       "trend": "Baisse",
       "swing_high": 56.39,
       "swing_low": 21.08,
-      "rsi": 48.9,
+      "rsi": 49.2,
       "rsi_label": "Neutre",
-      "dist_ma50": -19.7,
+      "dist_ma50": -16.8,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 22.97,
-          "dist_pct": -2.3,
+          "price": 23.93,
+          "dist_pct": -0.7,
           "strength": 1
         },
         {
-          "price": 22.44,
-          "dist_pct": -4.6,
+          "price": 23.44,
+          "dist_pct": -2.8,
+          "strength": 2
+        },
+        {
+          "price": 22.64,
+          "dist_pct": -6.1,
           "strength": 1
         },
         {
-          "price": 21.99,
-          "dist_pct": -6.5,
-          "strength": 1
-        },
-        {
-          "price": 21.08,
-          "dist_pct": -10.3,
+          "price": 21.87,
+          "dist_pct": -9.3,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 23.5,
-          "dist_pct": -0.0,
-          "strength": 2
-        },
-        {
-          "price": 24.02,
-          "dist_pct": 2.2,
+          "price": 24.67,
+          "dist_pct": 2.3,
           "strength": 1
         },
         {
-          "price": 24.54,
-          "dist_pct": 4.4,
+          "price": 25.11,
+          "dist_pct": 4.1,
+          "strength": 2
+        },
+        {
+          "price": 25.5,
+          "dist_pct": 5.8,
           "strength": 1
         },
         {
-          "price": 25.04,
-          "dist_pct": 6.5,
-          "strength": 2
+          "price": 25.86,
+          "dist_pct": 7.3,
+          "strength": 3
         }
       ]
     },
     "ULTA": {
-      "price": 534.1,
-      "date": "19/03/2026",
+      "price": 529.97,
+      "date": "20/03/2026",
       "score": 74,
       "verdict": "BON SIGNAL",
       "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
       "swing_high": 714.97,
       "swing_low": 493.0,
-      "rsi": 14.3,
+      "rsi": 14.6,
       "rsi_label": "Survente",
-      "dist_ma50": -18.4,
+      "dist_ma50": -18.8,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 528.65,
-          "dist_pct": -1.0,
+          "price": 521.14,
+          "dist_pct": -1.7,
+          "strength": 3
+        },
+        {
+          "price": 509.07,
+          "dist_pct": -3.9,
           "strength": 1
         },
         {
-          "price": 522.27,
-          "dist_pct": -2.2,
-          "strength": 3
+          "price": 500.0,
+          "dist_pct": -5.7,
+          "strength": 1
         },
         {
-          "price": 509.42,
-          "dist_pct": -4.6,
-          "strength": 2
-        },
-        {
-          "price": 499.39,
-          "dist_pct": -6.5,
-          "strength": 3
+          "price": 492.6,
+          "dist_pct": -7.1,
+          "strength": 5
         }
       ],
       "resistances": [
         {
-          "price": 539.39,
-          "dist_pct": 1.0,
+          "price": 537.34,
+          "dist_pct": 1.4,
           "strength": 4
         },
         {
-          "price": 548.77,
-          "dist_pct": 2.7,
+          "price": 550.09,
+          "dist_pct": 3.8,
           "strength": 2
         },
         {
-          "price": 558.72,
-          "dist_pct": 4.6,
-          "strength": 3
+          "price": 558.36,
+          "dist_pct": 5.4,
+          "strength": 2
         },
         {
           "price": 574.52,
-          "dist_pct": 7.6,
+          "dist_pct": 8.4,
           "strength": 2
         }
       ]
     },
     "UNH": {
-      "price": 280.44,
-      "date": "19/03/2026",
-      "score": 62,
-      "verdict": "SIGNAL CORRECT",
-      "verdict_text": "Conditions acceptables",
+      "price": 275.59,
+      "date": "20/03/2026",
+      "score": 75,
+      "verdict": "BON SIGNAL",
+      "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
       "swing_high": 375.54,
       "swing_low": 264.24,
-      "rsi": 39.0,
+      "rsi": 33.3,
       "rsi_label": "Bas",
-      "dist_ma50": -5.9,
+      "dist_ma50": -7.1,
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 275.83,
-          "dist_pct": -1.6,
+          "price": 274.39,
+          "dist_pct": -0.4,
           "strength": 4
         },
         {
-          "price": 269.7,
+          "price": 269.76,
+          "dist_pct": -2.1,
+          "strength": 2
+        },
+        {
+          "price": 265.04,
           "dist_pct": -3.8,
-          "strength": 1
+          "strength": 3
         },
         {
-          "price": 265.07,
-          "dist_pct": -5.5,
-          "strength": 4
-        },
-        {
-          "price": 250.0,
-          "dist_pct": -10.9,
+          "price": 258.83,
+          "dist_pct": -6.1,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 284.11,
-          "dist_pct": 1.3,
+          "price": 277.9,
+          "dist_pct": 0.8,
+          "strength": 1
+        },
+        {
+          "price": 283.63,
+          "dist_pct": 2.9,
           "strength": 5
         },
         {
-          "price": 289.3,
-          "dist_pct": 3.2,
+          "price": 288.88,
+          "dist_pct": 4.8,
           "strength": 3
         },
         {
-          "price": 293.34,
-          "dist_pct": 4.6,
+          "price": 295.29,
+          "dist_pct": 7.1,
           "strength": 2
-        },
-        {
-          "price": 299.37,
-          "dist_pct": 6.8,
-          "strength": 4
         }
       ]
     },
     "WDAY": {
-      "price": 133.38,
-      "date": "19/03/2026",
-      "score": 49,
-      "verdict": "SIGNAL FAIBLE",
-      "verdict_text": "Peu de catalyseurs pour un rebond",
-      "trend": "Baisse",
+      "price": 135.96,
+      "date": "20/03/2026",
+      "score": 51,
+      "verdict": "SIGNAL CORRECT",
+      "verdict_text": "Conditions acceptables",
+      "trend": "Hausse",
       "swing_high": 249.85,
       "swing_low": 117.76,
-      "rsi": 49.6,
+      "rsi": 52.2,
       "rsi_label": "Neutre",
-      "dist_ma50": -16.8,
+      "dist_ma50": -14.4,
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 131.33,
-          "dist_pct": -1.5,
-          "strength": 1
+          "price": 133.72,
+          "dist_pct": -1.6,
+          "strength": 2
         },
         {
-          "price": 129.5,
-          "dist_pct": -2.9,
+          "price": 130.02,
+          "dist_pct": -4.4,
           "strength": 3
         },
         {
-          "price": 125.07,
-          "dist_pct": -6.2,
-          "strength": 1
+          "price": 125.34,
+          "dist_pct": -7.8,
+          "strength": 2
         },
         {
-          "price": 122.27,
-          "dist_pct": -8.3,
+          "price": 120.0,
+          "dist_pct": -11.7,
           "strength": 1
         }
       ],
       "resistances": [
         {
-          "price": 133.9,
-          "dist_pct": 0.4,
+          "price": 137.52,
+          "dist_pct": 1.1,
           "strength": 2
         },
         {
-          "price": 137.17,
+          "price": 139.82,
           "dist_pct": 2.8,
           "strength": 3
         },
         {
-          "price": 140.34,
-          "dist_pct": 5.2,
-          "strength": 3
+          "price": 142.15,
+          "dist_pct": 4.6,
+          "strength": 2
         },
         {
-          "price": 142.31,
-          "dist_pct": 6.7,
+          "price": 147.11,
+          "dist_pct": 8.2,
           "strength": 1
         }
       ]
