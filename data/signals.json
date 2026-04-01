@@ -1,52 +1,13 @@
 {
-  "date": "2026-03-30",
-  "timestamp": "2026-03-31T22:56:22Z",
+  "date": "2026-03-31",
+  "timestamp": "2026-04-01T23:03:50Z",
   "summary": {
     "buy_count": 0,
-    "avoid_count": 4,
-    "neutral_count": 7,
+    "avoid_count": 3,
+    "neutral_count": 8,
     "open_positions": 0
   },
   "sectors": [
-    {
-      "ticker": "XLY",
-      "name": "Conso. Discret.",
-      "score": 2,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "G1",
-        "G2"
-      ],
-      "sell_signals": [],
-      "buy_count": 2,
-      "sell_count": 0,
-      "rsi": 29.1,
-      "cmf": -0.075,
-      "dist_ma50_pct": -8.7,
-      "rel_ret_60d_pct": -4.3,
-      "price": 105.66,
-      "ma50": 115.76,
-      "position": null
-    },
-    {
-      "ticker": "XLK",
-      "name": "Technologie",
-      "score": 1,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "G1"
-      ],
-      "sell_signals": [],
-      "buy_count": 1,
-      "sell_count": 0,
-      "rsi": 25.5,
-      "cmf": -0.193,
-      "dist_ma50_pct": -8.9,
-      "rel_ret_60d_pct": -4.3,
-      "price": 127.5,
-      "ma50": 139.99,
-      "position": null
-    },
     {
       "ticker": "XLV",
       "name": "Sante",
@@ -58,12 +19,31 @@
       "sell_signals": [],
       "buy_count": 1,
       "sell_count": 0,
-      "rsi": 21.5,
-      "cmf": -0.218,
-      "dist_ma50_pct": -6.1,
-      "rel_ret_60d_pct": 0.4,
-      "price": 143.82,
-      "ma50": 153.24,
+      "rsi": 34.2,
+      "cmf": -0.151,
+      "dist_ma50_pct": -4.2,
+      "rel_ret_60d_pct": -0.8,
+      "price": 146.61,
+      "ma50": 153.07,
+      "position": null
+    },
+    {
+      "ticker": "XLY",
+      "name": "Conso. Discret.",
+      "score": 1,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "G1"
+      ],
+      "sell_signals": [],
+      "buy_count": 1,
+      "sell_count": 0,
+      "rsi": 39.5,
+      "cmf": -0.072,
+      "dist_ma50_pct": -5.6,
+      "rel_ret_60d_pct": -3.2,
+      "price": 108.98,
+      "ma50": 115.5,
       "position": null
     },
     {
@@ -77,12 +57,54 @@
       "sell_signals": [],
       "buy_count": 1,
       "sell_count": 0,
-      "rsi": 23.5,
-      "cmf": -0.127,
-      "dist_ma50_pct": -7.2,
-      "rel_ret_60d_pct": 8.3,
-      "price": 156.61,
-      "ma50": 168.75,
+      "rsi": 37.4,
+      "cmf": -0.144,
+      "dist_ma50_pct": -4.1,
+      "rel_ret_60d_pct": 7.2,
+      "price": 161.73,
+      "ma50": 168.66,
+      "position": null
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technologie",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "G1"
+      ],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 1,
+      "sell_count": 1,
+      "rsi": 37.5,
+      "cmf": -0.19,
+      "dist_ma50_pct": -4.9,
+      "rel_ret_60d_pct": -3.2,
+      "price": 132.9,
+      "ma50": 139.74,
+      "position": null
+    },
+    {
+      "ticker": "XLF",
+      "name": "Finance",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "G2"
+      ],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 1,
+      "sell_count": 1,
+      "rsi": 49.9,
+      "cmf": -0.072,
+      "dist_ma50_pct": -3.6,
+      "rel_ret_60d_pct": -5.1,
+      "price": 49.37,
+      "ma50": 51.2,
       "position": null
     },
     {
@@ -94,33 +116,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 19.9,
-      "cmf": -0.105,
-      "dist_ma50_pct": -6.3,
-      "rel_ret_60d_pct": -0.9,
-      "price": 107.96,
-      "ma50": 115.26,
-      "position": null
-    },
-    {
-      "ticker": "XLP",
-      "name": "Conso. Essentiels",
-      "score": 0,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "F1"
-      ],
-      "sell_signals": [
-        "M3"
-      ],
-      "buy_count": 1,
-      "sell_count": 1,
-      "rsi": 28.4,
-      "cmf": -0.283,
-      "dist_ma50_pct": -3.5,
-      "rel_ret_60d_pct": 13.1,
-      "price": 81.88,
-      "ma50": 84.83,
+      "rsi": 33.6,
+      "cmf": -0.108,
+      "dist_ma50_pct": -3.7,
+      "rel_ret_60d_pct": -0.3,
+      "price": 110.86,
+      "ma50": 115.18,
       "position": null
     },
     {
@@ -136,31 +137,48 @@
       ],
       "buy_count": 1,
       "sell_count": 1,
-      "rsi": 45.9,
-      "cmf": -0.089,
-      "dist_ma50_pct": -2.7,
-      "rel_ret_60d_pct": 15.8,
-      "price": 49.09,
-      "ma50": 50.45,
+      "rsi": 52.3,
+      "cmf": -0.1,
+      "dist_ma50_pct": -1.0,
+      "rel_ret_60d_pct": 13.4,
+      "price": 49.97,
+      "ma50": 50.48,
       "position": null
     },
     {
-      "ticker": "XLF",
-      "name": "Finance",
+      "ticker": "XLRE",
+      "name": "Immobilier",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [],
+      "sell_signals": [],
+      "buy_count": 0,
+      "sell_count": 0,
+      "rsi": 36.3,
+      "cmf": -0.178,
+      "dist_ma50_pct": -2.6,
+      "rel_ret_60d_pct": 6.3,
+      "price": 40.83,
+      "ma50": 41.9,
+      "position": null
+    },
+    {
+      "ticker": "XLP",
+      "name": "Conso. Essentiels",
       "score": -1,
       "action": "AVOID",
       "buy_signals": [],
       "sell_signals": [
-        "M1"
+        "M3"
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 36.2,
-      "cmf": -0.103,
-      "dist_ma50_pct": -5.7,
-      "rel_ret_60d_pct": -4.2,
-      "price": 48.36,
-      "ma50": 51.3,
+      "rsi": 34.2,
+      "cmf": -0.203,
+      "dist_ma50_pct": -3.4,
+      "rel_ret_60d_pct": 10.7,
+      "price": 81.98,
+      "ma50": 84.84,
       "position": null
     },
     {
@@ -174,12 +192,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 88.5,
-      "cmf": -0.054,
-      "dist_ma50_pct": 13.5,
-      "rel_ret_60d_pct": 46.6,
-      "price": 61.96,
-      "ma50": 54.6,
+      "rsi": 78.9,
+      "cmf": -0.06,
+      "dist_ma50_pct": 11.6,
+      "rel_ret_60d_pct": 39.6,
+      "price": 61.26,
+      "ma50": 54.88,
       "position": null
     },
     {
@@ -193,31 +211,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 47.2,
-      "cmf": -0.165,
-      "dist_ma50_pct": 2.1,
-      "rel_ret_60d_pct": 15.4,
-      "price": 45.92,
-      "ma50": 44.99,
-      "position": null
-    },
-    {
-      "ticker": "XLRE",
-      "name": "Immobilier",
-      "score": -1,
-      "action": "AVOID",
-      "buy_signals": [],
-      "sell_signals": [
-        "M2"
-      ],
-      "buy_count": 0,
-      "sell_count": 1,
-      "rsi": 23.8,
-      "cmf": -0.156,
-      "dist_ma50_pct": -4.1,
-      "rel_ret_60d_pct": 7.4,
-      "price": 40.21,
-      "ma50": 41.92,
+      "rsi": 50.4,
+      "cmf": -0.054,
+      "dist_ma50_pct": 1.9,
+      "rel_ret_60d_pct": 11.6,
+      "price": 45.89,
+      "ma50": 45.05,
       "position": null
     }
   ]
