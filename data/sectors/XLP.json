@@ -2,14 +2,14 @@
   "etf": "XLP",
   "sector_name": "Conso. Essentiels",
   "sector_color": "#06b6d4",
-  "date": "2026-04-02",
+  "date": "2026-04-03",
   "stocks": [
     {
       "id": "BF-B",
       "name": "BF-B",
       "return_5d": -0.01618,
       "return_20d": 0.06876,
-      "volume_ratio": 0.31,
+      "volume_ratio": 0.38,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -26,7 +26,7 @@
       "name": "BG",
       "return_5d": 0.00544,
       "return_20d": 0.10928,
-      "volume_ratio": 0.42,
+      "volume_ratio": 0.58,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -36,14 +36,14 @@
       "sector_relative": "leader",
       "days_in_phase": 16,
       "previous_phase": "weakening",
-      "weight": 11.0
+      "weight": 11.1
     },
     {
       "id": "TSN",
       "name": "TSN",
       "return_5d": 0.01111,
       "return_20d": 0.05209,
-      "volume_ratio": 0.41,
+      "volume_ratio": 0.53,
       "momentum_phase": "leading",
       "phase_value": 100.0,
       "phase_delta": 0.0,
@@ -60,7 +60,7 @@
       "name": "ADM",
       "return_5d": 0.02215,
       "return_20d": 0.09475,
-      "volume_ratio": 0.43,
+      "volume_ratio": 0.71,
       "momentum_phase": "leading",
       "phase_value": 97.5,
       "phase_delta": -2.5,
@@ -70,14 +70,14 @@
       "sector_relative": "leader",
       "days_in_phase": 18,
       "previous_phase": "lagging",
-      "weight": 13.6
+      "weight": 13.8
     },
     {
       "id": "TAP",
       "name": "TAP",
       "return_5d": 0.01475,
       "return_20d": -0.05575,
-      "volume_ratio": 0.65,
+      "volume_ratio": 1.04,
       "momentum_phase": "leading",
       "phase_value": 96.2,
       "phase_delta": 31.5,
@@ -87,14 +87,14 @@
       "sector_relative": "leader",
       "days_in_phase": 1,
       "previous_phase": "lagging",
-      "weight": 4.8
+      "weight": 4.9
     },
     {
       "id": "STZ",
       "name": "STZ",
       "return_5d": -0.00132,
       "return_20d": 0.03229,
-      "volume_ratio": 1.01,
+      "volume_ratio": 1.19,
       "momentum_phase": "leading",
       "phase_value": 82.9,
       "phase_delta": -16.9,
@@ -104,14 +104,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 13,
       "previous_phase": "lagging",
-      "weight": 10.8
+      "weight": 10.9
     },
     {
       "id": "WMT",
       "name": "WMT",
       "return_5d": 0.0236,
       "return_20d": 0.01816,
-      "volume_ratio": 0.55,
+      "volume_ratio": 0.58,
       "momentum_phase": "leading",
       "phase_value": 80.7,
       "phase_delta": -8.6,
@@ -196,7 +196,7 @@
       "name": "KR",
       "return_5d": -0.01188,
       "return_20d": -0.02375,
-      "volume_ratio": 0.45,
+      "volume_ratio": 0.56,
       "momentum_phase": "leading",
       "phase_value": 15.2,
       "phase_delta": -73.1,
@@ -206,14 +206,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 37,
       "previous_phase": "lagging",
-      "weight": 20.1
+      "weight": 20.2
     },
     {
       "id": "HRL",
       "name": "HRL",
       "return_5d": -0.04248,
       "return_20d": -0.09541,
-      "volume_ratio": 0.9,
+      "volume_ratio": 1.07,
       "momentum_phase": "improving",
       "phase_value": 20.5,
       "phase_delta": -47.6,
@@ -230,7 +230,7 @@
       "name": "MO",
       "return_5d": -0.01083,
       "return_20d": 0.00529,
-      "volume_ratio": 0.62,
+      "volume_ratio": 0.94,
       "momentum_phase": "weakening",
       "phase_value": 55.0,
       "phase_delta": 0.6,
@@ -240,14 +240,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 8,
       "previous_phase": "leading",
-      "weight": 26.3
+      "weight": 26.7
     },
     {
       "id": "KMB",
       "name": "KMB",
       "return_5d": -0.02564,
       "return_20d": -0.0808,
-      "volume_ratio": 0.92,
+      "volume_ratio": 0.94,
       "momentum_phase": "weakening",
       "phase_value": 27.0,
       "phase_delta": -22.7,
@@ -262,19 +262,19 @@
     {
       "id": "CPB",
       "name": "CPB",
-      "return_5d": 0.00091,
-      "return_20d": -0.1469,
+      "return_5d": 0.01866,
+      "return_20d": -0.13177,
       "volume_ratio": 0.64,
       "momentum_phase": "lagging",
-      "phase_value": 86.8,
-      "phase_delta": 66.6,
-      "rs_ratio": 100.6,
-      "rs_momentum": 106.8,
-      "rsi": 54.5,
-      "sector_relative": "laggard",
+      "phase_value": 100.0,
+      "phase_delta": 79.8,
+      "rs_ratio": 102.2,
+      "rs_momentum": 108.6,
+      "rsi": 61.7,
+      "sector_relative": "leader",
       "days_in_phase": 26,
       "previous_phase": "leading",
-      "weight": 9.6
+      "weight": 9.5
     },
     {
       "id": "DLTR",
@@ -298,7 +298,7 @@
       "name": "PEP",
       "return_5d": 0.02594,
       "return_20d": -0.01518,
-      "volume_ratio": 0.82,
+      "volume_ratio": 0.85,
       "momentum_phase": "lagging",
       "phase_value": 71.8,
       "phase_delta": 30.9,
@@ -315,7 +315,7 @@
       "name": "KHC",
       "return_5d": 0.03403,
       "return_20d": -0.07131,
-      "volume_ratio": 0.72,
+      "volume_ratio": 0.75,
       "momentum_phase": "lagging",
       "phase_value": 64.0,
       "phase_delta": 32.1,
@@ -332,7 +332,7 @@
       "name": "MNST",
       "return_5d": 0.00752,
       "return_20d": -0.04285,
-      "volume_ratio": 0.55,
+      "volume_ratio": 0.58,
       "momentum_phase": "lagging",
       "phase_value": 51.1,
       "phase_delta": 40.3,
@@ -349,7 +349,7 @@
       "name": "GIS",
       "return_5d": 0.02661,
       "return_20d": -0.15511,
-      "volume_ratio": 0.47,
+      "volume_ratio": 0.6,
       "momentum_phase": "lagging",
       "phase_value": 43.3,
       "phase_delta": 42.5,
@@ -359,14 +359,14 @@
       "sector_relative": "leader",
       "days_in_phase": 60,
       "previous_phase": null,
-      "weight": 15.9
+      "weight": 16.0
     },
     {
       "id": "PM",
       "name": "PM",
       "return_5d": -0.03326,
       "return_20d": -0.06159,
-      "volume_ratio": 0.86,
+      "volume_ratio": 0.89,
       "momentum_phase": "lagging",
       "phase_value": 35.8,
       "phase_delta": -3.3,
@@ -383,7 +383,7 @@
       "name": "PG",
       "return_5d": 0.00287,
       "return_20d": -0.06841,
-      "volume_ratio": 0.51,
+      "volume_ratio": 0.52,
       "momentum_phase": "lagging",
       "phase_value": 35.3,
       "phase_delta": 18.3,
@@ -400,7 +400,7 @@
       "name": "CL",
       "return_5d": 0.01008,
       "return_20d": -0.09,
-      "volume_ratio": 0.48,
+      "volume_ratio": 0.82,
       "momentum_phase": "lagging",
       "phase_value": 34.6,
       "phase_delta": 23.5,
@@ -410,7 +410,7 @@
       "sector_relative": "leader",
       "days_in_phase": 15,
       "previous_phase": "leading",
-      "weight": 22.2
+      "weight": 22.6
     },
     {
       "id": "CAG",
@@ -434,7 +434,7 @@
       "name": "KVUE",
       "return_5d": -0.02169,
       "return_20d": -0.06797,
-      "volume_ratio": 0.63,
+      "volume_ratio": 0.71,
       "momentum_phase": "lagging",
       "phase_value": 26.7,
       "phase_delta": -29.1,
@@ -451,7 +451,7 @@
       "name": "CLX",
       "return_5d": -0.00882,
       "return_20d": -0.11791,
-      "volume_ratio": 0.99,
+      "volume_ratio": 1.19,
       "momentum_phase": "lagging",
       "phase_value": 24.1,
       "phase_delta": 24.1,
@@ -461,14 +461,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 19,
       "previous_phase": "leading",
-      "weight": 8.8
+      "weight": 8.9
     },
     {
       "id": "CHD",
       "name": "CHD",
       "return_5d": -0.01943,
       "return_20d": -0.07795,
-      "volume_ratio": 0.6,
+      "volume_ratio": 0.72,
       "momentum_phase": "lagging",
       "phase_value": 19.8,
       "phase_delta": -3.7,
@@ -519,7 +519,7 @@
       "name": "DG",
       "return_5d": 0.02202,
       "return_20d": -0.1816,
-      "volume_ratio": 0.67,
+      "volume_ratio": 0.68,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -536,7 +536,7 @@
       "name": "EL",
       "return_5d": 0.02811,
       "return_20d": -0.25453,
-      "volume_ratio": 1.39,
+      "volume_ratio": 1.4,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -553,7 +553,7 @@
       "name": "MKC",
       "return_5d": -0.07952,
       "return_20d": -0.24672,
-      "volume_ratio": 0.93,
+      "volume_ratio": 1.28,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -563,14 +563,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 16,
       "previous_phase": "leading",
-      "weight": 9.2
+      "weight": 9.3
     },
     {
       "id": "SJM",
       "name": "SJM",
       "return_5d": 0.00241,
       "return_20d": -0.14153,
-      "volume_ratio": 0.89,
+      "volume_ratio": 0.92,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": 0.0,
@@ -585,15 +585,15 @@
     {
       "id": "SYY",
       "name": "SYY",
-      "return_5d": -0.13007,
-      "return_20d": -0.16508,
-      "volume_ratio": 1.22,
+      "return_5d": -0.12352,
+      "return_20d": -0.15879,
+      "volume_ratio": 1.3,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": -59.9,
-      "rs_ratio": 88.9,
-      "rs_momentum": 89.0,
-      "rsi": 18.9,
+      "rs_ratio": 89.5,
+      "rs_momentum": 89.6,
+      "rsi": 19.3,
       "sector_relative": "laggard",
       "days_in_phase": 17,
       "previous_phase": "weakening",
@@ -614,7 +614,12 @@
     {
       "source": "CPB",
       "target": "CAG",
-      "correlation": 0.85
+      "correlation": 0.883
+    },
+    {
+      "source": "CPB",
+      "target": "GIS",
+      "correlation": 0.843
     },
     {
       "source": "PG",
@@ -625,11 +630,6 @@
       "source": "BG",
       "target": "ADM",
       "correlation": 0.826
-    },
-    {
-      "source": "CPB",
-      "target": "GIS",
-      "correlation": 0.812
     },
     {
       "source": "KO",
@@ -652,6 +652,11 @@
       "correlation": 0.747
     },
     {
+      "source": "CPB",
+      "target": "KHC",
+      "correlation": 0.744
+    },
+    {
       "source": "KHC",
       "target": "GIS",
       "correlation": 0.736
@@ -670,11 +675,6 @@
       "source": "HSY",
       "target": "MKC",
       "correlation": 0.698
-    },
-    {
-      "source": "CPB",
-      "target": "KHC",
-      "correlation": 0.696
     },
     {
       "source": "WMT",

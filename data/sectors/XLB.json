@@ -2,14 +2,14 @@
   "etf": "XLB",
   "sector_name": "Materiaux",
   "sector_color": "#a855f7",
-  "date": "2026-04-02",
+  "date": "2026-04-03",
   "stocks": [
     {
       "id": "ALB",
       "name": "ALB",
       "return_5d": -0.00758,
       "return_20d": 0.10008,
-      "volume_ratio": 0.51,
+      "volume_ratio": 0.59,
       "momentum_phase": "leading",
       "phase_value": 77.1,
       "phase_delta": 4.6,
@@ -19,7 +19,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 1,
       "previous_phase": "lagging",
-      "weight": 24.5
+      "weight": 24.6
     },
     {
       "id": "CTVA",
@@ -43,7 +43,7 @@
       "name": "DOW",
       "return_5d": 0.01421,
       "return_20d": 0.24399,
-      "volume_ratio": 0.7,
+      "volume_ratio": 0.81,
       "momentum_phase": "leading",
       "phase_value": 63.1,
       "phase_delta": -36.9,
@@ -53,14 +53,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 17,
       "previous_phase": "lagging",
-      "weight": 48.4
+      "weight": 48.7
     },
     {
       "id": "APD",
       "name": "APD",
       "return_5d": 0.01095,
       "return_20d": 0.08528,
-      "volume_ratio": 0.93,
+      "volume_ratio": 1.02,
       "momentum_phase": "leading",
       "phase_value": 48.9,
       "phase_delta": -51.1,
@@ -70,14 +70,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 15,
       "previous_phase": "improving",
-      "weight": 30.6
+      "weight": 30.8
     },
     {
       "id": "MOS",
       "name": "MOS",
       "return_5d": 0.0468,
       "return_20d": 0.00307,
-      "volume_ratio": 0.6,
+      "volume_ratio": 0.61,
       "momentum_phase": "leading",
       "phase_value": 31.1,
       "phase_delta": 3.3,
@@ -94,7 +94,7 @@
       "name": "LYB",
       "return_5d": -0.01057,
       "return_20d": 0.18611,
-      "volume_ratio": 0.62,
+      "volume_ratio": 0.68,
       "momentum_phase": "leading",
       "phase_value": 10.3,
       "phase_delta": -89.7,
@@ -104,14 +104,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 55,
       "previous_phase": "improving",
-      "weight": 58.4
+      "weight": 58.6
     },
     {
       "id": "CF",
       "name": "CF",
       "return_5d": -0.04749,
       "return_20d": 0.12256,
-      "volume_ratio": 0.57,
+      "volume_ratio": 0.66,
       "momentum_phase": "leading",
       "phase_value": 0.0,
       "phase_delta": -100.0,
@@ -121,14 +121,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 20,
       "previous_phase": "lagging",
-      "weight": 67.9
+      "weight": 68.2
     },
     {
       "id": "VMC",
       "name": "VMC",
       "return_5d": 0.07045,
       "return_20d": 0.01971,
-      "volume_ratio": 0.76,
+      "volume_ratio": 0.88,
       "momentum_phase": "improving",
       "phase_value": 91.9,
       "phase_delta": 44.7,
@@ -138,14 +138,14 @@
       "sector_relative": "leader",
       "days_in_phase": 9,
       "previous_phase": "lagging",
-      "weight": 31.9
+      "weight": 32.1
     },
     {
       "id": "CRH",
       "name": "CRH",
       "return_5d": 0.02841,
       "return_20d": -0.01673,
-      "volume_ratio": 0.61,
+      "volume_ratio": 0.81,
       "momentum_phase": "improving",
       "phase_value": 61.9,
       "phase_delta": 10.4,
@@ -155,14 +155,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 3,
       "previous_phase": "lagging",
-      "weight": 43.8
+      "weight": 44.2
     },
     {
       "id": "SHW",
       "name": "SHW",
       "return_5d": 0.00834,
       "return_20d": -0.03601,
-      "volume_ratio": 0.7,
+      "volume_ratio": 0.98,
       "momentum_phase": "improving",
       "phase_value": 36.7,
       "phase_delta": -13.0,
@@ -172,14 +172,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 3,
       "previous_phase": "lagging",
-      "weight": 40.7
+      "weight": 41.3
     },
     {
       "id": "IP",
       "name": "IP",
       "return_5d": -0.01862,
       "return_20d": -0.11991,
-      "volume_ratio": 0.89,
+      "volume_ratio": 1.08,
       "momentum_phase": "improving",
       "phase_value": 8.9,
       "phase_delta": -28.3,
@@ -189,14 +189,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 4,
       "previous_phase": "lagging",
-      "weight": 17.5
+      "weight": 17.7
     },
     {
       "id": "DD",
       "name": "DD",
       "return_5d": 0.00486,
       "return_20d": 0.00486,
-      "volume_ratio": 0.47,
+      "volume_ratio": 0.62,
       "momentum_phase": "weakening",
       "phase_value": 40.2,
       "phase_delta": -14.0,
@@ -206,14 +206,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 5,
       "previous_phase": "lagging",
-      "weight": 13.9
+      "weight": 14.0
     },
     {
       "id": "LIN",
       "name": "LIN",
       "return_5d": 0.02338,
       "return_20d": 0.04033,
-      "volume_ratio": 0.77,
+      "volume_ratio": 0.79,
       "momentum_phase": "weakening",
       "phase_value": 28.0,
       "phase_delta": -27.9,
@@ -223,7 +223,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 5,
       "previous_phase": "leading",
-      "weight": 96.3
+      "weight": 96.4
     },
     {
       "id": "NEM",
@@ -247,7 +247,7 @@
       "name": "FCX",
       "return_5d": 0.09139,
       "return_20d": 0.03403,
-      "volume_ratio": 0.79,
+      "volume_ratio": 0.88,
       "momentum_phase": "lagging",
       "phase_value": 83.5,
       "phase_delta": 83.5,
@@ -257,14 +257,14 @@
       "sector_relative": "leader",
       "days_in_phase": 37,
       "previous_phase": "weakening",
-      "weight": 83.6
+      "weight": 84.0
     },
     {
       "id": "NUE",
       "name": "NUE",
       "return_5d": 0.05924,
       "return_20d": 0.02547,
-      "volume_ratio": 0.76,
+      "volume_ratio": 0.86,
       "momentum_phase": "lagging",
       "phase_value": 78.5,
       "phase_delta": -5.8,
@@ -281,7 +281,7 @@
       "name": "IFF",
       "return_5d": 0.02,
       "return_20d": -0.01237,
-      "volume_ratio": 0.49,
+      "volume_ratio": 0.67,
       "momentum_phase": "lagging",
       "phase_value": 63.1,
       "phase_delta": 26.4,
@@ -298,7 +298,7 @@
       "name": "MLM",
       "return_5d": 0.04596,
       "return_20d": -0.021,
-      "volume_ratio": 0.37,
+      "volume_ratio": 0.44,
       "momentum_phase": "lagging",
       "phase_value": 56.4,
       "phase_delta": 29.0,
@@ -308,14 +308,14 @@
       "sector_relative": "leader",
       "days_in_phase": 60,
       "previous_phase": null,
-      "weight": 24.4
+      "weight": 24.5
     },
     {
       "id": "PPG",
       "name": "PPG",
       "return_5d": -0.00559,
       "return_20d": -0.03243,
-      "volume_ratio": 0.57,
+      "volume_ratio": 0.75,
       "momentum_phase": "lagging",
       "phase_value": 56.3,
       "phase_delta": -3.2,
@@ -325,14 +325,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 25,
       "previous_phase": "leading",
-      "weight": 17.4
+      "weight": 17.6
     },
     {
       "id": "STLD",
       "name": "STLD",
       "return_5d": 0.05725,
       "return_20d": -0.00469,
-      "volume_ratio": 0.75,
+      "volume_ratio": 0.76,
       "momentum_phase": "lagging",
       "phase_value": 54.7,
       "phase_delta": 7.7,
@@ -366,7 +366,7 @@
       "name": "AVY",
       "return_5d": 0.02199,
       "return_20d": -0.04548,
-      "volume_ratio": 0.57,
+      "volume_ratio": 0.68,
       "momentum_phase": "lagging",
       "phase_value": 36.9,
       "phase_delta": 5.1,
@@ -383,7 +383,7 @@
       "name": "BALL",
       "return_5d": 0.01181,
       "return_20d": -0.04094,
-      "volume_ratio": 0.46,
+      "volume_ratio": 0.68,
       "momentum_phase": "lagging",
       "phase_value": 23.3,
       "phase_delta": 2.8,
@@ -393,7 +393,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 18,
       "previous_phase": "leading",
-      "weight": 9.5
+      "weight": 9.6
     },
     {
       "id": "SW",
@@ -417,7 +417,7 @@
       "name": "ECL",
       "return_5d": 0.01113,
       "return_20d": -0.06262,
-      "volume_ratio": 0.44,
+      "volume_ratio": 0.59,
       "momentum_phase": "lagging",
       "phase_value": 12.8,
       "phase_delta": 6.1,
@@ -427,14 +427,14 @@
       "sector_relative": "laggard",
       "days_in_phase": 13,
       "previous_phase": "leading",
-      "weight": 32.1
+      "weight": 32.3
     },
     {
       "id": "PKG",
       "name": "PKG",
       "return_5d": -0.0367,
       "return_20d": -0.07576,
-      "volume_ratio": 0.67,
+      "volume_ratio": 0.91,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
       "phase_delta": -51.1,
@@ -444,7 +444,7 @@
       "sector_relative": "laggard",
       "days_in_phase": 12,
       "previous_phase": "leading",
-      "weight": 17.2
+      "weight": 17.4
     }
   ],
   "correlations": [
