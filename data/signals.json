@@ -1,13 +1,33 @@
 {
-  "date": "2026-04-06",
-  "timestamp": "2026-04-07T23:04:49Z",
+  "date": "2026-04-07",
+  "timestamp": "2026-04-08T23:06:09Z",
   "summary": {
     "buy_count": 0,
-    "avoid_count": 3,
-    "neutral_count": 8,
+    "avoid_count": 4,
+    "neutral_count": 7,
     "open_positions": 0
   },
   "sectors": [
+    {
+      "ticker": "XLY",
+      "name": "Conso. Discret.",
+      "score": 2,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "G1",
+        "G2"
+      ],
+      "sell_signals": [],
+      "buy_count": 2,
+      "sell_count": 0,
+      "rsi": 38.5,
+      "cmf": -0.164,
+      "dist_ma50_pct": -5.9,
+      "rel_ret_60d_pct": -8.0,
+      "price": 107.77,
+      "ma50": 114.49,
+      "position": null
+    },
     {
       "ticker": "XLV",
       "name": "Sante",
@@ -19,31 +39,12 @@
       "sell_signals": [],
       "buy_count": 1,
       "sell_count": 0,
-      "rsi": 37.2,
-      "cmf": -0.223,
-      "dist_ma50_pct": -4.1,
-      "rel_ret_60d_pct": -3.8,
-      "price": 146.28,
-      "ma50": 152.49,
-      "position": null
-    },
-    {
-      "ticker": "XLY",
-      "name": "Conso. Discret.",
-      "score": 1,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "G1"
-      ],
-      "sell_signals": [],
-      "buy_count": 1,
-      "sell_count": 0,
-      "rsi": 43.4,
-      "cmf": -0.166,
-      "dist_ma50_pct": -5.0,
-      "rel_ret_60d_pct": -5.4,
-      "price": 109.04,
-      "ma50": 114.79,
+      "rsi": 41.8,
+      "cmf": -0.248,
+      "dist_ma50_pct": -3.8,
+      "rel_ret_60d_pct": -2.8,
+      "price": 146.57,
+      "ma50": 152.28,
       "position": null
     },
     {
@@ -57,12 +58,31 @@
       "sell_signals": [],
       "buy_count": 1,
       "sell_count": 0,
-      "rsi": 48.2,
-      "cmf": -0.156,
-      "dist_ma50_pct": -2.4,
+      "rsi": 46.7,
+      "cmf": -0.173,
+      "dist_ma50_pct": -2.6,
+      "rel_ret_60d_pct": 7.0,
+      "price": 164.28,
+      "ma50": 168.64,
+      "position": null
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Immobilier",
+      "score": 1,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "F1"
+      ],
+      "sell_signals": [],
+      "buy_count": 1,
+      "sell_count": 0,
+      "rsi": 42.6,
+      "cmf": -0.257,
+      "dist_ma50_pct": -0.5,
       "rel_ret_60d_pct": 8.0,
-      "price": 164.61,
-      "ma50": 168.63,
+      "price": 41.72,
+      "ma50": 41.94,
       "position": null
     },
     {
@@ -78,33 +98,12 @@
       ],
       "buy_count": 1,
       "sell_count": 1,
-      "rsi": 46.7,
-      "cmf": -0.24,
-      "dist_ma50_pct": -1.8,
-      "rel_ret_60d_pct": -2.4,
-      "price": 136.78,
-      "ma50": 139.29,
-      "position": null
-    },
-    {
-      "ticker": "XLF",
-      "name": "Finance",
-      "score": 0,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "G2"
-      ],
-      "sell_signals": [
-        "M1"
-      ],
-      "buy_count": 1,
-      "sell_count": 1,
-      "rsi": 58.2,
-      "cmf": -0.102,
-      "dist_ma50_pct": -2.2,
-      "rel_ret_60d_pct": -5.7,
-      "price": 49.88,
-      "ma50": 50.99,
+      "rsi": 46.5,
+      "cmf": -0.189,
+      "dist_ma50_pct": -1.2,
+      "rel_ret_60d_pct": -0.5,
+      "price": 137.43,
+      "ma50": 139.14,
       "position": null
     },
     {
@@ -116,12 +115,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 39.3,
-      "cmf": -0.181,
-      "dist_ma50_pct": -2.8,
-      "rel_ret_60d_pct": -0.1,
-      "price": 111.76,
-      "ma50": 115.01,
+      "rsi": 39.4,
+      "cmf": -0.216,
+      "dist_ma50_pct": -2.7,
+      "rel_ret_60d_pct": -0.4,
+      "price": 111.82,
+      "ma50": 114.91,
       "position": null
     },
     {
@@ -137,29 +136,31 @@
       ],
       "buy_count": 1,
       "sell_count": 1,
-      "rsi": 56.9,
-      "cmf": -0.106,
-      "dist_ma50_pct": -0.7,
-      "rel_ret_60d_pct": 12.2,
-      "price": 50.22,
-      "ma50": 50.57,
+      "rsi": 55.1,
+      "cmf": -0.097,
+      "dist_ma50_pct": -1.0,
+      "rel_ret_60d_pct": 10.0,
+      "price": 50.08,
+      "ma50": 50.58,
       "position": null
     },
     {
-      "ticker": "XLRE",
-      "name": "Immobilier",
-      "score": 0,
-      "action": "NEUTRAL",
+      "ticker": "XLF",
+      "name": "Finance",
+      "score": -1,
+      "action": "AVOID",
       "buy_signals": [],
-      "sell_signals": [],
+      "sell_signals": [
+        "M1"
+      ],
       "buy_count": 0,
-      "sell_count": 0,
-      "rsi": 44.6,
-      "cmf": -0.241,
-      "dist_ma50_pct": -0.4,
-      "rel_ret_60d_pct": 8.9,
-      "price": 41.76,
-      "ma50": 41.92,
+      "sell_count": 1,
+      "rsi": 56.0,
+      "cmf": -0.15,
+      "dist_ma50_pct": -2.1,
+      "rel_ret_60d_pct": -6.2,
+      "price": 49.88,
+      "ma50": 50.93,
       "position": null
     },
     {
@@ -169,16 +170,16 @@
       "action": "AVOID",
       "buy_signals": [],
       "sell_signals": [
-        "M3"
+        "M2"
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 37.6,
-      "cmf": -0.056,
-      "dist_ma50_pct": -2.6,
-      "rel_ret_60d_pct": 12.7,
-      "price": 82.66,
-      "ma50": 84.84,
+      "rsi": 32.6,
+      "cmf": -0.146,
+      "dist_ma50_pct": -4.2,
+      "rel_ret_60d_pct": 8.3,
+      "price": 81.26,
+      "ma50": 84.82,
       "position": null
     },
     {
@@ -192,12 +193,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 60.6,
-      "cmf": -0.082,
-      "dist_ma50_pct": 7.4,
-      "rel_ret_60d_pct": 37.3,
-      "price": 59.68,
-      "ma50": 55.55,
+      "rsi": 60.1,
+      "cmf": -0.075,
+      "dist_ma50_pct": 7.9,
+      "rel_ret_60d_pct": 34.2,
+      "price": 60.16,
+      "ma50": 55.77,
       "position": null
     },
     {
@@ -211,12 +212,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 42.1,
-      "cmf": -0.148,
+      "rsi": 44.4,
+      "cmf": -0.16,
       "dist_ma50_pct": 2.0,
-      "rel_ret_60d_pct": 15.2,
-      "price": 46.17,
-      "ma50": 45.27,
+      "rel_ret_60d_pct": 15.1,
+      "price": 46.27,
+      "ma50": 45.35,
       "position": null
     }
   ]
