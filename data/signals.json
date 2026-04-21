@@ -1,6 +1,6 @@
 {
-  "date": "2026-04-17",
-  "timestamp": "2026-04-20T23:07:39Z",
+  "date": "2026-04-20",
+  "timestamp": "2026-04-21T23:04:13Z",
   "summary": {
     "buy_count": 0,
     "avoid_count": 2,
@@ -8,25 +8,6 @@
     "open_positions": 0
   },
   "sectors": [
-    {
-      "ticker": "XLE",
-      "name": "Energie",
-      "score": 1,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "M4"
-      ],
-      "sell_signals": [],
-      "buy_count": 1,
-      "sell_count": 0,
-      "rsi": 18.3,
-      "cmf": 0.068,
-      "dist_ma50_pct": -3.1,
-      "rel_ret_60d_pct": 9.7,
-      "price": 55.02,
-      "ma50": 56.78,
-      "position": null
-    },
     {
       "ticker": "XLK",
       "name": "Technologie",
@@ -36,12 +17,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 91.7,
-      "cmf": 0.107,
-      "dist_ma50_pct": 10.6,
-      "rel_ret_60d_pct": 3.6,
-      "price": 154.35,
-      "ma50": 139.51,
+      "rsi": 100.0,
+      "cmf": 0.095,
+      "dist_ma50_pct": 10.5,
+      "rel_ret_60d_pct": 3.7,
+      "price": 154.56,
+      "ma50": 139.89,
       "position": null
     },
     {
@@ -53,12 +34,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 88.4,
-      "cmf": 0.001,
-      "dist_ma50_pct": 3.5,
-      "rel_ret_60d_pct": -5.3,
-      "price": 52.43,
-      "ma50": 50.68,
+      "rsi": 87.7,
+      "cmf": -0.012,
+      "dist_ma50_pct": 3.9,
+      "rel_ret_60d_pct": -4.8,
+      "price": 52.63,
+      "ma50": 50.67,
       "position": null
     },
     {
@@ -70,12 +51,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 65.7,
-      "cmf": -0.095,
-      "dist_ma50_pct": -1.6,
-      "rel_ret_60d_pct": -9.5,
-      "price": 148.8,
-      "ma50": 151.27,
+      "rsi": 59.8,
+      "cmf": -0.072,
+      "dist_ma50_pct": -2.5,
+      "rel_ret_60d_pct": -9.6,
+      "price": 147.42,
+      "ma50": 151.13,
       "position": null
     },
     {
@@ -87,12 +68,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 97.5,
-      "cmf": -0.021,
-      "dist_ma50_pct": 3.9,
-      "rel_ret_60d_pct": 0.3,
-      "price": 119.1,
-      "ma50": 114.63,
+      "rsi": 94.5,
+      "cmf": -0.022,
+      "dist_ma50_pct": 3.5,
+      "rel_ret_60d_pct": -0.7,
+      "price": 118.75,
+      "ma50": 114.69,
       "position": null
     },
     {
@@ -104,12 +85,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 74.8,
-      "cmf": -0.075,
-      "dist_ma50_pct": 2.3,
-      "rel_ret_60d_pct": 0.7,
-      "price": 173.51,
-      "ma50": 169.61,
+      "rsi": 82.4,
+      "cmf": -0.081,
+      "dist_ma50_pct": 2.5,
+      "rel_ret_60d_pct": 2.2,
+      "price": 173.9,
+      "ma50": 169.73,
       "position": null
     },
     {
@@ -121,12 +102,33 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 53.7,
-      "cmf": 0.056,
+      "rsi": 52.8,
+      "cmf": 0.092,
       "dist_ma50_pct": -2.5,
-      "rel_ret_60d_pct": -3.3,
-      "price": 82.46,
-      "ma50": 84.6,
+      "rel_ret_60d_pct": -2.4,
+      "price": 82.39,
+      "ma50": 84.52,
+      "position": null
+    },
+    {
+      "ticker": "XLE",
+      "name": "Energie",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "M4"
+      ],
+      "sell_signals": [
+        "M3"
+      ],
+      "buy_count": 1,
+      "sell_count": 1,
+      "rsi": 19.6,
+      "cmf": 0.035,
+      "dist_ma50_pct": -3.1,
+      "rel_ret_60d_pct": 10.2,
+      "price": 55.07,
+      "ma50": 56.84,
       "position": null
     },
     {
@@ -138,12 +140,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 57.6,
-      "cmf": 0.048,
-      "dist_ma50_pct": 0.5,
-      "rel_ret_60d_pct": 4.2,
-      "price": 46.16,
-      "ma50": 45.94,
+      "rsi": 47.8,
+      "cmf": 0.019,
+      "dist_ma50_pct": -0.5,
+      "rel_ret_60d_pct": 4.7,
+      "price": 45.75,
+      "ma50": 46.0,
       "position": null
     },
     {
@@ -155,12 +157,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 77.0,
-      "cmf": 0.028,
-      "dist_ma50_pct": 2.0,
-      "rel_ret_60d_pct": 1.9,
-      "price": 51.88,
-      "ma50": 50.88,
+      "rsi": 77.6,
+      "cmf": 0.018,
+      "dist_ma50_pct": 2.6,
+      "rel_ret_60d_pct": 2.8,
+      "price": 52.23,
+      "ma50": 50.92,
       "position": null
     },
     {
@@ -174,12 +176,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 83.9,
-      "cmf": 0.012,
-      "dist_ma50_pct": 6.0,
-      "rel_ret_60d_pct": -4.5,
-      "price": 120.41,
-      "ma50": 113.55,
+      "rsi": 82.0,
+      "cmf": 0.013,
+      "dist_ma50_pct": 5.5,
+      "rel_ret_60d_pct": -5.2,
+      "price": 119.87,
+      "ma50": 113.6,
       "position": null
     },
     {
@@ -194,11 +196,11 @@
       "buy_count": 0,
       "sell_count": 1,
       "rsi": 98.7,
-      "cmf": -0.048,
-      "dist_ma50_pct": 5.1,
-      "rel_ret_60d_pct": 3.9,
-      "price": 44.48,
-      "ma50": 42.31,
+      "cmf": -0.042,
+      "dist_ma50_pct": 5.3,
+      "rel_ret_60d_pct": 6.1,
+      "price": 44.64,
+      "ma50": 42.39,
       "position": null
     }
   ]
