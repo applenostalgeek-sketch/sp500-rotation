@@ -1,12 +1,12 @@
 {
-  "XLB": {
-    "entry_date": "2026-05-19",
-    "entry_price": 49.04,
+  "XLV": {
+    "entry_date": "2026-05-26",
+    "entry_price": 148.51,
     "entry_score": 3,
     "entry_signals": [
       "R1",
-      "R2",
-      "F1"
+      "R3",
+      "G2"
     ]
   }
 }
