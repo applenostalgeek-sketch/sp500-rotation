@@ -1,6 +1,6 @@
 {
   "date": "2026-06-03",
-  "timestamp": "2026-06-04T00:11:27Z",
+  "timestamp": "2026-06-04T23:43:37Z",
   "summary": {
     "buy_count": 1,
     "avoid_count": 1,
@@ -8,35 +8,6 @@
     "open_positions": 2
   },
   "sectors": [
-    {
-      "ticker": "XLU",
-      "name": "Services Publics",
-      "score": 2,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "R3",
-        "G2"
-      ],
-      "sell_signals": [],
-      "buy_count": 2,
-      "sell_count": 0,
-      "rsi": 42.0,
-      "cmf": -0.147,
-      "dist_ma50_pct": -3.9,
-      "rel_ret_60d_pct": -17.6,
-      "price": 43.71,
-      "ma50": 45.5,
-      "position": {
-        "status": "OPEN",
-        "entry_date": "2026-06-02",
-        "entry_price": 43.9,
-        "current_price": 43.71,
-        "pnl_pct": -0.4,
-        "days_held": 1,
-        "ma50_price": 45.5,
-        "dist_to_exit_pct": 4.1
-      }
-    },
     {
       "ticker": "XLC",
       "name": "Communication",
@@ -57,10 +28,43 @@
       "price": 112.08,
       "ma50": 115.0,
       "position": {
-        "status": "NEW",
+        "status": "OPEN",
         "entry_date": "2026-06-03",
         "entry_price": 112.08,
-        "ma50_price": 115.0
+        "current_price": 112.08,
+        "pnl_pct": 0.0,
+        "days_held": 0,
+        "ma50_price": 115.0,
+        "dist_to_exit_pct": 2.6
+      }
+    },
+    {
+      "ticker": "XLU",
+      "name": "Services Publics",
+      "score": 2,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "R3",
+        "G2"
+      ],
+      "sell_signals": [],
+      "buy_count": 2,
+      "sell_count": 0,
+      "rsi": 42.0,
+      "cmf": -0.149,
+      "dist_ma50_pct": -3.9,
+      "rel_ret_60d_pct": -17.6,
+      "price": 43.71,
+      "ma50": 45.5,
+      "position": {
+        "status": "OPEN",
+        "entry_date": "2026-06-02",
+        "entry_price": 43.9,
+        "current_price": 43.71,
+        "pnl_pct": -0.4,
+        "days_held": 1,
+        "ma50_price": 45.5,
+        "dist_to_exit_pct": 4.1
       }
     },
     {
