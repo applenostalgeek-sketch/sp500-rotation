@@ -8,5 +8,15 @@
       "R3",
       "G2"
     ]
+  },
+  "XLC": {
+    "entry_date": "2026-06-03",
+    "entry_price": 112.08,
+    "entry_score": 3,
+    "entry_signals": [
+      "R2",
+      "R3",
+      "M4"
+    ]
   }
 }
