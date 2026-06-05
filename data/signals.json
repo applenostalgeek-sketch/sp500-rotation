@@ -1,11 +1,11 @@
 {
-  "date": "2026-06-03",
-  "timestamp": "2026-06-04T23:43:37Z",
+  "date": "2026-06-04",
+  "timestamp": "2026-06-05T23:44:46Z",
   "summary": {
-    "buy_count": 1,
+    "buy_count": 2,
     "avoid_count": 1,
-    "neutral_count": 9,
-    "open_positions": 2
+    "neutral_count": 8,
+    "open_positions": 3
   },
   "sectors": [
     {
@@ -21,21 +21,21 @@
       "sell_signals": [],
       "buy_count": 3,
       "sell_count": 0,
-      "rsi": 26.8,
-      "cmf": -0.048,
-      "dist_ma50_pct": -2.5,
-      "rel_ret_60d_pct": -15.9,
-      "price": 112.08,
-      "ma50": 115.0,
+      "rsi": 31.4,
+      "cmf": -0.065,
+      "dist_ma50_pct": -1.7,
+      "rel_ret_60d_pct": -15.4,
+      "price": 113.11,
+      "ma50": 115.04,
       "position": {
         "status": "OPEN",
         "entry_date": "2026-06-03",
         "entry_price": 112.08,
-        "current_price": 112.08,
-        "pnl_pct": 0.0,
-        "days_held": 0,
-        "ma50_price": 115.0,
-        "dist_to_exit_pct": 2.6
+        "current_price": 113.11,
+        "pnl_pct": 0.9,
+        "days_held": 1,
+        "ma50_price": 115.04,
+        "dist_to_exit_pct": 1.7
       }
     },
     {
@@ -51,61 +51,47 @@
       "buy_count": 2,
       "sell_count": 0,
       "rsi": 42.0,
-      "cmf": -0.149,
-      "dist_ma50_pct": -3.9,
-      "rel_ret_60d_pct": -17.6,
-      "price": 43.71,
-      "ma50": 45.5,
+      "cmf": -0.091,
+      "dist_ma50_pct": -3.4,
+      "rel_ret_60d_pct": -17.1,
+      "price": 43.94,
+      "ma50": 45.48,
       "position": {
         "status": "OPEN",
         "entry_date": "2026-06-02",
         "entry_price": 43.9,
-        "current_price": 43.71,
-        "pnl_pct": -0.4,
-        "days_held": 1,
-        "ma50_price": 45.5,
-        "dist_to_exit_pct": 4.1
+        "current_price": 43.94,
+        "pnl_pct": 0.1,
+        "days_held": 2,
+        "ma50_price": 45.48,
+        "dist_to_exit_pct": 3.5
       }
-    },
-    {
-      "ticker": "XLV",
-      "name": "Sante",
-      "score": 2,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "R1",
-        "R3"
-      ],
-      "sell_signals": [],
-      "buy_count": 2,
-      "sell_count": 0,
-      "rsi": 52.6,
-      "cmf": 0.03,
-      "dist_ma50_pct": 0.7,
-      "rel_ret_60d_pct": -15.5,
-      "price": 147.55,
-      "ma50": 146.48,
-      "position": null
     },
     {
       "ticker": "XLP",
       "name": "Conso. Essentiels",
-      "score": 2,
-      "action": "NEUTRAL",
+      "score": 3,
+      "action": "BUY",
       "buy_signals": [
         "R2",
-        "R3"
+        "R3",
+        "M4"
       ],
       "sell_signals": [],
-      "buy_count": 2,
+      "buy_count": 3,
       "sell_count": 0,
-      "rsi": 35.5,
-      "cmf": -0.049,
-      "dist_ma50_pct": -1.1,
-      "rel_ret_60d_pct": -15.4,
-      "price": 82.16,
-      "ma50": 83.08,
-      "position": null
+      "rsi": 33.1,
+      "cmf": -0.1,
+      "dist_ma50_pct": -1.3,
+      "rel_ret_60d_pct": -15.9,
+      "price": 82.04,
+      "ma50": 83.09,
+      "position": {
+        "status": "NEW",
+        "entry_date": "2026-06-04",
+        "entry_price": 82.04,
+        "ma50_price": 83.09
+      }
     },
     {
       "ticker": "XLF",
@@ -116,12 +102,33 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 48.6,
-      "cmf": -0.067,
-      "dist_ma50_pct": -0.5,
-      "rel_ret_60d_pct": -9.9,
-      "price": 50.87,
-      "ma50": 51.15,
+      "rsi": 58.4,
+      "cmf": -0.012,
+      "dist_ma50_pct": 1.9,
+      "rel_ret_60d_pct": -7.3,
+      "price": 52.19,
+      "ma50": 51.2,
+      "position": null
+    },
+    {
+      "ticker": "XLV",
+      "name": "Sante",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "R1"
+      ],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 1,
+      "sell_count": 1,
+      "rsi": 63.2,
+      "cmf": 0.054,
+      "dist_ma50_pct": 3.7,
+      "rel_ret_60d_pct": -12.4,
+      "price": 152.08,
+      "ma50": 146.63,
       "position": null
     },
     {
@@ -133,12 +140,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 43.8,
-      "cmf": -0.039,
-      "dist_ma50_pct": 0.6,
+      "rsi": 45.7,
+      "cmf": -0.022,
+      "dist_ma50_pct": 0.9,
       "rel_ret_60d_pct": -9.4,
-      "price": 116.73,
-      "ma50": 116.02,
+      "price": 117.26,
+      "ma50": 116.17,
       "position": null
     },
     {
@@ -150,12 +157,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 51.3,
-      "cmf": 0.181,
-      "dist_ma50_pct": 2.0,
-      "rel_ret_60d_pct": -9.4,
-      "price": 174.05,
-      "ma50": 170.58,
+      "rsi": 54.7,
+      "cmf": 0.198,
+      "dist_ma50_pct": 3.1,
+      "rel_ret_60d_pct": -8.2,
+      "price": 176.16,
+      "ma50": 170.83,
       "position": null
     },
     {
@@ -167,12 +174,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 54.6,
-      "cmf": 0.067,
-      "dist_ma50_pct": 0.8,
-      "rel_ret_60d_pct": -6.6,
-      "price": 58.71,
-      "ma50": 58.25,
+      "rsi": 53.0,
+      "cmf": 0.068,
+      "dist_ma50_pct": 0.9,
+      "rel_ret_60d_pct": -5.7,
+      "price": 58.75,
+      "ma50": 58.21,
       "position": null
     },
     {
@@ -184,12 +191,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 46.7,
-      "cmf": 0.068,
-      "dist_ma50_pct": 1.2,
-      "rel_ret_60d_pct": -7.8,
-      "price": 51.63,
-      "ma50": 51.03,
+      "rsi": 49.6,
+      "cmf": 0.029,
+      "dist_ma50_pct": 1.0,
+      "rel_ret_60d_pct": -8.2,
+      "price": 51.62,
+      "ma50": 51.09,
       "position": null
     },
     {
@@ -201,12 +208,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 41.5,
-      "cmf": -0.01,
-      "dist_ma50_pct": 0.5,
-      "rel_ret_60d_pct": -9.6,
-      "price": 43.51,
-      "ma50": 43.3,
+      "rsi": 55.2,
+      "cmf": 0.006,
+      "dist_ma50_pct": 2.3,
+      "rel_ret_60d_pct": -8.0,
+      "price": 44.4,
+      "ma50": 43.38,
       "position": null
     },
     {
@@ -220,12 +227,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 76.0,
-      "cmf": 0.385,
-      "dist_ma50_pct": 21.9,
-      "rel_ret_60d_pct": 29.1,
-      "price": 196.23,
-      "ma50": 160.99,
+      "rsi": 68.1,
+      "cmf": 0.373,
+      "dist_ma50_pct": 19.1,
+      "rel_ret_60d_pct": 26.3,
+      "price": 193.17,
+      "ma50": 162.13,
       "position": null
     }
   ]

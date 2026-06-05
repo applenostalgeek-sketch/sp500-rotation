@@ -18,5 +18,15 @@
       "R3",
       "M4"
     ]
+  },
+  "XLP": {
+    "entry_date": "2026-06-04",
+    "entry_price": 82.04,
+    "entry_score": 3,
+    "entry_signals": [
+      "R2",
+      "R3",
+      "M4"
+    ]
   }
 }
