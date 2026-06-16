@@ -1,6 +1,6 @@
 {
   "date": "2026-06-15",
-  "timestamp": "2026-06-16T00:08:02Z",
+  "timestamp": "2026-06-16T23:54:05Z",
   "summary": {
     "buy_count": 1,
     "avoid_count": 2,
@@ -8,6 +8,36 @@
     "open_positions": 3
   },
   "sectors": [
+    {
+      "ticker": "XLE",
+      "name": "Energie",
+      "score": 3,
+      "action": "BUY",
+      "buy_signals": [
+        "R2",
+        "R3",
+        "G2"
+      ],
+      "sell_signals": [],
+      "buy_count": 3,
+      "sell_count": 0,
+      "rsi": 39.7,
+      "cmf": -0.109,
+      "dist_ma50_pct": -3.8,
+      "rel_ret_60d_pct": -20.5,
+      "price": 55.55,
+      "ma50": 57.72,
+      "position": {
+        "status": "OPEN",
+        "entry_date": "2026-06-15",
+        "entry_price": 55.55,
+        "current_price": 55.55,
+        "pnl_pct": -0.0,
+        "days_held": 0,
+        "ma50_price": 57.72,
+        "dist_to_exit_pct": 3.9
+      }
+    },
     {
       "ticker": "XLC",
       "name": "Communication",
@@ -66,32 +96,6 @@
       }
     },
     {
-      "ticker": "XLE",
-      "name": "Energie",
-      "score": 3,
-      "action": "BUY",
-      "buy_signals": [
-        "R2",
-        "R3",
-        "G2"
-      ],
-      "sell_signals": [],
-      "buy_count": 3,
-      "sell_count": 0,
-      "rsi": 39.7,
-      "cmf": -0.109,
-      "dist_ma50_pct": -3.8,
-      "rel_ret_60d_pct": -20.5,
-      "price": 55.55,
-      "ma50": 57.72,
-      "position": {
-        "status": "NEW",
-        "entry_date": "2026-06-15",
-        "entry_price": 55.55,
-        "ma50_price": 57.72
-      }
-    },
-    {
       "ticker": "XLV",
       "name": "Sante",
       "score": 0,
@@ -139,7 +143,7 @@
       "buy_count": 0,
       "sell_count": 0,
       "rsi": 58.6,
-      "cmf": 0.088,
+      "cmf": 0.087,
       "dist_ma50_pct": 3.5,
       "rel_ret_60d_pct": -5.5,
       "price": 178.68,
@@ -156,7 +160,7 @@
       "buy_count": 0,
       "sell_count": 0,
       "rsi": 59.8,
-      "cmf": -0.071,
+      "cmf": -0.072,
       "dist_ma50_pct": 2.4,
       "rel_ret_60d_pct": -9.8,
       "price": 85.48,
@@ -173,7 +177,7 @@
       "buy_count": 0,
       "sell_count": 0,
       "rsi": 59.4,
-      "cmf": 0.064,
+      "cmf": 0.063,
       "dist_ma50_pct": 2.4,
       "rel_ret_60d_pct": -4.3,
       "price": 52.5,
@@ -228,7 +232,7 @@
       "buy_count": 0,
       "sell_count": 1,
       "rsi": 65.6,
-      "cmf": 0.045,
+      "cmf": 0.043,
       "dist_ma50_pct": 3.6,
       "rel_ret_60d_pct": -4.8,
       "price": 53.56,
