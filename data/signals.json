@@ -1,11 +1,11 @@
 {
-  "date": "2026-06-22",
-  "timestamp": "2026-06-23T23:35:17Z",
+  "date": "2026-06-23",
+  "timestamp": "2026-06-24T23:39:54Z",
   "summary": {
     "buy_count": 2,
-    "avoid_count": 2,
-    "neutral_count": 7,
-    "open_positions": 3
+    "avoid_count": 4,
+    "neutral_count": 5,
+    "open_positions": 2
   },
   "sectors": [
     {
@@ -21,21 +21,21 @@
       "sell_signals": [],
       "buy_count": 3,
       "sell_count": 0,
-      "rsi": 22.4,
-      "cmf": -0.12,
-      "dist_ma50_pct": -6.8,
-      "rel_ret_60d_pct": -17.5,
-      "price": 106.86,
-      "ma50": 114.71,
+      "rsi": 28.1,
+      "cmf": -0.101,
+      "dist_ma50_pct": -6.4,
+      "rel_ret_60d_pct": -15.2,
+      "price": 107.27,
+      "ma50": 114.59,
       "position": {
         "status": "OPEN",
         "entry_date": "2026-06-03",
         "entry_price": 112.08,
-        "current_price": 106.86,
-        "pnl_pct": -4.7,
-        "days_held": 19,
-        "ma50_price": 114.71,
-        "dist_to_exit_pct": 7.3
+        "current_price": 107.27,
+        "pnl_pct": -4.3,
+        "days_held": 20,
+        "ma50_price": 114.59,
+        "dist_to_exit_pct": 6.8
       }
     },
     {
@@ -51,69 +51,22 @@
       "sell_signals": [],
       "buy_count": 3,
       "sell_count": 0,
-      "rsi": 37.1,
-      "cmf": -0.124,
-      "dist_ma50_pct": -5.1,
-      "rel_ret_60d_pct": -23.7,
-      "price": 54.06,
-      "ma50": 56.97,
+      "rsi": 35.6,
+      "cmf": -0.058,
+      "dist_ma50_pct": -4.3,
+      "rel_ret_60d_pct": -24.8,
+      "price": 54.46,
+      "ma50": 56.93,
       "position": {
         "status": "OPEN",
         "entry_date": "2026-06-15",
         "entry_price": 55.55,
-        "current_price": 54.06,
-        "pnl_pct": -2.7,
-        "days_held": 7,
-        "ma50_price": 56.97,
-        "dist_to_exit_pct": 5.4
+        "current_price": 54.46,
+        "pnl_pct": -2.0,
+        "days_held": 8,
+        "ma50_price": 56.93,
+        "dist_to_exit_pct": 4.5
       }
-    },
-    {
-      "ticker": "XLU",
-      "name": "Services Publics",
-      "score": 0,
-      "action": "NEUTRAL",
-      "buy_signals": [],
-      "sell_signals": [],
-      "buy_count": 0,
-      "sell_count": 0,
-      "rsi": 68.5,
-      "cmf": -0.131,
-      "dist_ma50_pct": -0.2,
-      "rel_ret_60d_pct": -14.2,
-      "price": 44.72,
-      "ma50": 44.82,
-      "position": {
-        "status": "OPEN",
-        "entry_date": "2026-06-02",
-        "entry_price": 43.9,
-        "current_price": 44.72,
-        "pnl_pct": 1.9,
-        "days_held": 20,
-        "ma50_price": 44.82,
-        "dist_to_exit_pct": 0.2
-      }
-    },
-    {
-      "ticker": "XLV",
-      "name": "Sante",
-      "score": 0,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "R1"
-      ],
-      "sell_signals": [
-        "M1"
-      ],
-      "buy_count": 1,
-      "sell_count": 1,
-      "rsi": 57.4,
-      "cmf": -0.142,
-      "dist_ma50_pct": 1.9,
-      "rel_ret_60d_pct": -10.6,
-      "price": 150.06,
-      "ma50": 147.29,
-      "position": null
     },
     {
       "ticker": "XLY",
@@ -124,12 +77,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 42.3,
-      "cmf": -0.15,
-      "dist_ma50_pct": -2.2,
-      "rel_ret_60d_pct": -9.6,
-      "price": 114.94,
-      "ma50": 117.52,
+      "rsi": 41.1,
+      "cmf": -0.202,
+      "dist_ma50_pct": -3.2,
+      "rel_ret_60d_pct": -9.3,
+      "price": 113.76,
+      "ma50": 117.55,
       "position": null
     },
     {
@@ -141,12 +94,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 67.9,
-      "cmf": 0.005,
-      "dist_ma50_pct": 4.9,
-      "rel_ret_60d_pct": -3.2,
-      "price": 181.8,
-      "ma50": 173.24,
+      "rsi": 57.5,
+      "cmf": -0.03,
+      "dist_ma50_pct": 2.7,
+      "rel_ret_60d_pct": -3.3,
+      "price": 178.15,
+      "ma50": 173.38,
       "position": null
     },
     {
@@ -158,12 +111,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 54.0,
+      "rsi": 62.1,
       "cmf": -0.21,
-      "dist_ma50_pct": -1.0,
-      "rel_ret_60d_pct": -12.1,
-      "price": 82.18,
-      "ma50": 83.04,
+      "dist_ma50_pct": 0.8,
+      "rel_ret_60d_pct": -10.1,
+      "price": 83.72,
+      "ma50": 83.08,
       "position": null
     },
     {
@@ -175,12 +128,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 55.3,
-      "cmf": -0.006,
-      "dist_ma50_pct": 0.9,
-      "rel_ret_60d_pct": -8.8,
-      "price": 51.62,
-      "ma50": 51.18,
+      "rsi": 47.3,
+      "cmf": -0.06,
+      "dist_ma50_pct": -0.6,
+      "rel_ret_60d_pct": -10.0,
+      "price": 50.87,
+      "ma50": 51.16,
       "position": null
     },
     {
@@ -192,12 +145,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 59.7,
-      "cmf": -0.228,
-      "dist_ma50_pct": 0.6,
-      "rel_ret_60d_pct": -3.4,
-      "price": 44.02,
-      "ma50": 43.77,
+      "rsi": 62.3,
+      "cmf": -0.226,
+      "dist_ma50_pct": 1.9,
+      "rel_ret_60d_pct": -2.2,
+      "price": 44.64,
+      "ma50": 43.81,
       "position": null
     },
     {
@@ -211,12 +164,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 47.2,
-      "cmf": 0.077,
-      "dist_ma50_pct": 11.1,
-      "rel_ret_60d_pct": 27.0,
-      "price": 192.15,
-      "ma50": 172.91,
+      "rsi": 39.4,
+      "cmf": 0.016,
+      "dist_ma50_pct": 6.0,
+      "rel_ret_60d_pct": 25.2,
+      "price": 184.19,
+      "ma50": 173.75,
       "position": null
     },
     {
@@ -230,13 +183,59 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 69.5,
-      "cmf": -0.035,
-      "dist_ma50_pct": 3.7,
-      "rel_ret_60d_pct": -4.4,
-      "price": 53.7,
-      "ma50": 51.81,
+      "rsi": 70.2,
+      "cmf": -0.045,
+      "dist_ma50_pct": 3.9,
+      "rel_ret_60d_pct": -3.8,
+      "price": 53.88,
+      "ma50": 51.87,
       "position": null
+    },
+    {
+      "ticker": "XLV",
+      "name": "Sante",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 66.1,
+      "cmf": -0.141,
+      "dist_ma50_pct": 3.2,
+      "rel_ret_60d_pct": -9.1,
+      "price": 152.18,
+      "ma50": 147.4,
+      "position": null
+    },
+    {
+      "ticker": "XLU",
+      "name": "Services Publics",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 65.5,
+      "cmf": -0.138,
+      "dist_ma50_pct": 0.6,
+      "rel_ret_60d_pct": -13.9,
+      "price": 45.07,
+      "ma50": 44.79,
+      "position": {
+        "status": "CLOSED",
+        "entry_date": "2026-06-02",
+        "entry_price": 43.9,
+        "exit_date": "2026-06-23",
+        "exit_price": 45.07,
+        "pnl_pct": 2.7,
+        "exit_reason": "MA50 crossover"
+      }
     }
   ]
 }
