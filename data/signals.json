@@ -1,108 +1,73 @@
 {
-  "date": "2026-06-29",
-  "timestamp": "2026-06-30T23:43:11Z",
+  "date": "2026-06-30",
+  "timestamp": "2026-07-01T23:50:13Z",
   "summary": {
-    "buy_count": 0,
-    "avoid_count": 3,
-    "neutral_count": 8,
+    "buy_count": 2,
+    "avoid_count": 4,
+    "neutral_count": 5,
     "open_positions": 2
   },
   "sectors": [
     {
-      "ticker": "XLC",
-      "name": "Communication",
-      "score": 2,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "R2",
-        "R3"
-      ],
-      "sell_signals": [],
-      "buy_count": 2,
-      "sell_count": 0,
-      "rsi": 38.9,
-      "cmf": -0.194,
-      "dist_ma50_pct": -5.2,
-      "rel_ret_60d_pct": -16.1,
-      "price": 107.88,
-      "ma50": 113.78,
-      "position": {
-        "status": "OPEN",
-        "entry_date": "2026-06-03",
-        "entry_price": 112.08,
-        "current_price": 107.88,
-        "pnl_pct": -3.7,
-        "days_held": 26,
-        "ma50_price": 113.78,
-        "dist_to_exit_pct": 5.5
-      }
-    },
-    {
       "ticker": "XLE",
       "name": "Energie",
-      "score": 2,
-      "action": "NEUTRAL",
+      "score": 4,
+      "action": "BUY",
       "buy_signals": [
         "R2",
-        "R3"
+        "R3",
+        "G2",
+        "M4"
       ],
       "sell_signals": [],
-      "buy_count": 2,
+      "buy_count": 4,
       "sell_count": 0,
-      "rsi": 28.5,
-      "cmf": -0.0,
-      "dist_ma50_pct": -5.6,
-      "rel_ret_60d_pct": -21.9,
-      "price": 53.58,
-      "ma50": 56.76,
+      "rsi": 29.9,
+      "cmf": -0.025,
+      "dist_ma50_pct": -6.4,
+      "rel_ret_60d_pct": -23.9,
+      "price": 53.11,
+      "ma50": 56.73,
       "position": {
         "status": "OPEN",
         "entry_date": "2026-06-15",
         "entry_price": 55.55,
-        "current_price": 53.58,
-        "pnl_pct": -3.5,
-        "days_held": 14,
-        "ma50_price": 56.76,
-        "dist_to_exit_pct": 5.9
+        "current_price": 53.11,
+        "pnl_pct": -4.4,
+        "days_held": 15,
+        "ma50_price": 56.73,
+        "dist_to_exit_pct": 6.8
       }
     },
     {
-      "ticker": "XLY",
-      "name": "Conso. Discret.",
-      "score": 1,
-      "action": "NEUTRAL",
+      "ticker": "XLC",
+      "name": "Communication",
+      "score": 3,
+      "action": "BUY",
       "buy_signals": [
-        "F1"
+        "R2",
+        "R3",
+        "M4"
       ],
       "sell_signals": [],
-      "buy_count": 1,
+      "buy_count": 3,
       "sell_count": 0,
-      "rsi": 54.3,
-      "cmf": -0.252,
-      "dist_ma50_pct": -0.3,
-      "rel_ret_60d_pct": -6.5,
-      "price": 117.12,
-      "ma50": 117.44,
-      "position": null
-    },
-    {
-      "ticker": "XLB",
-      "name": "Materiaux",
-      "score": 1,
-      "action": "NEUTRAL",
-      "buy_signals": [
-        "R1"
-      ],
-      "sell_signals": [],
-      "buy_count": 1,
-      "sell_count": 0,
-      "rsi": 55.0,
-      "cmf": -0.112,
-      "dist_ma50_pct": -0.9,
-      "rel_ret_60d_pct": -12.6,
-      "price": 50.66,
-      "ma50": 51.14,
-      "position": null
+      "rsi": 35.0,
+      "cmf": -0.198,
+      "dist_ma50_pct": -5.7,
+      "rel_ret_60d_pct": -18.0,
+      "price": 107.13,
+      "ma50": 113.55,
+      "position": {
+        "status": "OPEN",
+        "entry_date": "2026-06-03",
+        "entry_price": 112.08,
+        "current_price": 107.13,
+        "pnl_pct": -4.4,
+        "days_held": 27,
+        "ma50_price": 113.55,
+        "dist_to_exit_pct": 6.0
+      }
     },
     {
       "ticker": "XLI",
@@ -113,12 +78,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 63.6,
-      "cmf": -0.098,
-      "dist_ma50_pct": 4.9,
-      "rel_ret_60d_pct": -2.0,
-      "price": 182.76,
-      "ma50": 174.23,
+      "rsi": 64.2,
+      "cmf": -0.067,
+      "dist_ma50_pct": 6.2,
+      "rel_ret_60d_pct": -0.8,
+      "price": 185.23,
+      "ma50": 174.47,
       "position": null
     },
     {
@@ -130,12 +95,12 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 59.1,
-      "cmf": -0.206,
-      "dist_ma50_pct": 1.2,
-      "rel_ret_60d_pct": -9.1,
-      "price": 84.37,
-      "ma50": 83.36,
+      "rsi": 47.9,
+      "cmf": -0.2,
+      "dist_ma50_pct": -0.4,
+      "rel_ret_60d_pct": -12.0,
+      "price": 83.07,
+      "ma50": 83.39,
       "position": null
     },
     {
@@ -143,16 +108,41 @@
       "name": "Services Publics",
       "score": 0,
       "action": "NEUTRAL",
-      "buy_signals": [],
-      "sell_signals": [],
-      "buy_count": 0,
-      "sell_count": 0,
-      "rsi": 82.1,
-      "cmf": -0.022,
-      "dist_ma50_pct": 2.8,
+      "buy_signals": [
+        "R3"
+      ],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 1,
+      "sell_count": 1,
+      "rsi": 68.0,
+      "cmf": -0.047,
+      "dist_ma50_pct": 1.3,
+      "rel_ret_60d_pct": -15.7,
+      "price": 45.34,
+      "ma50": 44.77,
+      "position": null
+    },
+    {
+      "ticker": "XLB",
+      "name": "Materiaux",
+      "score": 0,
+      "action": "NEUTRAL",
+      "buy_signals": [
+        "R1"
+      ],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 1,
+      "sell_count": 1,
+      "rsi": 51.5,
+      "cmf": -0.089,
+      "dist_ma50_pct": -0.6,
       "rel_ret_60d_pct": -12.9,
-      "price": 46.02,
-      "ma50": 44.78,
+      "price": 50.83,
+      "ma50": 51.12,
       "position": null
     },
     {
@@ -164,11 +154,11 @@
       "sell_signals": [],
       "buy_count": 0,
       "sell_count": 0,
-      "rsi": 61.6,
-      "cmf": -0.117,
-      "dist_ma50_pct": 2.2,
-      "rel_ret_60d_pct": -2.7,
-      "price": 44.92,
+      "rsi": 45.0,
+      "cmf": -0.158,
+      "dist_ma50_pct": 0.2,
+      "rel_ret_60d_pct": -7.4,
+      "price": 44.03,
       "ma50": 43.95,
       "position": null
     },
@@ -183,12 +173,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 51.4,
-      "cmf": 0.008,
-      "dist_ma50_pct": 5.0,
-      "rel_ret_60d_pct": 24.2,
-      "price": 185.41,
-      "ma50": 176.53,
+      "rsi": 59.0,
+      "cmf": 0.013,
+      "dist_ma50_pct": 7.5,
+      "rel_ret_60d_pct": 26.1,
+      "price": 190.52,
+      "ma50": 177.26,
       "position": null
     },
     {
@@ -202,12 +192,12 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 70.1,
-      "cmf": -0.065,
-      "dist_ma50_pct": 3.3,
-      "rel_ret_60d_pct": -4.3,
-      "price": 53.72,
-      "ma50": 52.02,
+      "rsi": 65.1,
+      "cmf": -0.082,
+      "dist_ma50_pct": 3.0,
+      "rel_ret_60d_pct": -5.5,
+      "price": 53.61,
+      "ma50": 52.05,
       "position": null
     },
     {
@@ -221,12 +211,31 @@
       ],
       "buy_count": 0,
       "sell_count": 1,
-      "rsi": 70.3,
-      "cmf": -0.046,
-      "dist_ma50_pct": 8.4,
-      "rel_ret_60d_pct": -4.1,
-      "price": 160.74,
-      "ma50": 148.23,
+      "rsi": 60.9,
+      "cmf": -0.04,
+      "dist_ma50_pct": 6.9,
+      "rel_ret_60d_pct": -5.6,
+      "price": 158.66,
+      "ma50": 148.44,
+      "position": null
+    },
+    {
+      "ticker": "XLY",
+      "name": "Conso. Discret.",
+      "score": -1,
+      "action": "AVOID",
+      "buy_signals": [],
+      "sell_signals": [
+        "M1"
+      ],
+      "buy_count": 0,
+      "sell_count": 1,
+      "rsi": 53.7,
+      "cmf": -0.195,
+      "dist_ma50_pct": -0.1,
+      "rel_ret_60d_pct": -5.5,
+      "price": 117.28,
+      "ma50": 117.38,
       "position": null
     }
   ]
