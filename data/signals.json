@@ -1,6 +1,6 @@
 {
   "date": "2026-07-02",
-  "timestamp": "2026-07-03T23:32:59Z",
+  "timestamp": "2026-07-06T23:36:02Z",
   "summary": {
     "buy_count": 1,
     "avoid_count": 4,
@@ -220,7 +220,7 @@
       "buy_count": 0,
       "sell_count": 1,
       "rsi": 52.8,
-      "cmf": -0.189,
+      "cmf": -0.188,
       "dist_ma50_pct": -0.2,
       "rel_ret_60d_pct": -4.4,
       "price": 117.12,
