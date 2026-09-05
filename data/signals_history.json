@@ -1008,22 +1008,6 @@
     "close_reason": "confirmed"
   },
   {
-    "ticker": "SNPS",
-    "sector": "XLK",
-    "sector_name": "Technologie",
-    "open_date": "2026-07-06",
-    "open_price": 442.2699890136719,
-    "spy_open_price": 751.280029296875,
-    "current_phase": "lagging",
-    "days_active": 17,
-    "return_vs_spy": -0.13801,
-    "return_abs": -0.15545,
-    "rsi": 44.0,
-    "status": "closed",
-    "close_date": "2026-07-23",
-    "close_reason": "reversed"
-  },
-  {
     "ticker": "BLK",
     "sector": "XLF",
     "sector_name": "Finance",
