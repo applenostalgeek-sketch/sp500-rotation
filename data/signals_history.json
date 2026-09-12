@@ -976,22 +976,6 @@
     "close_reason": "reversed"
   },
   {
-    "ticker": "COIN",
-    "sector": "XLF",
-    "sector_name": "Finance",
-    "open_date": "2026-07-13",
-    "open_price": 157.3699951171875,
-    "spy_open_price": 749.1699829101562,
-    "current_phase": "lagging",
-    "days_active": 25,
-    "return_vs_spy": -0.10188,
-    "return_abs": -0.076,
-    "rsi": 45.0,
-    "status": "closed",
-    "close_date": "2026-08-07",
-    "close_reason": "reversed"
-  },
-  {
     "ticker": "ORCL",
     "sector": "XLK",
     "sector_name": "Technologie",
@@ -1067,22 +1051,6 @@
     "return_vs_spy": 0.16589,
     "return_abs": 0.15276,
     "rsi": 24.0,
-    "status": "closed",
-    "close_date": "2026-07-28",
-    "close_reason": "confirmed"
-  },
-  {
-    "ticker": "CEG",
-    "sector": "XLU",
-    "sector_name": "Services Publics",
-    "open_date": "2026-07-13",
-    "open_price": 257.57000732421875,
-    "spy_open_price": 749.1699829101562,
-    "current_phase": "leading",
-    "days_active": 15,
-    "return_vs_spy": 0.01983,
-    "return_abs": 0.00874,
-    "rsi": 38.0,
     "status": "closed",
     "close_date": "2026-07-28",
     "close_reason": "confirmed"
