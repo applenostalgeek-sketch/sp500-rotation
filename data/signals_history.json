@@ -1038,21 +1038,5 @@
     "status": "closed",
     "close_date": "2026-07-30",
     "close_reason": "reversed"
-  },
-  {
-    "ticker": "SMCI",
-    "sector": "XLK",
-    "sector_name": "Technologie",
-    "open_date": "2026-07-16",
-    "open_price": 24.68000030517578,
-    "spy_open_price": 750.719970703125,
-    "current_phase": "leading",
-    "days_active": 12,
-    "return_vs_spy": 0.16589,
-    "return_abs": 0.15276,
-    "rsi": 24.0,
-    "status": "closed",
-    "close_date": "2026-07-28",
-    "close_reason": "confirmed"
   }
 ]
