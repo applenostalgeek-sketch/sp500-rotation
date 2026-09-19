@@ -848,22 +848,6 @@
     "close_reason": "reversed"
   },
   {
-    "ticker": "TTD",
-    "sector": "XLC",
-    "sector_name": "Communication",
-    "open_date": "2026-07-20",
-    "open_price": 18.639999389648438,
-    "spy_open_price": 742.0900268554688,
-    "current_phase": "lagging",
-    "days_active": 24,
-    "return_vs_spy": -0.26711,
-    "return_abs": -0.21888,
-    "rsi": 50.0,
-    "status": "closed",
-    "close_date": "2026-08-13",
-    "close_reason": "reversed"
-  },
-  {
     "ticker": "ALB",
     "sector": "XLB",
     "sector_name": "Materiaux",
@@ -1022,21 +1006,5 @@
     "status": "closed",
     "close_date": "2026-07-30",
     "close_reason": "confirmed"
-  },
-  {
-    "ticker": "CIEN",
-    "sector": "XLK",
-    "sector_name": "Technologie",
-    "open_date": "2026-07-20",
-    "open_price": 378.7699890136719,
-    "spy_open_price": 742.0900268554688,
-    "current_phase": "lagging",
-    "days_active": 10,
-    "return_vs_spy": -0.01715,
-    "return_abs": -0.01769,
-    "rsi": 30.0,
-    "status": "closed",
-    "close_date": "2026-07-30",
-    "close_reason": "reversed"
   }
 ]
