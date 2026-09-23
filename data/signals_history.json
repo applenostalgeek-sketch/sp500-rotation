@@ -832,22 +832,6 @@
     "close_reason": "reversed"
   },
   {
-    "ticker": "KR",
-    "sector": "XLP",
-    "sector_name": "Conso. Essentiels",
-    "open_date": "2026-07-24",
-    "open_price": 56.869998931884766,
-    "spy_open_price": 738.9299926757812,
-    "current_phase": "lagging",
-    "days_active": 18,
-    "return_vs_spy": -0.05371,
-    "return_abs": -0.0109,
-    "rsi": 45.0,
-    "status": "closed",
-    "close_date": "2026-08-11",
-    "close_reason": "reversed"
-  },
-  {
     "ticker": "FDXF",
     "sector": "XLI",
     "sector_name": "Industrie",
@@ -910,37 +894,5 @@
     "status": "closed",
     "close_date": "2026-08-07",
     "close_reason": "reversed"
-  },
-  {
-    "ticker": "AMT",
-    "sector": "XLRE",
-    "sector_name": "Immobilier",
-    "open_date": "2026-07-24",
-    "open_price": 166.6699981689453,
-    "spy_open_price": 738.9299926757812,
-    "current_phase": "leading",
-    "days_active": 10,
-    "return_vs_spy": 0.01262,
-    "return_abs": 0.03798,
-    "rsi": 60.0,
-    "status": "closed",
-    "close_date": "2026-08-03",
-    "close_reason": "confirmed"
-  },
-  {
-    "ticker": "UHS",
-    "sector": "XLV",
-    "sector_name": "Sante",
-    "open_date": "2026-07-24",
-    "open_price": 155.75,
-    "spy_open_price": 738.9299926757812,
-    "current_phase": "leading",
-    "days_active": 6,
-    "return_vs_spy": 0.04468,
-    "return_abs": 0.04841,
-    "rsi": 47.0,
-    "status": "closed",
-    "close_date": "2026-07-30",
-    "close_reason": "confirmed"
   }
 ]
