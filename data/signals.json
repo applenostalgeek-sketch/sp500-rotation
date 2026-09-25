@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-23",
-  "timestamp": "2026-09-24T00:38:55Z",
+  "date": "2026-09-24",
+  "timestamp": "2026-09-25T00:38:58Z",
   "summary": {
     "buy_count": 0,
     "avoid_count": 0,
@@ -29,7 +29,7 @@
         "entry_price": 175.13,
         "current_price": NaN,
         "pnl_pct": NaN,
-        "days_held": 23,
+        "days_held": 24,
         "ma50_price": NaN,
         "dist_to_exit_pct": NaN
       }
@@ -61,7 +61,7 @@
       "buy_count": 0,
       "sell_count": 0,
       "rsi": null,
-      "cmf": -0.171,
+      "cmf": -0.242,
       "dist_ma50_pct": null,
       "rel_ret_60d_pct": null,
       "price": NaN,
@@ -146,7 +146,7 @@
       "buy_count": 0,
       "sell_count": 0,
       "rsi": null,
-      "cmf": -0.07,
+      "cmf": -0.047,
       "dist_ma50_pct": null,
       "rel_ret_60d_pct": null,
       "price": NaN,
