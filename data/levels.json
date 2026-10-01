@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "stocks": {
     "ALB": {
       "price": 107.62,
@@ -21,8 +21,8 @@
           "strength": 2
         },
         {
-          "price": 102.56,
-          "dist_pct": -4.7,
+          "price": 102.64,
+          "dist_pct": -4.6,
           "strength": 2
         },
         {
@@ -38,7 +38,7 @@
       ],
       "resistances": [
         {
-          "price": 107.85,
+          "price": 107.86,
           "dist_pct": 0.2,
           "strength": 4
         },
@@ -53,8 +53,8 @@
           "strength": 1
         },
         {
-          "price": 116.72,
-          "dist_pct": 8.5,
+          "price": 116.67,
+          "dist_pct": 8.4,
           "strength": 3
         }
       ]
@@ -374,7 +374,7 @@
           "strength": 3
         },
         {
-          "price": 572.18,
+          "price": 572.41,
           "dist_pct": -4.6,
           "strength": 2
         },
@@ -1454,7 +1454,7 @@
     "TSCO": {
       "price": 31.51,
       "date": "29/09/2026",
-      "score": 69,
+      "score": 72,
       "verdict": "BON SIGNAL",
       "verdict_text": "Bonne configuration pour un rebond",
       "trend": "Baisse",
@@ -1466,9 +1466,9 @@
       "ma50_label": "En-dessous",
       "supports": [
         {
-          "price": 31.38,
-          "dist_pct": -0.4,
-          "strength": 2
+          "price": 31.35,
+          "dist_pct": -0.5,
+          "strength": 3
         },
         {
           "price": 30.9,
@@ -1476,8 +1476,8 @@
           "strength": 2
         },
         {
-          "price": 30.27,
-          "dist_pct": -3.9,
+          "price": 30.25,
+          "dist_pct": -4.0,
           "strength": 1
         },
         {
@@ -1498,9 +1498,9 @@
           "strength": 3
         },
         {
-          "price": 32.88,
+          "price": 32.85,
           "dist_pct": 4.3,
-          "strength": 3
+          "strength": 2
         },
         {
           "price": 33.25,
