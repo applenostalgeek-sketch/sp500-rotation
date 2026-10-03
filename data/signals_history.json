@@ -640,22 +640,6 @@
     "close_reason": "confirmed"
   },
   {
-    "ticker": "ON",
-    "sector": "XLK",
-    "sector_name": "Technologie",
-    "open_date": "2026-08-03",
-    "open_price": 80.4000015258789,
-    "spy_open_price": 757.6699829101562,
-    "current_phase": "lagging",
-    "days_active": 21,
-    "return_vs_spy": -0.113,
-    "return_abs": -0.10535,
-    "rsi": 33.0,
-    "status": "closed",
-    "close_date": "2026-08-24",
-    "close_reason": "reversed"
-  },
-  {
     "ticker": "FSLR",
     "sector": "XLK",
     "sector_name": "Technologie",

@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "stocks": {
     "ALB": {
       "price": 105.03,
@@ -16,8 +16,8 @@
       "ma50_label": "Bien en-dessous",
       "supports": [
         {
-          "price": 103.08,
-          "dist_pct": -1.9,
+          "price": 103.34,
+          "dist_pct": -1.6,
           "strength": 2
         },
         {
@@ -26,14 +26,14 @@
           "strength": 1
         },
         {
-          "price": 99.34,
-          "dist_pct": -5.4,
-          "strength": 3
+          "price": 99.65,
+          "dist_pct": -5.1,
+          "strength": 2
         },
         {
-          "price": 95.35,
-          "dist_pct": -9.2,
-          "strength": 2
+          "price": 96.12,
+          "dist_pct": -8.5,
+          "strength": 1
         }
       ],
       "resistances": [
@@ -48,8 +48,8 @@
           "strength": 1
         },
         {
-          "price": 108.1,
-          "dist_pct": 2.9,
+          "price": 108.27,
+          "dist_pct": 3.1,
           "strength": 3
         },
         {
@@ -575,8 +575,8 @@
           "strength": 2
         },
         {
-          "price": 64.81,
-          "dist_pct": 6.5,
+          "price": 64.88,
+          "dist_pct": 6.6,
           "strength": 3
         }
       ]
@@ -669,9 +669,9 @@
           "strength": 2
         },
         {
-          "price": 79.83,
-          "dist_pct": -9.5,
-          "strength": 2
+          "price": 80.0,
+          "dist_pct": -9.3,
+          "strength": 1
         }
       ],
       "resistances": [
