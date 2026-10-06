@@ -19,5 +19,15 @@
       "F2",
       "M4"
     ]
+  },
+  "XLRE": {
+    "entry_date": "2026-10-05",
+    "entry_price": 40.67,
+    "entry_score": 3,
+    "entry_signals": [
+      "R2",
+      "F1",
+      "M4"
+    ]
   }
 }
