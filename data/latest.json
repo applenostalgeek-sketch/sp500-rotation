@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "date": "2026-10-13",
-    "generated_at": "2026-10-13T03:05:15Z",
+    "date": "2026-10-14",
+    "generated_at": "2026-10-14T01:17:27Z",
     "market_state": "normal",
-    "avg_correlation": 0.103,
-    "total_sectors": 10,
-    "benchmark_return": -0.0006,
+    "avg_correlation": 0.109,
+    "total_sectors": 11,
+    "benchmark_return": NaN,
     "regime": "mid_cycle",
     "regime_label": "Croissance en tete",
     "regime_confidence": 0.57,
-    "narrative": "Technologie m\u00e8nent, Communication et Finance d\u00e9crochent. Une configuration classique de phase d'expansion."
+    "narrative": "Technologie m\u00e8nent, Materiaux et Communication d\u00e9crochent. Une configuration classique de phase d'expansion."
   },
   "nodes": [
     {
@@ -17,19 +17,19 @@
       "name": "Materiaux",
       "color": "#a855f7",
       "weight": 2.5,
-      "daily_return": 0.0002,
-      "return_5d": -0.00583,
-      "return_20d": -0.02094,
-      "residual_return": -0.00509,
-      "volume_ratio": 0.5,
-      "mfi": 31.4,
-      "cmf": -0.004,
-      "trend": -0.448,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.69,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 49.7,
-      "phase_delta": 18.4,
-      "rs_ratio": 98.5,
-      "rs_momentum": 101.5,
+      "phase_value": 50.0,
+      "phase_delta": 15.0,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 65,
       "previous_phase": "leading"
     },
@@ -38,19 +38,19 @@
       "name": "Communication",
       "color": "#ec4899",
       "weight": 9.0,
-      "daily_return": 0.00969,
-      "return_5d": -0.00179,
-      "return_20d": -0.0194,
-      "residual_return": -0.00094,
-      "volume_ratio": 1.12,
-      "mfi": 45.4,
-      "cmf": -0.114,
-      "trend": -0.292,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 1.07,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 16.7,
-      "phase_delta": -15.3,
-      "rs_ratio": 98.3,
-      "rs_momentum": 95.0,
+      "phase_value": 50.0,
+      "phase_delta": 22.6,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 8,
       "previous_phase": "leading"
     },
@@ -59,19 +59,19 @@
       "name": "Energie",
       "color": "#ef4444",
       "weight": 3.5,
-      "daily_return": 0.01429,
-      "return_5d": 0.03545,
-      "return_20d": 0.00716,
-      "residual_return": 0.03479,
-      "volume_ratio": 0.58,
-      "mfi": 85.3,
-      "cmf": -0.029,
-      "trend": 0.058,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.82,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 71.1,
-      "phase_delta": 40.4,
-      "rs_ratio": 103.0,
-      "rs_momentum": 101.2,
+      "phase_value": 50.0,
+      "phase_delta": 24.6,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 12,
       "previous_phase": "leading"
     },
@@ -80,19 +80,19 @@
       "name": "Finance",
       "color": "#f59e0b",
       "weight": 13.5,
-      "daily_return": 0.00585,
-      "return_5d": 0.01926,
-      "return_20d": -0.02824,
-      "residual_return": 0.02004,
-      "volume_ratio": 0.52,
-      "mfi": 41.7,
-      "cmf": -0.03,
-      "trend": -0.463,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 1.15,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 47.1,
-      "phase_delta": 36.8,
-      "rs_ratio": 99.5,
-      "rs_momentum": 99.9,
+      "phase_value": 50.0,
+      "phase_delta": 35.0,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 15,
       "previous_phase": "improving"
     },
@@ -101,19 +101,19 @@
       "name": "Industrie",
       "color": "#8b5cf6",
       "weight": 8.5,
-      "daily_return": -0.00059,
-      "return_5d": -0.01416,
-      "return_20d": 0.00447,
-      "residual_return": -0.01309,
-      "volume_ratio": 0.52,
-      "mfi": 51.8,
-      "cmf": 0.049,
-      "trend": 0.003,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 1.01,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "improving",
-      "phase_value": 53.7,
-      "phase_delta": 0.4,
-      "rs_ratio": 98.7,
-      "rs_momentum": 102.0,
+      "phase_value": 50.0,
+      "phase_delta": -6.6,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 8,
       "previous_phase": "lagging"
     },
@@ -122,19 +122,19 @@
       "name": "Technologie",
       "color": "#3b82f6",
       "weight": 31.0,
-      "daily_return": -0.01217,
-      "return_5d": -0.02792,
-      "return_20d": 0.06993,
-      "residual_return": -0.02564,
-      "volume_ratio": 0.71,
-      "mfi": 60.0,
-      "cmf": 0.122,
-      "trend": 0.674,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.92,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "leading",
-      "phase_value": 43.5,
-      "phase_delta": -36.1,
-      "rs_ratio": 99.4,
-      "rs_momentum": 99.3,
+      "phase_value": 50.0,
+      "phase_delta": -22.7,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 45,
       "previous_phase": "lagging"
     },
@@ -143,19 +143,19 @@
       "name": "Conso. Essentiels",
       "color": "#06b6d4",
       "weight": 6.0,
-      "daily_return": 0.01175,
-      "return_5d": 0.03191,
-      "return_20d": 0.01475,
-      "residual_return": 0.03193,
-      "volume_ratio": 0.68,
-      "mfi": 55.1,
-      "cmf": 0.014,
-      "trend": -0.001,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.95,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 65.3,
-      "phase_delta": 36.4,
-      "rs_ratio": 101.5,
-      "rs_momentum": 101.6,
+      "phase_value": 50.0,
+      "phase_delta": 14.9,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 14,
       "previous_phase": "improving"
     },
@@ -164,19 +164,19 @@
       "name": "Immobilier",
       "color": "#14b8a6",
       "weight": 2.5,
-      "daily_return": 0.00745,
-      "return_5d": 0.01995,
-      "return_20d": -0.01851,
-      "residual_return": 0.0204,
-      "volume_ratio": 1.23,
-      "mfi": 27.5,
-      "cmf": -0.129,
-      "trend": -0.568,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.85,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 55.7,
-      "phase_delta": 43.2,
-      "rs_ratio": 99.5,
-      "rs_momentum": 101.6,
+      "phase_value": 50.0,
+      "phase_delta": 31.3,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 14,
       "previous_phase": "improving"
     },
@@ -185,56 +185,66 @@
       "name": "Services Publics",
       "color": "#eab308",
       "weight": 2.5,
-      "daily_return": 0.00531,
-      "return_5d": 0.01142,
-      "return_20d": 0.01491,
-      "residual_return": 0.01173,
-      "volume_ratio": 0.49,
-      "mfi": 62.3,
-      "cmf": -0.001,
-      "trend": 0.014,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.8,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 79.0,
-      "phase_delta": 55.9,
-      "rs_ratio": 101.7,
-      "rs_momentum": 104.1,
+      "phase_value": 50.0,
+      "phase_delta": 6.6,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 13,
       "previous_phase": "improving"
+    },
+    {
+      "id": "XLV",
+      "name": "Sante",
+      "color": "#22c55e",
+      "weight": 11.5,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 1.08,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
+      "momentum_phase": "lagging",
+      "phase_value": 50.0,
+      "phase_delta": 12.6,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
+      "days_in_phase": 21,
+      "previous_phase": "leading"
     },
     {
       "id": "XLY",
       "name": "Conso. Discretionnaire",
       "color": "#f97316",
       "weight": 10.0,
-      "daily_return": -0.00514,
-      "return_5d": 0.00492,
-      "return_20d": 0.01477,
-      "residual_return": 0.00638,
-      "volume_ratio": 0.59,
-      "mfi": 44.8,
-      "cmf": -0.045,
-      "trend": 0.043,
+      "daily_return": NaN,
+      "return_5d": 0.0,
+      "return_20d": 0.0,
+      "residual_return": NaN,
+      "volume_ratio": 0.89,
+      "mfi": 50.0,
+      "cmf": 0.0,
+      "trend": -0.0,
       "momentum_phase": "lagging",
-      "phase_value": 60.6,
-      "phase_delta": 18.0,
-      "rs_ratio": 100.1,
-      "rs_momentum": 102.0,
+      "phase_value": 50.0,
+      "phase_delta": -1.0,
+      "rs_ratio": 100.0,
+      "rs_momentum": 100.0,
       "days_in_phase": 28,
       "previous_phase": "leading"
     }
   ],
   "signals": [
-    {
-      "ticker": "FIS",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "improving",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.02513,
-      "phase_value": 52.7,
-      "rs_momentum": 102.1
-    },
     {
       "ticker": "BX",
       "sector": "XLF",
@@ -243,8 +253,19 @@
       "previous_phase": "lagging",
       "days_in_phase": 1,
       "return_5d": 0.01253,
-      "phase_value": 51.8,
-      "rs_momentum": 103.3
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "FIS",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "improving",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": 0.02513,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "TRGP",
@@ -254,8 +275,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 1,
       "return_5d": 0.01687,
-      "phase_value": 47.2,
-      "rs_momentum": 101.1
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "ERIE",
@@ -265,8 +286,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 2,
       "return_5d": 0.00824,
-      "phase_value": 32.3,
-      "rs_momentum": 98.0
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "LULU",
@@ -276,8 +297,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 2,
       "return_5d": 0.01122,
-      "phase_value": 57.0,
-      "rs_momentum": 105.5
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "AXON",
@@ -287,8 +308,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 2,
       "return_5d": -0.01001,
-      "phase_value": 57.1,
-      "rs_momentum": 105.5
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "KMB",
@@ -298,8 +319,19 @@
       "previous_phase": "lagging",
       "days_in_phase": 2,
       "return_5d": 0.02067,
-      "phase_value": 64.4,
-      "rs_momentum": 104.2
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "ABT",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "improving",
+      "previous_phase": "lagging",
+      "days_in_phase": 3,
+      "return_5d": 0.03729,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "BKNG",
@@ -309,8 +341,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 3,
       "return_5d": 0.00508,
-      "phase_value": 57.1,
-      "rs_momentum": 105.3
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "EXPE",
@@ -320,8 +352,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 3,
       "return_5d": 0.0323,
-      "phase_value": 53.4,
-      "rs_momentum": 102.7
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "OMC",
@@ -331,8 +363,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 4,
       "return_5d": 0.02623,
-      "phase_value": 100.0,
-      "rs_momentum": 109.8
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "SW",
@@ -342,666 +374,17 @@
       "previous_phase": "leading",
       "days_in_phase": 4,
       "return_5d": -0.03114,
-      "phase_value": 0.0,
-      "rs_momentum": 96.1
-    },
-    {
-      "ticker": "ABT",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03729,
       "phase_value": 50.0,
       "rs_momentum": 100.0
     },
     {
-      "ticker": "ABBV",
-      "sector": "XLV",
-      "sector_name": "Sante",
+      "ticker": "ANET",
+      "sector": "XLK",
+      "sector_name": "Technologie",
       "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.05411,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "A",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01181,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "ALGN",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.00728,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "AMGN",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03718,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "BAX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01724,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "BDX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.04764,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "TECH",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00179,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "BIIB",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02925,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "BSX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03911,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "BMY",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.03373,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CAH",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01988,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "COR",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02747,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CNC",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.0373,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CRL",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01017,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CI",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03269,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "COO",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01559,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "CVS",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01516,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "DHR",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02593,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "DVA",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00765,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "DXCM",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03034,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "EW",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.00104,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "ELV",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.05499,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "GEHC",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.04585,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "GILD",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.04299,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "HCA",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.06108,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "HSIC",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.00719,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "HUM",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.0723,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "IDXX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01655,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "ILMN",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01144,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "INCY",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01215,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "PODD",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03771,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "ISRG",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.05653,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "IQV",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00858,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "JNJ",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03513,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "LH",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01222,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "LLY",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02171,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "MCK",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03699,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "MDT",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.05557,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "MRK",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02473,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "MTD",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01953,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "MRNA",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.14019,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "PFE",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03273,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "DGX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01856,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "REGN",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.03261,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "RMD",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.06303,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "RVTY",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01507,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "SOLV",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01988,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "STE",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.04951,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "SYK",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.01582,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "TMO",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00862,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "UNH",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00585,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "UHS",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00988,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "VEEV",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.04356,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "VRTX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.00934,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "VTRS",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.0,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "WAT",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.00992,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "WST",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": -0.01353,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "ZBH",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.02777,
-      "phase_value": 50.0,
-      "rs_momentum": 100.0
-    },
-    {
-      "ticker": "ZTS",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "leading",
-      "previous_phase": null,
-      "days_in_phase": 0,
-      "return_5d": 0.06056,
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": -0.0208,
       "phase_value": 50.0,
       "rs_momentum": 100.0
     },
@@ -1013,19 +396,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 1,
       "return_5d": 0.00977,
-      "phase_value": 100.0,
-      "rs_momentum": 110.5
-    },
-    {
-      "ticker": "PLTR",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 1,
-      "return_5d": 0.08814,
-      "phase_value": 100.0,
-      "rs_momentum": 110.9
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "CSCO",
@@ -1035,19 +407,19 @@
       "previous_phase": "lagging",
       "days_in_phase": 1,
       "return_5d": -0.02205,
-      "phase_value": 85.9,
-      "rs_momentum": 103.5
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
-      "ticker": "ANET",
+      "ticker": "PLTR",
       "sector": "XLK",
       "sector_name": "Technologie",
       "phase": "leading",
-      "previous_phase": "lagging",
+      "previous_phase": "weakening",
       "days_in_phase": 1,
-      "return_5d": -0.0208,
-      "phase_value": 78.3,
-      "rs_momentum": 103.9
+      "return_5d": 0.08814,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "ICE",
@@ -1057,8 +429,19 @@
       "previous_phase": "weakening",
       "days_in_phase": 1,
       "return_5d": 0.0256,
-      "phase_value": 63.6,
-      "rs_momentum": 101.3
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "VEEV",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "leading",
+      "previous_phase": "weakening",
+      "days_in_phase": 1,
+      "return_5d": 0.04356,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "MAS",
@@ -1068,8 +451,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 1,
       "return_5d": -0.01358,
-      "phase_value": 54.2,
-      "rs_momentum": 100.2
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "CEG",
@@ -1079,19 +462,8 @@
       "previous_phase": "weakening",
       "days_in_phase": 1,
       "return_5d": -0.02167,
-      "phase_value": 100.0,
-      "rs_momentum": 109.1
-    },
-    {
-      "ticker": "FDS",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.06125,
-      "phase_value": 100.0,
-      "rs_momentum": 108.6
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "CME",
@@ -1101,8 +473,30 @@
       "previous_phase": "weakening",
       "days_in_phase": 2,
       "return_5d": 0.02613,
-      "phase_value": 55.9,
-      "rs_momentum": 99.4
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "FDS",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 2,
+      "return_5d": 0.06125,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "AMGN",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 2,
+      "return_5d": 0.03718,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "CL",
@@ -1112,8 +506,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 2,
       "return_5d": 0.03129,
-      "phase_value": 67.7,
-      "rs_momentum": 102.5
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "MA",
@@ -1123,8 +517,8 @@
       "previous_phase": "weakening",
       "days_in_phase": 3,
       "return_5d": 0.05191,
-      "phase_value": 93.6,
-      "rs_momentum": 104.4
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "V",
@@ -1134,8 +528,8 @@
       "previous_phase": "weakening",
       "days_in_phase": 3,
       "return_5d": 0.05026,
-      "phase_value": 87.4,
-      "rs_momentum": 102.9
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "LYV",
@@ -1145,30 +539,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 3,
       "return_5d": -0.01257,
-      "phase_value": 87.2,
-      "rs_momentum": 107.2
-    },
-    {
-      "ticker": "CIEN",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 4,
-      "return_5d": -0.0871,
-      "phase_value": 100.0,
-      "rs_momentum": 122.8
-    },
-    {
-      "ticker": "PTC",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 4,
-      "return_5d": 0.0072,
-      "phase_value": 100.0,
-      "rs_momentum": 133.6
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "APH",
@@ -1178,8 +550,19 @@
       "previous_phase": "lagging",
       "days_in_phase": 4,
       "return_5d": -0.02742,
-      "phase_value": 84.2,
-      "rs_momentum": 104.3
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "CIEN",
+      "sector": "XLK",
+      "sector_name": "Technologie",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 4,
+      "return_5d": -0.0871,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "COHR",
@@ -1189,8 +572,19 @@
       "previous_phase": "improving",
       "days_in_phase": 4,
       "return_5d": -0.14878,
-      "phase_value": 23.0,
-      "rs_momentum": 101.1
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "PTC",
+      "sector": "XLK",
+      "sector_name": "Technologie",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 4,
+      "return_5d": 0.0072,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "CBOE",
@@ -1200,8 +594,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 4,
       "return_5d": 0.06894,
-      "phase_value": 100.0,
-      "rs_momentum": 111.2
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "PGR",
@@ -1211,8 +605,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 4,
       "return_5d": 0.03881,
-      "phase_value": 68.5,
-      "rs_momentum": 100.6
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "HAS",
@@ -1222,8 +616,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 4,
       "return_5d": 0.04065,
-      "phase_value": 93.5,
-      "rs_momentum": 104.4
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "CASY",
@@ -1233,8 +627,8 @@
       "previous_phase": "lagging",
       "days_in_phase": 4,
       "return_5d": 0.04014,
-      "phase_value": 100.0,
-      "rs_momentum": 125.2
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "TSN",
@@ -1244,19 +638,8 @@
       "previous_phase": "improving",
       "days_in_phase": 4,
       "return_5d": 0.03079,
-      "phase_value": 69.4,
-      "rs_momentum": 103.3
-    },
-    {
-      "ticker": "SNPS",
-      "sector": "XLK",
-      "sector_name": "Technologie",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
-      "return_5d": -0.00527,
-      "phase_value": 100.0,
-      "rs_momentum": 120.6
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "LITE",
@@ -1266,19 +649,19 @@
       "previous_phase": "lagging",
       "days_in_phase": 5,
       "return_5d": -0.12175,
-      "phase_value": 86.6,
-      "rs_momentum": 107.2
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
-      "ticker": "NDAQ",
-      "sector": "XLF",
-      "sector_name": "Finance",
+      "ticker": "SNPS",
+      "sector": "XLK",
+      "sector_name": "Technologie",
       "phase": "leading",
       "previous_phase": "lagging",
       "days_in_phase": 5,
-      "return_5d": 0.02189,
-      "phase_value": 81.4,
-      "rs_momentum": 105.2
+      "return_5d": -0.00527,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "MRSH",
@@ -1288,8 +671,30 @@
       "previous_phase": "lagging",
       "days_in_phase": 5,
       "return_5d": 0.02795,
-      "phase_value": 79.4,
-      "rs_momentum": 104.2
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "NDAQ",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.02189,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
+    },
+    {
+      "ticker": "BAX",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 5,
+      "return_5d": 0.01724,
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "DECK",
@@ -1299,8 +704,8 @@
       "previous_phase": "improving",
       "days_in_phase": 5,
       "return_5d": 0.03196,
-      "phase_value": 100.0,
-      "rs_momentum": 108.9
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "FTV",
@@ -1310,8 +715,8 @@
       "previous_phase": "weakening",
       "days_in_phase": 5,
       "return_5d": -0.00898,
-      "phase_value": 77.8,
-      "rs_momentum": 103.3
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "NDSN",
@@ -1321,8 +726,8 @@
       "previous_phase": "weakening",
       "days_in_phase": 5,
       "return_5d": -0.01131,
-      "phase_value": 67.9,
-      "rs_momentum": 101.6
+      "phase_value": 50.0,
+      "rs_momentum": 100.0
     }
   ],
   "signals_history": [
@@ -2125,22 +1530,6 @@
       "status": "closed",
       "close_date": "2026-08-19",
       "close_reason": "confirmed"
-    },
-    {
-      "ticker": "BEN",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "open_date": "2026-08-14",
-      "open_price": 33.86000061035156,
-      "spy_open_price": 776.3400268554688,
-      "current_phase": "lagging",
-      "days_active": 5,
-      "return_vs_spy": 0.01292,
-      "return_abs": 0.00354,
-      "rsi": 54.0,
-      "status": "closed",
-      "close_date": "2026-08-19",
-      "close_reason": "reversed"
     },
     {
       "ticker": "CMS",
