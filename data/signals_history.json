@@ -656,22 +656,6 @@
     "close_reason": "confirmed"
   },
   {
-    "ticker": "KLAC",
-    "sector": "XLK",
-    "sector_name": "Technologie",
-    "open_date": "2026-08-17",
-    "open_price": 205.75999450683594,
-    "spy_open_price": 772.6699829101562,
-    "current_phase": "leading",
-    "days_active": 43,
-    "return_vs_spy": -0.07149,
-    "return_abs": -0.08063,
-    "rsi": 59.0,
-    "status": "closed",
-    "close_date": "2026-09-29",
-    "close_reason": "confirmed"
-  },
-  {
     "ticker": "META",
     "sector": "XLC",
     "sector_name": "Communication",
@@ -814,21 +798,5 @@
     "status": "closed",
     "close_date": "2026-08-19",
     "close_reason": "confirmed"
-  },
-  {
-    "ticker": "CMS",
-    "sector": "XLU",
-    "sector_name": "Services Publics",
-    "open_date": "2026-08-17",
-    "open_price": 71.4000015258789,
-    "spy_open_price": 772.6699829101562,
-    "current_phase": "lagging",
-    "days_active": 1,
-    "return_vs_spy": 0.00199,
-    "return_abs": -0.00476,
-    "rsi": 35.0,
-    "status": "closed",
-    "close_date": "2026-08-18",
-    "close_reason": "reversed"
   }
 ]
