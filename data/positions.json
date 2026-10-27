@@ -8,26 +8,5 @@
       "G1",
       "M4"
     ]
-  },
-  "XLU": {
-    "entry_date": "2026-09-28",
-    "entry_price": 39.25,
-    "entry_score": 4,
-    "entry_signals": [
-      "R2",
-      "R3",
-      "F2",
-      "M4"
-    ]
-  },
-  "XLRE": {
-    "entry_date": "2026-10-05",
-    "entry_price": 40.67,
-    "entry_score": 3,
-    "entry_signals": [
-      "R2",
-      "F1",
-      "M4"
-    ]
   }
 }
