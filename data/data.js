@@ -1,15 +1,15 @@
 window.ROTATION_DATA = {
   "metadata": {
-    "date": "2026-10-29",
-    "generated_at": "2026-10-29T01:52:56Z",
+    "date": "2026-10-30",
+    "generated_at": "2026-10-30T02:02:47Z",
     "market_state": "normal",
-    "avg_correlation": 0.12,
+    "avg_correlation": 0.142,
     "total_sectors": 11,
-    "benchmark_return": 0.00344,
+    "benchmark_return": -0.00382,
     "regime": "late_cycle",
     "regime_label": "Defensives en tete",
     "regime_confidence": 0.79,
-    "narrative": "Materiaux et Finance m\u00e8nent, Communication et Technologie d\u00e9crochent. Un positionnement historiquement associe aux fins de cycle."
+    "narrative": "Materiaux et Finance m\u00e8nent, Technologie et Communication d\u00e9crochent. Un positionnement historiquement associe aux fins de cycle."
   },
   "nodes": [
     {
@@ -17,20 +17,20 @@ window.ROTATION_DATA = {
       "name": "Materiaux",
       "color": "#a855f7",
       "weight": 2.5,
-      "daily_return": 0.00155,
-      "return_5d": 0.00329,
-      "return_20d": 0.0684,
-      "residual_return": -0.00174,
-      "volume_ratio": 0.87,
-      "mfi": 80.6,
-      "cmf": 0.294,
-      "trend": 0.91,
+      "daily_return": 0.01292,
+      "return_5d": 0.02378,
+      "return_20d": 0.07511,
+      "residual_return": 0.01827,
+      "volume_ratio": 1.38,
+      "mfi": 81.8,
+      "cmf": 0.397,
+      "trend": 0.909,
       "momentum_phase": "leading",
-      "phase_value": 96.8,
-      "phase_delta": 4.6,
-      "rs_ratio": 102.9,
-      "rs_momentum": 106.5,
-      "days_in_phase": 7,
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 104.2,
+      "rs_momentum": 108.0,
+      "days_in_phase": 8,
       "previous_phase": "lagging"
     },
     {
@@ -38,20 +38,20 @@ window.ROTATION_DATA = {
       "name": "Communication",
       "color": "#ec4899",
       "weight": 9.0,
-      "daily_return": -0.00425,
-      "return_5d": -0.03984,
-      "return_20d": -0.06185,
-      "residual_return": -0.04884,
-      "volume_ratio": 1.27,
-      "mfi": 27.2,
-      "cmf": -0.217,
-      "trend": -0.599,
+      "daily_return": -0.01871,
+      "return_5d": -0.04075,
+      "return_20d": -0.08258,
+      "residual_return": -0.05117,
+      "volume_ratio": 1.58,
+      "mfi": 26.2,
+      "cmf": -0.119,
+      "trend": -0.712,
       "momentum_phase": "lagging",
       "phase_value": 0.0,
-      "phase_delta": -27.9,
-      "rs_ratio": 94.1,
+      "phase_delta": -21.9,
+      "rs_ratio": 93.1,
       "rs_momentum": 95.1,
-      "days_in_phase": 20,
+      "days_in_phase": 21,
       "previous_phase": "leading"
     },
     {
@@ -59,20 +59,20 @@ window.ROTATION_DATA = {
       "name": "Energie",
       "color": "#ef4444",
       "weight": 3.5,
-      "daily_return": 0.00352,
-      "return_5d": 0.01302,
-      "return_20d": 0.09171,
-      "residual_return": 0.02065,
-      "volume_ratio": 0.88,
+      "daily_return": 0.0038,
+      "return_5d": -0.00894,
+      "return_20d": 0.09376,
+      "residual_return": -5e-05,
+      "volume_ratio": 0.8,
       "mfi": 60.4,
-      "cmf": 0.22,
-      "trend": 0.868,
+      "cmf": 0.254,
+      "trend": 0.835,
       "momentum_phase": "leading",
-      "phase_value": 93.3,
-      "phase_delta": -6.7,
-      "rs_ratio": 102.8,
-      "rs_momentum": 105.9,
-      "days_in_phase": 9,
+      "phase_value": 86.8,
+      "phase_delta": -13.2,
+      "rs_ratio": 103.1,
+      "rs_momentum": 104.2,
+      "days_in_phase": 10,
       "previous_phase": "lagging"
     },
     {
@@ -80,20 +80,20 @@ window.ROTATION_DATA = {
       "name": "Finance",
       "color": "#f59e0b",
       "weight": 13.5,
-      "daily_return": 0.00447,
-      "return_5d": -0.00918,
-      "return_20d": 0.04994,
-      "residual_return": -0.01469,
-      "volume_ratio": 0.77,
+      "daily_return": 0.01443,
+      "return_5d": 0.0186,
+      "return_20d": 0.0645,
+      "residual_return": 0.01272,
+      "volume_ratio": 1.02,
       "mfi": 71.1,
-      "cmf": 0.15,
-      "trend": 0.889,
+      "cmf": 0.227,
+      "trend": 0.89,
       "momentum_phase": "leading",
-      "phase_value": 91.4,
-      "phase_delta": -7.1,
-      "rs_ratio": 101.8,
-      "rs_momentum": 106.4,
-      "days_in_phase": 7,
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 103.4,
+      "rs_momentum": 107.8,
+      "days_in_phase": 8,
       "previous_phase": "lagging"
     },
     {
@@ -101,20 +101,20 @@ window.ROTATION_DATA = {
       "name": "Industrie",
       "color": "#8b5cf6",
       "weight": 8.5,
-      "daily_return": 0.00339,
-      "return_5d": 0.01056,
-      "return_20d": -0.00089,
-      "residual_return": 0.00169,
-      "volume_ratio": 1.11,
-      "mfi": 43.7,
-      "cmf": 0.195,
-      "trend": -0.419,
+      "daily_return": 0.00973,
+      "return_5d": 0.03347,
+      "return_20d": 0.00106,
+      "residual_return": 0.02375,
+      "volume_ratio": 1.05,
+      "mfi": 45.8,
+      "cmf": 0.282,
+      "trend": -0.235,
       "momentum_phase": "improving",
-      "phase_value": 59.4,
-      "phase_delta": 5.2,
-      "rs_ratio": 100.0,
-      "rs_momentum": 101.9,
-      "days_in_phase": 20,
+      "phase_value": 68.3,
+      "phase_delta": 9.5,
+      "rs_ratio": 101.4,
+      "rs_momentum": 102.3,
+      "days_in_phase": 21,
       "previous_phase": "lagging"
     },
     {
@@ -122,20 +122,20 @@ window.ROTATION_DATA = {
       "name": "Technologie",
       "color": "#3b82f6",
       "weight": 31.0,
-      "daily_return": 0.00797,
-      "return_5d": 0.04749,
-      "return_20d": -0.03443,
-      "residual_return": 0.02767,
-      "volume_ratio": 0.89,
-      "mfi": 36.8,
-      "cmf": 0.007,
-      "trend": -0.677,
+      "daily_return": -0.01183,
+      "return_5d": 0.03007,
+      "return_20d": -0.0554,
+      "residual_return": 0.00757,
+      "volume_ratio": 0.86,
+      "mfi": 31.9,
+      "cmf": 0.041,
+      "trend": -0.643,
       "momentum_phase": "lagging",
-      "phase_value": 25.3,
-      "phase_delta": 25.3,
-      "rs_ratio": 99.1,
-      "rs_momentum": 95.9,
-      "days_in_phase": 9,
+      "phase_value": 17.7,
+      "phase_delta": 17.7,
+      "rs_ratio": 98.6,
+      "rs_momentum": 94.9,
+      "days_in_phase": 10,
       "previous_phase": "leading"
     },
     {
@@ -143,20 +143,20 @@ window.ROTATION_DATA = {
       "name": "Conso. Essentiels",
       "color": "#06b6d4",
       "weight": 6.0,
-      "daily_return": -0.00356,
-      "return_5d": -0.035,
-      "return_20d": 0.08104,
-      "residual_return": -0.03234,
-      "volume_ratio": 0.95,
-      "mfi": 58.8,
-      "cmf": -0.007,
-      "trend": 0.835,
+      "daily_return": 0.01543,
+      "return_5d": -0.00091,
+      "return_20d": 0.095,
+      "residual_return": 0.00245,
+      "volume_ratio": 1.07,
+      "mfi": 60.3,
+      "cmf": 0.073,
+      "trend": 0.802,
       "momentum_phase": "leading",
-      "phase_value": 80.4,
-      "phase_delta": -18.7,
-      "rs_ratio": 101.8,
-      "rs_momentum": 104.3,
-      "days_in_phase": 11,
+      "phase_value": 97.0,
+      "phase_delta": -3.0,
+      "rs_ratio": 103.3,
+      "rs_momentum": 106.1,
+      "days_in_phase": 12,
       "previous_phase": "lagging"
     },
     {
@@ -164,20 +164,20 @@ window.ROTATION_DATA = {
       "name": "Immobilier",
       "color": "#14b8a6",
       "weight": 2.5,
-      "daily_return": -0.0073,
-      "return_5d": -0.00917,
-      "return_20d": 0.03564,
-      "residual_return": -0.01433,
-      "volume_ratio": 1.09,
+      "daily_return": 0.02207,
+      "return_5d": 0.01151,
+      "return_20d": 0.05513,
+      "residual_return": 0.00623,
+      "volume_ratio": 0.84,
       "mfi": 66.6,
-      "cmf": -0.005,
-      "trend": 0.813,
+      "cmf": 0.066,
+      "trend": 0.818,
       "momentum_phase": "leading",
-      "phase_value": 76.4,
-      "phase_delta": -4.6,
-      "rs_ratio": 100.8,
-      "rs_momentum": 104.5,
-      "days_in_phase": 7,
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 103.2,
+      "rs_momentum": 107.4,
+      "days_in_phase": 8,
       "previous_phase": "lagging"
     },
     {
@@ -185,20 +185,20 @@ window.ROTATION_DATA = {
       "name": "Services Publics",
       "color": "#eab308",
       "weight": 2.5,
-      "daily_return": -0.0084,
-      "return_5d": -0.00886,
-      "return_20d": 0.07082,
-      "residual_return": -0.01111,
-      "volume_ratio": 0.6,
-      "mfi": 77.2,
-      "cmf": 0.177,
-      "trend": 0.826,
+      "daily_return": 0.0153,
+      "return_5d": 0.01363,
+      "return_20d": 0.0831,
+      "residual_return": 0.0116,
+      "volume_ratio": 0.83,
+      "mfi": 77.8,
+      "cmf": 0.279,
+      "trend": 0.828,
       "momentum_phase": "leading",
-      "phase_value": 90.0,
-      "phase_delta": -10.0,
-      "rs_ratio": 102.0,
-      "rs_momentum": 106.0,
-      "days_in_phase": 12,
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 103.5,
+      "rs_momentum": 106.8,
+      "days_in_phase": 13,
       "previous_phase": "lagging"
     },
     {
@@ -206,20 +206,20 @@ window.ROTATION_DATA = {
       "name": "Sante",
       "color": "#22c55e",
       "weight": 11.5,
-      "daily_return": 0.00301,
-      "return_5d": -0.00871,
-      "return_20d": 0.08135,
-      "residual_return": -0.01097,
-      "volume_ratio": 1.04,
-      "mfi": 60.0,
-      "cmf": 0.049,
-      "trend": 0.905,
+      "daily_return": 0.02404,
+      "return_5d": 0.02655,
+      "return_20d": 0.10747,
+      "residual_return": 0.0244,
+      "volume_ratio": 1.72,
+      "mfi": 62.8,
+      "cmf": 0.145,
+      "trend": 0.909,
       "momentum_phase": "leading",
-      "phase_value": 81.5,
-      "phase_delta": -12.0,
-      "rs_ratio": 103.2,
-      "rs_momentum": 103.1,
-      "days_in_phase": 7,
+      "phase_value": 100.0,
+      "phase_delta": 0.0,
+      "rs_ratio": 105.5,
+      "rs_momentum": 106.9,
+      "days_in_phase": 8,
       "previous_phase": "lagging"
     },
     {
@@ -227,20 +227,20 @@ window.ROTATION_DATA = {
       "name": "Conso. Discretionnaire",
       "color": "#f97316",
       "weight": 10.0,
-      "daily_return": -0.00104,
-      "return_5d": 0.00278,
-      "return_20d": 0.05992,
-      "residual_return": -0.00982,
-      "volume_ratio": 0.9,
-      "mfi": 73.7,
-      "cmf": 0.118,
-      "trend": 0.801,
+      "daily_return": 0.00754,
+      "return_5d": 0.02741,
+      "return_20d": 0.05598,
+      "residual_return": 0.01338,
+      "volume_ratio": 0.91,
+      "mfi": 73.6,
+      "cmf": 0.152,
+      "trend": 0.803,
       "momentum_phase": "leading",
-      "phase_value": 82.2,
-      "phase_delta": -15.1,
-      "rs_ratio": 102.0,
-      "rs_momentum": 104.5,
-      "days_in_phase": 10,
+      "phase_value": 90.6,
+      "phase_delta": -9.4,
+      "rs_ratio": 102.8,
+      "rs_momentum": 105.3,
+      "days_in_phase": 11,
       "previous_phase": "lagging"
     }
   ],
@@ -251,10 +251,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.01166,
-      "phase_value": 50.2,
-      "rs_momentum": 102.0
+      "days_in_phase": 2,
+      "return_5d": 0.05266,
+      "phase_value": 66.5,
+      "rs_momentum": 102.6
     },
     {
       "ticker": "COR",
@@ -262,10 +262,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "improving",
       "previous_phase": "leading",
-      "days_in_phase": 1,
-      "return_5d": -0.04175,
-      "phase_value": 33.6,
-      "rs_momentum": 101.1
+      "days_in_phase": 2,
+      "return_5d": -0.00142,
+      "phase_value": 7.6,
+      "rs_momentum": 96.1
     },
     {
       "ticker": "MGM",
@@ -273,10 +273,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.07559,
-      "phase_value": 47.1,
-      "rs_momentum": 108.1
+      "days_in_phase": 2,
+      "return_5d": 0.02744,
+      "phase_value": 100.0,
+      "rs_momentum": 114.9
     },
     {
       "ticker": "HSY",
@@ -284,10 +284,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Essentiels",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.06758,
-      "phase_value": 45.3,
-      "rs_momentum": 101.9
+      "days_in_phase": 2,
+      "return_5d": -0.05518,
+      "phase_value": 5.3,
+      "rs_momentum": 97.0
     },
     {
       "ticker": "ORCL",
@@ -295,10 +295,10 @@ window.ROTATION_DATA = {
       "sector_name": "Technologie",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.15135,
+      "days_in_phase": 3,
+      "return_5d": 0.10621,
       "phase_value": 100.0,
-      "rs_momentum": 119.2
+      "rs_momentum": 115.9
     },
     {
       "ticker": "WFC",
@@ -306,10 +306,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.00795,
-      "phase_value": 62.3,
-      "rs_momentum": 102.6
+      "days_in_phase": 3,
+      "return_5d": 0.02937,
+      "phase_value": 60.3,
+      "rs_momentum": 102.2
     },
     {
       "ticker": "MTB",
@@ -317,10 +317,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.0118,
-      "phase_value": 40.3,
-      "rs_momentum": 99.4
+      "days_in_phase": 3,
+      "return_5d": 0.01087,
+      "phase_value": 45.9,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "AMP",
@@ -328,9 +328,9 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.01415,
-      "phase_value": 37.2,
+      "days_in_phase": 3,
+      "return_5d": 0.0116,
+      "phase_value": 39.2,
       "rs_momentum": 100.3
     },
     {
@@ -339,21 +339,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.00962,
-      "phase_value": 69.7,
-      "rs_momentum": 103.1
-    },
-    {
-      "ticker": "BAX",
-      "sector": "XLV",
-      "sector_name": "Sante",
-      "phase": "improving",
-      "previous_phase": "leading",
       "days_in_phase": 3,
-      "return_5d": -0.00741,
-      "phase_value": 44.8,
-      "rs_momentum": 99.3
+      "return_5d": 0.0456,
+      "phase_value": 73.2,
+      "rs_momentum": 103.2
     },
     {
       "ticker": "BMY",
@@ -361,10 +350,87 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "improving",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.03857,
-      "phase_value": 34.2,
-      "rs_momentum": 99.4
+      "days_in_phase": 4,
+      "return_5d": -0.00146,
+      "phase_value": 28.2,
+      "rs_momentum": 98.8
+    },
+    {
+      "ticker": "BAX",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "improving",
+      "previous_phase": "leading",
+      "days_in_phase": 4,
+      "return_5d": -0.07115,
+      "phase_value": 0.0,
+      "rs_momentum": 89.9
+    },
+    {
+      "ticker": "PNC",
+      "sector": "XLF",
+      "sector_name": "Finance",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": 0.03283,
+      "phase_value": 74.7,
+      "rs_momentum": 103.2
+    },
+    {
+      "ticker": "LH",
+      "sector": "XLV",
+      "sector_name": "Sante",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": 0.1192,
+      "phase_value": 100.0,
+      "rs_momentum": 110.6
+    },
+    {
+      "ticker": "ECHO",
+      "sector": "XLC",
+      "sector_name": "Communication",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": 0.09632,
+      "phase_value": 100.0,
+      "rs_momentum": 116.6
+    },
+    {
+      "ticker": "HAL",
+      "sector": "XLE",
+      "sector_name": "Energie",
+      "phase": "leading",
+      "previous_phase": "improving",
+      "days_in_phase": 1,
+      "return_5d": 0.02806,
+      "phase_value": 100.0,
+      "rs_momentum": 110.7
+    },
+    {
+      "ticker": "SLB",
+      "sector": "XLE",
+      "sector_name": "Energie",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": 0.01413,
+      "phase_value": 100.0,
+      "rs_momentum": 112.1
+    },
+    {
+      "ticker": "FANG",
+      "sector": "XLE",
+      "sector_name": "Energie",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 1,
+      "return_5d": 0.0033,
+      "phase_value": 85.7,
+      "rs_momentum": 105.5
     },
     {
       "ticker": "SWKS",
@@ -372,10 +438,10 @@ window.ROTATION_DATA = {
       "sector_name": "Technologie",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.05875,
+      "days_in_phase": 2,
+      "return_5d": 0.07192,
       "phase_value": 100.0,
-      "rs_momentum": 109.5
+      "rs_momentum": 117.7
     },
     {
       "ticker": "ARES",
@@ -383,10 +449,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": 0.00097,
+      "days_in_phase": 2,
+      "return_5d": 0.04415,
       "phase_value": 100.0,
-      "rs_momentum": 107.9
+      "rs_momentum": 108.6
     },
     {
       "ticker": "BX",
@@ -394,10 +460,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.01423,
+      "days_in_phase": 2,
+      "return_5d": 0.02229,
       "phase_value": 100.0,
-      "rs_momentum": 108.6
+      "rs_momentum": 109.5
     },
     {
       "ticker": "TFC",
@@ -405,10 +471,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.0,
-      "phase_value": 66.1,
-      "rs_momentum": 102.2
+      "days_in_phase": 2,
+      "return_5d": 0.01817,
+      "phase_value": 70.5,
+      "rs_momentum": 102.6
     },
     {
       "ticker": "USB",
@@ -416,10 +482,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.007,
-      "phase_value": 54.0,
-      "rs_momentum": 100.2
+      "days_in_phase": 2,
+      "return_5d": 0.01779,
+      "phase_value": 61.2,
+      "rs_momentum": 101.3
     },
     {
       "ticker": "PODD",
@@ -427,10 +493,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.00547,
-      "phase_value": 100.0,
-      "rs_momentum": 109.4
+      "days_in_phase": 2,
+      "return_5d": 0.02342,
+      "phase_value": 97.9,
+      "rs_momentum": 106.9
     },
     {
       "ticker": "ZBH",
@@ -438,21 +504,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.02449,
-      "phase_value": 79.7,
-      "rs_momentum": 105.8
-    },
-    {
-      "ticker": "LULU",
-      "sector": "XLY",
-      "sector_name": "Conso. Discretionnaire",
-      "phase": "leading",
-      "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": 0.01115,
-      "phase_value": 100.0,
-      "rs_momentum": 109.2
+      "days_in_phase": 2,
+      "return_5d": -0.01106,
+      "phase_value": 62.3,
+      "rs_momentum": 103.6
     },
     {
       "ticker": "BBY",
@@ -460,10 +515,21 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.02875,
-      "phase_value": 85.9,
-      "rs_momentum": 103.5
+      "days_in_phase": 2,
+      "return_5d": 0.00521,
+      "phase_value": 100.0,
+      "rs_momentum": 107.0
+    },
+    {
+      "ticker": "LULU",
+      "sector": "XLY",
+      "sector_name": "Conso. Discretionnaire",
+      "phase": "leading",
+      "previous_phase": "improving",
+      "days_in_phase": 2,
+      "return_5d": 0.10918,
+      "phase_value": 100.0,
+      "rs_momentum": 112.0
     },
     {
       "ticker": "PHM",
@@ -471,10 +537,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.00192,
-      "phase_value": 69.7,
-      "rs_momentum": 102.1
+      "days_in_phase": 2,
+      "return_5d": 0.02616,
+      "phase_value": 99.7,
+      "rs_momentum": 104.9
     },
     {
       "ticker": "DHI",
@@ -482,10 +548,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.03156,
-      "phase_value": 57.7,
-      "rs_momentum": 100.7
+      "days_in_phase": 2,
+      "return_5d": -0.00644,
+      "phase_value": 73.5,
+      "rs_momentum": 102.1
     },
     {
       "ticker": "VZ",
@@ -493,10 +559,10 @@ window.ROTATION_DATA = {
       "sector_name": "Communication",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.04469,
+      "days_in_phase": 2,
+      "return_5d": -0.02239,
       "phase_value": 100.0,
-      "rs_momentum": 108.4
+      "rs_momentum": 109.8
     },
     {
       "ticker": "AXON",
@@ -504,10 +570,10 @@ window.ROTATION_DATA = {
       "sector_name": "Industrie",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": 0.02067,
+      "days_in_phase": 2,
+      "return_5d": 0.04206,
       "phase_value": 100.0,
-      "rs_momentum": 110.7
+      "rs_momentum": 113.6
     },
     {
       "ticker": "HONA",
@@ -515,10 +581,10 @@ window.ROTATION_DATA = {
       "sector_name": "Industrie",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": 0.08594,
-      "phase_value": 100.0,
-      "rs_momentum": 110.7
+      "days_in_phase": 2,
+      "return_5d": -0.02002,
+      "phase_value": 44.6,
+      "rs_momentum": 100.7
     },
     {
       "ticker": "KHC",
@@ -526,10 +592,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Essentiels",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.04902,
-      "phase_value": 82.8,
-      "rs_momentum": 105.4
+      "days_in_phase": 2,
+      "return_5d": -0.03629,
+      "phase_value": 72.4,
+      "rs_momentum": 104.6
     },
     {
       "ticker": "HRL",
@@ -537,10 +603,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Essentiels",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 1,
-      "return_5d": -0.03511,
-      "phase_value": 62.1,
-      "rs_momentum": 101.6
+      "days_in_phase": 2,
+      "return_5d": -0.0076,
+      "phase_value": 59.0,
+      "rs_momentum": 101.0
     },
     {
       "ticker": "AWK",
@@ -548,32 +614,10 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.02402,
-      "phase_value": 79.3,
-      "rs_momentum": 103.4
-    },
-    {
-      "ticker": "NEE",
-      "sector": "XLU",
-      "sector_name": "Services Publics",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.01074,
-      "phase_value": 62.6,
-      "rs_momentum": 102.0
-    },
-    {
-      "ticker": "DTE",
-      "sector": "XLU",
-      "sector_name": "Services Publics",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.00827,
-      "phase_value": 60.2,
-      "rs_momentum": 101.6
+      "days_in_phase": 2,
+      "return_5d": -0.00378,
+      "phase_value": 89.3,
+      "rs_momentum": 105.3
     },
     {
       "ticker": "DUK",
@@ -581,10 +625,32 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.01459,
-      "phase_value": 58.2,
-      "rs_momentum": 100.3
+      "days_in_phase": 2,
+      "return_5d": 0.00736,
+      "phase_value": 65.3,
+      "rs_momentum": 101.4
+    },
+    {
+      "ticker": "DTE",
+      "sector": "XLU",
+      "sector_name": "Services Publics",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 2,
+      "return_5d": 0.01994,
+      "phase_value": 60.5,
+      "rs_momentum": 101.3
+    },
+    {
+      "ticker": "NEE",
+      "sector": "XLU",
+      "sector_name": "Services Publics",
+      "phase": "leading",
+      "previous_phase": "lagging",
+      "days_in_phase": 2,
+      "return_5d": 0.00049,
+      "phase_value": 60.2,
+      "rs_momentum": 101.6
     },
     {
       "ticker": "D",
@@ -592,9 +658,9 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.01713,
-      "phase_value": 53.7,
+      "days_in_phase": 2,
+      "return_5d": -0.00123,
+      "phase_value": 53.0,
       "rs_momentum": 100.6
     },
     {
@@ -603,10 +669,10 @@ window.ROTATION_DATA = {
       "sector_name": "Immobilier",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 1,
-      "return_5d": -0.02082,
-      "phase_value": 60.0,
-      "rs_momentum": 101.5
+      "days_in_phase": 2,
+      "return_5d": 0.03199,
+      "phase_value": 80.8,
+      "rs_momentum": 103.8
     },
     {
       "ticker": "FITB",
@@ -614,10 +680,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": 0.00451,
-      "phase_value": 67.9,
-      "rs_momentum": 101.6
+      "days_in_phase": 3,
+      "return_5d": 0.02756,
+      "phase_value": 73.3,
+      "rs_momentum": 102.4
     },
     {
       "ticker": "ALGN",
@@ -625,10 +691,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": -0.01215,
-      "phase_value": 78.4,
-      "rs_momentum": 104.5
+      "days_in_phase": 3,
+      "return_5d": -0.00518,
+      "phase_value": 49.0,
+      "rs_momentum": 100.7
     },
     {
       "ticker": "COO",
@@ -636,10 +702,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": -0.03633,
-      "phase_value": 63.6,
-      "rs_momentum": 102.8
+      "days_in_phase": 3,
+      "return_5d": -0.01421,
+      "phase_value": 39.2,
+      "rs_momentum": 98.5
     },
     {
       "ticker": "PEP",
@@ -647,10 +713,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Essentiels",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.04466,
-      "phase_value": 61.3,
-      "rs_momentum": 102.3
+      "days_in_phase": 3,
+      "return_5d": -0.01458,
+      "phase_value": 57.8,
+      "rs_momentum": 102.1
     },
     {
       "ticker": "SRE",
@@ -658,10 +724,10 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.00118,
-      "phase_value": 60.5,
-      "rs_momentum": 100.9
+      "days_in_phase": 3,
+      "return_5d": 0.02177,
+      "phase_value": 61.5,
+      "rs_momentum": 101.2
     },
     {
       "ticker": "MAA",
@@ -669,10 +735,10 @@ window.ROTATION_DATA = {
       "sector_name": "Immobilier",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 2,
-      "return_5d": -0.03648,
-      "phase_value": 44.7,
-      "rs_momentum": 99.5
+      "days_in_phase": 3,
+      "return_5d": -0.01269,
+      "phase_value": 39.2,
+      "rs_momentum": 99.2
     },
     {
       "ticker": "VMRK",
@@ -680,10 +746,10 @@ window.ROTATION_DATA = {
       "sector_name": "Immobilier",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 2,
-      "return_5d": -0.042,
-      "phase_value": 38.4,
-      "rs_momentum": 99.0
+      "days_in_phase": 3,
+      "return_5d": -0.02031,
+      "phase_value": 33.2,
+      "rs_momentum": 98.7
     },
     {
       "ticker": "RF",
@@ -691,10 +757,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.00035,
-      "phase_value": 72.2,
-      "rs_momentum": 103.4
+      "days_in_phase": 4,
+      "return_5d": 0.0144,
+      "phase_value": 73.0,
+      "rs_momentum": 103.3
     },
     {
       "ticker": "KEY",
@@ -702,10 +768,10 @@ window.ROTATION_DATA = {
       "sector_name": "Finance",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.00047,
-      "phase_value": 71.7,
-      "rs_momentum": 102.4
+      "days_in_phase": 4,
+      "return_5d": 0.01945,
+      "phase_value": 71.4,
+      "rs_momentum": 102.5
     },
     {
       "ticker": "REGN",
@@ -713,10 +779,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 3,
-      "return_5d": -0.00711,
-      "phase_value": 88.6,
-      "rs_momentum": 106.2
+      "days_in_phase": 4,
+      "return_5d": 0.01708,
+      "phase_value": 77.4,
+      "rs_momentum": 105.7
     },
     {
       "ticker": "MCD",
@@ -724,10 +790,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.00843,
-      "phase_value": 91.5,
-      "rs_momentum": 106.5
+      "days_in_phase": 4,
+      "return_5d": 0.0359,
+      "phase_value": 100.0,
+      "rs_momentum": 107.5
     },
     {
       "ticker": "TKO",
@@ -735,10 +801,10 @@ window.ROTATION_DATA = {
       "sector_name": "Communication",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.02161,
+      "days_in_phase": 4,
+      "return_5d": 0.03293,
       "phase_value": 100.0,
-      "rs_momentum": 108.3
+      "rs_momentum": 113.8
     },
     {
       "ticker": "MMM",
@@ -746,10 +812,10 @@ window.ROTATION_DATA = {
       "sector_name": "Industrie",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.01572,
-      "phase_value": 82.4,
-      "rs_momentum": 102.9
+      "days_in_phase": 4,
+      "return_5d": 0.02248,
+      "phase_value": 100.0,
+      "rs_momentum": 105.9
     },
     {
       "ticker": "EXC",
@@ -757,10 +823,10 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.00178,
-      "phase_value": 78.5,
-      "rs_momentum": 103.0
+      "days_in_phase": 4,
+      "return_5d": 0.03331,
+      "phase_value": 88.6,
+      "rs_momentum": 104.2
     },
     {
       "ticker": "NI",
@@ -768,10 +834,10 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": 0.00412,
-      "phase_value": 78.0,
-      "rs_momentum": 102.6
+      "days_in_phase": 4,
+      "return_5d": 0.03396,
+      "phase_value": 77.9,
+      "rs_momentum": 102.3
     },
     {
       "ticker": "AEE",
@@ -779,10 +845,10 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 3,
-      "return_5d": -0.00863,
-      "phase_value": 60.0,
-      "rs_momentum": 100.7
+      "days_in_phase": 4,
+      "return_5d": 0.02009,
+      "phase_value": 66.3,
+      "rs_momentum": 101.5
     },
     {
       "ticker": "HPQ",
@@ -790,10 +856,10 @@ window.ROTATION_DATA = {
       "sector_name": "Technologie",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 4,
-      "return_5d": -0.0388,
-      "phase_value": 100.0,
-      "rs_momentum": 110.3
+      "days_in_phase": 5,
+      "return_5d": -0.0538,
+      "phase_value": 95.2,
+      "rs_momentum": 107.1
     },
     {
       "ticker": "ELV",
@@ -801,10 +867,10 @@ window.ROTATION_DATA = {
       "sector_name": "Sante",
       "phase": "leading",
       "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": -0.06933,
-      "phase_value": 28.3,
-      "rs_momentum": 99.8
+      "days_in_phase": 5,
+      "return_5d": -0.04075,
+      "phase_value": 25.1,
+      "rs_momentum": 99.7
     },
     {
       "ticker": "EBAY",
@@ -812,10 +878,10 @@ window.ROTATION_DATA = {
       "sector_name": "Conso. Discretionnaire",
       "phase": "leading",
       "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": -0.03294,
-      "phase_value": 43.5,
-      "rs_momentum": 98.7
+      "days_in_phase": 5,
+      "return_5d": -0.00181,
+      "phase_value": 60.8,
+      "rs_momentum": 100.6
     },
     {
       "ticker": "TXT",
@@ -823,10 +889,10 @@ window.ROTATION_DATA = {
       "sector_name": "Industrie",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 4,
-      "return_5d": 0.00359,
-      "phase_value": 85.0,
-      "rs_momentum": 104.3
+      "days_in_phase": 5,
+      "return_5d": 0.13836,
+      "phase_value": 100.0,
+      "rs_momentum": 114.3
     },
     {
       "ticker": "EXPD",
@@ -834,10 +900,10 @@ window.ROTATION_DATA = {
       "sector_name": "Industrie",
       "phase": "leading",
       "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": 0.00489,
-      "phase_value": 59.6,
-      "rs_momentum": 101.1
+      "days_in_phase": 5,
+      "return_5d": 0.01111,
+      "phase_value": 51.2,
+      "rs_momentum": 100.0
     },
     {
       "ticker": "OXY",
@@ -845,10 +911,10 @@ window.ROTATION_DATA = {
       "sector_name": "Energie",
       "phase": "leading",
       "previous_phase": "lagging",
-      "days_in_phase": 4,
-      "return_5d": 0.00576,
-      "phase_value": 64.5,
-      "rs_momentum": 103.1
+      "days_in_phase": 5,
+      "return_5d": -0.01808,
+      "phase_value": 50.2,
+      "rs_momentum": 100.3
     },
     {
       "ticker": "ETR",
@@ -856,10 +922,10 @@ window.ROTATION_DATA = {
       "sector_name": "Services Publics",
       "phase": "leading",
       "previous_phase": "weakening",
-      "days_in_phase": 4,
-      "return_5d": -0.00287,
-      "phase_value": 58.0,
-      "rs_momentum": 100.6
+      "days_in_phase": 5,
+      "return_5d": 0.0245,
+      "phase_value": 59.1,
+      "rs_momentum": 100.4
     },
     {
       "ticker": "CPT",
@@ -867,87 +933,10 @@ window.ROTATION_DATA = {
       "sector_name": "Immobilier",
       "phase": "leading",
       "previous_phase": "improving",
-      "days_in_phase": 4,
-      "return_5d": -0.03163,
-      "phase_value": 47.2,
-      "rs_momentum": 99.6
-    },
-    {
-      "ticker": "TRV",
-      "sector": "XLF",
-      "sector_name": "Finance",
-      "phase": "leading",
-      "previous_phase": "weakening",
       "days_in_phase": 5,
-      "return_5d": -0.02819,
-      "phase_value": 58.3,
-      "rs_momentum": 100.2
-    },
-    {
-      "ticker": "CHTR",
-      "sector": "XLC",
-      "sector_name": "Communication",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
-      "return_5d": -0.05708,
-      "phase_value": 100.0,
-      "rs_momentum": 121.7
-    },
-    {
-      "ticker": "XYL",
-      "sector": "XLI",
-      "sector_name": "Industrie",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
-      "return_5d": -0.19248,
-      "phase_value": 0.0,
-      "rs_momentum": 88.0
-    },
-    {
-      "ticker": "SJM",
-      "sector": "XLP",
-      "sector_name": "Conso. Essentiels",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
-      "return_5d": -0.05945,
-      "phase_value": 50.4,
-      "rs_momentum": 100.3
-    },
-    {
-      "ticker": "APA",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "weakening",
-      "days_in_phase": 5,
-      "return_5d": 0.03378,
-      "phase_value": 100.0,
-      "rs_momentum": 107.3
-    },
-    {
-      "ticker": "CVX",
-      "sector": "XLE",
-      "sector_name": "Energie",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
-      "return_5d": 0.01112,
-      "phase_value": 62.1,
-      "rs_momentum": 100.8
-    },
-    {
-      "ticker": "LNT",
-      "sector": "XLU",
-      "sector_name": "Services Publics",
-      "phase": "leading",
-      "previous_phase": "lagging",
-      "days_in_phase": 5,
-      "return_5d": -0.01323,
-      "phase_value": 60.7,
-      "rs_momentum": 101.0
+      "return_5d": -0.01039,
+      "phase_value": 38.0,
+      "rs_momentum": 98.4
     }
   ],
   "signals_history": [
@@ -959,9 +948,9 @@ window.ROTATION_DATA = {
       "open_price": 27.270000457763672,
       "spy_open_price": 772.3099975585938,
       "current_phase": "improving",
-      "days_active": 0,
-      "return_vs_spy": 0.0,
-      "return_abs": 0.0,
+      "days_active": 1,
+      "return_vs_spy": 0.06103,
+      "return_abs": 0.05721,
       "rsi": 31.0,
       "status": "active",
       "close_date": null,
@@ -975,9 +964,9 @@ window.ROTATION_DATA = {
       "open_price": 144.5399932861328,
       "spy_open_price": 772.3099975585938,
       "current_phase": "improving",
-      "days_active": 0,
-      "return_vs_spy": 0.0,
-      "return_abs": 0.0,
+      "days_active": 1,
+      "return_vs_spy": -0.03063,
+      "return_abs": -0.03445,
       "rsi": 57.0,
       "status": "active",
       "close_date": null,
@@ -991,9 +980,9 @@ window.ROTATION_DATA = {
       "open_price": 245.6199951171875,
       "spy_open_price": 772.3099975585938,
       "current_phase": "improving",
-      "days_active": 0,
-      "return_vs_spy": 0.0,
-      "return_abs": 0.0,
+      "days_active": 1,
+      "return_vs_spy": 0.03354,
+      "return_abs": 0.02972,
       "rsi": 74.0,
       "status": "active",
       "close_date": null,
@@ -1007,9 +996,9 @@ window.ROTATION_DATA = {
       "open_price": 25.290000915527344,
       "spy_open_price": 765.3699951171875,
       "current_phase": "improving",
-      "days_active": 2,
-      "return_vs_spy": -0.00235,
-      "return_abs": 0.00672,
+      "days_active": 3,
+      "return_vs_spy": -0.07599,
+      "return_abs": -0.07078,
       "rsi": 59.0,
       "status": "active",
       "close_date": null,
@@ -1023,9 +1012,9 @@ window.ROTATION_DATA = {
       "open_price": 159.97000122070312,
       "spy_open_price": 773.9299926757812,
       "current_phase": "improving",
-      "days_active": 20,
-      "return_vs_spy": -0.07311,
-      "return_abs": -0.0752,
+      "days_active": 21,
+      "return_vs_spy": -0.05373,
+      "return_abs": -0.05964,
       "rsi": 39.0,
       "status": "active",
       "close_date": null,
@@ -1039,9 +1028,9 @@ window.ROTATION_DATA = {
       "open_price": 82.01000213623047,
       "spy_open_price": 774.8300170898438,
       "current_phase": "improving",
-      "days_active": 23,
-      "return_vs_spy": 0.06215,
-      "return_abs": 0.0589,
+      "days_active": 24,
+      "return_vs_spy": 0.08827,
+      "return_abs": 0.08121,
       "rsi": 38.0,
       "status": "active",
       "close_date": null,
@@ -1055,9 +1044,9 @@ window.ROTATION_DATA = {
       "open_price": 12.350000381469727,
       "spy_open_price": 774.8300170898438,
       "current_phase": "improving",
-      "days_active": 23,
-      "return_vs_spy": 0.06803,
-      "return_abs": 0.06478,
+      "days_active": 24,
+      "return_vs_spy": 0.07831,
+      "return_abs": 0.07125,
       "rsi": 34.0,
       "status": "active",
       "close_date": null,
